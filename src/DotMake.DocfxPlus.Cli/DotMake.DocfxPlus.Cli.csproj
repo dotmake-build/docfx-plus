@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Product>DotMake Docfx-Plus Cli</Product>
+    <AssemblyName>docfx-plus</AssemblyName>
+    <RollForward>Major</RollForward>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>docfx-plus</ToolCommandName>
+    <!-- NuGet Package Information (common ones are in Directory.Build.props) -->
+    <!-- Description is used for assembly and NuGet metadata -->
+    <Description>A dotnet tool for enhancing docfx behaviour and template/theme.</Description>
+    <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
+    <PackageReleaseNotes>
+      <![CDATA[
+        - Initial release.
+      ]]>
+    </PackageReleaseNotes>
+
+    <!--<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>-->
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      So we have <PackageReference> with ExcludeAssets="All" so that the package reference is not added as a nuget dependency
+      in our NuGet package, and with GeneratePathProperty="true" so that we can use <Reference> to reference the DLL from
+      the package directly with HintPath.
+      https://blog.maartenballiauw.be/post/2020/04/22/referencing-specific-assembly-nuget-package.html
+    -->
+    <PackageReference Include="docfx" Version="$(DocfxVersion)">
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>None</IncludeAssets>
+      <ExcludeAssets>All</ExcludeAssets>
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
+    <Reference Include="docfx">
+      <HintPath>$(Pkgdocfx)\tools\$(TargetFramework)\any\docfx.dll</HintPath>
+    </Reference>
+    <None Include="$(Pkgdocfx)\tools\$(TargetFramework)\any\**">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <!-- required as we are referencing docfx as dll, these are needed to prevent conflicts -->
+    <PackageReference Include="Docfx.App" Version="$(DocfxVersion)">
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Docfx.Dotnet" Version="$(DocfxVersion)">
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\templates\**">
+      <Link>templates\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Remove Node.js runtime dependencies that used by playwright -->
+  <Target Name="RemoveNodeJsRuntimes" AfterTargets="CopyPlaywrightFilesToOutput">
+    <ItemGroup>
+      <!--<Content Remove="@(Content)" Condition="$([System.String]::Copy('%(Content.PlaywrightFolder)').Contains('node\'))" />-->
+      <Content Remove="@(Content)" Condition="'%(Content.NuGetPackageId)' == 'Microsoft.Playwright'" />
+    </ItemGroup>
+  </Target>
+</Project>

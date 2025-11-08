@@ -1,0 +1,5 @@
+{{#_obsoleted}}
+{{#_obsoletedMessage}}
+<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-triangle"></i> {{_obsoletedMessage}}</div>
+{{/_obsoletedMessage}}
+{{/_obsoleted}}

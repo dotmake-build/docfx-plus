@@ -1,0 +1,70 @@
+{{!Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license.}}
+
+{{>partials/class.header}}
+
+{{#children}}
+<h2 class="section" id="{{id}}">{{>partials/classSubtitle}}</h2>
+<table class="table jumplist" aria-label="{{>partials/classSubtitle}}">
+<tbody>
+{{#children}}
+  <tr>
+    <td>
+      {{#definition}}
+        <xref uid="{{definition}}" altProperty="fullName" displayProperty="name"/>
+      {{/definition}}
+      {{^definition}}
+        <xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/>
+      {{/definition}}
+    </td>
+    <td>
+      {{>partials/obsoleteBadge}}
+      {{{summary}}}
+      {{#_inherited}}(Inherited from <xref uid="{{parent}}" altProperty="fullName" displayProperty="name"/>){{/_inherited}}
+    </td>
+  </tr>
+{{/children}}
+</tbody>
+</table>
+{{/children}}
+
+{{#extensionMethods.0}}
+<h2 class="section" id="extensionMethods">{{__global.extensionMethods}}</h2>
+<table class="table jumplist" aria-label="{{__global.extensionMethods}}">
+<tbody>
+{{/extensionMethods.0}}
+{{#extensionMethods}}
+  <tr>
+    <td>
+      {{#definition}}
+        <xref uid="{{definition}}" altProperty="fullName" displayProperty="nameWithType"/>
+      {{/definition}}
+      {{^definition}}
+        <xref uid="{{uid}}" altProperty="fullName" displayProperty="nameWithType"/>
+      {{/definition}}
+    </td>
+    <td>
+      {{>partials/obsoleteBadge}}
+      {{{summary}}}
+    </td>
+  </tr>
+{{/extensionMethods}}
+{{#extensionMethods.0}}
+</tbody>
+</table>
+{{/extensionMethods.0}}
+
+{{#seealso.0}}
+<h2 class="section" id="seealso">{{__global.seealso}}</h2>
+<div class="seealso">
+{{/seealso.0}}
+{{#seealso}}
+  {{#isCref}}
+    <div>{{{type.specName.0.value}}}</div>
+  {{/isCref}}
+  {{^isCref}}
+    <div>{{{url}}}</div>
+  {{/isCref}}
+{{/seealso}}
+{{#seealso.0}}
+</div>
+{{/seealso.0}}

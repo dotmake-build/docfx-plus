@@ -1,0 +1,5 @@
+{{#_obsoleted}}
+<p>
+  <span class="badge rounded-pill text-bg-danger">{{__global.obsolete}}</span>
+</p>
+{{/_obsoleted}}
