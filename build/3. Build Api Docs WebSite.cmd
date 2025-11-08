@@ -1,11 +1,12 @@
 @echo off
 
-set projectName=DotMake.SvgSprite
-set srcFolder=..\src
-set publishFolder=..\docs\api
+set srcFolder=..\docs
+set publishFolder=..\docs\_site
 
-dotnet build %srcFolder%\HelpBuilder\%projectName%.shfbproj --configuration Release --output %publishFolder%
+dotnet tool update -g docfx-plus
+docfx-plus %srcFolder%\docfx.json --serve
 
+@echo off
 if %ERRORLEVEL% EQU 0 (
   echo:
   echo *************
@@ -13,5 +14,6 @@ if %ERRORLEVEL% EQU 0 (
   echo *************
   echo:
 )
+@echo on
 
-pause
+@pause
