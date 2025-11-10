@@ -9,7 +9,7 @@ exports.preTransform = function (model) {
   //Fix urls starting with app relative path ~/
   //This is because we can't use e.g. ./ for href in toc.yml, we get CircularTocInclusion error
   //because it tries to load itself at ./toc.yml
-  //This way can use ~/. as a workaround in toc.yml (we want to use clean directory url and avoid using index.html)
+  //This way we can use ~/. as a workaround in toc.yml (we want to use clean directory url and avoid using index.html)
   //Only for non-api pages, e.g. for toc.json, toc.html
   //console.log(JSON.stringify(model));
   if (!("memberLayout" in model))
