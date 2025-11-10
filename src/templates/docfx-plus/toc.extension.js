@@ -24,7 +24,7 @@ exports.preTransform = function (model) {
 exports.postTransform = function (model) {
   //Remove root node "Namespaces" which causes unnecessary nesting and display all namespaces as root
   if (model.memberLayout === 'SeparatePages') {
-    if (model.items && model.items.length === 1)
+    if (model.items && model.items.length === 1 && model.items[0].name === model.__global.namespacesInSubtitle)
       model.items = model.items[0].items;
   }
 

@@ -79,7 +79,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
         internal static void ResolveCode(XDocument doc, object context, object instance)
         {
-            foreach (var node in doc.XPathSelectElements("//code").ToList())
+            foreach (var node in doc.XPathSelectElements("//code[not(ancestor::code)]").ToList())
             {
                 if (node.Attribute("data-inline") is { } inlineAttribute)
                 {
@@ -103,9 +103,10 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 var (lang, value) = ResolveCodeSource(node, context);
                 //var trimEachLine = AccessTools.Method(XmlCommentPatch.XmlCommentType, "TrimEachLine");
                 //value = (string)trimEachLine.Invoke(null, [value ?? node.Value, indent]);
-                value = (value != null)
-                    ? TrimEachLine(value, indent, tabSize)
-                    : ResolveCodeContent(node, context, indent, tabSize);
+                if (value != null)
+                    value = TrimEachLine(value, indent, tabSize);
+                else
+                    (lang, value) = ResolveCodeContent(node, context, indent, tabSize);
 
 
                 //var code = new XElement("code", value);
@@ -165,9 +166,10 @@ namespace DotMake.DocfxPlus.Cli.Patches
             }
         }
 
-        internal static string ResolveCodeContent(XElement node, object context, string indent, int tabSize)
+        internal static (string lang, string code) ResolveCodeContent(XElement node, object context, string indent, int tabSize)
         {
             var code = new StringBuilder();
+            string firstLang = null;
 
             foreach (var subNode in node.Nodes())
             {
@@ -177,7 +179,9 @@ namespace DotMake.DocfxPlus.Cli.Patches
                     codePart = subXText.Value;
                 if (subNode is XElement subXElement && subXElement.Name == "code")
                 {
-                    var (_, value) = ResolveCodeSource(subXElement, context);
+                    var (lang, value) = ResolveCodeSource(subXElement, context);
+                    if (firstLang == null)
+                        firstLang = lang;
                     codePart = value;
                 }
 
@@ -187,7 +191,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 }
             }
 
-            return code.ToString().Trim();
+            return (firstLang, code.ToString().Trim());
         }
 
         internal static (string lang, string code) ResolveCodeSource(XElement node, object context)
@@ -278,6 +282,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 case ".ASPX":
                 case ".CSPROJ":
                 case ".SLNX":
+                case ".CONFIG":
                     return (XmlRegionRegex(), XmlEndRegionRegex());
             }
 

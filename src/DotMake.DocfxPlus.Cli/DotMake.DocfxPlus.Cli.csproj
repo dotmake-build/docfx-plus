@@ -16,7 +16,9 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - Initial release.
+        - **Fixed:** Remove first tree node in TOC only if it's named `Namespaces` (as it's fixed in `v2.78.4` of `docfx`).
+        - **Improved:** Infer language from the first nested code element with source if there is no language attribute in the parent code element.
+        - **Improved:** Add `.config` extension to xml-based formats for region handling.
       ]]>
     </PackageReleaseNotes>
 

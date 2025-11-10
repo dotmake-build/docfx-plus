@@ -17,6 +17,8 @@ This project was mainly done for migrating our projects' docs from [SHFB (Sandca
 which is still very stable but its theme and architecture was outdated.
 `SHFB` was used for many years mainly because of its excellent `<code>` block support and now we put these features into `docfx`.
 
+[**Live Demo**](https://dotmake.build/command-line/api/) - API docs for our other project [DotMake Command-Line](https://github.com/dotmake-build/command-line).
+
 [![Nuget](https://img.shields.io/nuget/v/docfx-plus?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/docfx-plus)
 
 ![docfx-plus-template-light](https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-light.png)
@@ -357,6 +359,10 @@ Then enable GitHub Actions for your repository's Pages settings as described her
 [Publishing with a custom GitHub Actions workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow)
 
 Now whenever you commit, your action will run automatically and publish your docs.
+
+### Full `docfx.json` sample:
+
+Refer to [docfx.json](https://github.com/dotmake-build/command-line/blob/main/docs/docfx.json) from our other project [DotMake Command-Line](https://github.com/dotmake-build/command-line).
 
 ## Building
 

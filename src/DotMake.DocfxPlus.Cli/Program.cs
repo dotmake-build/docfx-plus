@@ -7,7 +7,7 @@ HarmonyBootstrap.Init();
 var mainMethod = AccessTools.Method(HarmonyBootstrap.DocfxAssembly.GetType("Docfx.Program"), "Main");
 
 #if DEBUG
-var commandLine = @"..\..\..\..\..\..\command-line\src\DocsBuilder\docfx.json --serve --debug";
+var commandLine = @"..\..\..\..\..\..\command-line\docs\docfx.json --serve --debug";
 args = commandLine.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 #endif
 
