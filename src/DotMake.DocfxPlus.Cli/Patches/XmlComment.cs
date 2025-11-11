@@ -200,6 +200,9 @@ namespace DotMake.DocfxPlus.Cli.Patches
             if (string.IsNullOrEmpty(source))
                 return default;
 
+            //Fix backslashes in source path for linux
+            source = source.Replace('\\', Path.DirectorySeparatorChar);
+
             var lang = Path.GetExtension(source).TrimStart('.').ToLowerInvariant();
 
             var resolveCode = AccessTools.PropertyGetter(context.GetType(), "ResolveCode")

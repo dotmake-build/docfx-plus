@@ -131,7 +131,7 @@ Refer to [DocFx Config Reference](https://dotnet.github.io/docfx/reference/docfx
    <!-- </Name> -->
   ```
   
-  `.aspx`, `.csproj`, `.slnx` are also added to `docfx` default xml-based formats `.xml`, `.xaml`, `.html`, `.cshtml`, `.vbhtml`.
+  `.aspx`, `.csproj`, `.slnx`, `.config` are also added to `docfx` default xml-based formats `.xml`, `.xaml`, `.html`, `.cshtml`, `.vbhtml`.
  
 - Support `tabSize` attribute (`<code tabSize="2">`) which is used when replacing tab (`\t`) characters 
   to spaces in the included source file (default is `4`).
@@ -178,6 +178,41 @@ Refer to [DocFx Config Reference](https://dotnet.github.io/docfx/reference/docfx
   ```
   Indentation from source files and literal code will all be normalized.
 
+- If `codeSourceBasePath` from `metadata` in `docfx.json` is a relative path,
+  convert it to be relative to the `docfx.json` (`docfx` originally treats it relative to the working directory, which is wrong).
+ 
+  Also convert backslashes (`\`) in code block's source attribute (`<code source="...">`) to forward slashes (`/`)  
+  so that they are resolved correctly even when running on linux (e.g. when running in a Github Pages workflow which are usually linux based).  
+  Since .NET 8, `System.IO.Path` methods does not do backslash mapping in Unix file paths  
+  but we want to support existing projects which may have `<code source="...">` with backslashes all over the source code.
+ 
+- `NamespaceDoc` support just like `SHFB`.  
+    Namespace comments can be specified and maintained in your source code by adding an empty `NamespaceDoc` class to each namespace.  
+    XML Comments (`<summary>` and `<remarks>` tags) from these classes will be extracted and assigned to the containing namespaces in the docs.
+          
+    ```c#
+    namespace DotMake.CommandLine
+    {
+        /// <summary>
+        /// This is the root namespace of this library, it includes the CLI attributes and CLI parser/runner.
+        /// <para />
+        /// <para>The main classes in this namespace are:</para>
+        /// <list type="bullet">
+        ///     <item><see cref="CliCommandAttribute"/> is the attribute which specifies a class that represents a command which is a specific action that the command line application performs.</item>
+        ///     <item><see cref="CliOptionAttribute"/> is the attribute which specifies a class property that represents an option which is a named parameter and a value for that parameter, that is used on the command line.</item>
+        /// </list>
+        /// </summary>
+        [System.Runtime.CompilerServices.CompilerGenerated]
+        internal class NamespaceDoc
+        {
+        }
+    }
+    ```
+          
+    `NamespaceDoc` classes will be found even if your API filter excludes them but themselves will not be included in the docs,
+    only their XML Comments assigned to the containing namespaces will be displayed.  
+    You can optionally make them private or internal and mark them with a `CompilerGenerated` attribute.
+ 
 ## `docfx-plus` **template** features
 
 - In namespace, class, enum or member pages use `Name Type` format as the title e.g. `CliContext Class` instead of `Class CliContext`.
@@ -253,6 +288,8 @@ Refer to [DocFx Config Reference](https://dotnet.github.io/docfx/reference/docfx
   }
   ```
 
+  Fix header nav brand logo, title and buttons wrapping on phone and tablet sizes.
+  
   ![docfx-plus-template-feature8](https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature8.png)
 
 - Fix some URL issues:

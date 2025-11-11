@@ -1,15 +1,12 @@
 using System;
-using System.Reflection;
 using DotMake.DocfxPlus.Cli.Util;
 using HarmonyLib;
 #pragma warning disable CA2255
 
-namespace DotMake.DocfxPlus.Cli
+namespace DotMake.DocfxPlus.Cli.Patches
 {
     public static class HarmonyBootstrap
     {
-        public static Assembly DocfxAssembly = Assembly.Load("docfx");
-
         //[ModuleInitializer]
         public static void Init()
         {
@@ -17,7 +14,7 @@ namespace DotMake.DocfxPlus.Cli
             harmony.PatchAll(); // Applies all [HarmonyPatch] classes in your assembly
 
             Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: Patches for DocFx are applied."
-                              + $" Version: {ExecutableInfo.AssemblyInfo.Version}, DocFx Version: {new AssemblyInfo(DocfxAssembly).Version}");
+                              + $" Version: {ExecutableInfo.AssemblyInfo.Version}, DocFx Version: {new AssemblyInfo(Assemblies.DocfxAssembly).Version}");
         }
     }
 }

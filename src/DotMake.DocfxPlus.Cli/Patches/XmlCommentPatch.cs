@@ -9,19 +9,18 @@ namespace DotMake.DocfxPlus.Cli.Patches
     //[HarmonyPatch]
     internal static class XmlCommentPatch
     {
-        public static Assembly DocfxDotnetAssembly = Assembly.Load("Docfx.Dotnet");
-        public static Type XmlCommentType = DocfxDotnetAssembly.GetType("Docfx.Dotnet.XmlComment", true);
+        public static Type Type = Assemblies.DocfxDotnetAssembly.GetType("Docfx.Dotnet.XmlComment", true);
 
         [HarmonyPatch]
         internal static class ResolveCode
         {
-            public static MethodBase TargetMethod() => AccessTools.Method(XmlCommentType, nameof(ResolveCode));
+            public static MethodBase TargetMethod() => AccessTools.Method(Type, nameof(ResolveCode));
 
             internal static bool Prefix(XDocument doc, object context, object __instance)
             {
-                //Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: nameof(ResolveCode) Prefix is run!");
+                //Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: {nameof(ResolveCode)} Prefix is run!");
                 XmlComment.ResolveCode(doc, context, __instance);
-                return false;
+                return false; //don't run original method
             }
         }
 
@@ -33,14 +32,14 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
             internal static bool Prefix(XElement node, object context, ref (string lang, string code) __result)
             {
-                //Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: nameof(ResolveCodeSource) Prefix is run!");
+                //Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: {nameof(ResolveCodeSource)} Prefix is run!");
                 __result = XmlComment.ResolveCodeSource(node, context);
                 return false;
             }
 
             public static void Postfix()
             {
-                Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: ResolveCodeSource Postfix is run!");
+                Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: {nameof(ResolveCodeSource)} Postfix is run!");
 
                 // Your logic after the original method
             }
