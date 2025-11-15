@@ -24,12 +24,15 @@ export default {
           return;
         }
         */
-        
-        //Convert unescaped <br> tags which we use instead of \n 
+
+        //UPDATE: No more needed, we fix Yaml without <br> tags
+        //Convert unescaped <br> tags which we use instead of \n
         //to fix multi-line problems for <pre><code> tags in Yaml
+        /*
         el.querySelectorAll('br').forEach(
           br => br.replaceWith(document.createTextNode('\n'))
         );
+        */
         //don't use innerText because when display: none it will not preserve line breaks
         //el.textContent = el.innerText;
         //DOM replace above will be usually faster for long text, so don't use regex replace

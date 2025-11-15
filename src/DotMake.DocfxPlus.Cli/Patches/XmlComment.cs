@@ -79,6 +79,8 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
         internal static void ResolveCode(XDocument doc, object context, object instance)
         {
+            var parentElements = new HashSet<XElement>();
+
             foreach (var node in doc.XPathSelectElements("//code[not(ancestor::code)]").ToList())
             {
                 if (node.Attribute("data-inline") is { } inlineAttribute)
@@ -88,10 +90,11 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 }
 
                 /*
-                As we will use <br> tags for line breaks, don't use indents
-                (which was probably needed for Yaml, otherwise it converted whole example: block to a string with \r\n)
+                Don't use indent of the <code> block itself (which was probably needed for Yaml,
+                otherwise it converted whole example: block to a string with \r\n)
                 */
                 var indent = "";//new string(' ', ((IXmlLineInfo)node).LinePosition - 2);
+
                 //Add support for tabsize attribute
                 var tabSize = 0;
                 if (node.Attribute("tabsize") is { } tabSizeAttribute
@@ -109,29 +112,13 @@ namespace DotMake.DocfxPlus.Cli.Patches
                     (lang, value) = ResolveCodeContent(node, context, indent, tabSize);
 
 
-                //var code = new XElement("code", value);
-                var code = new XElement("code");
-                foreach (var line in ReadLines(value))
-                {
-                    code.Add(new XText(line));
-
-                    /*
-                    To prevent Yaml multi-line problems, use <br> tags for line breaks
-                    We can't use \n as Yaml goes crazy (converts whole example: block to a string with \r\n)
-                    For example if a line is empty or whitespace, in Yaml it's written without any indent
-                    and when reading that Yaml it splits the blocks tries to close the previous <pre><code> and open a new one
-
-                    In the web page, we can simply fix highlight.js to support unescaped <br> tags in main.js:
-                        hljs.addPlugin({ 
-                          "before:highlightElement": ({ el }) => { el.textContent = el.innerText } });
-
-                    */
-                    code.Add(new XElement("br"));
-                }
+                var code = new XElement("code", value);
+                //Seems no longer needed when we normalize indentation of all <pre><code> tags
+                //var code = CreateCodeTagWithBrTags(value);
 
                 //Store original lang from file (if source was set) for using as title on client-side tabs
                 if (!string.IsNullOrWhiteSpace(lang))
-                   code.SetAttributeValue("data-file-type", lang);
+                    code.SetAttributeValue("data-file-type", lang);
 
                 if (node.Attribute("title") is { } titleAttribute
                     && !string.IsNullOrEmpty(titleAttribute.Value))
@@ -151,6 +138,12 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
                 code.SetAttributeValue("class", $"lang-{lang}");
 
+                if (node.Parent != null)
+                    parentElements.Add(node.Parent);
+
+                node.ReplaceWith(new XElement("pre", code));
+
+                /*
                 if (node.PreviousNode is null
                     || node.PreviousNode is XText xText && xText.Value == $"\n{indent}")
                 {
@@ -162,6 +155,33 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 else
                 {
                     node.ReplaceWith(new XElement("pre", code));
+                }
+                */
+            }
+
+            //Normalize new lines inside of parent elements which contain <pre><code> tags.
+            //So that text surrounding code blocks does not break YAML due to inconsistent indentation
+            foreach (var parentElement in parentElements)
+            {
+                foreach (var node in parentElement.Nodes().ToList())
+                {
+                    if (node is XText xText
+                        && xText.Value.Contains('\n'))
+                    {
+                        var lines = xText.Value
+                            .Split('\n')
+                            .Select(line => line.TrimStart());
+
+                        xText.Value = string.Join("\n", lines);
+                    }
+
+                    if (node is XElement xElement
+                        && xElement.Name == "pre")
+                    {
+                        if (xElement.PreviousNode is XElement
+                            || xElement.PreviousNode is XText xText2 && !xText2.Value.EndsWith('\n'))
+                            xElement.AddBeforeSelf(new XText("\n"));
+                    }
                 }
             }
         }
@@ -345,6 +365,33 @@ namespace DotMake.DocfxPlus.Cli.Patches
             }
 
             return builder.ToString().TrimEnd();
+        }
+
+#pragma warning disable IDE0051
+        private static XElement CreateCodeTagWithBrTags(string value)
+#pragma warning restore IDE0051
+        {
+            var code = new XElement("code");
+
+            foreach (var line in ReadLines(value))
+            {
+                code.Add(new XText(line));
+
+                /*
+                To prevent Yaml multi-line problems, use <br> tags for line breaks
+                We can't use \n as Yaml goes crazy (converts whole example: block to a string with \r\n)
+                For example if a line is empty or whitespace, in Yaml it's written without any indent
+                and when reading that Yaml it splits the blocks tries to close the previous <pre><code> and open a new one
+
+                In the web page, we can simply fix highlight.js to support unescaped <br> tags in main.js:
+                    hljs.addPlugin({ 
+                      "before:highlightElement": ({ el }) => { el.textContent = el.innerText } });
+
+                */
+                code.Add(new XElement("br"));
+            }
+
+            return code;
         }
     }
 }
