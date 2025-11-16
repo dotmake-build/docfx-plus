@@ -79,7 +79,26 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
         internal static void ResolveCode(XDocument doc, object context, object instance)
         {
-            var parentElements = new HashSet<XElement>();
+            //Trim start of new lines inside of parent elements (e.g. `<summary>`, `<example>` under `<member>`)
+            //which may contain`<code>` tags.
+            //So that text surrounding code blocks does not break YAML due to inconsistent indentation.
+            if (doc.Root != null)
+                foreach (var parentElement in doc.Root.Elements())
+                {
+                    foreach (var node in parentElement.DescendantNodes())
+                    {
+                        if (node is XText xText
+                            && xText.Parent?.Name.LocalName.ToLowerInvariant() != "code"
+                            && xText.Value.Contains('\n'))
+                        {
+                            var lines = xText.Value
+                                .Split('\n')
+                                .Select(line => line.TrimStart());
+
+                            xText.Value = string.Join("\n", lines);
+                        }
+                    }
+                }
 
             foreach (var node in doc.XPathSelectElements("//code[not(ancestor::code)]").ToList())
             {
@@ -111,10 +130,8 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 else
                     (lang, value) = ResolveCodeContent(node, context, indent, tabSize);
 
-
-                var code = new XElement("code", value);
-                //Seems no longer needed when we normalize indentation of all <pre><code> tags
-                //var code = CreateCodeTagWithBrTags(value);
+                //var code = new XElement("code", value);
+                var code = FixCodeTagLineBreaks(value);
 
                 //Store original lang from file (if source was set) for using as title on client-side tabs
                 if (!string.IsNullOrWhiteSpace(lang))
@@ -138,12 +155,20 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
                 code.SetAttributeValue("class", $"lang-{lang}");
 
-                if (node.Parent != null)
-                    parentElements.Add(node.Parent);
+                var pre = new XElement("pre", code);
 
-                node.ReplaceWith(new XElement("pre", code));
+                if (node.PreviousNode is XElement)
+                    node.ReplaceWith('\n', pre);
+                else
+                {
+                    if (node.PreviousNode is XText xText && !xText.Value.EndsWith('\n'))
+                        xText.Value += '\n';
+
+                    node.ReplaceWith(pre);
+                }
 
                 /*
+                
                 if (node.PreviousNode is null
                     || node.PreviousNode is XText xText && xText.Value == $"\n{indent}")
                 {
@@ -158,32 +183,6 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 }
                 */
             }
-
-            //Normalize new lines inside of parent elements which contain <pre><code> tags.
-            //So that text surrounding code blocks does not break YAML due to inconsistent indentation
-            foreach (var parentElement in parentElements)
-            {
-                foreach (var node in parentElement.Nodes().ToList())
-                {
-                    if (node is XText xText
-                        && xText.Value.Contains('\n'))
-                    {
-                        var lines = xText.Value
-                            .Split('\n')
-                            .Select(line => line.TrimStart());
-
-                        xText.Value = string.Join("\n", lines);
-                    }
-
-                    if (node is XElement xElement
-                        && xElement.Name == "pre")
-                    {
-                        if (xElement.PreviousNode is XElement
-                            || xElement.PreviousNode is XText xText2 && !xText2.Value.EndsWith('\n'))
-                            xElement.AddBeforeSelf(new XText("\n"));
-                    }
-                }
-            }
         }
 
         internal static (string lang, string code) ResolveCodeContent(XElement node, object context, string indent, int tabSize)
@@ -197,7 +196,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
                 if (subNode is XText subXText)
                     codePart = subXText.Value;
-                if (subNode is XElement subXElement && subXElement.Name == "code")
+                if (subNode is XElement subXElement && subXElement.Name.LocalName.ToLowerInvariant() == "code")
                 {
                     var (lang, value) = ResolveCodeSource(subXElement, context);
                     if (firstLang == null)
@@ -367,28 +366,30 @@ namespace DotMake.DocfxPlus.Cli.Patches
             return builder.ToString().TrimEnd();
         }
 
-#pragma warning disable IDE0051
-        private static XElement CreateCodeTagWithBrTags(string value)
-#pragma warning restore IDE0051
+        private static XElement FixCodeTagLineBreaks(string value)
         {
+            /*
+            To prevent Yaml multi-line problems, use comment tags `<!-- -->` for line breaks
+            We can't use \n as Yaml goes crazy (converts whole example: block to a string with \r\n)
+            For example if a line is empty or whitespace, in Yaml it's written without any indent
+            and when reading that Yaml it splits the blocks tries to close the previous <pre><code> and open a new one
+
+            Previously we were using <br> tags which required to be replaced back in main.js but comment tags work better
+            and does not need to processed in JS.
+            */
+
             var code = new XElement("code");
 
             foreach (var line in ReadLines(value))
             {
+                if (line == null) continue;
+
+                if (string.IsNullOrWhiteSpace(line))
+                    code.Add(new XComment(" "));
+
                 code.Add(new XText(line));
 
-                /*
-                To prevent Yaml multi-line problems, use <br> tags for line breaks
-                We can't use \n as Yaml goes crazy (converts whole example: block to a string with \r\n)
-                For example if a line is empty or whitespace, in Yaml it's written without any indent
-                and when reading that Yaml it splits the blocks tries to close the previous <pre><code> and open a new one
-
-                In the web page, we can simply fix highlight.js to support unescaped <br> tags in main.js:
-                    hljs.addPlugin({ 
-                      "before:highlightElement": ({ el }) => { el.textContent = el.innerText } });
-
-                */
-                code.Add(new XElement("br"));
+                code.Add(new XText("\n"));
             }
 
             return code;
