@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -89,10 +88,9 @@ namespace DotMake.DocfxPlus.Cli.Patches
                     {
                         if (node is XText xText
                             && xText.Parent?.Name.LocalName.ToLowerInvariant() != "code"
-                            && xText.Value.Contains('\n'))
+                            && xText.Value.StartsWith('\n'))
                         {
-                            var lines = xText.Value
-                                .Split('\n')
+                            var lines = ReadLines(xText.Value)
                                 .Select(line => line.TrimStart());
 
                             xText.Value = string.Join("\n", lines);
@@ -122,16 +120,16 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 if (tabSize == 0)
                     tabSize = 4;
 
-                var (lang, value) = ResolveCodeSource(node, context);
+                var (lang, sourceLines) = ResolveCodeSource(node, context);
                 //var trimEachLine = AccessTools.Method(XmlCommentPatch.XmlCommentType, "TrimEachLine");
                 //value = (string)trimEachLine.Invoke(null, [value ?? node.Value, indent]);
-                if (value != null)
-                    value = TrimEachLine(value, indent, tabSize);
+                if (sourceLines != null)
+                    sourceLines = TrimEachLine(sourceLines, indent, tabSize);
                 else
-                    (lang, value) = ResolveCodeContent(node, context, indent, tabSize);
+                    (lang, sourceLines) = ResolveCodeContent(node, context, indent, tabSize);
 
                 //var code = new XElement("code", value);
-                var code = FixCodeTagLineBreaks(value);
+                var code = FixCodeTagLineBreaks(sourceLines);
 
                 //Store original lang from file (if source was set) for using as title on client-side tabs
                 if (!string.IsNullOrWhiteSpace(lang))
@@ -185,35 +183,34 @@ namespace DotMake.DocfxPlus.Cli.Patches
             }
         }
 
-        internal static (string lang, string code) ResolveCodeContent(XElement node, object context, string indent, int tabSize)
+        internal static (string lang, List<string> sourceLines) ResolveCodeContent(XElement node, object context, string indent, int tabSize)
         {
-            var code = new StringBuilder();
+            var sourceLines = new List<string>();
             string firstLang = null;
 
             foreach (var subNode in node.Nodes())
             {
-                string codePart = null;
-
                 if (subNode is XText subXText)
-                    codePart = subXText.Value;
-                if (subNode is XElement subXElement && subXElement.Name.LocalName.ToLowerInvariant() == "code")
                 {
-                    var (lang, value) = ResolveCodeSource(subXElement, context);
+                    //Trim trailing non-newline whitespace which may be the indentation of the following <code> tag to avoid extra new lines.
+                    var value = TrimTrailingNonNewlineWhitespace(subXText.Value);
+                    var contentLines = ReadLines(value).ToList();
+                    sourceLines.AddRange(TrimEachLine(contentLines, indent, tabSize, trimEmptyLines: false));
+                }
+                else if (subNode is XElement subXElement && subXElement.Name.LocalName.ToLowerInvariant() == "code")
+                {
+                    var (lang, nestedSourceLines) = ResolveCodeSource(subXElement, context);
                     if (firstLang == null)
                         firstLang = lang;
-                    codePart = value;
-                }
 
-                if (codePart != null)
-                {
-                    code.AppendLine(TrimEachLine(codePart, indent, tabSize));
+                    sourceLines.AddRange(TrimEachLine(nestedSourceLines, indent, tabSize));
                 }
             }
 
-            return (firstLang, code.ToString().Trim());
+            return (firstLang, TrimEmptyLines(sourceLines));
         }
 
-        internal static (string lang, string code) ResolveCodeSource(XElement node, object context)
+        internal static (string lang, List<string> sourceLines) ResolveCodeSource(XElement node, object context)
         {
             var source = node.Attribute("source")?.Value;
             if (string.IsNullOrEmpty(source))
@@ -226,59 +223,55 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
             var resolveCode = AccessTools.PropertyGetter(context.GetType(), "ResolveCode")
                 .Invoke(context, null) as Func<string, string>;
-            var code = resolveCode?.Invoke(source);
-            if (code is null)
+            var sourceText = resolveCode?.Invoke(source);
+            if (sourceText is null)
                 return (lang, null);
 
+            //Always read source lines (even if no region) to handle inconsistent line breaks (\n or \r\n)
+            var sourceLines = ReadLines(sourceText).ToList();
+
             var region = node.Attribute("region")?.Value;
-            if (region is null)
-                return (lang, code);
+            if (string.IsNullOrEmpty(region))
+                return (lang, sourceLines);
 
             var (regionRegex, endRegionRegex) = GetRegionRegex(source);
 
-            var builder = new StringBuilder();
+            var regionSourceLines = new List<string>();
             var regionCount = 0;
 
-            foreach (var line in ReadLines(code))
+            foreach (var line in sourceLines)
             {
-                if (!string.IsNullOrEmpty(region))
+                var match = regionRegex.Match(line);
+                if (match.Success)
                 {
-                    var match = regionRegex.Match(line);
-                    if (match.Success)
+                    //used a named group here instead of index because regex is cannot be done in a single group
+                    var name = match.Groups["name"].Value.Trim();
+                    if (name == region)
                     {
-                        //used a named group here instead of index because regex is cannot be done in a single group
-                        var name = match.Groups["name"].Value.Trim();
-                        if (name == region)
-                        {
-                            ++regionCount;
-                            continue;
-                        }
-                        else if (regionCount > 0)
-                        {
-                            ++regionCount;
-                        }
+                        ++regionCount;
+                        continue;
                     }
-                    else if (regionCount > 0 && endRegionRegex.IsMatch(line))
+                    else if (regionCount > 0)
                     {
-                        --regionCount;
-                        if (regionCount == 0)
-                        {
-                            break;
-                        }
-                    }
-
-                    if (regionCount > 0)
-                    {
-                        builder.AppendLine(line);
+                        ++regionCount;
                     }
                 }
-                else
+                else if (regionCount > 0 && endRegionRegex.IsMatch(line))
                 {
-                    builder.AppendLine(line);
+                    --regionCount;
+                    if (regionCount == 0)
+                    {
+                        break;
+                    }
+                }
+
+                if (regionCount > 0)
+                {
+                    regionSourceLines.Add(line);
                 }
             }
 
-            return (lang, builder.ToString());
+            return (lang, regionSourceLines);
         }
 
         internal static IEnumerable<string> ReadLines(string text)
@@ -311,21 +304,22 @@ namespace DotMake.DocfxPlus.Cli.Patches
             return (RegionRegex(), EndRegionRegex());
         }
 
-        internal static string TrimEachLine(string text, string indent, int tabSize)
+        internal static List<string> TrimEachLine(List<string> lines, string indent = null, int tabSize = 4, bool trimEmptyLines = true)
         {
             var minLeadingWhitespace = int.MaxValue;
-            var lines = ReadLines(text).ToList();
             var tab = new string(' ', tabSize);
+
+            // Trim leading and trailing empty lines
+            if (trimEmptyLines)
+                lines = TrimEmptyLines(lines);
 
             for (var i = 0; i < lines.Count; i++)
             {
-                var line = lines[i];
+                //Convert tabs to spaces to always ensure correct indentation
+                var line = lines[i] = lines[i].Replace("\t", tab);
 
                 if (string.IsNullOrWhiteSpace(line))
                     continue;
-
-                //Convert tabs to spaces to always ensure correct indentation
-                line = lines[i] = lines[i].Replace("\t", tab);
 
                 var leadingWhitespace = 0;
                 while (leadingWhitespace < line.Length && char.IsWhiteSpace(line[leadingWhitespace]))
@@ -334,10 +328,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 minLeadingWhitespace = Math.Min(minLeadingWhitespace, leadingWhitespace);
             }
 
-            var builder = new StringBuilder();
-
-            // Trim leading empty lines
-            var trimStart = true;
+            var newLines = new List<string>();
 
             // Apply indentation to all lines except the first,
             // since the first new line in <pre></code> is significant
@@ -345,28 +336,40 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
             foreach (var line in lines)
             {
-                if (trimStart && string.IsNullOrWhiteSpace(line))
-                    continue;
+                var newLine = "";
 
                 if (firstLine)
                     firstLine = false;
-                else
-                    builder.Append(indent);
+                else if(!string.IsNullOrEmpty(indent))
+                    newLine = indent;
 
                 if (string.IsNullOrWhiteSpace(line))
                 {
-                    builder.AppendLine();
+                    newLines.Add(newLine);
                     continue;
                 }
 
-                trimStart = false;
-                builder.AppendLine(line.Substring(minLeadingWhitespace));
+                newLine += line.Substring(minLeadingWhitespace);
+                newLines.Add(newLine);
             }
 
-            return builder.ToString().TrimEnd();
+            return newLines;
         }
 
-        private static XElement FixCodeTagLineBreaks(string value)
+        private static List<string> TrimEmptyLines(List<string> lines)
+        {
+            var start = 0;
+            while (start < lines.Count && string.IsNullOrWhiteSpace(lines[start]))
+                start++;
+
+            var end = lines.Count - 1;
+            while (end >= start && string.IsNullOrWhiteSpace(lines[end]))
+                end--;
+
+            return lines.GetRange(start, end - start + 1);
+        }
+
+        private static XElement FixCodeTagLineBreaks(List<string> lines)
         {
             /*
             To prevent Yaml multi-line problems, use comment tags `<!-- -->` for line breaks
@@ -380,7 +383,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
 
             var code = new XElement("code");
 
-            foreach (var line in ReadLines(value))
+            foreach (var line in lines)
             {
                 if (line == null) continue;
 
@@ -393,6 +396,21 @@ namespace DotMake.DocfxPlus.Cli.Patches
             }
 
             return code;
+        }
+
+        private static string TrimTrailingNonNewlineWhitespace(string input)
+        {
+            var end = input.Length;
+
+            while (end > 0)
+            {
+                var c = input[end - 1];
+                if (c == '\n' || c == '\r') break;
+                if (!char.IsWhiteSpace(c)) break;
+                end--;
+            }
+
+            return input.Substring(0, end);
         }
     }
 }

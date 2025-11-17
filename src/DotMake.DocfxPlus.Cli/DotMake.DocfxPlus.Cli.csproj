@@ -16,13 +16,25 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - **Fixed:** Previous fix was not enough in some cases, for example when `<code>` blocks were inside `<para>` tags.
+        - **Fixed:** Previous fix caused some inline `<code>` tags to lose space between self and the following word.
 
-          Trim start of new lines inside of parent elements (e.g. `<summary>`, `<example>` under `<member>`)  
-          which may contain`<code>` tags.  
-          So that text surrounding code blocks does not break YAML due to inconsistent indentation.
+        - **Improved:** Performance of reading source of `<code>` blocks, avoid unnecessary string allocations by
+          using lists of source lines in all the methods.
 
-       - **Fixed:** Heading tags like `<h5>` should not inherit article margins when inside `<alert>` tags or `In this article` menu.
+        - **Improved:** When using nested `<code>` blocks, allow the user to adjust line breaks of literal code:
+          ```xml
+          <code language="cs">
+            // The new line below will be significant but above will not
+         
+            <code source="Class1.cs" region="Region1" />
+
+            // New lines above or below will be significant
+
+            <code source="Class2.cs" region="Region2" />
+         
+            // The new line above will be significant but below will not
+          </code>
+          ```        
       ]]>
     </PackageReleaseNotes>
 
