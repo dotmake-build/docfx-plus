@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>TopicTransformationCore Class </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="TopicTransformationCore Class ">
+      
+      <meta name="description" content="This abstract base class is used to define the settings and common functionality for a specific presentation style topic transformation.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/new/main/apiSpec/new?filename=Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore.md&amp;value=---%0Auid%3A%20Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore">
+
+
+
+  <h1 id="Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore" data-uid="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore" class="text-break">
+TopicTransformationCore Class  <a class="header-action link-secondary" title="View source" href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/PresentationStyle/Transformation/TopicTransformationCore.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <h2 class="section" id="Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_definition">Definition</h2>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.html">Sandcastle.Core.PresentationStyle.Transformation</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandcastle.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary">
+  <p>This abstract base class is used to define the settings and common functionality for a specific
+presentation style topic transformation.</p>
+
+  </div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class TopicTransformationCore</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">TopicTransformationCore</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+  <h2 class="section" id="Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This implements the core processing common to all presentation styles.  While it can render
+presentation style neutral elements such as <code>referenceLink</code>and <code>include</code>elements, any
+presentation style specific elements such as HTML elements, Open XML elements, or markdown should be
+rendered by derived classes in the appropriate overridden methods.</p>
+</div>
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+  <table class="table jumplist" aria-label="Constructors
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.-ctor.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore__ctor_Sandcastle_Core_Project_HelpFileFormats_System_Func_System_String_System_String__">TopicTransformationCore(HelpFileFormats, Func&lt;string, string&gt;)</a>
+      </td>
+      <td>
+      <p>Constructor</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="fields">Fields
+</h2>
+  <table class="table jumplist" aria-label="Fields
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.VersionNumberSeparators.html">VersionNumberSeparators</a>
+      </td>
+      <td>
+      <p>This returns the assembly version number separator characters</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="properties">Properties
+</h2>
+  <table class="table jumplist" aria-label="Properties
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiMember.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiMember">ApiMember</a>
+      </td>
+      <td>
+      <p>This read-only property returns common API member information for the API topic being rendered.  This
+is not used for MAML topics.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicSections.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicSections">ApiTopicSections</a>
+      </td>
+      <td>
+      <p>This read-only property returns an enumerable list of the API section handlers in the order that they
+will be rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.BibliographyData.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_BibliographyData">BibliographyData</a>
+      </td>
+      <td>
+      <p>This read-only property returns the content of the bibliography data file if a
+<a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.BibliographyDataFile.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_BibliographyDataFile">BibliographyDataFile</a>has been specified.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.BibliographyDataFile.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_BibliographyDataFile">BibliographyDataFile</a>
+      </td>
+      <td>
+      <p>This is used to get or set the path to the bibliography data file for the <code>bibliography</code>
+and <code>cite</code>elements.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CodeSnippetLanguageConversion.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CodeSnippetLanguageConversion">CodeSnippetLanguageConversion</a>
+      </td>
+      <td>
+      <p>This read-only property returns a dictionary containing code snippet language ID conversions</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CommentsNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CommentsNode">CommentsNode</a>
+      </td>
+      <td>
+      <p>This read-only property returns the <code>comments</code>node for the API topic being rendered.  This is
+not used for MAML topics.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CurrentElement.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CurrentElement">CurrentElement</a>
+      </td>
+      <td>
+      <p>This is used to get or set the current element to which rendered content is being added</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.DocumentNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_DocumentNode">DocumentNode</a>
+      </td>
+      <td>
+      <p>This read-only property returns the root <code>document</code>node for the topic being rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.HasFooterContent.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_HasFooterContent">HasFooterContent</a>
+      </td>
+      <td>
+      <p>This property is used to get or set whether or not all pages should be have the footer content item
+inserted into them.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.HasHeaderText.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_HasHeaderText">HasHeaderText</a>
+      </td>
+      <td>
+      <p>This property is used to get or set whether or not all pages should be have the header text item
+inserted into them.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.HasWebsiteAdContent.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_HasWebsiteAdContent">HasWebsiteAdContent</a>
+      </td>
+      <td>
+      <p>This property is used to get or set whether or not all pages should be have the website ad content
+item inserted into them.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.IconPath.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_IconPath">IconPath</a>
+      </td>
+      <td>
+      <p>This is used to get or set the path used for icons and other images in the presentation style</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.IsMamlTopic.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_IsMamlTopic">IsMamlTopic</a>
+      </td>
+      <td>
+      <p>This read-only property returns true if a MAML topic is being generated, false if an API topic is
+being generated</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.IsPreliminaryDocumentation.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_IsPreliminaryDocumentation">IsPreliminaryDocumentation</a>
+      </td>
+      <td>
+      <p>This property is used to get or set whether or not all pages should be marked with a &quot;preliminary
+documentation&quot; warning in the page header.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.Key.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_Key">Key</a>
+      </td>
+      <td>
+      <p>This read-only property returns the topic key</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.LanguageFilter.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_LanguageFilter">LanguageFilter</a>
+      </td>
+      <td>
+      <p>This read-only property returns the language filter items for presentation styles that contain one
+in their topics.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.Locale.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_Locale">Locale</a>
+      </td>
+      <td>
+      <p>This is used to get or set the locale</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.MetadataNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_MetadataNode">MetadataNode</a>
+      </td>
+      <td>
+      <p>This read-only property returns the <code>metadata</code>node for the topic being rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.NoticeDefinitions.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_NoticeDefinitions">NoticeDefinitions</a>
+      </td>
+      <td>
+      <p>This read-only property returns an enumerable list of the notice definitions</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ReferenceNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ReferenceNode">ReferenceNode</a>
+      </td>
+      <td>
+      <p>This read-only property returns the <code>reference</code>node for the API topic being rendered.  This is
+not used for MAML topics.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ResolvePath.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ResolvePath">ResolvePath</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the function use to resolve a path to a presentation style
+content file of some sort.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ScriptPath.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ScriptPath">ScriptPath</a>
+      </td>
+      <td>
+      <p>This is used to get or set the path used for scripts in the presentation style</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.StartupScriptBlockItemIds.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_StartupScriptBlockItemIds">StartupScriptBlockItemIds</a>
+      </td>
+      <td>
+      <p>This read-only property returns an enumerable list of the startup script block item IDs that have
+been registered.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.StartupScriptBlocks.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_StartupScriptBlocks">StartupScriptBlocks</a>
+      </td>
+      <td>
+      <p>This read-only property returns an enumerable list of the startup script blocks that have been
+registered.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.StyleSheetPath.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_StyleSheetPath">StyleSheetPath</a>
+      </td>
+      <td>
+      <p>This is used to get or set the path used for style sheets in the presentation style</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.SupportedFormats.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_SupportedFormats">SupportedFormats</a>
+      </td>
+      <td>
+      <p>This read-only property returns the help file formats supported by the presentation style</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.SyntaxNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_SyntaxNode">SyntaxNode</a>
+      </td>
+      <td>
+      <p>This read-only property returns the <code>syntax</code>node for the API topic being rendered.  This is
+not used for MAML topics.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.TopicNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_TopicNode">TopicNode</a>
+      </td>
+      <td>
+      <p>This read-only property returns the <code>topic</code>node for the MAML topic being rendered.  This is
+not used for API topics.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.TopicTemplatePath.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_TopicTemplatePath">TopicTemplatePath</a>
+      </td>
+      <td>
+      <p>This is used to get or set the topic template path if the presentation style makes use of one</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.TransformationArguments.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_TransformationArguments">TransformationArguments</a>
+      </td>
+      <td>
+      <p>This read-only property returns a dictionary used to contain transformation arguments used by the
+presentation style</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.UsesLegacyCodeColorizer.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_UsesLegacyCodeColorizer">UsesLegacyCodeColorizer</a>
+      </td>
+      <td>
+      <p>This property is used to get or set whether or not the presentation style transformation uses
+the legacy code colorizer.</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="methods">Methods
+</h2>
+  <table class="table jumplist" aria-label="Methods
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddApiTopicSectionHandler.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddApiTopicSectionHandler_Sandcastle_Core_PresentationStyle_Transformation_Elements_ApiTopicSectionHandler_">AddApiTopicSectionHandler(ApiTopicSectionHandler)</a>
+      </td>
+      <td>
+      <p>Add a new API topic section handler</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddApiTopicSectionHandlerRange.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddApiTopicSectionHandlerRange_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_Elements_ApiTopicSectionHandler__">AddApiTopicSectionHandlerRange(IEnumerable&lt;ApiTopicSectionHandler&gt;)</a>
+      </td>
+      <td>
+      <p>Add a range of new API topic section handlers</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddElement.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddElement_Sandcastle_Core_PresentationStyle_Transformation_Elements_Element_">AddElement(Element)</a>
+      </td>
+      <td>
+      <p>Add an element that will be transformed when the topic is rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddElements.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddElements_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_Elements_Element__">AddElements(IEnumerable&lt;Element&gt;)</a>
+      </td>
+      <td>
+      <p>Add a range of elements that will be transformed when the topic is rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddLanguageFilterItems.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddLanguageFilterItems_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_LanguageFilterItem__">AddLanguageFilterItems(IEnumerable&lt;LanguageFilterItem&gt;)</a>
+      </td>
+      <td>
+      <p>This is used to add the language filter item information for presentation styles that contain a
+language filter in the topics.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddLanguageSpecificText.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddLanguageSpecificText_Sandcastle_Core_PresentationStyle_Transformation_Elements_Html_LanguageSpecificText_">AddLanguageSpecificText(LanguageSpecificText)</a>
+      </td>
+      <td>
+      <p>Add a language specific text entry</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddLanguageSpecificTextRange.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddLanguageSpecificTextRange_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_Elements_Html_LanguageSpecificText__">AddLanguageSpecificTextRange(IEnumerable&lt;LanguageSpecificText&gt;)</a>
+      </td>
+      <td>
+      <p>Add a range of language specific text entries</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddNoticeDefinition.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddNoticeDefinition_Sandcastle_Core_PresentationStyle_Transformation_Notice_">AddNoticeDefinition(Notice)</a>
+      </td>
+      <td>
+      <p>Add a notice definitions</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddNoticeDefinitions.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddNoticeDefinitions_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_Notice__">AddNoticeDefinitions(IEnumerable&lt;Notice&gt;)</a>
+      </td>
+      <td>
+      <p>Add one or more notice definitions</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddTransformationArgument.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddTransformationArgument_Sandcastle_Core_PresentationStyle_Transformation_TransformationArgument_">AddTransformationArgument(TransformationArgument)</a>
+      </td>
+      <td>
+      <p>Add a new transformation argument</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.AddTransformationArgumentRange.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_AddTransformationArgumentRange_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_TransformationArgument__">AddTransformationArgumentRange(IEnumerable&lt;TransformationArgument&gt;)</a>
+      </td>
+      <td>
+      <p>Add a range of new transformation arguments</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicOperatorTypes.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicOperatorTypes_System_Boolean_">ApiTopicOperatorTypes(bool)</a>
+      </td>
+      <td>
+      <p>Get parameter and return types for an operator API member topic (e.g. <code>Int32</code>to <code>Decimal</code>)</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicParameterTypes.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicParameterTypes_System_Boolean_">ApiTopicParameterTypes(bool)</a>
+      </td>
+      <td>
+      <p>Get parameter types for an API member topic in plain text format</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicSectionHandlerFor.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicSectionHandlerFor_Sandcastle_Core_PresentationStyle_Transformation_ApiTopicSectionType_System_String_">ApiTopicSectionHandlerFor(ApiTopicSectionType, string)</a>
+      </td>
+      <td>
+      <p>This is used to retrieve the current API topic section handler for the given section</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicShortNameDecorated.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicShortNameDecorated">ApiTopicShortNameDecorated()</a>
+      </td>
+      <td>
+      <p>Get the short type/member name for an API topic decorated with language-specific text.  This is used
+for page title.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicShortNamePlainText.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicShortNamePlainText_System_Boolean_">ApiTopicShortNamePlainText(bool)</a>
+      </td>
+      <td>
+      <p>Get the short type/member name for an API topic in plain text.  This is used for metadata values and
+the table of contents title.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicTitle.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicTitle_System_Boolean_System_Boolean_">ApiTopicTitle(bool, bool)</a>
+      </td>
+      <td>
+      <p>Get the title for an API topic</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTopicTocTitleSimple.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTopicTocTitleSimple">ApiTopicTocTitleSimple()</a>
+      </td>
+      <td>
+      <p>Get the simple table of contents title for an API topic</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTypeNameDecorated.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTypeNameDecorated_System_Xml_Linq_XElement_System_Xml_Linq_XElement_">ApiTypeNameDecorated(XElement, XElement)</a>
+      </td>
+      <td>
+      <p>This is used to get a type name in decorated with language-specific text elements based on the given
+type information.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTypeNamePlainText.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTypeNamePlainText_System_Text_StringBuilder_System_Xml_Linq_XElement_">ApiTypeNamePlainText(StringBuilder, XElement)</a>
+      </td>
+      <td>
+      <p>This is used to get a type name in plain text based on the given type information</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ApiTypeNameWithTemplateCount.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ApiTypeNameWithTemplateCount_System_Xml_Linq_XElement_">ApiTypeNameWithTemplateCount(XElement)</a>
+      </td>
+      <td>
+      <p>This is used to get the type name with the template count if any (e.g. TypeName`2)</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CreateApiTopicSectionHandlers.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CreateApiTopicSectionHandlers">CreateApiTopicSectionHandlers()</a>
+      </td>
+      <td>
+      <p>This is called to create the API topic section handlers that will be used by the transformation</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CreateElementHandlers.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CreateElementHandlers">CreateElementHandlers()</a>
+      </td>
+      <td>
+      <p>This is called to create the element handlers that will be used by the transformation</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CreateLanguageSpecificText.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CreateLanguageSpecificText">CreateLanguageSpecificText()</a>
+      </td>
+      <td>
+      <p>This is called to create the language specific text elements that will be used by the transformation</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CreateNoticeDefinitions.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CreateNoticeDefinitions">CreateNoticeDefinitions()</a>
+      </td>
+      <td>
+      <p>This is called to create the API topic notice definitions that will be used by the transformation</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CreateSection.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CreateSection_System_String_System_Boolean_System_String_System_String_">CreateSection(string, bool, string, string)</a>
+      </td>
+      <td>
+      <p>Create a topic section with a title</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CreateSubsection.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CreateSubsection_System_Boolean_System_String_">CreateSubsection(bool, string)</a>
+      </td>
+      <td>
+      <p>Create a topic subsection with a title</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.CreateTransformationArguments.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_CreateTransformationArguments">CreateTransformationArguments()</a>
+      </td>
+      <td>
+      <p>This is called to create the transformation arguments that will be used by the transformation</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ElementHandlerFor.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ElementHandlerFor_System_String_">ElementHandlerFor(string)</a>
+      </td>
+      <td>
+      <p>This is used to retrieve the current handler for the given element name</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.InsertApiTopicSectionHandlerAfter.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_InsertApiTopicSectionHandlerAfter_Sandcastle_Core_PresentationStyle_Transformation_Elements_ApiTopicSectionHandler_Sandcastle_Core_PresentationStyle_Transformation_Elements_ApiTopicSectionHandler_">InsertApiTopicSectionHandlerAfter(ApiTopicSectionHandler, ApiTopicSectionHandler)</a>
+      </td>
+      <td>
+      <p>Insert an API topic section handler after the given section handler</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.InsertApiTopicSectionHandlerBefore.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_InsertApiTopicSectionHandlerBefore_Sandcastle_Core_PresentationStyle_Transformation_Elements_ApiTopicSectionHandler_Sandcastle_Core_PresentationStyle_Transformation_Elements_ApiTopicSectionHandler_">InsertApiTopicSectionHandlerBefore(ApiTopicSectionHandler, ApiTopicSectionHandler)</a>
+      </td>
+      <td>
+      <p>Insert an API topic section handler before the given section handler</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.LanguageIdFor.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_LanguageIdFor_System_String_">LanguageIdFor(string)</a>
+      </td>
+      <td>
+      <p>This is used to get the language ID for the given language from a syntax section or code example</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.LanguageSpecificApiNames.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_LanguageSpecificApiNames_System_Xml_Linq_XElement_">LanguageSpecificApiNames(XElement)</a>
+      </td>
+      <td>
+      <p>This returns an enumerable list of plain text API member names with language-specific text for use
+in help index entries.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.LanguageSpecificTextFor.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_LanguageSpecificTextFor_System_String_">LanguageSpecificTextFor(string)</a>
+      </td>
+      <td>
+      <p>This is used to retrieve the language specific text for a given keyword</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.LoadTemplateFile.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_LoadTemplateFile_System_String_System_Collections_Generic_IEnumerable_System_ValueTuple_System_String_System_String___">LoadTemplateFile(string, IEnumerable&lt;(string Key, string Value)&gt;)</a>
+      </td>
+      <td>
+      <p>Load a template file and perform any necessary substitution tag replacements</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.MamlTopicTitle.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_MamlTopicTitle">MamlTopicTitle()</a>
+      </td>
+      <td>
+      <p>Get the title for a MAML topic</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.OnRenderCompleted.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_OnRenderCompleted_System_Xml_Linq_XDocument_">OnRenderCompleted(XDocument)</a>
+      </td>
+      <td>
+      <p>This is used to raise the <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderCompleted.html">RenderCompleted</a>event</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.OnRenderStarting.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_OnRenderStarting_System_Xml_Linq_XDocument_">OnRenderStarting(XDocument)</a>
+      </td>
+      <td>
+      <p>This is used to raise the <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderStarting.html">RenderStarting</a>event</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.OnSectionRendered.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_OnSectionRendered_Sandcastle_Core_PresentationStyle_Transformation_ApiTopicSectionType_System_String_">OnSectionRendered(ApiTopicSectionType, string)</a>
+      </td>
+      <td>
+      <p>This is used to raise the <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.SectionRendered.html">SectionRendered</a>event</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.OnUnhandledElement.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_OnUnhandledElement_System_String_System_String_">OnUnhandledElement(string, string)</a>
+      </td>
+      <td>
+      <p>This is used to raise the <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.UnhandledElement.html">UnhandledElement</a>event</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RegisterStartupScript.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RegisterStartupScript_System_Int32_System_String_">RegisterStartupScript(int, string)</a>
+      </td>
+      <td>
+      <p>This is used to register a block of script to execute in the <code>$(document).ready()</code>function by
+presentation styles that support script.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RegisterStartupScriptItem.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RegisterStartupScriptItem_System_Int32_System_String_">RegisterStartupScriptItem(int, string)</a>
+      </td>
+      <td>
+      <p>This is used to register a shared content item ID that contains a block of script with localized
+text.  These will be added to a <code>script</code>element at the end of the document body by presentation
+styles that support script.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RemoveApiTopicSectionHandler.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RemoveApiTopicSectionHandler_Sandcastle_Core_PresentationStyle_Transformation_ApiTopicSectionType_System_String_">RemoveApiTopicSectionHandler(ApiTopicSectionType, string)</a>
+      </td>
+      <td>
+      <p>Remove an API topic section handler</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.Render.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_Render_System_String_System_Xml_Linq_XDocument_">Render(string, XDocument)</a>
+      </td>
+      <td>
+      <p>This is used to parse the topic data and render the topic output for the presentation style</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderChildElements.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RenderChildElements_System_Xml_Linq_XElement_System_Collections_Generic_IEnumerable_System_Xml_Linq_XNode__">RenderChildElements(XElement, IEnumerable&lt;XNode&gt;)</a>
+      </td>
+      <td>
+      <p>This makes the given parent element the current element, renders the list of children to it and then
+resets the current element to the prior current element.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RenderNode_System_Xml_Linq_XNode_">RenderNode(XNode)</a>
+      </td>
+      <td>
+      <p>Render the given XML node based on its node type</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderTextNode.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RenderTextNode_System_Xml_Linq_XElement_System_Xml_Linq_XText_">RenderTextNode(XElement, XText)</a>
+      </td>
+      <td>
+      <p>This is used to render a text node</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderTopic.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RenderTopic">RenderTopic()</a>
+      </td>
+      <td>
+      <p>Render the topic content based on the topic type</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderTypeReferenceLink.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_RenderTypeReferenceLink_System_Xml_Linq_XElement_System_Xml_Linq_XElement_System_Boolean_">RenderTypeReferenceLink(XElement, XElement, bool)</a>
+      </td>
+      <td>
+      <p>This is used to render a reference link based on the given type information</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ReplaceApiTopicSectionHandler.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ReplaceApiTopicSectionHandler_Sandcastle_Core_PresentationStyle_Transformation_Elements_ApiTopicSectionHandler_">ReplaceApiTopicSectionHandler(ApiTopicSectionHandler)</a>
+      </td>
+      <td>
+      <p>Replace an API topic section handler with a new one</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ReplaceElement.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ReplaceElement_Sandcastle_Core_PresentationStyle_Transformation_Elements_Element_">ReplaceElement(Element)</a>
+      </td>
+      <td>
+      <p>Replace an element handler</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ReplaceElements.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ReplaceElements_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_Elements_Element__">ReplaceElements(IEnumerable&lt;Element&gt;)</a>
+      </td>
+      <td>
+      <p>Replace a range of elements</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ReplaceLanguageSpecificText.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ReplaceLanguageSpecificText_Sandcastle_Core_PresentationStyle_Transformation_Elements_Html_LanguageSpecificText_">ReplaceLanguageSpecificText(LanguageSpecificText)</a>
+      </td>
+      <td>
+      <p>Replace a language specific text entry</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.ReplaceLanguageSpecificTextRange.html#Sandcastle_Core_PresentationStyle_Transformation_TopicTransformationCore_ReplaceLanguageSpecificTextRange_System_Collections_Generic_IEnumerable_Sandcastle_Core_PresentationStyle_Transformation_Elements_Html_LanguageSpecificText__">ReplaceLanguageSpecificTextRange(IEnumerable&lt;LanguageSpecificText&gt;)</a>
+      </td>
+      <td>
+      <p>Replace a range of language specific text entries</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="events">Events
+</h2>
+  <table class="table jumplist" aria-label="Events
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderCompleted.html">RenderCompleted</a>
+      </td>
+      <td>
+      <p>This event is raised to notify the user that the topic has been completely rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.RenderStarting.html">RenderStarting</a>
+      </td>
+      <td>
+      <p>This event is raised to notify the user that the topic is about to be rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.SectionRendered.html">SectionRendered</a>
+      </td>
+      <td>
+      <p>This event is raised to notify the user of section having been rendered</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.PresentationStyle.Transformation.TopicTransformationCore.UnhandledElement.html">UnhandledElement</a>
+      </td>
+      <td>
+      <p>This event is raised to notify the user of an unhandled element</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/PresentationStyle/Transformation/TopicTransformationCore.cs/#L44" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

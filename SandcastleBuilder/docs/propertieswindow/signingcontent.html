@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Signing MS Help Viewer Content </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Signing MS Help Viewer Content ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/signingcontent.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="signing-ms-help-viewer-content">Signing MS Help Viewer Content</h1>
+
+<p>The following steps can be used to sign the MS Help Viewer content so that it can be installed
+silently.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Please note that this information was supplied by an end user and diagnosing any problems that
+you may encounter is outside the scope of the Sandcastle Help File Builder project.  If you have issues, the best
+course of action is to post a message asking for help with signing content on the <a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=visualstudiogeneral">Visual Studio General Questions</a> forum.</p>
+</div>
+<p>In all of the following examples, substitute your file name for the &quot;Documentation&quot; filename.</p>
+<ol>
+<li><p>Create the help files using Sandcastle Help File Builder.</p>
+</li>
+<li><p>Create the cabinet file using the following command:</p>
+<pre><code class="lang-none">makecab Documentation.mshc Documentation.cab
+</code></pre>
+</li>
+<li><p>Sign the cabinet file:</p>
+<pre><code class="lang-none">signtool sign /q /sha1 [Your signing certificate thumbprint] Documentation.cab
+</code></pre>
+</li>
+<li><p>Modify the file reference in the MSHA file to point to the new cabinet file:</p>
+<pre><code class="lang-xml">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Class Library Documentation&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body class=&quot;vendor-book&quot;&gt;
+        &lt;div class=&quot;details&quot;&gt;
+            &lt;span class=&quot;vendor&quot;&gt;Your Company Name&lt;/span&gt;
+            &lt;span class=&quot;locale&quot;&gt;en-us&lt;/span&gt;
+            &lt;span class=&quot;product&quot;&gt;My Class Library&lt;/span&gt;
+            &lt;span class=&quot;name&quot;&gt;My Class Library Documentation&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;package-list&quot;&gt;
+            &lt;div class=&quot;package&quot;&gt;
+                &lt;!-- NOTE: The &quot;name&quot; span value cannot contain any periods! --&gt;
+                &lt;span class=&quot;name&quot;&gt;Documentation&lt;/span&gt;
+                &lt;a class=&quot;current-link&quot; href=&quot;Documentation.cab&quot;&gt;Documentation.cab&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</li>
+<li><p>You can now install silently using a command line similar to the following:</p>
+<pre><code class="lang-bat">REM Help Viewer 1.0
+HelpLibraryManagerLauncher.exe /product &quot;VS&quot; /version &quot;100&quot; /locale en-us /silent
+    /sourceMedia &quot;C:\FullPathToFile\Documentation.msha&quot;
+
+REM Help Viewer 2.0
+HelpLibraryManagerLauncher.exe /viewerVersion 2.0 /locale en-us /wait 0
+    /operation install /silent /sourceUri &quot;C:\FullPathToFile\Documentation.msha&quot;
+</code></pre>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="deploymshc.html">Deploying an MS Help Viewer File</a></li>
+<li><a href="helplibrarymanagerlauncher.html">Help Library Manager Launcher Utility</a></li>
+<li><a href="mshelpviewerprops.html">MS Help Viewer Category Properties</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/signingcontent.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Missing Tags Category Properties </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Missing Tags Category Properties ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/showmissingprops.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="missing-tags-category-properties">Missing Tags Category Properties</h1>
+
+<p>The following properties are available in the Show Missing Tags category.  These define for which
+help topic elements a red &quot;missing&quot; message will appear if the related tag has not been used where needed or
+contains no text.  These can help you locate help topics that need additional work to fully specify the
+documentation.  In addition to the inserted messages, a warning is written to the log file noting the missing
+item as well.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can simplify your project comments for derived classes, interface implementations, overridden
+members, and other members with common comments by making use of the <code>inheritdoc</code> XML
+comments element.</p>
+</div>
+<h2 id="AutoDocCtors"> Auto-document constructors (AutoDocumentConstructors)</h2>
+<p>This is used to indicate whether or not constructors are automatically documented if they are missing
+the <code>&lt;summary&gt;</code> tag and for classes with compiler-generated constructors. Set this
+to True (the default) to automatically add default text for the <code>&lt;summary&gt;</code> tag on
+constructors that are missing it and for classes with a compiler-generated constructor. If set to false and <code>Show Missing Summaries</code> is true, a &quot;missing summary&quot; warning will appear instead.  A
+message is also written to the log file when a constructor is auto-documented.</p>
+<h2 id="AutoDocDispose"> Auto-document Dispose methods (AutoDocumentDisposeMethods)</h2>
+<p>This is used to indicate whether or not dispose methods are automatically documented if they are
+missing the <code>&lt;summary&gt;</code> tag and for classes with compiler-generated dispose methods.
+Set this to True (the default) to automatically add default text for the <code>&lt;summary&gt;</code>
+tag on dispose methods that are missing it and for classes with compiler-generated dispose methods. If set to
+false and <code>Show Missing Summaries</code> is true, a &quot;missing summary&quot; warning will appear instead.
+A message is also written to the log file when a dispose method is auto-documented.  If a <code>Dispose(Boolean)</code> method is present, its parameter will also be auto-documented if
+necessary.  If set to false and <code>Show Missing Params</code> is true, a &quot;missing parameter&quot;
+message will appear instead.</p>
+<h2 id="MissingNS"> Show missing namespace documentation (ShowMissingNamespaces)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into each namespace
+group or namespace topic that is missing its namespace comments.  The default is True to add the message.
+Namespace comments can be added using the <code>Namespace Summaries</code> project property, by using
+an external XML comments file, or by using a <code>NamespaceGroupDoc</code> and <code>NamespaceDoc</code> class in your code.  See the <a href="namespacesummaries.html">Summaries Category Properties</a>
+for details.</p>
+<h2 id="MissingSummaries"> Show missing &lt;summary&gt; elements (ShowMissingSummaries)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into the help topic
+if the <code>&lt;summary&gt;</code> tag has not been specified for the item.  The default is True to
+add the message.</p>
+<h2 id="MissingParams"> Show missing &lt;param&gt; elements (ShowMissingParams)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into the help topic
+for each method parameter that is missing its related <code>&lt;param&gt;</code> tag documentation.
+The default is True to add the message.</p>
+<h2 id="MissingTypeParams"> Show missing &lt;typeparam&gt; elements (ShowMissingTypeParams)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into the help topic
+for each generic type or method type parameter that is missing its related <code>&lt;typeparam&gt;</code>
+tag documentation.  The default is True to add the message.</p>
+<h2 id="MissingReturns"> Show missing &lt;returns&gt; elements (ShowMissingReturns)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into the help topic
+if the method returns a value and the <code>&lt;returns&gt;</code> tag has not been specified for the
+item.  The default is True to add the message.</p>
+<h2 id="MissingValues"> Show missing &lt;value&gt; elements (ShowMissingValues)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into the help topic
+for property items that are missing the <code>&lt;value&gt;</code> tag documentation.  The default is
+False to ignore properties with missing or empty <code>&lt;value&gt;</code> tags.</p>
+<h2 id="MissingRemarks"> Show missing &lt;remarks&gt; elements (ShowMissingRemarks)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into the help topic
+if the <code>&lt;remarks&gt;</code> tag has not been specified for the item.  The default is False to
+ignore items with missing or empty <code>&lt;remarks&gt;</code> tags.</p>
+<h2 id="MissingIncTargets"> Show missing &lt;include&gt; element targets (ShowMissingIncludeTargets)</h2>
+<p>This property lets you indicate whether or not a red &quot;missing&quot; message is inserted into each topic in
+which an <code>include</code> tag is found.  This indicates that the target of the include (either
+the file or the XPath query) could not be found at the time the assembly was compiled.  The default is False to
+ignore <code>include</code> tags.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are writing C# code, invalid <code>include</code> comment tags are easy to find at
+the time the assembly is built as the compiler issues a warning (CS1589 or CS1592).  The VB.NET compiler does not
+output a warning, nor does it write the invalid tag to the comments file.  As such, this option will have no
+effect in VB.NET generated XML comments files.  The same is true for managed C++ generated XML comments files
+except the compiler does generate a warning (C4637).</p>
+<p>By now you're probably wondering &quot;So, what was the point of adding this property?&quot; Well, somebody
+requested it and I didn't find out it was only useful with C# XML comments files until after I'd done the work
+and by then I couldn't be bothered to go back and take out all the code and resource items.  So, it's there but
+off by default.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="propertieswindow.html">Project Properties Window</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/showmissingprops.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

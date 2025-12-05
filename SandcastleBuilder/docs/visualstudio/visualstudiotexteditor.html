@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Visual Studio Text Editor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Visual Studio Text Editor ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/visualstudio/visualstudiotexteditor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="visual-studio-text-editor">Visual Studio Text Editor</h1>
+
+<p>The Visual Studio text editor is feature rich and very little needed to be added in the way of extra
+features to support the Sandcastle Help File Builder.  The following sections describe the built-in features that
+you can take advantage of as well as a couple of extra additions added by the help file builder's integration
+package.</p>
+<h2 id="StandardFeatures"> IntelliSense for the MAML Schemas</h2>
+<p>When editing MAML topics, you can take advantage of IntelliSense to help you enter the MAML
+elements, their attributes, and attribute values.  The MAML schemas are installed in the Visual Studio schema
+cache by the package.  In addition, hovering the mouse over a link or image target ID will show you information
+about the target file (title, filename, etc.).  This is useful as most items are identified by a GUID and the
+quick info tooltip can provide a better idea of what the link will go to.  If you Ctrl+Click on the link target,
+the item will be opened in the related text or image editor.  This feature (Go to Definition) is available in
+both MAML topic files as well as XML comments elements in source code.  Note that the Go to Definition feature
+must be enabled in the help file builder options in order to work.</p>
+<h2 id="DragAndDrop"> Drag and Drop</h2>
+<p>The text editor window also supports drag and drop operations from the <strong>Content Layout Editor</strong>
+and the <strong>Site Map Editor</strong> to insert links to other topics in the project.  It also supports drag and
+drop from the <strong>Entity References Window</strong> to insert token references, image links, code entity reference
+inks, code snippet references, and table of contents links.</p>
+<p>By default, links to MAML topics are inserted as self-closing link elements and will use the topic's
+title from the content layout file when converted to HTML at build-time.  If necessary, you can modify the link
+element to specify inner text which will be used instead of the title text.</p>
+<h2 id="HTMLEncoding"> HTML Encoding Selected Text</h2>
+<p>When editing MAML topics and other XML files, you will see an extra option on the text editor's
+context menu: <strong>HTML Encode Selected Text</strong>.  It is only enabled when there is selected text.  If selected
+from the context menu, it will HTML encode the selected text.  This is useful for the content of <code>code</code> elements.  You can paste text into the element and then use this option to encode
+it rather than editing the text by hand to encode the special characters.</p>
+<h2 id="Snippets"> MAML Snippets</h2>
+<p>When editing MAML topics, you can take advantage of snippets to insert various block and inline
+MAML elements.  This is useful if you are not yet familiar with the various common MAML elements or for quickly
+inserting block elements that have several parts like the <code>externalLink</code> element.  In
+order to do this, use the option in the guided installer to install the MAML snippets in the Visual Studio
+snippet cache.  If you did not do it when you first installed the tools, you can re-run the guided installer and
+skip down to the step that installs them.</p>
+<p>To take advantage of the MAML snippets, use one of the following snippet insertion commands:</p>
+<ul>
+<li><p>Select <strong>Insert Snippet</strong> from the text editor context menu or press its shortcut key
+combination <strong>Ctrl+K, Ctrl+X</strong>.  This will allow you to insert a snippet at the selected location.</p>
+</li>
+<li><p>Certain elements support wrapping selected text within the snippet (i.e. the various
+inline elements).  To wrap the selected text in the snippet element, select <strong>Surround With</strong> from the text
+editor context menu or press its shortcut key combination <strong>Ctrl+K, Ctrl+S</strong>.</p>
+</li>
+</ul>
+<p>Regardless of the option chosen, an auto-completion pop-up will appear.  Select the <strong>MyXml Snippets</strong> option using either the down arrow key or by typing its name and pressing Enter or by
+double-clicking it with the mouse.  Repeat the process to select either the <strong>MAML Block Elements</strong> or <strong>MAML Inline Elements</strong> category.  The list of elements will then appear.  If you selected <strong>InsertSnippet</strong>, you will see the full list of available snippets in the selected category.  If you selected <strong>Surround With</strong>, the available elements are limited to those that can surround the selected text.
+Select the one you want by  using the down arrow key or typing its name and pressing Enter or double-clicking
+it with the mouse.</p>
+<p>Certain snippets such as <code>externalLink</code> have replacement parameters.  In
+such cases, you will be placed on the first parameter and can type over its default value.  Press the Tab key to
+move between any subsequent parameters.  Hovering the mouse over a parameter location will give you a tool tip
+describing the parameter.  Press Enter when done to complete the process.</p>
+<p>Refer to the Visual Studio documentation for information on adding your own custom snippets.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="gotodefinition.html">Go To Definition Support</a></li>
+<li><a href="visualstudiopackage.html">Visual Studio Integration Package</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/visualstudio/visualstudiotexteditor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

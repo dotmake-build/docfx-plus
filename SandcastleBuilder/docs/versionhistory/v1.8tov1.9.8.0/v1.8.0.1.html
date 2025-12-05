@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 1.8.0.1 (Beta 1) </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 1.8.0.1 (Beta 1) ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.8.0.1.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-1801-beta-1">Version 1.8.0.1 (Beta 1)</h1>
+
+<h2 id="BreakingChanges"> Breaking Changes</h2>
+<ul>
+<li><p>All projects and components are now built using the .NET Framework 3.5 SP1.  As such, you must
+have the .NET Framework 3.5 SP1 installed to use the help file builder and components.  It can still build help
+files for any framework version from .NET 1.1 to .NET 3.5.</p>
+</li>
+<li><p>When a custom build component was added to the project in prior releases, attributes from the <code>component</code> node other than the ID, type, and assembly were not included in the project's
+copy of the configuration.  This problem has been corrected.  The only component affected by this fix is the <strong>Cached MSDN URL References</strong> component.  If you use it in your projects, you should delete
+it and re-add it in the <code>ComponentConfigurations</code> project property so that it picks up the
+locale and link target attributes in order to use the appropriate settings for them during a build.</p>
+</li>
+<li><p>The IDs on the <code>HierarchicalTocPlugIn</code> and the <code>TocExcludePlugIn</code>
+changed.  You will need to delete them from the <code>PlugInConfigurations</code> project property
+and add them back in to pick up the new IDs.</p>
+</li>
+<li><p>The location of user-defined template files and build component cache files has changed.  They
+are now stored in the <em>Local Application Data</em> folder rather than the <em>CommonApplication Data</em> folder.  However, the custom build components and plug-ins will themselves still
+reside in the <em>Common Application Data</em> folder.  You should remove and add the three cached
+build components to the project file so that they use the new location.  Any existing cache files can be moved to
+the new local data folder.  This change was made to avoid problems with security and clashes with modified
+template and cache files when multiple people use the same PC.  See the <a href="../../gettingstarted/specialfilepaths.html">Special Folder Locations</a> topic for more information.</p>
+</li>
+</ul>
+<h2 id="OtherChanges"> Other Changes in This Release</h2>
+<ul>
+<li><p>Relative hint paths on reference items are now converted to full paths at build time so that
+they are located correctly.</p>
+</li>
+<li><p>Added <code>ExtensionAttribute</code> to the <strong>MRefBuilder</strong>
+attribute filter and excluded it from the <code>DocumentAttributes</code> property processing so that
+extension methods are documented correctly.</p>
+</li>
+<li><p>Fixed a bug in the Help 1 build project template that caused it to use the table of contents
+definition file for the index.</p>
+</li>
+<li><p>Fixed a bug that caused the Output Deployment plug-in to fail if a folder did not already exist
+when deploying to a file path.</p>
+</li>
+<li><p>Added &quot; &quot; (space), &quot;*&quot;, and &quot;?&quot; to the characters replaced with an underscore by the <code>MemberName</code> naming method code to prevent save failures when the help topics are saved.</p>
+</li>
+<li><p>Paths to the comments files in <em>sandcastle.config</em> are now expanded fully
+before being written to it to prevent issues with environment variables expanding differently when the build
+engine runs as a 32-bit MSBuild process but the build step project runs as a 64-bit MSBuild process.</p>
+</li>
+<li><p>Added code to turn off the read-only attribute on MAML topics when they are copied to the
+working folder.</p>
+</li>
+<li><p>Added code to the <strong>Post-Transform Component</strong> so that <code>see</code>
+tags within code blocks are converted to links when the Code Block Component's <code>keepSeeTags</code>
+option is used.  A prior release broke it due to changes needed to get the components to colorize code in
+conceptual builds.  Note that the referenced target names must be fully qualified in order to get resolved.</p>
+</li>
+<li><p>Fixed a bug in the <strong>Show Missing Documentation</strong> component that caused it
+to fail if an auto-documented constructor's signature contained unencoded special XML characters.</p>
+</li>
+<li><p>If the <code>DocumentSealedProtected</code> property is set to False, it now
+removes inherited protected members too.</p>
+</li>
+<li><p>Added the <code>ShowMissingIncludeTargets</code> project property.  This is used to
+add a &quot;missing&quot; message if an <code>&lt;include&gt;</code> tag is found in the comments for a topic
+indicating a missing file or invalid XPath query.  However, it's really only useful for C# generated XML comments
+files <a href="../../propertieswindow/showmissingprops.html#MissingIncTargets">(don't ask)</a>.</p>
+</li>
+<li><p>Added the <code>UserDefinedProperties</code> project property to the <strong>Build</strong> category.  This allows you to add or edit user-defined MSBuild project properties
+that can be used to hold additional information or for use in substitution tags within other help file builder
+project properties.</p>
+</li>
+<li><p>Added support for <code>CustomBeforeSHFBTargets</code> and <code>CustomAfterSHFBTargets</code> properties that can define custom projects containing property or
+target overrides imported and evaluated before and after the help file builder targets respectively.  These can
+be defined on the command line to import the custom targets and property overrides.</p>
+</li>
+<li><p>Substitution tag replacement (i.e. <code>{@PropName}</code>) now includes support
+for using any property name defined in the project.  This includes user-defined MSBuild properties not recognized
+as help file builder properties and all global properties defined in the MSBuild build engine (reserved
+properties, environment variables, etc.).</p>
+</li>
+<li><p>The <code>HelpFileVersion</code> project property is now a string value.  This
+allows you to specify user-defined MSBuild project properties to define the value (i.e. <code>{@Version}</code>
+or <code>{@Major}.{@Minor}.{@Build}.{@Revision}</code>).  The end result must still evaluate to a
+valid four-part version number.  If not, a build error will occur (BE0066).</p>
+</li>
+<li><p>Added an optional execution priority value to the <code>ExecutionPoint</code>
+object so that plug-ins can set an execution priority for each build step.  It is used to determine the order in
+which the plug-ins will be executed.  Those with a higher priority value will be executed before those with a
+lower value.  Those with an identical priority may be executed in any order within their group.  If not
+explicitly defined, the default priority value is 1000.</p>
+</li>
+<li><p>Added the <code>SandcastleBuilder.MRefBuilder</code> assembly which contains the <code>BindingRedirectResolver</code> component used by the <strong>Assembly Binding Redirection</strong>
+plug-in.  The resolver component can be used in other third-party tools and standalone build scripts.</p>
+</li>
+<li><p>Added the <a href="../../gettingstarted/userprefs.html">Before Building</a> user
+preference that lets you specify how to handle project and document changes prior to building the help file or
+previewing a topic.</p>
+</li>
+<li><p>Added the following new plug-ins:</p>
+<ul>
+<li><p><a href="../../plugins/assemblybindingredirection.html">Assembly Binding Redirection Plug-In</a></p>
+</li>
+<li><p>Bibliography Support Plug-In</p>
+</li>
+<li><p><a href="../../plugins/xpathreflectionfilefilterplugin.html">XPath Reflection File Filter Plug-In</a> - Thanks to Eyal Post for
+donating the code upon which this plug-in is based.</p>
+</li>
+</ul>
+</li>
+<li><p>Thanks to Jeroen Vos for providing up to date information on using the Sandcastle Help File
+Builder v1.8.0.0 or later with Visual Studio Team Foundation Server 2008 SP1.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="v1.8.0.3.html">Version 1.8.0.3</a></li>
+<li><a href="v1.8.0.2.html">Version 1.8.0.2 (Beta 2)</a></li>
+<li><a href="v1.8.0.0.html">Version 1.8.0.0 (Alpha)</a></li>
+<li><a href="v1.8tov1.9.8.0.html">Versions 1.8.0.0 through 1.9.8.0</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.8.0.1.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

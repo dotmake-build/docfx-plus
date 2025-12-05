@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Additional Notices Plug-In </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Additional Notices Plug-In ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/plugins/additionalnoticesplugin.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="additional-notices-plug-in">Additional Notices Plug-In</h1>
+
+<p>Notices appear at the top of topics and as tags in the member list pages to show additional important
+information about API members.  By default, notices are added for any type or member with a <code>preliminary</code> XML comments element and those decorated with the <code>System.ObsoleteAttribute</code> or <code>System.Diagnostics.CodeAnalysis.ExperimentalAttribute</code> attribute.  This plug-in is used
+to add additional notice definitions to the selected presentation style based on your own custom attributes or
+XML comments elements.</p>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>The configuration options consist of the following properties:</p>
+<ul>
+<li><p><strong>Attribute Type Name</strong> - If the notice is related to an attribute on a
+type or member, specify the fully qualified name here including the &quot;T:&quot; prefix.  Example: <code>T:System.ObsoleteAttribute</code>.</p>
+</li>
+<li><p><strong>XML Comments Element Name</strong> - If the notice is related to an XML
+comments element on a type or member, specify the element name here.  Example: <code>preliminary</code>.</p>
+</li>
+<li><p><strong>Use attribute/element value for notice message text</strong> - If this option
+is checked, the inner text of the XML comments element or the attribute value will be used as the notice message.
+If not checked, the notice message from the definition will be used.  If the comments element is empty or the
+attribute has no value, the notice text in the definition is used automatically.</p>
+</li>
+<li><p><strong>Notice Message</strong> - This is the message to display at the top of the API
+member topics.  It can be literal text or a localized content item ID prefixed with '@'.  For example, <code>@boilerplate_obsoleteLong</code> is used for the obsolete notice message.  If a notice message
+is not specified, a notice message will not appear for the notice in member topics.</p>
+</li>
+<li><p><strong>Tag Text</strong> - This is the tag text to display below the member
+descriptions on member list pages.  It can be literal text or a localized content item ID prefixed with '@'.  For
+example, <code>@boilerplate_obsoleteShort</code> is used for the obsolete notice tag.  Tags are
+typically one or two words.  Reserve the longer description for the notice message shown at the top of the topic.
+If tag text is not specified, a tag will not appear for the notice.</p>
+</li>
+<li><p><strong>Notice Style Classes</strong> - For HTML presentation styles, this allows you
+to set the CSS classes that will be applied to the notice message.  If not specified, default styles will be
+applied.  For example, in the Default 2022 presentation style the default styles are <code>tag is-infois-medium</code>.  You can use various combinations of styles on the notice message and tag.  Some examples
+are shown below:</p>
+<div class="tags"><span class="tag is-black">tag is-black</span><span class="tag is-dark">tag is-dark</span><span class="tag is-light">tag is-light</span><span class="tag is-white">tag is-white</span></div><div class="tags"><span class="tag is-primary">tag is-primary</span><span class="tag is-link">tag is-link</span><span class="tag is-info">tag is-info</span><span class="tag is-success">tag is-success</span><span class="tag is-warning">tag is-warning</span><span class="tag is-danger">tag is-danger</span></div><div class="tags"><span class="tag is-primary is-light">tag is-primary is-light</span><span class="tag is-link is-light">tag is-link is-light</span><span class="tag is-info is-light">tag is-info is-light</span><span class="tag is-success is-light">tag is-success is-light</span><span class="tag is-warning is-light">tag is-warning is-light</span><span class="tag is-danger is-light">tag is-danger is-light</span></div><div class="tags"><span class="tag is-link is-normal">tag is-link is-normal</span><span class="tag is-primary is-medium">tag is-primary is-medium</span><span class="tag is-info is-large">tag is-info is-large</span><span class="tag is-success is-normal is-rounded">tag is-success is-normal is-rounded</span></div>
+</li>
+<li><p><strong>Tag Style Classes</strong> - For HTML presentation styles, this allows you to
+set the CSS classes that will be applied to the tags on member list pages.  If not specified, default styles will
+be applied.  For example, in the Default 2022 presentation style the default styles are <code>tag is-infois-rounded</code>.  See above for some example styles.</p>
+</li>
+</ul>
+<h2 id="localizing-notice-message-and-tag-text">Localizing Notice Message and Tag Text</h2>
+<p>As noted above, if the notice message or tag text specify a content item ID prefix with '@', the
+related text for the item in the resource item file will be used.  You can specify localized text for your own
+notice definitions by adding one or more resource items files to the project.  The filenames must have a suffix
+identifying the language of the items they contain prefixed with an underscore and have a <em>.items</em>
+filename extension.  Examples: <em>ProjectNotices_en-US.items</em>, <em>ProjectNotices_fr-Fr.items</em>.
+The file's <code>Build Action</code> should be set to <code>ResourceItems</code>.</p>
+<p>The content of the notice content items file will look like the following example:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;content xml:space=&quot;preserve&quot;&gt;
+    &lt;item id=&quot;unsafeNoticeMessage&quot;&gt;This API does some unsafe stuff&lt;/item&gt;
+    &lt;item id=&quot;unsafeTag&quot;&gt;Unsafe&lt;/item&gt;
+    &lt;item id=&quot;topicNoticeMessage&quot;&gt;This is a notice for a custom XML comments element&lt;/item&gt;
+    &lt;item id=&quot;topicNoticeTag&quot;&gt;Notice&lt;/item&gt;
+
+    &lt;!-- If you want to override the preliminary, obsolete, or experimental notice text,
+         you can add the following entries to your file with your own message and tag text.
+    &lt;item id=&quot;boilerplate_obsoleteShort&quot;&gt;Obsolete&lt;/item&gt;
+    &lt;item id=&quot;boilerplate_obsoleteLong&quot;&gt;Note: This API is now obsolete.&lt;/item&gt;
+    &lt;item id=&quot;boilerplate_experimentalShort&quot;&gt;Experimental&lt;/item&gt;
+    &lt;item id=&quot;boilerplate_experimentalLong&quot;&gt;Note: This API is for evaluation purposes only and is subject to change or removal in future updates.&lt;/item&gt;
+    &lt;item id=&quot;preliminaryApi&quot;&gt;This API is preliminary and subject to change.&lt;/item&gt;
+    &lt;item id=&quot;preliminaryShort&quot;&gt;Preliminary&lt;/item&gt;
+    --&gt;
+&lt;/content&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Resource item files have a custom editor and are usually used to override default help file
+builder content items.  To add the initial message items for your notices, open the file with a text editor.
+Once the items have been added, you can open it with the custom editor to make changes to the new items if
+wanted.</p>
+</div>
+<h2 id="overriding-the-preliminary-obsolete-and-experimental-notices">Overriding the Preliminary, Obsolete, and Experimental Notices</h2>
+<p>As noted, the <code>preliminary</code> XML comments element and the obsolete and
+experimental attributes are added by default.  If you want to override the messages or styles used, you can
+add matching notice entries to the plug-in configuration for the element or attribute name.  If you just want
+to change the notice message or tag text, you can also do so through the resource items file as shown in the
+example above without using the plug-in.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="plugins.html">Build Process Plug-Ins</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/plugins/additionalnoticesplugin.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

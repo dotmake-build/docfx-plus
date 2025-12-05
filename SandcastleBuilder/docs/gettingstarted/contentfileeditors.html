@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Content File Editors </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Content File Editors ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/contentfileeditors.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="content-file-editors">Content File Editors</h1>
+
+<p>This topic describes the content file editor preferences (standalone GUI only).</p>
+<p>This tab allows you to define custom editors for project files that are not recognized by the
+standalone GUI as being editable text files based on their filename extension.  In such cases, the standalone GUI
+will look for a custom editor definition and, if found, will launch the associated application.  If no custom
+editor definition is found, the GUI attempts to launch the file using the shell to let it decide how the file
+should be edited.</p>
+<p>To add a new content file editor, click the <strong>Add</strong> button located next to the upper right
+corner of the editor list.  Select the new entry in the list and use the property grid at the bottom of the tab
+to alter its settings.</p>
+<ul>
+<li><p><strong>Description</strong> - Enter a description for the editor.</p>
+</li>
+<li><p><strong>Extensions</strong> - Enter a list of filename extensions with which this editor will be
+associated.  If specifying multiple extensions, separate them with a space, semi-colon, period, or a comma.</p>
+</li>
+<li><p><strong>ApplicationPath</strong> - Enter the path to the editor application.  As with other project
+properties, this can be an absolute or a relative path and can contain environment variable references for
+expansion when actually invoked.</p>
+</li>
+<li><p><strong>Arguments</strong> - Specify any necessary command line arguments.  At the minimum, the <code>$ContentItem</code> macro should be specified so that the file to edit is passed to the
+application.  Enclose arguments in quote marks if the value will contain spaces.  Macros that you can use are as
+follows:</p>
+<ul>
+<li><p><code>$ContentItem</code> - This expands to the full path and filename of the
+item to be edited.</p>
+</li>
+<li><p><code>$ProjectFile</code> - This expands to the full path and filename of the
+current project.</p>
+</li>
+<li><p><code>$ProjectFolder</code> - This expands to the full path of the current
+project without the filename.</p>
+</li>
+</ul>
+<p>Macro names are case-insensitive.</p>
+</li>
+<li><p><strong>StartupFolder</strong> - An optional folder name in which the application is started.  If left
+blank, the current project's folder is used.  As with the application path, this can be an absolute or relative
+path and can contain environment variable references for expansion when actually invoked.</p>
+</li>
+</ul>
+<p>To delete an editor definition, select it in the list and click the <strong>Delete</strong> button located
+next to the bottom right corner of the editor list.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="userprefs.html">User Preferences</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/contentfileeditors.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

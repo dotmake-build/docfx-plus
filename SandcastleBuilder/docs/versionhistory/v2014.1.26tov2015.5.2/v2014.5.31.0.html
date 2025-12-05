@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2014.5.31.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2014.5.31.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2014.5.31.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-20145310">Version 2014.5.31.0</h1>
+
+<h2 id="HelpFileBuilder"> Help File Builder</h2>
+<p>This release completes removal of the branding transformations and implements the new VS2013
+presentation style that utilizes the new lightweight website format.  Several breaking changes had to be made in
+order to support it properly.  You will need to rebuild any custom plug-ins, components, and presentation styles
+against the latest version of the Sandcastle and Help File Builder assemblies.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If switching to the new VS2013 presentation style, there are a few issues to be aware of.
+Most notable is that existing links to topics from external sites will not work unless updated to use the
+direct URL to the topic.  See the <a href="../../plugins/lightweightwebsitestyleplugin.html">Lightweight Website Style Plug-In</a> topic for details.</p>
+</div>
+<ul>
+<li><p>Moved the web content from the standalone GUI to the presentation style project.  It is now
+in a presentation style folder called <em>.\LegacyWeb</em>.  If you have custom presentation styles
+that use the prior web content, update them to use the new folder location.</p>
+</li>
+<li><p>Updated the build engine to support the presentation style plug-in dependency list.</p>
+</li>
+<li><p>The Syntax Component now supports configuring the order of the syntax generators.  This only
+has an effect in presentation styles that support code snippet grouping (currently only the VS2010 and VS2013
+styles).</p>
+</li>
+<li><p>The default language for the VS2010 and VS2013 presentation styles can be set using the new <code>defaultLanguage</code> transform argument found on the <strong>Transform Args</strong> property page.
+This can be used in conjunction with the Syntax Component configuration to match the default language to the first
+language in the syntax language sort order.</p>
+</li>
+<li><p>Added an <code>IsHidden</code> property to the <code>HelpFileBuilderPlugInExportAttribute</code>.  The Plug-Ins property page uses this to hide
+presentation style dependency plug-ins that do not have any configurable settings.</p>
+</li>
+<li><p>Added support for Windows Phone 8.1 (Silverlight and Windows Store Apps) frameworks. Thanks to
+Morten Nielsen for the configuration settings.</p>
+</li>
+<li><p>Updated the presentation style and syntax generator project templates to reflect recent changes
+in the API.</p>
+</li>
+<li><p>Updated the topic previewer tool window to use a VS2013-like presentation style.</p>
+</li>
+<li><p>Made the VS2013 style the default presentation style for new projects.</p>
+</li>
+<li><p>Renamed the <strong>View Website (ASP.NET)</strong> and <strong>View Website (HTML)</strong> options to <strong>View Website (Local Web Dev Server)</strong> and <strong>View Website (Local File System)</strong> to reflect their more
+general use now since the VS2013 presentation style does not contain an <em>Index.aspx</em> page and
+no longer requires ASP.NET to be viewed with the local web development server.</p>
+</li>
+</ul>
+<h2 id="ToolsBreakingChanges"> Sandcastle Tools Breaking Changes</h2>
+<p>This release completes removal of the branding transformations and implements the new VS2013
+presentation style that utilizes the new lightweight website format.  Several breaking changes had to be made in
+order to support it properly.  You will need to rebuild any custom plug-ins, components, and presentation styles
+against the latest version of the Sandcastle and Help File Builder assemblies.</p>
+<h3 id="BuildAssemblerBreaks"> BuildAssembler and Build Components</h3>
+<ul>
+<li><p>Modified the syntax generator components so that they write out a style ID as well as the
+language name.  This allows better handling of grouped language elements without having to modify the XSL
+transformations for custom languages.</p>
+</li>
+<li><p>Each syntax generator now has a unique style ID. Third-party generators should also ensure
+they are using a unique style ID rather than the existing ones or the previously suggested default of &quot;cs&quot;.
+Using an existing one such as &quot;cs&quot; will cause the custom syntax section to be associated with the other
+language's code snippets when grouped.</p>
+</li>
+<li><p>The language name and style ID on the syntax generators must now be set by the syntax
+generator factory when it constructs an instance so that the values do not have to be on the configuration
+elements in the <strong>BuildAssembler</strong> configuration file.  This change was required to better
+support grouping and sorting by the <code>SyntaxComponent</code> and eliminate another location where
+the information had to be duplicated unnecessarily.</p>
+</li>
+<li><p>Added a warning to the <code>BrandingComponent</code> to note that its use has
+been deprecated and that it will be removed in a future release. You will only see this if you cloned the VS2010
+or VS2013 presentation style from a prior release.  Update your custom style to match the latest release as soon
+as possible.  It is well worth the effort.</p>
+</li>
+</ul>
+<h3 id="PresentationStyleBreaks"> Presentation Styles</h3>
+<ul>
+<li>Moved the web content from the standalone GUI to the presentation style project.  It is now
+in a presentation style folder called <em>.\LegacyWeb</em>.  If you have custom presentation styles
+that use the prior web content, update them to use the new folder location.</li>
+</ul>
+<h2 id="ToolsOtherChanges"> Other Changes To Sandcastle Tools</h2>
+<h3 id="Documentation"> Documentation</h3>
+<ul>
+<li><p>Updated all documentation projects to use the new VS2013 presentation style.</p>
+</li>
+<li><p>Added a topic to the XML Comments Guide for the section element <code>revisionHistory</code>
+contributed by THLucas.</p>
+</li>
+</ul>
+<h3 id="BuildAssembler"> BuildAssembler and Build Components</h3>
+<ul>
+<li><p>Fixed the <code>SqlDictionary</code> class so that it handles nulls correctly
+for unresolved member IDs in the SQL Server cached build components.</p>
+</li>
+<li><p>Added the <code>LanguageSpecificTextComponent</code> to handle
+language-specific text element conversion from <code>span</code> to <code>script</code>
+elements for the VS2010 and later presentation styles.</p>
+</li>
+<li><p>Added the <code>AdditionalHeaderResourcesComponent</code> to handle insertion
+of additional metadata, style sheets, and scripts in the topics based on the help file format.  This allows for
+changes to be made on a format by format basis to give a better look to the rendered content such as adjusting
+the positioning of elements that may differ in the various help viewers due to variations in browser and CSS
+versions supported.  Believe it or not, Help 1 and MS Help Viewer default to the IE7 rendering engine unless
+forced to use a higher version via metadata.</p>
+</li>
+<li><p>Updated the <code>SyntaxComponent</code> to group and sort code snippets based
+on the order of the defined syntax generators.  The sort order and whether or not to add &quot;No Example&quot; tabs can be
+configured in the <code>SyntaxComponent</code> 's configuration dialog.</p>
+</li>
+<li><p>Added a new <code>TransformingTopicEventArgs</code> class and updated the <code>TransformComponent</code> to raise a build event using the event arguments just prior to
+transforming the topic.  This allows other build components to alter the document XML prior to the XSL
+transformation.  The <code>SyntaxComponent</code> uses this event to group and sort the code snippets
+at that time since any other components that ran after it will have added their snippets by that point and we can
+be sure that it will find and handle them all.</p>
+</li>
+<li><p>Added code to the MSDN resolver to shut off further lookups and report failures due to the
+service being down.  This prevents it from reporting all failures as missing content IDs.</p>
+</li>
+</ul>
+<h3 id="MRefBuilder"> MRefBuilder</h3>
+<ul>
+<li>Added support for Windows Phone 8.1 (Silverlight and Windows Store Apps) frameworks.
+Thanks to Morten Nielsen for the configuration settings.</li>
+</ul>
+<h3 id="PresentationStyles"> Presentation Styles</h3>
+<ul>
+<li><p>Removed all branding transformations and use of the branding component from the VS2010 and
+VS2013 presentation styles. The presentation styles now handle all aspects of topic generation.</p>
+</li>
+<li><p>Finished the VS2013 style which is now a blend of the best parts of the MSDN and Visual
+Studio website styles and implemented the lightweight table of contents based on Sam Harwell's code.</p>
+</li>
+<li><p>Implemented a search feature in the new VS2013 lightweight website output that works with
+modified versions of the old ASP.NET and PHP server-side search pages and, if they are not available, a full
+client-side script implementation. Although not optimal for large sites, the client-side search works quite well for
+sites that do not support ASP.NET or PHP.</p>
+</li>
+<li><p>Reworked how the tab sets and language-specific text elements work to allow for missing
+languages in the VS2010 and VS2013 presentation styles.</p>
+</li>
+<li><p>Fixed up handling of XAML syntax sections in the Open XML, VS2010, and VS2013 presentation
+styles.</p>
+</li>
+<li><p>Fixed the presentation styles so that they show explicitly implemented interface member
+names even if the parent type is unresolved.</p>
+</li>
+<li><p>Made various updates and fixes to the VS2010 and VS2013 presentation styles to ensure they
+render the best possible output in each of the different help file formats.</p>
+</li>
+<li><p>Completely rewrote the code snippet grouping support to present the code snippets in a
+logical manner based on their positioning within a MAML topic or XML comments and took steps to make the grouping
+and default language easily configurable without having to change the presentation style transformations or
+scripts.</p>
+</li>
+<li><p>Added a new <code>defaultLanguage</code> transform component argument to the
+VS2010 and VS2013 presentation styles.  This allows you to define the default language displayed in the help
+topics on a project by project basis.  The default is &quot;cs&quot; for C#.  The <code>SyntaxComponent</code>
+allows the order of the syntax components to be defined via its configuration dialog so that the first tab can be
+set to match the default language when not C#.</p>
+</li>
+<li><p>Added support for &quot;No Example&quot; tabs in code snippet groups.  These appear for missing
+languages in grouped code snippets.  For example, if the syntax section shows C#, VB.NET, C++ and F# but a code
+example only shows C# and VB.NET, tabs for C++ and F# will be added to the group with a default message noting
+that an example is unavailable or is not supported.</p>
+</li>
+<li><p>Added an <code>IsDeprecated</code> property to <code>PresentationStyleExportAttribute</code>.  The Help File property page uses this to sort
+deprecated presentation styles to the end of the list.</p>
+</li>
+<li><p>Added a new <code>PlugInDependencies</code> presentation style property which
+allows a presentation style to define a list of plug-ins on which it depends so that they are added to the build
+with a default configuration if not already included in the project.  The new VS2013 presentation style uses this
+to add the lightweight website style plug-in to the project when built.</p>
+</li>
+<li><p>Simplified the VS2013 style sheet to include only the necessary elements.  This gives a
+more consistent look to the topics across all help formats.</p>
+</li>
+<li><p>Added a new &quot;Code Example&quot; icon to the member list pages in the VS2010 and VS2013
+presentation styles to show when a type or member's comments contain code examples.</p>
+</li>
+<li><p>Added support to the VS2005, VS2010, and VS2013 presentation styles for the <code>revisionHistory</code> element contributed by THLucas.</p>
+</li>
+<li><p>Deprecated the VS2005 presentation style.  It will not receive any further enhancements.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2014.5.31.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Building Projects Outside the GUI </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Building Projects Outside the GUI ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/consolebuild.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="building-projects-outside-the-gui">Building Projects Outside the GUI</h1>
+
+<p>Starting with version 1.8.0.0 of the help file builder, the project file uses a standard MSBuild file
+format.  Projects can be built from the command line using the <em>MSBuild</em> executable.  Starting
+with version 2021.9.9.0, the <em>dotnet build</em> tool is also supported.</p>
+<h2 id="Options"> Building From the Command Line</h2>
+<p>Use <em>MSBuild.exe</em> or <em>dotnet.exe</em> with the <strong>build</strong>
+command line option to build help file builder projects from the command line.  All of the usual MSBuild command
+line options can be used.  You can use the <strong>/property:name=value</strong> option (short form: <strong>/p:name=value</strong>) to override project property values where &quot;name&quot; is a property name and &quot;value&quot;
+is the value to use.  Below are some common command line option and property overrides not directly represented
+by a matching help file builder project property.  For a full list of MSBuild command line options, see the
+<a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference">MSBuild Command Line Reference</a></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/verbosity:[level] or /v:[level]&gt;</td>
+<td>Set the overall verbosity level of the build.  This controls which messages MSBuild will<br>display.  The default is <code>normal</code> which shows informational messages, errors, and<br>warnings.</td>
+</tr>
+<tr>
+<td>/p:Verbose=[True|False]</td>
+<td>This property value can be specified to control the output from the build process.  The<br>default is false to only output build step names as the build is performed.  Setting this property value to true<br>will display all output from all build steps.  This is equivalent to the information written to the log file.</td>
+</tr>
+<tr>
+<td>/p:DumpLogOnFailure=[True|False]</td>
+<td>This property value can be specified to control whether or not the log file is dumped to the<br>MSBuild log if the project fails to build.  The default is false to not dump the log.  Setting this property<br>value to true will dump the log content if the build fails.</td>
+</tr>
+<tr>
+<td>/p:Configuration=[configName]</td>
+<td>This can be used to specify the <code>Configuration</code> value to use for any<br>solution or project file documentation sources.  If not set, it defaults to <code>Debug</code>.</td>
+</tr>
+<tr>
+<td>/p:Platform=[configName]</td>
+<td>This can be used to specify the <code>Platform</code> value to use for any<br>solution or project file documentation sources.  If not set, it defaults to <code>AnyCPU</code>.</td>
+</tr>
+<tr>
+<td>/p:CustomBeforeSHFBTargets=[projectFile]</td>
+<td>This can be used to specify a custom project file containing property or target overrides<br>that should be evaluated prior to the help file builder's targets.  Specify the full path to the project file.<br>Do not enclose the project filename value in single quotes or it will be ignored.  If necessary, enclose the<br>entire command line parameter in double quotes.</td>
+</tr>
+<tr>
+<td>/p:CustomAfterSHFBTargets=[projectFile]</td>
+<td>This can be used to specify a custom project file containing property or target overrides<br>that should be evaluated after the help file builder's targets.  Specify the full path to the project file.  Do<br>not enclose the project filename value in single quotes or it will be ignored.  If necessary, enclose the entire<br>command line parameter in double quotes.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Regardless of any verbosity level setting, full output from the build is always saved to the log
+file.  As with the standalone GUI, the help file and the log file can be found in the folder specified in the
+project's <code>OutputPath</code> property after a build.</p>
+</div>
+<p>Prefix options with '-' or '/'.  Property values should be enclosed in double quotes if they
+contain spaces, commas, or other special characters. All relative paths specified on the command line and those
+in a response file (see below) are relative to the project's path as usual.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Property names specified on the command line or in response files are case-insensitive as are
+simple property values.  However, XML-based property values (the collection-based ones) are case-sensitive with
+regard to the element names.  The values of the elements themselves are case-insensitive.</p>
+<p>If a file path is specified on the command line that ends in a backslash, escape it with an
+additional backslash or the command interpreter will likely include it as an escape for the following character
+such as the closing quote that surrounds the path.  This will likely cause the path to be interpreted
+incorrectly and the build will fail.</p>
+</div>
+<h2 id="ResponseFile"> Response Files</h2>
+<p>In addition to specifying project option overrides on the command line, MSBuild supports response
+(.rsp) files that contain a complex list of command line options used to build help file projects.  Each option
+can be on a separate line or all options can be on one line.  Comment lines are prefaced with a <code>#</code> symbol.  The <code>@</code> switch is used to pass another response file
+to <em>MSBuild.exe</em>.</p>
+<pre><code class="lang-bat">%ProgramFiles(x86)%\MSBuild\14.0\bin\MSBuild.exe @ResponseFile.rsp
+</code></pre>
+<h2 id="TargetOverrides"> Target Override Files</h2>
+<p>As noted above, the <code>CustomBeforeSHFBTargets</code> and <code>CustomAfterSHFBTargets</code> properties can be set to the names of MSBuild project files
+containing property and/or target definition overrides.  The <code>CustomBeforeSHFBTargets</code>
+property is useful for specifying overrides for complex properties such as those for build component
+configurations, plug-in configurations, and API filter settings as you can specify them using normal XML that
+spans multiple lines.  An example override file is shown below:</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The paths to the target override files should be fully qualified as relative paths on them are
+evaluated by MSBuild based on the help file builder's target file location.  Do not enclose the project filename
+in single quotes or it will be ignored.  If necessary, enclose the entire command line parameter in double
+quotes.</p>
+</div>
+<pre><code class="lang-xml">&lt;Project xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+  &lt;!-- Example documentation source overrides
+  &lt;PropertyGroup&gt;
+    &lt;DocumentationSources&gt;
+      &lt;DocumentationSource sourceFile=&quot;..\..\OtherProject\bin\Release\OtherAssembly.xml&quot; xmlns=&quot;&quot; /&gt;
+      &lt;DocumentationSource sourceFile=&quot;..\..\OtherProject\bin\Release\OtherAssembly.dll&quot; xmlns=&quot;&quot; /&gt;
+    &lt;/DocumentationSources&gt;
+  &lt;/PropertyGroup&gt;
+  --&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;HtmlHelpName&gt;TestDocOverride&lt;/HtmlHelpName&gt;
+    &lt;RootNamespaceTitle&gt;Root Namespace Override&lt;/RootNamespaceTitle&gt;
+    &lt;HelpTitle&gt;Test Help File Override&lt;/HelpTitle&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;!-- Add the overridden properties as the value of the SubstitutionTags property --&gt;
+    &lt;SubstitutionTags&gt;$(SubstitutionTags);HtmlHelpName=$(HtmlHelpName);
+      RootNamespaceTitle=$(RootNamespaceTitle);HelpTitle=$(HelpTitle)
+    &lt;/SubstitutionTags&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;!-- Example target override --&gt;
+  &lt;Target Name=&quot;BeforeBuildHelp&quot;&gt;
+    &lt;Message Text=&quot;BeforeBuildHelp override executed&quot; /&gt;
+  &lt;/Target&gt;
+
+&lt;/Project&gt;
+</code></pre>
+<p>The help file builder target definition file contains several targets that can be overridden to
+define custom behavior that occurs before and after the help file builder build targets.  These can be defined in
+a custom project file specified with the <code>CustomAfterSHFBTargets</code> property.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These targets are not executed when built from within the standalone help file builder GUI.
+These are only executed when built using MSBuild.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BeforeBuildHelp</td>
+<td>This target executes before the help file is built.</td>
+</tr>
+<tr>
+<td>AfterBuildHelp</td>
+<td>This target executes after the help file is built.</td>
+</tr>
+<tr>
+<td>BeforeCleanHelp</td>
+<td>This target executes before the prior build's output is cleared.</td>
+</tr>
+<tr>
+<td>AfterCleanHelp</td>
+<td>This target executes after the prior build's output is cleared.</td>
+</tr>
+<tr>
+<td>BeforeRebuildHelp</td>
+<td>This target executes before the help file is rebuilt.</td>
+</tr>
+<tr>
+<td>AfterRebuildHelp</td>
+<td>This target executes after the help file is rebuilt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PostBuildEvent"> Specifying a Post-Build Event to Build a Help File</h2>
+<p>Help file builder projects are supported in Visual Studio if you install the Visual Studio
+extension package.  In addition, a post-build event in a Visual Studio project can be used to build them.  To do
+so, right click on a project name in the Solution Explorer, select <strong>Properties</strong>, and
+select the <strong>Build Events</strong> sub-item.  Click in the <strong>Post-build Event CommandLine</strong> option to enter the command line to run.  You can click the <strong>Edit Post-build</strong>
+button to open a dialog with a larger editor and a list of available macros.  Below is an example of a common
+command line script that can be used (lines wrapped for display purposes). Replace the path to the tool with the
+path where you installed it on your PC.  The <code>IF</code> statement prevents building the help
+file in debug builds where it may not be needed.</p>
+<pre><code class="lang-bat">IF &quot;$(ConfigurationName)&quot;==&quot;Debug&quot; Goto Exit
+
+ECHO Building SHFB help file via MSBuild
+%ProgramFiles(x86)%\MSBuild\14.0\bin\MSBuild.exe&quot;
+    /p:CleanIntermediates=True /p:Configuration=Release
+    &quot;$(SolutionDir)Doc\SandcastleBuilder.shfbproj&quot;
+
+:Exit
+</code></pre>
+<p>In a solution with multiple projects that are documented by the same help file builder project, the
+post-build event should be defined on the last project built by Visual Studio.  If the projects are documented
+individually, you can place a post-build event on each one.</p>
+<h2 id="OtherTools"> Other Build Tools</h2>
+<p>Other automated build tools also exist.  As long as the build tool supports execution of command
+line based executables with parameters such as <em>MSBuild.exe</em>, you should be able to integrate
+it with the build process in a similar fashion.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="gettingstarted.html">Getting Started</a></li>
+<li><a href="teambuild.html">Generating Documentation with Team Build</a></li>
+<li><a href="logfile.html">The Log File</a></li>
+<li><a href="dynamicproperties.html">Using Dynamic Properties</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/consolebuild.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

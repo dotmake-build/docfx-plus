@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Creating Custom Components </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Creating Custom Components ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/customcomponents/creatingcustomcomponents.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="creating-custom-components">Creating Custom Components</h1>
+
+<p>In addition to the help file builder project template, component project templates are provided in
+Visual Studio to create custom build components, plug-ins, syntax generators, and presentation styles.  Templates
+are provided for C# and VB.NET and appear in the given language categories in the <strong>Documentation</strong>
+subcategory.</p>
+<p>The following component project templates are available:</p>
+<ul>
+<li><p><strong>Sandcastle Help File Builder Plug-In</strong> - Create a build process plug-in
+used to extend or alter the help file builder build process.</p>
+</li>
+<li><p><strong>BuildAssembler Build Component</strong> - Create a build component for use with
+the <strong>BuildAssembler</strong> tool that can alter the topics in some way as they are being
+generated.</p>
+</li>
+<li><p><strong>Build Component/Plug-In Configuration Editor</strong> - Create a configuration
+editor for a build component or plug-in.  This allows you to configure the component or plug-in interactively
+from within the standalone GUI or Visual Studio.  The configuration editor is placed in a separate assembly from
+the component or plug-in as the editors are specific to the Windows platform.  This allows the components to
+remain platform-neutral and usable with either <strong>MSBuild</strong> or <strong>dotnet build</strong>.</p>
+</li>
+<li><p><strong>BuildAssembler Syntax Generator</strong> - Create a syntax generator for use
+with the <strong>BuildAssembler</strong>   <code>SyntaxComponent</code> used to create
+declaration or usage syntax sections within topics.</p>
+</li>
+<li><p><strong>Sandcastle Presentation Style Component</strong> - Create a presentation style
+component to add a new presentation style used to format the topics.  This template provides a shell into which
+you can copy the content files from an existing presentation style or start from scratch and add all new content.</p>
+</li>
+</ul>
+<p>Once the project has been created, see the comments in the template source code for things to do to
+implement the given component.  Refer to the related topics in the <strong>See Also</strong> section
+below for more information on creating the components.</p>
+<h2 id="common-traits">Common Traits</h2>
+<p>All component project templates are set up to generate .NET Standard 2.0 assemblies.  As noted
+above, this allows the components to remain platform-neutral and usable with either <strong>MSBuild</strong>
+or <strong>dotnet build</strong>.  In addition, the necessary properties are defined to automatically
+generate a NuGet package from the build output.</p>
+<p>Each component project has a <em>.\build</em> folder containing a <em>.props</em>
+file that defines a single <code>SHFBComponentPath</code> item that equates to the path of the <em>.\tools</em> folder for the NuGet package.  This allows the help file builder to locate the
+component when adding it to the project via the related property page and at build time so that it can be used.</p>
+<p>Additional supporting files can be added to the project such as configuration files or other
+content files.  These will be added to the package's <em>.\tools</em> folder as well.  If placed in
+subfolders within the project, the folder structure will be retained when compiled into the package.</p>
+<p>The configuration UI project template is the exception to the above.  It is set to generate a
+.NET 4.7.2 assembly as it will only be used from the standalone GUI or Visual Studio on the Windows platform.  In
+addition, it does not generate a NuGet package.  Instead, you will include the assembly in your component
+package as an additional assembly.  Instructions are given in the UI project template example source code and
+the build component and plug-in project files on how to do this.  The configuration forms can be created with
+Windows Forms or XAML.  An example of each is provided in the template project as a starting point.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../visualstudio/visualstudiopackage.html">Visual Studio Integration Package</a></li>
+<li><a href="debuggingcomponents.html">Debugging Components and Plug-Ins</a></li>
+<li><a href="createplugins.html">Creating a Build Process Plug-In</a></li>
+<li><a href="createbuildcomponent.html">Creating a BuildAssembler Build Component</a></li>
+<li><a href="createsyntaxfilter.html">Creating a Syntax Filter Generator Component</a></li>
+<li><a href="custompresentationstyle.html">Creating a Presentation Style Component</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/customcomponents/creatingcustomcomponents.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

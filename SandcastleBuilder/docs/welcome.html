@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Welcome </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Welcome ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/welcome.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="welcome">Welcome</h1>
+
+<p>Welcome to the Sandcastle Help File Builder.  This project is composed of two separate parts that
+work together: the Sandcastle tools and the Sandcastle Help File Builder. The Sandcastle tools are used to create
+help files for managed class libraries containing both conceptual and API reference topics. API reference topics
+are created by combining the XML comments that are embedded in your source code with the syntax and structure of
+the types which is acquired by reflecting against the associated .NET Framework assembly.  Conceptual topics are
+created by converting XML documents that you author containing Microsoft Assistance Markup Language (MAML).  The
+Sandcastle tools are command-line based and have no GUI front-end, project management features, or an automated
+build process.</p>
+<p>The Sandcastle Help File Builder was created to fill in the gaps, provide the missing NDoc-like
+features that are used most often, and provide standalone GUI and command line based tools to build a help file
+in an automated fashion. A Visual Studio integration package is also available for it so that help projects can
+be created and managed entirely from within Visual Studio.</p>
+<p>Sandcastle was originally created by Microsoft back in 2006. The last official release from Microsoft
+occurred in June 2010.  Until October 2012, it was hosted at the Sandcastle project site on CodePlex.  In October
+2012, Microsoft officially declared that they were ceasing support and development of Sandcastle. The Sandcastle
+tools have been merged into the SHFBproject and all future development and support for
+them will be handled at its project site.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>See the <a href="gettingstarted/installation.html">Installation Instructions</a> for information about the required set
+of additional tools that need to be installed, where to get them, and how to make sure everything is configured
+correctly. The guided installer also provides information on the necessary tools and walks you through the
+installation steps.</p>
+<p>If you are new to Sandcastle and the help file builder, see the topics in the <a href="gettingstarted/gettingstarted.html">Getting Started</a> section to get familiar with it, set up your projects
+to produce XML comments, and create a help file project.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="benefitsandfeatures.html">Benefits and Features</a></li>
+<li><a href="gettingstarted/installation.html">Installation Instructions</a></li>
+<li><a href="gettingstarted/gettingstarted.html">Getting Started</a></li>
+<li><a href="gettingstarted/overview.html">Sandcastle Help File Builder Overview</a></li>
+<li><a href="visualstudio/visualstudiopackage.html">Visual Studio Integration Package</a></li>
+<li><a href="links.html">Links to Resources</a></li>
+<li><a href="versionhistory/versionhistory.html">Version History</a></li>
+<li><a href="donate.html">Making a Donation</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/welcome.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2014.11.22.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2014.11.22.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2014.11.22.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-201411220">Version 2014.11.22.0</h1>
+
+<h2 id="BreakingChanges"> Breaking Changes</h2>
+<p>The first two changes affect all users.  The remaining changes will only affect those that have
+created custom build components, syntax generators, plug-ins, and presentation styles.  Carefully read the
+following items as you will need to update your components based on these changes.</p>
+<ul>
+<li><p>Moved the colorizer files from the Sandcastle Builder GUI project to the Presentation Styles
+project where they are a better fit.  This changes the location of the colorizer files and places them under the *PresentationStyles* folder.  If you have added the Code Block Component to your project, you
+will need to remove it and re-add it or update the configuration to add the &quot;PresentationStyles&quot; folder ahead of
+the &quot;Colorizer&quot; folder in the configuration file location options.</p>
+</li>
+<li><p>Added code to the Resolve Reference Links Component and Copy From Index Command to check
+for and use broken explicitly implemented interface (EII) member IDs if the correct one is not found.  This works
+around a bug in the base framework XML comments file member IDs and the MSDN content service IDs for certain
+inherited EII members.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>You will need to delete the content ID cache in order for this change to have any effect.
+See the <strong>User Configuration Settings and Cache Files</strong> section of the <a href="../../gettingstarted/specialfilepaths.html#BuildSettings">Special Folder Locations</a> topic for details.</p>
+</div>
+</li>
+<li><p>Moved the syntax generator resource items to the syntax generator BuildAssembler project.  This
+allows the syntax generators to be more self-contained and allows them to be created without requiring changes to
+the presentation styles.</p>
+</li>
+<li><p>Added a new <code>ResourceItemFileLocation</code> property to the syntax generator
+factory interface. This is implemented to return the path to the resource item file associated with the syntax
+generator containing its localized text for titles, messages, metadata, etc. This allows creation of
+self-contained syntax generators that require no modifications to the presentation styles with which they will be
+used.</p>
+</li>
+<li><p>Updated the Open XML, VS2010, and VS2013 presentation styles so that they are no longer
+dependent on the syntax generator items and IDs.</p>
+</li>
+</ul>
+<h2 id="Help2Deprecated"> MS Help 2 (HxS) Format Support Deprecated</h2>
+<p>Effective with this release, support for the MS Help 2 (HxS) help file format used in Visual Studio
+2008 and earlier has been deprecated.  It is just too cumbersome to maintain a separate environment with an older
+version of Visual Studio and its SDKs in which to test this obsolete help format.  Going forward, no further
+updates or fixes will be made to support it.  Any new presentation styles created in the future will not support
+it either.</p>
+<h2 id="HelpFileBuilder"> Help File Builder</h2>
+<ul>
+<li><p>A NuGet package is now available (<strong>EWSoftware.SHFB</strong>) to allow for <a href="../../gettingstarted/xcopydeployment.html">build server deployments</a> and local project copies
+of the tools that can be checked into source control.</p>
+</li>
+<li><p>Fixed the Version Builder plug-in so that it correctly generates the version IDs used in the
+configuration file and the label resource items.  It is now possible to have &quot;prior&quot; projects that use different
+framework labels with a version number that matches the &quot;current&quot; project.</p>
+</li>
+<li><p>Fixed the Additional Reference Links and Version Builder plug-ins so that they correctly apply
+the <code>Configuration</code> and <code>Platform</code> properties to the sub-projects
+to ensure they are evaluated properly in project properties when the sub-projects are loaded.</p>
+</li>
+<li><p>Fixed the VSPackage IntelliSense provider by adding &quot;langword&quot; as a prefix to the language
+keyword entries to prevent an odd crash in VS 2013.</p>
+</li>
+<li><p>Merged changes from Sam Harwell to enable the Visual Studio C# documentation completion
+provider to work properly if the Roslyn package is installed which uses a different implementation of
+IntelliSense.</p>
+</li>
+<li><p>Fixed the Lightweight TOC plug-in so that it adds some script to the default topic to expand
+the root node when the first node has children. This prevents it from looking like only one namespace was
+documented because the root node is collapsed.</p>
+</li>
+<li><p>Fixed the Lightweight TOC plug-in so that it transforms the help title property value to ensure
+substitution tags in the value are replaced.</p>
+</li>
+<li><p>Fixed the DBCS Fix plug-in so that it copies the Help 1 content to the output folder for
+inclusion in the localized copy of the content.</p>
+</li>
+<li><p>Fixed the XPath Reflection File Filter plug-in so that it runs before transforming the
+reflection file content and generating the BuildAssembler manifest file.</p>
+</li>
+<li><p>Applied a fix from Kalyan00 to the Sandcastle HTML Extract tool so that it correctly saves
+files in the localized and original locations with the proper encodings.</p>
+</li>
+<li><p>Set the maximum degree of parallelism in the Sandcastle HTML Extract tool to 20 threads per
+processor.  This is configurable but is not currently exposed.  It can be adjusted by adding a <code>MaxDegreeOfParallelism</code> property to the HTML extract project template and passing it to
+the task if needed.</p>
+</li>
+<li><p>As suggested by Kaylan00, the DBCS Fix plug-in has been changed so that the path to the <strong>SBAppLocale</strong> tool is optional.  If not specified, the plug-in will issue a warning but
+will run.  In such cases, only the localization fixes applied by the Sandcastle HTML Extract tool will be in
+effect.</p>
+</li>
+<li><p>Added support for <a href="../../propertieswindow/namespacedoc.html">NamespaceGroupDoc</a>
+classes in XML comments files to add documentation to namespace group topics.</p>
+</li>
+<li><p>Added the <a href="../../plugins/memberidfixupsplugin.html">Member ID Fix-Ups Plug-In</a> to allow fixing up member
+IDs in XML comments files that do not match the reflection data due to quirks in the various compilers.  This can
+be used in place of or in conjunction with the C++ Fix-Up project property.</p>
+</li>
+<li><p>Added the <a href="../../plugins/intellisenseonlyplugin.html">IntelliSense Only Plug-In</a> that can be used to
+suppress the help file build steps and produce only the IntelliSense XML comments files when used in conjunction
+with the <a href="../../compconfig/intellisensecomponent.html">IntelliSense Component</a>.  This is useful for supporting projects that
+need IntelliSense XML comments files but do not contribute content to the help file directly (i.e. those in the
+Version Builder plug-in configuration).</p>
+</li>
+<li><p>Added support for installing the VSPackage in Visual Studio 2015 Preview and added support for
+the .NET Framework versions 4.5.2 and 4.5.3.</p>
+</li>
+</ul>
+<h2 id="Documentation"> Documentation</h2>
+<ul>
+<li>Added information to the XML Comments Guide about using <code>NamespaceGroupDoc</code>
+classes.</li>
+</ul>
+<h2 id="BuildAssembler"> BuildAssembler and Build Components</h2>
+<ul>
+<li><p>Fixed a bug in the Syntax Component so that it does not crash if a syntax generator does
+not specify any alternate IDs.</p>
+</li>
+<li><p>Updated the syntax generators to write out method parameter attributes.</p>
+</li>
+</ul>
+<h2 id="MRefBuilder"> MRefBuilder</h2>
+<ul>
+<li><p>Fixed MRefBuilder so that it properly matches types and methods with generic parameters
+under certain specific conditions.  Thanks to Jared Moore for reporting the issue with a test case.</p>
+</li>
+<li><p>Fixed MRefBuilder so that it filters out duplicate member IDs from derived interfaces that
+re-implement base members using the &quot;new&quot; keyword.  Thanks to rpcode for reporting the issue with a test case.</p>
+</li>
+<li><p>Added a new namer component for Windows Store and Windows Phone frameworks that renames
+certain core types that the compiler changes when building assemblies.  This ensures that the reflection data
+matches the XML comments which contain the expected type names.  The new namer component is used automatically
+when generating reflection data using a Windows Store or Windows Phone framework version.</p>
+</li>
+<li><p>Added code to write method parameter attribute elements to the reflection information file.</p>
+</li>
+<li><p>Added code to write out the value of literal (constant) fields to the reflection
+information file.</p>
+</li>
+</ul>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<ul>
+<li><p>Fixed the copyright replacement tags in the SHFB content files so that they use the HTML
+encoded text.</p>
+</li>
+<li><p>Fixed an invalid end element in the German and Russian language versions of the <code>enumerationOverviewXamlSyntax</code> element.</p>
+</li>
+<li><p>Fixed the VS2010 and VS2013 presentation styles so that code blocks with line numbers
+and/or collapsible sections are copied to the clipboard without those elements.</p>
+</li>
+<li><p>Fixed the code contracts templates so that the inherited property member IDs in reference
+links are rendered correctly.</p>
+</li>
+<li><p>Removed an extraneous comma in the VS2013 <em>branding-Website.js</em> file
+which was causing problems in Internet Explorer (reported by baerbradford).</p>
+</li>
+<li><p>Merged a few style changes into the VS2013 website style sheet from Sam Harwell related to
+the resize/drag divider.</p>
+</li>
+<li><p>Added support for including conceptual links in <code>overloads</code> elements.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2014.11.22.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

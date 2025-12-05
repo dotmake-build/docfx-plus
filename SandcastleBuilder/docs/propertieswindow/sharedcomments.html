@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sharing Project Summary and Namespace Comments </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sharing Project Summary and Namespace Comments ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/sharedcomments.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sharing-project-summary-and-namespace-comments">Sharing Project Summary and Namespace Comments</h1>
+
+<p>If you are documenting multiple, related assemblies but wish to use a separate help file builder
+project for each assembly, you may want to share project summary and namespace comments between each of the
+projects and specify a common set of namespaces to exclude from the build.  Rather than managing this information
+in each individual project, you can create a standalone XML comments file to contain the information.</p>
+<p>Start by creating an XML comments file like the following and give it a unique name that will not
+conflict with any other XML comments file in the related projects.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;doc&gt;
+  &lt;assembly&gt;
+    &lt;name&gt;_SharedItems_&lt;/name&gt;
+  &lt;/assembly&gt;
+  &lt;members&gt;
+    &lt;member name=&quot;R:Project_CustomControlsHelp&quot;&gt;
+      &lt;summary&gt;
+        Shared project summary comments go in here.
+      &lt;/summary&gt;
+    &lt;/member&gt;
+    &lt;member name=&quot;N:&quot;&gt;
+      &lt;exclude /&gt;
+      &lt;summary&gt;
+        Exclude the global namespace from all projects.
+      &lt;/summary&gt;
+    &lt;/member&gt;
+    &lt;member name=&quot;N:CustomControls.Internal&quot;&gt;
+      &lt;exclude /&gt;
+    &lt;/member&gt;
+    &lt;member name=&quot;N:CustomControls.Design&quot;&gt;
+      &lt;summary&gt;
+        Common namespace summary info for the CustomControls.Design
+        namespace go here.
+      &lt;/summary&gt;
+    &lt;/member&gt;
+  &lt;/members&gt;
+&lt;/doc&gt;
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The project summary comments will be placed in the member with the ID starting with
+&quot; <code>R:Project_</code> &quot;.  The ID must be suffixed with the value from your project's <code>Html Help Name</code> property.  Replace any spaces in the value with underscores.  This is
+required so that the root namespace container has a unique name that will not cause any conflicts when building
+MS Help Viewer output.</p>
+</div>
+<p>Next, do one or more of the following:</p>
+<ul>
+<li><p>To specify shared project summary comments, add them to the <code>&lt;summary&gt;</code>
+tag in the <strong>R:Project_[HtmlHelpName]</strong> node.  As noted above, substitute the value of your
+project's <code>Html Help Name</code> property in the ID.  Any project summary comments in the help file
+projects will be appended to these comments.  If you do not have any shared project summary notes, you may remove
+this node from the file.</p>
+</li>
+<li><p>To exclude a namespace from all shared projects, add a <code>&lt;member&gt;</code>
+node, set it's <code>name</code> attribute to the namespace name prefixed with &quot; <code>N:</code> &quot;,
+and place an <code>&lt;exclude /&gt;</code> tag in it.  Any other tags are optional.  The example
+above would exclude the unnamed global namespace and the <code>CustomControls.Internal</code>
+namespace from all projects.</p>
+</li>
+<li><p>To specify shared namespace summary comments, add a <code>&lt;member&gt;</code> node,
+set it's <code>name</code> attribute to the namespace name prefixed with &quot; <code>N:</code> &quot;,
+and add the comments to the <code>&lt;summary&gt;</code> tag in the node.  Any namespace summary
+comments in the help file projects will be appended to these comments.</p>
+</li>
+<li><p>To specify shared namespace group summary comments, add a <code>&lt;member&gt;</code>
+node, set it's <code>name</code> attribute to the namespace group name prefixed with
+&quot; <code>G:</code> &quot;, and add the comments to the <code>&lt;summary&gt;</code> tag in the
+node.  Any namespace group summary comments in the help file projects will be appended to these comments.</p>
+</li>
+</ul>
+<p>Once you have created the file, open each project that needs to use it, right click on the <strong>Documentation Sources</strong> node in the Project Explorer window, select the option to add a documentation
+source, and select the shared comments file.  You may now build your project and the shared comments will be
+included in it.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="namespacesummaries.html">Summaries Category Properties</a></li>
+<li><a href="namespacedoc.html">Using NamespaceDoc and NamespaceGroupDoc Classes</a></li>
+<li><a href="propertieswindow.html">Project Properties Window</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/sharedcomments.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

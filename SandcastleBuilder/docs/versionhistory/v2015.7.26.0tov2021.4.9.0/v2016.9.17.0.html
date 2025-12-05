@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2016.9.17.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2016.9.17.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2015.7.26.0tov2021.4.9.0/v2016.9.17.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-20169170">Version 2016.9.17.0</h1>
+
+<h2 id="BreakingChange"> Potential Breaking Change</h2>
+<p>The <em>InstallMSHC.bat</em> and <em>RemoveMSHC.bat</em> example scripts
+used to install and remove MS Help Viewer content have been modified to make them more generic with regard to
+the version parameter.  It is now a simple version number (1.0, 2.0, 2.1, etc.).  If you have been using the
+generated files as-is, you may need to update any installers that use them to handle the new version parameter
+format.</p>
+<h2 id="SandcastleTools"> Sandcastle Tools</h2>
+<ul>
+<li><p>Fixed <strong>MRefBuilder</strong> so that it resolves a missing <em>mscorlib</em>
+with a major version number of 255 to <code>System.Runtime</code> which is common for frameworks like
+.NETCore that redirect all of their system types there.</p>
+</li>
+<li><p>Added another condition to <strong>MRefBuilder</strong> 's <code>ParameterMatch</code> method to try and match odd intrinsic/generic element type pairings.</p>
+</li>
+<li><p>Added support to <strong>MRefBuilder</strong> for generating source code context
+information in the reflection information files.  If enabled by specifying a base path to the source code in the
+new <code>sourceContext</code> element in the <em>MRefBuilder.config</em> configuration
+file, <strong>MRefBuilder</strong> will query the program database (PDB) file related to each
+documented assembly to obtain source code file and starting line number information for the API types and
+members.  If available, the source code file and starting line number will be written out in a new <code>sourceContext</code> element.</p>
+</li>
+<li><p>Fixed the <strong>GenerateInheritedDocs</strong> tool so that it handles <code>inheritdoc</code> tags correctly that are nested within elements with a <code>name</code> or <code>cref</code> attribute such as a <code>param</code>
+element.</p>
+</li>
+<li><p>Demoted the circular reference error in the <strong>GenerateInheritedDocs</strong>
+tool to a warning (<a href="../../errorsandwarnings/inheriteddocs/gid0009.html">GID0009</a>).  This allows for
+inheriting comments from another element within the same member comments (i.e. a <code>para</code> or <code>span</code> from the <code>summary</code> in the <code>remarks</code>
+element).</p>
+</li>
+<li><p>Updated the Reflection Data Manager tool to use the latest version of MSBuild to build the
+reflection data rather than specifically looking for version 12.0 which may not be installed.</p>
+</li>
+</ul>
+<h2 id="SHFB"> Sandcastle Help File Builder</h2>
+<ul>
+<li><p>Fixed up property name case sensitivity issues and issues with environment variables that match
+property names when loading project properties.</p>
+</li>
+<li><p>Fixed the Multi-Format Output Component so that it recreates the document for each format from
+the XML rather than cloning it to workaround an occasional issue with the clone that results in an &quot;invalid
+parent&quot; error.</p>
+</li>
+<li><p>Added support for the .NETCore and .NETPortable Frameworks distributed as NuGet packages
+effective with Visual Studio 2015 Update 3.  These are denoted with a &quot;(NuGet)&quot; suffix in their title.  Use one
+of these frameworks if the framework assembly references are added via a NuGet package in your documented
+assembly's project.</p>
+</li>
+<li><p>Added support for the .NET Framework 4.6.2.</p>
+</li>
+<li><p>Added code to bypass the assembly binding redirection plug-in execution and issue a warning if
+the <em>MRefBuilder.config</em> file is not found (i.e. the Additional Content Only plug-in is
+enabled as well).</p>
+</li>
+<li><p>Added an application manifest with DPI awareness settings to <strong>SandcastleBuilderGUI</strong>
+and <strong>SHFBProjectLauncher</strong> to prevent scaling issues and blurry fonts on Windows 10.</p>
+</li>
+<li><p>Adjusted all forms and controls so that they look decent with scaling up to 150% at a
+resolution of 3840x2160 in both the standalone GUI and the Visual Studio package.</p>
+</li>
+<li><p>Added the <a href="../../propertieswindow/pathprops.html#SourceCodeBasePath">SourceCode Base Path</a> and <a href="../../propertieswindow/pathprops.html#WarnOnMissingSourceContext">WarnOn Missing Source Context</a> project properties to support generation of source code context information in
+the reflection information files.  These are used in conjunction with presentation styles that support links to
+online source code.  See the property help for known limitations and possible issues.</p>
+</li>
+<li><p>Added support for installing MS Help Viewer output in Help Viewer 2.3.</p>
+</li>
+<li><p>Added the <a href="../../plugins/documentedentitiesonlyplugin.html">Documented Entities Only Plug-In</a>.  This can be used as a
+way of generating a help file using only the types and members with XML comments without having to manually
+manage an API filter within the help file builder project.</p>
+</li>
+</ul>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<ul>
+<li><p>Fixed all presentation styles so that they generate the root group topic correctly when
+namespace grouping is used without a root namespace container.</p>
+</li>
+<li><p>Updated all presentation styles to support the <code>baseSoureCodeUrl</code>
+transformation argument property and the VS2010 and VS2013 presentation styles to support the <code>requestExampleUrl</code> transformation argument property.  These enable generation of
+links to the online source code and requesting an example for an API member respectively.</p>
+</li>
+<li><p>Added up-to-date, cross-browser compatible clipboard script for website builds of the VS2010
+and VS2013 presentation styles.  The <strong>Copy</strong> link on syntax sections and code examples is now visible and
+enabled for all browsers.</p>
+</li>
+<li><p>Updated the Open XML build task so that it includes the <code>align</code> and <code>posOffset</code> elements as parent elements that can contain text that does not need to be
+wrapped in a run element.</p>
+</li>
+<li><p>Renamed the <em>[Content_Types].xml</em> and <em>rels.rels</em>
+document part files in the Open XML presentation style to work around issues with Open Packaging Conventions
+filename conflicts in the NuGet distribution.  The Open XML build task has been updated to fix the names of those
+two document part files so that they are correct when the Open XML document is generated.</p>
+</li>
+<li><p>Fixed the VS2010 and V2013 presentation styles so that member list tables each get a unique ID.</p>
+</li>
+<li><p>Thanks to Sue Maurizio for supplying Italian translations for the VS 2013 presentation style
+content item files.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2015.7.26.0tov2021.4.9.0/v2016.9.17.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

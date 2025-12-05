@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Code Block Component </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Code Block Component ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/compconfig/codeblockcomponent.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="code-block-component">Code Block Component</h1>
+
+<h2 id="Benefits"> Usage Benefits</h2>
+<p>The Code Block Component is used to extend the functionality of the XML comments <code>&lt;code&gt;</code> tag.  It provides the following features:</p>
+<ul>
+<li><p>Excess leading whitespace is stripped from the <code>&lt;code&gt;</code> blocks to
+left-align them correctly.</p>
+</li>
+<li><p>It adds support for optional line numbering.</p>
+</li>
+<li><p>It adds support for optional collapsible regions for code in <code>#region</code> and <code>#if/#else/#endif</code> blocks with support for nested collapsible regions.  The C++ and VB.NET
+equivalents are supported too.</p>
+</li>
+<li><p>A default title can be added based on the language that the code represents.</p>
+</li>
+<li><p>A &quot;Copy&quot; link appears to the right on the title line that allows you to copy the code sample to the
+clipboard.  The code is copied as plain text without the highlighting and line numbers if used.</p>
+</li>
+<li><p>It adds support for reading in an external source file or a defined region of an external source
+file so that you can keep code samples in a buildable project to test them for correctness and to do away with
+managing the code samples in the XML comments or include files.</p>
+</li>
+<li><p>Support is provided for nested code tags which allows you to merge code from two or more code
+snippets into a single code example.</p>
+</li>
+<li><p>Syntax highlighting of code blocks in <code>&lt;code&gt;</code> tags.  Languages
+supported include C#, VB.NET, JScript.NET, C++, J#, C, JavaScript, VBScript, XAML, XML, HTML, SQL script, Python,
+PowerShell script, and batch file script.  An external configuration file is used so that it is possible to
+extend the colorizer to support other languages. The style sheet is also replaceable. All of the features noted
+above are available whether or not you enable the colorizing feature.  The code colorizer is a modified and
+extended version of the one written by Jonathan de Halleux in the Code Project article <a href="http://www.codeproject.com/Articles/3767/Multiple-Language-Syntax-Highlighting-Part-2-C-Con">Multiple Language Syntax Highlighting, Part 2: C# Control</a>.  The modified code is available with the source download for
+the help file builder and the build components.</p>
+</li>
+</ul>
+<h2 id="Attributes"> Custom Attributes</h2>
+<p>The following attributes can be added to the <code>&lt;code&gt;</code> tag in XML comments.
+They can be used in any combination with each other with the exception of <code>region</code> and <code>removeRegionMarkers</code> which, if used, must be paired with a <code>source</code>
+attribute.  All attribute names and values are case-sensitive.</p>
+<ul>
+<li><p>The <code>source</code>, <code>region</code>, and <code>removeRegionMarkers</code> Attributes</p>
+<ul>
+<li>This feature is based on an idea suggested by Morten Nielsen in the MSDN Documentation Forum.  The <code>source</code> attribute is used to specify that the code block's content should be read from an
+external source code file.  If used alone, the entire file is used.  The optional <code>region</code>
+attribute can be used to limit the code to a specific section of the file delimited with the named <code>#region</code> (<code>#pragma region</code> for C++).  The <code>#region</code> and <code>#endregion</code> tags are excluded from the extracted
+section of code.</li>
+</ul>
+</li>
+</ul>
+<p>This is not to be confused with the XML comments <code>&lt;include&gt;</code> tag. This
+extension is intended to extract code from actual source files.  This allows you to manage your code examples in
+buildable projects to test them for correctness as a project is developed and altered in the future.  It also
+saves you from managing the code in the XML comments and does not require that the code be HTML encoded as it is
+when written in the comments. The code will be HTML encoded when it is read in for processing.  When used, it is
+assumed that there is no code within the comment tag itself and thus it will always be self-closing.  Here are
+some examples:</p>
+<p>Retrieve all code from an external file and use the VB.NET syntax to color it.  The path is
+relative to the <code>basePath</code> configuration element.  Typically, the base path is the path of
+the documentation project file.  So, if your documentation project is in a subfolder and the code is in the
+parent folder in an <em>Examples</em> subfolder, the path would look like the following example.</p>
+<pre><code class="lang-xml">&lt;code source=&quot;..\Examples\WholeDemo.vb&quot; language=&quot;vbnet&quot; /&gt;
+</code></pre>
+<p>Retrieve a specific <code>#region</code> from an external file.</p>
+<pre><code class="lang-xml">&lt;code source=&quot;..\Examples\SeveralExamples.vb&quot;
+    region=&quot;Example 1&quot; language=&quot;vbnet&quot; title=&quot;Example #1&quot; /&gt;
+</code></pre>
+<p>Note that VB.NET does not allow <code>#Region</code> and <code>#End Region</code>
+within a method body.  Other file types such as XML, XAML, and SQL script do not understand <code>#region</code>
+statements.  However, if you want to extract a region from a VB.NET method body or a section of another file
+type, you can add the region statements in comments to workaround the limitation.  The component will still find
+it and extract the region.</p>
+<pre><code class="lang-none">--------------------------------------------------------
+VB.NET Example
+--------------------------------------------------------
+Public Sub SomeMethod()
+    ' #Region &quot;VB.NET Snippet&quot;
+    Dim x As Integer
+
+    For x = 1 To 10
+        Console.WriteLine(x)
+    Next x
+    ' #End Region
+End Sub
+
+--------------------------------------------------------
+XAML Example
+--------------------------------------------------------
+&lt;Style x:Key=&quot;SpecialButton&quot; TargetType=&quot;{x:Type Button}&quot;&gt;
+  &lt;Style.Triggers&gt;
+    &lt;!-- #region XAML Snippet --&gt;
+    &lt;Trigger Property=&quot;Button.IsMouseOver&quot; Value=&quot;true&quot;&gt;
+      &lt;Setter Property = &quot;Background&quot; Value=&quot;Red&quot;/&gt;
+    &lt;/Trigger&gt;
+    &lt;!-- #endregion --&gt;
+  &lt;/Style.Triggers&gt;
+&lt;/Style&gt;
+
+--------------------------------------------------------
+SQL Example
+--------------------------------------------------------
+-- #region SQL snippet
+Select *
+From   tblName
+Where  LastName = 'SMITH'
+-- #endregion
+
+/* #region Another snippet */
+Select *
+From   tblName
+Where  FirstName = 'JOHN'
+/* #endregion */
+</code></pre>
+<p>The <code>removeRegionMarkers</code> attribute can be used to specify whether or not
+region markers within the imported code file or region are removed.  If not specified or set to false, any nested
+region markers are left in the imported code block.  If specified and set to true, nested region markers are
+removed from the imported code.  This is useful for removing nested region markers from larger code samples that
+contain smaller snippets of code used in other examples.  The default setting (false) can be overridden via the
+component configuration.</p>
+<ul>
+<li><p>The <code>lang</code> or <code>language</code> Attribute</p>
+<ul>
+<li>These attributes allows you to override the default language specified in the component's
+configuration.  Either one will have the same effect.  Any <code>&lt;code&gt;</code> tag without a <code>lang</code> / <code>language</code> attribute will use the value specified in the
+component's configuration.  For example, if most or all of your code examples are in C#, you can set the default
+language in the configuration to &quot;cs&quot;.  If you have an example in VB.NET, you can add <code>language=&quot;vbnet&quot;</code>
+to colorize that example as VB.NET code.  The possible language values in the supplied configuration file are as
+follows:</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Language ID (case-insensitive)</th>
+<th>Language Syntax Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cs, C#, CSharp</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>cpp, cpp#, C++, CPlusPlus</td>
+<td>C++</td>
+</tr>
+<tr>
+<td>c</td>
+<td>C</td>
+</tr>
+<tr>
+<td>fs, f#, FSharp, fscript</td>
+<td>F#</td>
+</tr>
+<tr>
+<td>EcmaScript, js, JavaScript</td>
+<td>JavaScript</td>
+</tr>
+<tr>
+<td>jscript, jscript#, jscriptnet, JScript.NET</td>
+<td>JScript.NET</td>
+</tr>
+<tr>
+<td>VB, VB#, vbnet, VB.NET</td>
+<td>VB/VB.NET</td>
+</tr>
+<tr>
+<td>vbs, vbscript</td>
+<td>VBScript</td>
+</tr>
+<tr>
+<td>htm, html, xml, xsl</td>
+<td>XML</td>
+</tr>
+<tr>
+<td>XAML</td>
+<td>XAML</td>
+</tr>
+<tr>
+<td>jsharp, J#</td>
+<td>J#</td>
+</tr>
+<tr>
+<td>sql, sql server, sqlserver</td>
+<td>SQL script</td>
+</tr>
+<tr>
+<td>py, python</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>pshell, powershell, ps1</td>
+<td>PowerShell script</td>
+</tr>
+<tr>
+<td>bat, batch</td>
+<td>batch file script</td>
+</tr>
+<tr>
+<td>Anything else (i.e. &quot;none&quot;)</td>
+<td>No highlighting</td>
+</tr>
+</tbody>
+</table>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The full name &quot; <code>language</code> &quot; should be used for the attribute name rather
+than the abbreviated form &quot; <code>lang</code> &quot;.  The reason is that the XSL transformations used by
+the presentation styles expect the full name when they search for the language attribute.  The abbreviated form
+is a legacy syntax that should be avoided.  The code block component will auto-correct the attribute name so that
+it is not missed by the transformations.</p>
+<p>It is recommended that you always specify a language attribute.</p>
+</div>
+<ul>
+<li><p>The <code>numberLines</code> Attribute</p>
+<ul>
+<li>This attribute allows you to override the default setting in the component's configuration.  For
+example, if the default setting is false to turn off line numbering, you can add <code>numberLines=&quot;true&quot;</code>
+to enable numbering on a specific code example.</li>
+</ul>
+</li>
+<li><p>The <code>outlining</code> Attribute</p>
+<ul>
+<li>This attribute allows you to override the default setting in the component's configuration.  For
+example, if the default setting is false to not add collapsible regions, you can add <code>outlining=&quot;true&quot;</code>
+to enable collapsible regions on a specific code example.  Note that if a code block contains no <code>#region</code> or <code>#if</code> blocks, outlining is automatically disabled and
+it will not reserve space in the margin for the markers.</li>
+</ul>
+</li>
+<li><p>The <code>keepSeeTags</code> Attribute</p>
+<ul>
+<li>When set to true, this attribute allows you to tell the code colorizer to preserve <code>&lt;see&gt;</code> tags within the code so that they can be rendered as clickable links to the
+related topic.  If set to false, the default, any <code>&lt;see&gt;</code> tags within the code will
+be colorized and passed through as literal text.  When using this option, you may find that you need to specify
+inner text for the <code>&lt;see&gt;</code> tag so that the link text appears as you want it.  If the
+self-closing version of the tag is used, Sandcastle will generally set the link text to the name of the item plus
+any parameters if it is a generic type or takes parameters which may not be appropriate within a code sample.</li>
+</ul>
+</li>
+<li><p>The <code>tabSize</code> Attribute</p>
+<ul>
+<li>When the code blocks are formatted, tab characters are replaced with a set number of spaces to
+preserve formatting.  This attribute can be used to override the default setting for a language which is
+specified in the syntax file.  For example, if the default tab size for a language is four, adding <code>tabSize=&quot;8&quot;</code> will force it to use eight spaces instead.  If set to zero, the syntax file
+setting is used.  This attribute sets the default tab size for unknown languages when used in the component's
+configuration.</li>
+</ul>
+</li>
+<li><p>The <code>title</code> Attribute</p>
+<ul>
+<li>This attribute allows you to add a title that appears before the code block.  An example of its use
+would be to label the example with a description.  If omitted and the <code>defaultTitle</code>
+attribute on the code block component's <code>colorizer</code> element is true, the language name
+will appear for the title.  If it is set to false, no title will appear.  If using default titles and you do not
+want a title on a particular block, set the <code>title</code> attribute to a single space (&quot; &quot;).</li>
+</ul>
+</li>
+</ul>
+<h2 id="SpecialChars"> Literal XML And Other Special Characters</h2>
+<p>NDoc had an additional <code>escaped</code> attribute that let you enter literal XML in the
+code block without having to HTML encode things like the angle brackets.  An attempt was made to support that
+attribute in the code block component.  However, the XML document as created by Sandcastle and passed to the
+component has all inter-element whitespace and line feeds stripped from it.  As such, it loses all formatting in
+the escaped XML and renders it on a single, unbroken line.  This made the <code>escaped</code>
+attribute useless and it was removed. If you want to include XML or other unencoded information you can do one
+of the following:</p>
+<ul>
+<li><p>Utilize the <code>source</code> attribute to read it in from an external file instead.</p>
+</li>
+<li><p>Use a <code>CDATA</code> section to encapsulate the code so that special characters and
+formatting are preserved.  For example:</p>
+<pre><code class="lang-cs">/// &lt;example&gt;
+/// &lt;code language=&quot;xml&quot; title=&quot;Example Configuration&quot;&gt;
+/// &lt;![CDATA[
+/// &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+/// &lt;config&gt;
+///   &lt;path&gt;C:\Test\&lt;/path&gt;
+///   &lt;filespec mask=&quot;*.txt&quot; /&gt;
+/// &lt;/config&gt;]]&gt;
+/// &lt;/code&gt;
+/// &lt;/example&gt;
+</code></pre>
+<p>Be sure to start the example code on a new line after the opening &quot; <code>&lt;![CDATA[</code> &quot;
+tag as shown so that the leading whitespace can be normalized correctly.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The inclusion of a <code>CDATA</code> tag anywhere in the code comments can cause
+Visual Studio 2005 to lock up when you type an angle bracket within a comment block.  If you are affected by this
+issue, there is a hot fix available at: <a href="https://connect.microsoft.com/VisualStudio/Downloads/DownloadDetails.aspx?DownloadID=9646">https://connect.microsoft.com/VisualStudio/Downloads/DownloadDetails.aspx?DownloadID=9646</a>.</p>
+</div>
+</li>
+</ul>
+<p>Using either of the methods above preserves the formatting and has the same effect as the <code>escaped</code> attribute in NDoc.</p>
+<h2 id="Nesting"> Nested Code Tags</h2>
+<p>You can import multiple code snippets into one common colorized code block by nesting <code>code</code>
+tags within a parent <code>code</code> tag. On nested <code>code</code> tags, only the <code>source</code> and <code>region</code> attributes will be utilized.  All other
+attributes that control colorization of the merged code block will be retrieved from the parent <code>code</code> tag.</p>
+<pre><code class="lang-xml">&lt;code title=&quot;Nested code tag example&quot; language=&quot;VB.NET&quot;&gt;
+    &lt;code source=&quot;..\Class1.vb&quot; region=&quot;Snippet #1&quot; /&gt;
+    &lt;code source=&quot;..\Class1.vb&quot; region=&quot;Snippet #2&quot; /&gt;
+&lt;/code&gt;
+</code></pre>
+<p>Literal code can also be mixed in between the nested <code>code</code> tags. However, there
+are some limitations.  All tags and literal code should be flush left within the parent <code>code</code>
+tag or you will end up with additional spaces before the first line of each nested <code>code</code>
+tag. There may still be additional spaces before the literal code.  This is caused by the indentation included
+when the XML comments file is created by the compiler.  If this is a problem, move the example to an include file
+and remove the excess leading whitespace.  Use an <code>include</code> tag to bring it into the XML
+comments.  When done this way, the compiler preserves the spacing when writing the example out to the XML
+comments file.</p>
+<pre><code class="lang-xml">&lt;code title=&quot;Nested code tag example&quot; language=&quot;VB.NET&quot;&gt;
+&lt;code source=&quot;..\Class1.vb&quot; region=&quot;Snippet #1&quot; /&gt;
+
+' ... Some stuff happens here ...
+
+&lt;code source=&quot;..\Class1.vb&quot; region=&quot;Snippet #2&quot; /&gt;
+&lt;/code&gt;
+</code></pre>
+<h2 id="Configuration"> Example Configuration</h2>
+<p>The following is the default configuration for the code block component. It should be inserted into the
+configuration file just ahead of the <code>TransformComponent</code>.  All attribute names and values
+are case-sensitive.</p>
+<pre><code class="lang-xml">&lt;!-- Code block component configuration.  This must appear before the
+     TransformComponent. --&gt;
+&lt;component id=&quot;Code Block Component&quot;&gt;
+    &lt;!-- Base path for relative filenames in source attributes
+         (optional) --&gt;
+    &lt;basePath value=&quot;{@HtmlEncProjectFolder}&quot; /&gt;
+
+    &lt;!-- Base output paths for the files (required).  These should match
+         the parent folder of the output path of the HTML files (see each of
+         the SaveComponent instances below). --&gt;
+    &lt;outputPaths&gt;
+        {@HelpFormatOutputPaths}
+    &lt;/outputPaths&gt;
+
+    &lt;!-- Allow missing source files (Optional).  If omitted,
+         it will generate errors if referenced source files
+         are missing. --&gt;
+    &lt;allowMissingSource value=&quot;false&quot; /&gt;
+
+    &lt;!-- Remove region markers from imported code blocks.  If omitted,
+         region markers in imported code blocks are left alone. --&gt;
+    &lt;removeRegionMarkers value=&quot;false&quot; /&gt;
+
+    &lt;!-- Code colorizer options (required).
+         Attributes:
+           Language syntax configuration file (required)
+           XSLT style sheet file (required)
+           CSS style sheet file (required)
+           Script file (required)
+           Disabled (optional, leading whitespace normalization only)
+           Default language (optional)
+           Enable line numbering (optional)
+           Enable outlining (optional)
+           Keep XML comment &quot;see&quot; tags within the code (optional)
+           Tab size override (optional, 0 = Use syntax file setting)
+           Use language name as default title (optional) --&gt;
+    &lt;colorizer syntaxFile=&quot;{@SHFBFolder}Colorizer\highlight.xml&quot;
+      styleFile=&quot;{@SHFBFolder}Colorizer\highlight.xsl&quot;
+      stylesheet=&quot;{@SHFBFolder}Colorizer\highlight.css&quot;
+      scriptFile=&quot;{@SHFBFolder}Colorizer\highlight.js&quot;
+      disabled=&quot;{@DisableCodeBlockComponent}&quot; language=&quot;cs&quot; numberLines=&quot;false&quot;
+      outlining=&quot;false&quot; keepSeeTags=&quot;false&quot; tabSize=&quot;0&quot; defaultTitle=&quot;true&quot; /&gt;
+&lt;/component&gt;
+</code></pre>
+<p>The example given above is taken from the Sandcastle Help File Builder's configuration file.  When used
+with it, you may specify the replacement tag <code>{@SHFBFolder}</code> to insert the help file
+builder's folder in the file path and the <code>{@ProjectFolder}</code> replacement tag to specify
+the current project's folder.  These are replaced at build time with the appropriate values.  These replacement
+tags can also be specified in the configuration dialog when configuring project-specific configurations for the
+component from within the help file builder.  If using the component in your own build scripts, replace the tags
+with an actual absolute or relative path.</p>
+<p>The <code>basePath</code> element is optional.  If specified, it defines the base path to
+use for relative paths in the <code>source</code> attributes of code blocks.  If omitted or left
+blank, the current folder at build time is assumed to be the base path.</p>
+<p>The <code>outputPaths</code> element is required.  It defines the output paths to use for
+each help file format in the build.  These will be used when copying the colorizer script and style sheet files.
+The help file builder will fill these in automatically.  If using this with your own build scripts, specify
+one <code>path</code> element for each help file output format being generated with a <code>value</code> attribute set to the relative path of the format's output folder (i.e. <em>Output\HtmlHelp1</em>).</p>
+<p>The <code>allowMissingSource</code> element is optional.  If omitted, or if specified and
+set to false, any code block that references a source code file or region within a file will generate an error
+and stop the build if the source code file or the region in it cannot be found.  If specified and set to true,
+only warnings will be generated and the build will be allowed to run to completion.  The code blocks with the
+missing information will contain an error message referring you to the log file.  This option can be overridden
+on a case by case basis by adding an <code>allowMissingSource</code> attribute to individual <code>code</code> elements in the XML comments.  When set to true on the individual elements, it
+allows them to be missing.  If omitted or set to false, the global setting from this option is inherited.</p>
+<p>The <code>removeRegionMarkers</code> element is option.  If omitted, or if specified and
+set to false, any region markers in imported code blocks are left in the imported code.  If specified and set to
+true, any region markers nested within the imported code file or region are removed.  This is useful for getting
+rid of region markers in code that is used both for a larger example and parts of it that are used in smaller
+snippet examples.  This setting can be overridden by specifying the attribute on individual <code>code</code> elements.</p>
+<p>The <code>colorizer</code> element is required along with the <code>syntaxFile</code>, <code>styleFile</code>, <code>stylesheet</code>, and <code>scriptFile</code>
+attributes which define the default syntax definition file, the transformation file used by the colorizer,
+the style sheet to use for the colorized code, and the colorized code script file.  The supplied <em>highlight.xml</em> file contains the syntax definitions for the languages supported by the
+colorizer.  The supplied <em>highlight.xsl</em> file defines the XSLT transformation used to convert
+the parsed code block into the colorized HTML.  The supplied <em>highlight.css</em> and <em>highlight.js</em> files contain the default styles and script used for the colorized code.  All
+other attributes are optional.  If specified, they define the defaults for code blocks that do not specify the
+matching attribute.  The optional <code>defaultTitle</code> attribute specifies whether or not to use
+the language name as the title if a specific title is not supplied.  The optional <code>disabled</code>
+attribute will turn off code colorization if set to true.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="compconfig.html">BuildAssembler Components</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/compconfig/codeblockcomponent.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 1.9.3.1 (Alpha 1) </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 1.9.3.1 (Alpha 1) ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.9.3.1.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-1931-alpha-1">Version 1.9.3.1 (Alpha 1)</h1>
+
+<h2 id="VSPackage"> Visual Studio 2010 Extension Package</h2>
+<p>This version contains the first alpha release of the Visual Studio 2010 extension package that
+allows you to create, manage, and build help file builder projects completely from within Visual Studio.
+In this first release, most of the common project management features have been implemented but support
+for several of the custom file type editors and tool windows is still not done (editors for content layout
+files, token files, resource item files, and site map files, the entity references tool window, preview topic
+tool window, and creation of new projects from other file formats).  These features will be added in
+future releases.</p>
+<p>While the extension package is under development, the standalone GUI and core build engine will
+retain the current version number of the latest production release that does not contain the extension package
+(v1.9.3.0 as of this release).  This will ensure that third-party plug-ins and other components will continue
+to work with both the release build and the alpha builds without the third-party component vendors having to
+provide versions specific to the production and alpha release versions.  Apart from a few minor changes and
+internal refactoring, the standalone GUI and core build engine are identical in functionality to the current
+release build.</p>
+<p>Project files created with either release are compatible with one another.  In the event of
+issues with the alpha release, you can fall back to the latest production release without any issues.
+See the <a href="../../visualstudio/visualstudiopackage.html">Visual Studio Integration Package</a> for more information.</p>
+<h2 id="BreakingChanges"> Potential Breaking Changes</h2>
+<p>Neither of these changes should cause any side effects but they are something to be aware of.</p>
+<ul>
+<li><p>The <em>Microsoft.Common.targets</em> file is now imported in the <em>SandcastleHelpFileBuilder.targets</em> file.  This is required as the Managed Package Framework
+used in the Visual Studio extension package expects access to some of the common targets.</p>
+</li>
+<li><p>In order to prevent the common targets from setting the <code>OutDir</code> property
+to the help file builder's <code>OutputPath</code> property value, a default <code>OutDir</code>
+value is defined in the <em>SandcastleHelpFileBuilder.targets</em> file (*.*).  SHFB
+will ignore this default value if it sees it.  An override value specified on the command line will still take
+precedence.</p>
+</li>
+</ul>
+<h2 id="OtherChanges"> Other Changes in This Release</h2>
+<ul>
+<li><p>Fixed a bug in the <code>BuildHelp</code> task that was causing some command line
+property overrides to be missed when building a project from the command line.  This fix is also available
+in the refresh of the v1.9.3.0 release.</p>
+</li>
+<li><p>Fixed a bug that caused the reflection file to be renamed incorrectly if it contained
+a UNC path with <em>.org</em> as part of one of the path elements.  This fix is also available
+in the refresh of the v1.9.3.0 release.</p>
+</li>
+<li><p>Images added to a project now use a default <code>BuildAction</code> of <code>Image</code> rather than <code>Content</code>.  Since the additional content
+model has been deprecated in favor of MAML, this is the more appropriate choice.  This change is also
+available in the refresh of the v1.9.3.0 release.</p>
+</li>
+<li><p>Added a simple file system watcher that watches for changed files and prompts to reload any that
+are open in the standalone GUI when it regains control.  It will not do anything more than watch for changed files.
+It will not handle deletes, moves, renames, etc.  This was implemented to facilitate editing files in the standalone
+GUI with the project open in Visual Studio until the extension package contains all of the required file editors.
+This change is also available in the refresh of the v1.9.3.0 release.</p>
+</li>
+<li><p>The <code>BuildHelp</code> and <code>CleanHelp</code> MSBuild tasks now log
+all messages with an importance of <code>High</code> so that they appear in the Visual Studio output
+window  when the logging options are set to <code>Minimal</code>.  Note that this does not apply when
+built from within a pre-build or post-build task.  In those cases, the output is only shown after the commands
+complete due to a change in the way Visual Studio 2010  handles project build task output.</p>
+</li>
+<li><p>The <code>BuildHelp</code> MSBuild task is now cancelable.  Note that if canceled while <strong>BuildAssembler</strong> is initializing that it may take 10-20 seconds for MSBuild to stop.</p>
+</li>
+<li><p>Made various internal changes to the build engine to allow it to work when called from within
+Visual Studio.</p>
+</li>
+<li><p>Moved the <code>IndentHtml</code> property to the <code>Build</code> category
+since it is a better fit there.</p>
+</li>
+<li><p>Renamed the <code>Comments</code> property category <code>Summaries</code>
+to better match its purpose.</p>
+</li>
+<li><p>Added the <strong>SHFB Project Launcher</strong> tool that lets you choose how help file
+builder projects are opened.  This is the default application associated with the <em>.shfbproj</em>
+file extension now.  If you have the extension package installed and open a help file builder project from Windows
+Explorer, it will ask you for your preferred method of opening the project.  You can choose to always use the
+selected application or let it prompt you each time a project is opened that way.  You can run the application from
+the help file builder's Start menu folder to change your default preference.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="v1.8tov1.9.8.0.html">Versions 1.8.0.0 through 1.9.8.0</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.9.3.1.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

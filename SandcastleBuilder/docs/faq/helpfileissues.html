@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Help File Issues </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Help File Issues ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/faq/helpfileissues.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="help-file-issues">Help File Issues</h1>
+
+<p>This topic covers common issues related to the viewing help files and their content.</p>
+<h2 id="Help1NotLoading1"> Why doesn't my compiled help file load?</h2>
+<p>For an MS Help Viewer file (.mshc), you need to integrate it into an existing collection.  See the <a href="../propertieswindow/deploymshc.html">Deploying an MS Help Viewer File</a> topic for details.  An alternate MSHC file viewer can
+also be specified in the help file builder user preferences.</p>
+<p>For problems opening and viewing Open XML documents, see the <a href="../openxmlformat.html">Open XML Document Help File Format</a> topic for troubleshooting information.</p>
+<p>For HTML Help 1 files (.chm), if the path to the help file contains &quot;#&quot;, the help file may fail to
+load.  The apparent reason for this is that the help viewer considers the &quot;#&quot; to be an unsafe character and it
+must be encoded for it to use it. Rename the folder to remove the &quot;#&quot; to get the file to load.</p>
+<p>Another cause for the pages not displaying is a security patch that prevents the help viewer from
+running from the intranet zone (i.e. a network share).  You can fix this problem by saving the following to a
+file and importing it into the registry.</p>
+<pre><code class="lang-none">Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\HTMLHelp\1.x\ItssRestrictions]
+&quot;MaxAllowedZone&quot;=dword:00000001
+</code></pre>
+<p>It may also be possible to unblock the file so that it can be viewed by right-clicking on it,
+selecting <strong>Properties</strong> and clicking the <strong>Unblock</strong> button on the <strong>General</strong> tab if it is
+there.</p>
+<h2 id="Help1NotLoading2"> Why do all of the help file topics display a &quot;Page not found&quot; or &quot;This program cannot display theweb page&quot; error?</h2>
+<p>See the answer to the <a href="#Help1NotLoading1">previous question</a>.</p>
+<h2 id="EmptyHelp"> Why doesn't my help file contain any/all of the classes from the assembly?</h2>
+<p>The most likely cause of an empty help file or one that does not contain all of your assembly's
+classes is that the missing classes are not declared public.  By default, when you add a class to a Visual Studio
+project, it does not add the <code>public</code> keyword to it.  As such, you must remember to edit
+the class to make it public if necessary.  Sandcastle does not document private and internal methods by default
+either.  If you really want to see them in the help file, set the <strong>Document Privates</strong> and/or <strong>Document Internals</strong> project properties to true.</p>
+<p>You should also check the project to be sure that it does not have an <strong>API Filter</strong> defined
+that is excluding the items in question.  An <code>&lt;exclude /&gt;</code> tag in the item's XML
+comments will also cause it to be removed from the documentation.</p>
+<p>Another possible cause of missing classes is compiling a help file project using the wrong
+framework version selection.  For example, if you compile a .NET 2.0 help project with the <strong>Framework Version</strong>
+project property set to a .NET 1.x version number, you may end up with lots of missing classes.  As such, check
+the property to be sure that it is set appropriately.</p>
+<h2 id="NoComments"> The help file builds successfully but I don't see my comments on the members.  Why not?</h2>
+<p>You either have not enabled the Visual Studio project option to produce an XML comments file for
+your assembly, it has a name different from that of the assembly and the help file builder did not see it when
+you added the assembly to the project, or the XML comments filename is not unique.  Check the <strong>DocumentationSources</strong> node in the Project Explorer window.  You should see the assembly name and the XML comments filename
+listed.  If you added a solution or project file as a documentation source, check the build log to see if it
+found the correct assembly and XML comments file.  See the <a href="../gettingstarted/projectsetup.html">Enabling and Using XML Comments</a>
+topic for information on enabling the XML comments file option in Visual Studio.</p>
+<p>Be sure that you selected the proper configuration and platform for the help file build.  You can
+check the build log to see if the XML comments file selected matches the expected configuration and platform.
+You may also need to rebuild your assembly to ensure that the XML comments file is up to date.</p>
+<p>Be sure to give each project's XML comments file a unique name as they are copied to a common
+location for the build.  Identically named files may overwrite each other and the documentation in the
+overwritten files will not appear in the help file.  If the comments file options are set correctly, check to be
+sure that the XML comments in your source files are preceded by a triple slash for C# code
+(<code>///</code>) or a triple quote for VB.NET (<code>'''</code>).</p>
+<h2 id="ShowMissing"> My help file contains lots of red &quot;missing documentation&quot; messages.  How do I get rid of them?</h2>
+<p>The project properties in the <a href="../propertieswindow/showmissingprops.html">MissingTags</a> category control which types of &quot;missing documentation&quot; messages appear in the help file.  These can
+help you locate help topics that need attention to provide better documentation.  Adding the missing tags to your
+code is one way to get rid of the messages.  You can search the help file for the text &quot;missing documentation&quot; or
+review the build log file to locate the members in question.  If you do not care to see these messages, simply
+alter the project properties to turn off the ones that you do not want to see.</p>
+<h2 id="CodeSamples1"> Why are all of my code samples colorized as C# code?</h2>
+<p>The help file builder automatically includes a copy of the <a href="../compconfig/codeblockcomponent.html">Code Block Component</a> that adds several attributes to the <code>&lt;code&gt;</code> element.  One of these is the <code>language</code> attribute
+that lets you specify the language rules to use when colorizing the code.  It is also used to indicate the code
+filter to which the sample should be connected.  If omitted, the component will assume that the code is C#.  You
+can change this behavior by adding a <code>language</code> attribute that specifies a different
+language.  You can also specify &quot;none&quot; as a value to disable colorization and the code filter for it.</p>
+<p>If the majority of your code samples are in a language other than C#, you can override the default
+by using the <code>Component Configurations</code> project category to add the <strong>Code BlockComponent</strong> to the project and configure it to use a different default setting.</p>
+<h2 id="CodeSamples2"> Why don't my code samples show up unless I select the C# code filter?</h2>
+<p>See the answer to the <a href="#CodeSamples2">previous question</a>.</p>
+<h2 id="DefaultTitle"> The language name is showing up as the default title on a colorized code block but I don't want itto do that.  How do I get rid of it?</h2>
+<p>Specify the <code>title</code> attribute and set it to a title of your choice or to a
+single space to suppress it (<code>title=&quot; &quot;</code>).  To turn it off globally, use the <code>Components</code> project category to add the <strong>Code Block Component</strong> to
+the project and edit its configuration to turn off the <strong>Use language name as title</strong> option.</p>
+<h2 id="NoTitle"> Why does my help file title not appear when I use a language selection other than English?</h2>
+<p>For non-English HTML Help 1 help files, the help title will not appear on the title of the help
+window unless the system's language matches the help file's language exactly.  This is a known issue with the way
+the help viewer compares the language values.</p>
+<p>To resolve encoding issues, add the <a href="../plugins/dbcsfixplugin.html">DBCS Fix for CHM Builds Plug-In</a> to
+the project.  See the plug-in documentation for information about its configuration.</p>
+<h2 id="BadChars"> Why does the help file title contain garbage characters?</h2>
+<p>The HTML Help 1 compiler does not appear to support Unicode encoding of its project and table of
+contents files.  This may cause the help title to display incorrectly if it contains extended characters that
+need encoding.</p>
+<p>To resolve encoding issues, add the <a href="../plugins/dbcsfixplugin.html">DBCS Fix for CHM Builds Plug-In</a> to
+the project.  See the plug-in documentation for information about its configuration.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/faq/helpfileissues.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

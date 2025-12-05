@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Item File Templates </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Item File Templates ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/visualstudio/itemfiletemplates.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="item-file-templates">Item File Templates</h1>
+
+<p>Item file templates are supplied for each of the common file types within a help file builder project.
+This topic covers how to add a file to a project as well as how to create and install your own custom item file
+templates for use from within Visual Studio.</p>
+<h2 id="AddNewFile"> Adding a File to the Project</h2>
+<p>To add a new file to a help file builder project, select the project node or the folder within which
+you want to add the new item and then select the <strong>Add New Item</strong> option from the <strong>Project</strong> main menu
+option or the <strong>Add</strong> | <strong>New Item</strong> option from the selected item's context menu.  To add an existing
+item, use the <strong>Existing Item</strong> option from the project menu or context menu instead.</p>
+<p align="center">
+<img alt="Visual Studio Add New Item dialog" src="../../images/VSAddNewItemDlg.png">
+</p>
+<p>The <strong>Add New Item</strong> dialog box, shown above, groups the item templates into various categories.  The
+parent category shows all item templates from its subcategories.  Pick a subcategory to further filter the available
+selections.  The <strong>Sort by</strong> combo box can be used to change the sort order of the items.  The default sort order
+lists the most frequently used file types first followed by the lesser used file types within each subcategory.
+Once you have selected the file template, enter a name for it and click the <strong>Add</strong> button to add it to the
+project.</p>
+<h2 id="CustomTemplates"> Creating Custom Item File Templates</h2>
+<p>Like the standalone GUI, Visual Studio supports custom item file templates for help file builder
+projects.  However, they are created differently and are stored in a different location from the templates used
+by the standalone GUI.  Follow these steps to create your own custom item file templates.</p>
+<ol>
+<li><p>Create the template file.  Name the file whatever you like and give it an appropriate extension.  The
+content of the template file will be used as the default content for the file when it is added to a project.  An
+example conceptual content template is shown below:</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For conceptual content item templates, replace the topic's GUID value with the text &quot; <code>$guid1$</code> &quot;.
+This will cause Visual Studio to automatically insert a new GUID value in the topic when it is added to a project.</p>
+</div>
+<pre><code class="lang-c#">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;topic id=&quot;$guid1$&quot; revisionNumber=&quot;1&quot;&gt;
+  &lt;developerConceptualDocument
+    xmlns=&quot;http://ddue.schemas.microsoft.com/authoring/2003/5&quot;
+    xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+
+    &lt;introduction&gt;
+      &lt;para&gt;Required introduction&lt;/para&gt;
+    &lt;/introduction&gt;
+
+    &lt;section address=&quot;Section1&quot;&gt;
+      &lt;title&gt;Optional section title&lt;/title&gt;
+      &lt;content&gt;
+        &lt;para&gt;Add one or more sections with content&lt;/para&gt;
+      &lt;/content&gt;
+    &lt;/section&gt;
+
+    &lt;relatedTopics&gt;
+      &lt;!-- Add related topics --&gt;
+    &lt;/relatedTopics&gt;
+  &lt;/developerConceptualDocument&gt;
+&lt;/topic&gt;
+</code></pre>
+</li>
+<li><p>In order for Visual Studio to know how to display and use your template file, you must create a
+VSTemplate file to accompany it.  This is an XML file with a <em>.vstemplate</em> extension.  The
+base filename should match the base filename of your template file (i.e. <em>BlankTopic.vstemplate</em>
+for the <em>BlankTopic.aml</em> template file).  An example is shown below:</p>
+<pre><code class="lang-xml">&lt;VSTemplate Version=&quot;3.0.0&quot; Type=&quot;Item&quot;
+  xmlns=&quot;http://schemas.microsoft.com/developer/vstemplate/2005&quot;&gt;
+
+  &lt;TemplateData&gt;
+    &lt;!-- This is the name displayed for the template --&gt;
+    &lt;Name&gt;Blank Topic&lt;/Name&gt;
+
+    &lt;!-- This is the description displayed for the template --&gt;
+    &lt;Description&gt;A blank conceptual topic&lt;/Description&gt;
+
+    &lt;!-- This is the icon displayed for the template.  This example uses
+         an icon from the SHFB project package.  If you want to add your
+         own icon, use an Icon element as shown in the commented out example
+         below instead. --&gt;
+    &lt;Icon Package=&quot;{c997d569-ee8e-4947-a46f-9a0717ce39a0}&quot; ID=&quot;407&quot; /&gt;
+
+    &lt;!-- &lt;Icon&gt;MyTemplateIcon.ico&lt;/Icon&gt; --&gt;
+
+    &lt;!-- This associates the template with the SHFB package --&gt;
+    &lt;ProjectType&gt;SHFBProject&lt;/ProjectType&gt;
+
+    &lt;!-- The default filename to use --&gt;
+    &lt;DefaultName&gt;BlankTopic.aml&lt;/DefaultName&gt;
+
+    &lt;!-- The sort order of the item.  You can adjust this to have the
+         template appear higher or lower in the list when using the
+         default sort order. --&gt;
+    &lt;SortOrder&gt;10&lt;/SortOrder&gt;
+
+    &lt;!-- Adding this element will cause the template to appear in
+         parent categories if they are used.  Adjust the number up if
+         you have more than two parent categories. --&gt;
+    &lt;NumberOfParentCategoriesToRollUp&gt;2&lt;/NumberOfParentCategoriesToRollUp&gt;
+  &lt;/TemplateData&gt;
+
+  &lt;TemplateContent&gt;
+    &lt;!-- This defines the project item template file.  The name should
+         match the name of the item template you created.  If it contains
+         replaceable parameters such as &quot;$guid1$&quot;, add the
+         ReplaceParameters attribute and set it to &quot;true&quot;. --&gt;
+    &lt;ProjectItem ReplaceParameters=&quot;true&quot;&gt;BlankTopic.aml&lt;/ProjectItem&gt;
+  &lt;/TemplateContent&gt;
+&lt;/VSTemplate&gt;
+</code></pre>
+<p>For the <code>Icon</code> element, you can replace the ID shown in the
+example above with one of the following ID numbers to use one of the built-in file type icons.  If you
+want to use your own icon, use an element like the commented out example to specify the icon filename.
+The icon file should be placed in the same folder as the template file and the VSTemplate file.</p>
+<table>
+<thead>
+<tr>
+<th>ID Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401</td>
+<td>HTML file</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Image file</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Script file</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Stylesheet</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Text/general file</td>
+</tr>
+<tr>
+<td>406</td>
+<td>XML file</td>
+</tr>
+<tr>
+<td>407</td>
+<td>Conceptual content topic</td>
+</tr>
+<tr>
+<td>408</td>
+<td>Content layout file</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Resource item file</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Token file</td>
+</tr>
+<tr>
+<td>411</td>
+<td>Code snippets file</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Create a <em>.zip</em> archive file containing the template file, the
+VSTemplate XML file, and the icon file if you added your own icon.  Store the files in the archive without
+paths.</p>
+</li>
+<li><p>Create the folder *[My Documents]\Visual Studio XXXX\Templates\ItemTemplates\SHFBProject*
+where &quot; <em>[My Documents]</em> &quot; is the location of your personal documents folder and &quot;XXXX&quot; is the
+version of Visual Studio into which you want to add the templates.  This is the root folder for your custom help
+file builder item template files.</p>
+</li>
+<li><p>To separate your custom templates from the standard item templates, create a subfolder such as <em>.\Custom Templates</em> beneath the root folder created in the prior step.  This will make it
+easy to filter the list to your custom templates.  Additional subfolders can be used to further sub-categorize
+the files as needed.  For example, if you want to categorize your templates as conceptual content or other
+content, create a <em>.\Conceptual Content</em> and/or <em>.\Other Content</em> subfolder
+beneath the custom templates folder.</p>
+</li>
+<li><p>Place the archive file containing your template in the custom templates folder.</p>
+</li>
+<li><p>When you open the <strong>Add New Item</strong> dialog, you should now see your custom templates listed in
+the appropriate location.  An example is shown below:</p>
+<p align="center">
+<img alt="Custom templates in the Add New Item dialog" src="../../images/VSCustomTemplates.png">
+</p>
+</li>
+</ol>
+<p>For more information about template files, see the <a href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/s365byhx%28v=vs.100%29" title="VSTemplate information">Creating Project and Item Templates</a> help topic.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="visualstudiopackage.html">Visual Studio Integration Package</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/visualstudio/itemfiletemplates.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

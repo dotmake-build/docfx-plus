@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>General Information </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="General Information ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/sandcastletools/generalinformation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="general-information">General Information</h1>
+
+<p>Sandcastle is not a single executable program but is actually a set of command-line programs and
+transformations that are executed in a specific sequence to produce a set of files that can be used to
+create a help file.  It is extremely flexible and offers many configurable features and the build process can
+be changed depending upon the desired output format and presentation style.</p>
+<p>As the tools are command-line based, they can be used in various ways such as in batch files,
+MSBuild projects, and PowerShell scripts.  One downside to its command-line based nature and the flexibility it
+offers with its various configuration files and presentation styles is a steep learning curve.  Using the tools
+in their native form can be a daunting process so a good front end that hides the various details can greatly
+simplify the process of using them.</p>
+<p>It is highly recommended that you use an open source front end such as the SHFB
+that provides both a standalone GUI as well as Visual Studio integration.  It provides the usual project
+management options and also many more features that can be used to produce better looking help files and to
+author conceptual help topics.  It also hides the complexity of the Sandcastle tools and lets you focus on the
+task of authoring the help content.</p>
+<p>Sandcastle produces two types of help topic, each using a different build process.  The results
+can be combined into a single help file.</p>
+<ul>
+<li><p><strong>Conceptual Content</strong> - This topic is an example of conceptual content.
+It is written using Microsoft Assistance Markup Language (MAML) and is used to create topics for general
+conceptual information, walkthroughs, how-tos, etc.  For more information about MAML and how to use it, see the <strong>Sandcastle MAML Guide</strong> that is available for installation along with the Sandcastle
+tools.</p>
+</li>
+<li><p><strong>API Reference Content</strong> - Reference content is generated by using
+reflection to generate information about one or more managed assemblies, the types it contains, and their members
+and combining that information with the related XML comments extracted from the source code.  This produces
+topics with a format similar to those you see on Microsoft help websites.  For more information about XML
+comments and how to use them, see the <strong>Sandcastle XML Comments Guide</strong> that is available
+for installation along with the Sandcastle tools.</p>
+</li>
+</ul>
+<p>As noted above with regard to API reference content, Sandcastle is primarily for use in documenting
+managed code assemblies that utilize the standard .NET Framework, Silverlight, the .NET Portable framework, or
+the .NET for Windows Store Apps framework.  However, if you can produce a reflection information file for other
+API types such as a JavaScript library, it is possible to document them as well.  For example, plug-ins exist for
+the SHFBthat allow you to document JavaScript libraries and XML schemas.  Currently, there is no
+means of documenting unmanaged native code assemblies with Sandcastle.  However, if information about the
+unmanaged API could be converted to a reflection information file, it would be possible to produce a help file.</p>
+<p>It is important to note that Sandcastle itself does not generate the end result, a compiled help
+file such as a Help 1 file (CHM), an MS Help Viewer file (MSHC) file, or an Open XML document.  Instead, it
+relies on third-party tools such as the Help 1 compiler in the HTML Help Workshop or the third-party front ends
+to compress the content into an MS Help Viewer archive or Open XML document.  The HTML output by Sandcastle is
+ready to use for website output but it lacks a front end to display the table of content in any meaningful way
+and does not provide for searching or a keyword index.  Third-party tools such as the Sandcastle Help File
+Builder can fill these gaps for you.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="sandcastletools.html">Sandcastle Tools</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/sandcastletools/generalinformation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Assembly Binding Redirection Plug-In </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Assembly Binding Redirection Plug-In ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/plugins/assemblybindingredirection.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="assembly-binding-redirection-plug-in">Assembly Binding Redirection Plug-In</h1>
+
+<p>This plug-in is used to add assembly binding redirection support to the <strong>MRefBuilder</strong>
+configuration file.  With this in place, it is possible to document assemblies that use binding redirection to
+reference assemblies of a different version than the ones they were built against.  It is also possible to add
+assembly names to ignore if they are unresolved which is useful in certain situations where the named dependency
+assembly is unavailable (i.e. the Crystal Reports keycode decoder assembly).</p>
+<h2 id="Configuring"> Configuring the Plug-In</h2>
+<p>Once added to the project, this plug-in must be configured.  The first tab is used to enter binding
+redirection information.  The second tab is used to enter assemblies to ignore if unresolved.  The <strong>Use theGAC to resolve unknown assembly references</strong> option at the top of the dialog box can be checked to have the
+resolver try to find the assembly in the Global Assembly Cache before attempting to use the redirections.  If an
+appropriate version is found there, it will be used and the redirections will not be checked.</p>
+<h2 id="RedirectionOptions"> Binding Redirection Configuration Options</h2>
+<p>The configuration consists of one or more entries that define how to redirect an assembly reference
+or an application configuration file from which the settings should be imported.  A list box at the top of the
+Binding Redirections tab lists the current definitions.  Click the <strong>Add</strong> button to the right of the list
+box to add a new item.  The property grid at the bottom of the tab is used to edit each entry's settings.  Click
+the <strong>Delete</strong> button to the right of the list box to delete an entry.  Each entry consists of the
+following configuration options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ConfigurationFile</code></td>
+<td>This option allows you to specify a configuration file from which the binding redirection<br>settings are imported.  This should be an application or web configuration file (i.e. <em>App.exe.config</em><br>or <em>Web.config</em>) that contains an <code>assemblyBinding</code> section that<br>defines the dependent assemblies and how they should be redirected.  If specified, all other configuration options<br>are ignored.  The value can contain replacement tags to specify the path to the file (i.e. <em>{@ProjectFolder}..\bin\MyApp.exe.config</em>).</td>
+</tr>
+<tr>
+<td><code>AssemblyName</code></td>
+<td>The assembly name that will be redirected.  Specify only the name of the assembly.  Do not<br>include a path or extension.</td>
+</tr>
+<tr>
+<td><code>PublicKeyToken</code></td>
+<td>Specify the public key token of the assembly.  If left blank, &quot;null&quot; is assumed.</td>
+</tr>
+<tr>
+<td><code>Culture</code></td>
+<td>Specify the culture of the assembly.  If left blank, &quot;neutral&quot; is assumed.</td>
+</tr>
+<tr>
+<td><code>OldVersion</code></td>
+<td>Use this to specify the old version that will be redirected.  If the <code>OldVersionTo</code> property is left blank, this will be used as the single version to<br>redirect.  This can be a version value from 0.0.0.0 to 65535.65535.65535.65535.</td>
+</tr>
+<tr>
+<td><code>OldVersionTo</code></td>
+<td>To redirect a range of assembly versions, enter the starting version number in the <code>OldVersion</code> property and the ending version number in this property.  If this property is<br>left blank, only the version specified in <code>OldVersion</code> is redirected.  This can be a<br>version value from 0.0.0.0 to 65535.65535.65535.65535.</td>
+</tr>
+<tr>
+<td><code>NewVersion</code></td>
+<td>This defines the new assembly version to which the old versions are redirected.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="IgnoreOptions"> Ignore If Unresolved Entries</h2>
+<p>This tab is used to enter one or more assembly names to ignore if they are unresolved.  By default,
+it contains two entries: one for the Crystal Reports <code>BusinessObjects.Licensing.KeycodeDecoder</code>
+assembly and another for the Visual Studio <code>Microsoft.VisualStudio.TestTools.UITest.Playback</code>
+assembly.  Both of those are not distributed and can cause documentation projects that include them indirectly
+through other reference assemblies to fail when built.</p>
+<p>Type the name of an assembly to add without a path or extension, just the name reported by the <strong>MRefBuilder</strong> tool when it fails due to the missing assembly.  Click the <strong>Add</strong>
+button to add it to the list.  Select an entry and click the <strong>Delete</strong> button to remove an entry.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This option is only to be used in the event that you do no have the named assembly and do not
+care about missing information for it in your help file.  It is always better to find the reference assembly and
+add it as a reference in the documentation project rather than to ignore it altogether.  Doing so may result in
+missing information in the help file.  This option is truly a last resort if there is no possible way to obtain
+a copy of the missing reference assembly.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="plugins.html">Build Process Plug-Ins</a></li>
+</ul>
+<h4 id="other-resources">Other Resources</h4>
+<ul>
+<li><a href="https://docs.microsoft.com/dotnet/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection">Assembly Binding Redirection</a></li>
+<li><a href="https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime">assemblyBinding Configuration File Element</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/plugins/assemblybindingredirection.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

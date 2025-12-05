@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Known Issues and Limitations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Known Issues and Limitations ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/knownissues.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="known-issues-and-limitations">Known Issues and Limitations</h1>
+
+<h2 id="NetCore"> .NET Core Builds</h2>
+<p>The following are the known issues with .NET Core builds.  These will be addressed in later
+releases if possible.</p>
+<ul>
+<li>If one is specified, the XSL transform in the Completion Notification plug-in currently fails
+on .NET Core.  It can be cleared in the plug-in settings to send the raw log file in the meantime.</li>
+</ul>
+<h2 id="MSHelpViewer"> Microsoft Help Viewer</h2>
+<ul>
+<li>The deprecated raw HTML additional content model and site maps are not supported for help
+viewer output.  All additional topics must be in the form of MAML <a href="addconceptcontent/conceptcontent/conceptcontent.html">conceptual content</a> and must be defined in a
+content layout file.  There are too many requirements of the format to support raw HTML files and the deprecated
+additional content options.  The <a href="https://EWSoftware.GitHub.io/HtmlToMamlDocs" title="HTML to MAML Converter">HTML to MAML Converter</a> is available to help you convert legacy HTML content to MAML topics.</li>
+</ul>
+<h2 id="SHFB"> Sandcastle Help File Builder</h2>
+<ul>
+<li><p>Not all build errors and warnings have been documented yet.  You will recognize these by a <em>TODO:</em> comment where the introduction should be or in the topic body.  If you need
+help for one of these errors or warnings, please ask in the Issues area of the SHFBproject
+on GitHub.</p>
+</li>
+<li><p>The standalone GUI does not support source control providers.</p>
+</li>
+<li><p>Linked items (file items in which the physical file is located in a folder outside the
+project's folder) are supported but cannot be added from the standalone GUI.</p>
+</li>
+<li><p>COM object references are supported in the projects but they cannot be added from the
+standalone GUI.</p>
+</li>
+<li><p>Due to their non-standard format, managed C++ projects from Visual Studio 2008 and before are
+not supported as documentation sources or project references.  Add the targets and references individually.
+Visual Studio 2010 and later use a standard MSBuild format for C++ projects and they are supported as
+documentation sources.</p>
+</li>
+<li><p>The display of editor windows, the Properties window, or the Preview window sometimes gets
+corrupted such that the content area disappears or is not sized correctly in the tabbed area of the standalone
+GUI.  Selecting a different file tab and switching back to the affected tab, closing and reopening the affected
+file/window, or resizing the width of a docked window to force a repaint will work around the issue.</p>
+</li>
+<li><p>Renaming a folder or file in the Project Explorer in the standalone GUI will not rename any
+open document editors associated with the renamed folder or file.  If necessary, do a <strong>File | Save As</strong> to
+save it in the right location or just close and reopen the file if it has not been changed.</p>
+</li>
+<li><p>A standard tree control is used in the Project Explorer window in the standalone GUI and does
+not allow selection of multiple tree nodes.  As such, all operations within it only affect the currently selected
+node.</p>
+</li>
+<li><p>When doing search and replace in a text editor window in the standalone GUI, the highlight on
+the found text is not always retained when doing a subsequent search/replace.  The cursor is positioned correctly
+though.</p>
+</li>
+<li><p>In the standalone GUI, when using the dropdown on the editor window's &quot;various elements&quot; toolbar
+button (shows <strong>alert</strong> as the default action when first opened), the cursor occasionally disappears from
+the editor window after the dropdown closes even though it has the focus and text can be entered.  Change the
+focus to another window and back to restore it.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="versionhistory/versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/knownissues.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

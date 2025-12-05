@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2025.9.30.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2025.9.30.0 ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2025.9.30.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-20259300">Version 2025.9.30.0</h1>
+
+<p>Release notes for version 2025.9.30.0.</p>
+<h2 id="BreakingChanges"> Breaking Changes in This Release</h2>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you have created custom build components, syntax generators, plug-ins, or presentation styles,
+you will need to rebuild them against the latest release of the help file builder NuGet package.</p>
+</div>
+<ul>
+<li><p>The <strong>SandcastleBuilder.Utils</strong> assembly has been removed.  Its
+functionality has been moved into the <strong>Sandcastle.Core</strong> and other internal assemblies.
+Third-party components should remove the reference to the <strong>EWSoftware.SandcastleBuilder.Utils</strong>
+NuGet package and update the reference to the <strong>EWSoftware.Sandcastle.Core</strong> package to the
+latest release.  You will also need to update some namespace references.  See the <a href="migrationsupport.html">Component Migration Support</a> topic for more information.</p>
+<p>These changes should prevent future issues with changes to MSBuild breaking the standalone GUI
+and should facilitate future changes related to the MSBuild tasks and the build engine in general.</p>
+</li>
+<li><p>Updated all tools to .NET Framework 4.8 and .NET 9.0.</p>
+</li>
+</ul>
+<h2 id="build-tools">Build Tools</h2>
+<ul>
+<li><p>Fixed a bug in MRefBuilder related to parameter matching when parameter types where in both
+mscorlib and another framework assembly.</p>
+</li>
+<li><p>Fixed handling of XML comments files related to assemblies from package references.</p>
+</li>
+<li><p>Added two new visibility options to allow removing the extension methods section from member
+list topics entirely or just hiding extension methods that extend <code>System.Object</code>.</p>
+</li>
+<li><p>Fixed how <code>CopyFromIndexComponent</code> and <code>SyntaxComponent</code>
+obtain their component factory info due to lack of <code>ImportMany</code> MEF attribute support in
+dotnet builds.</p>
+</li>
+<li><p>Added support for using solution filter files (<em>*.slnf</em>) as documentation
+sources.</p>
+</li>
+<li><p>Updated the reflection data set files to support .NET 10.</p>
+</li>
+</ul>
+<h2 id="sandcastle-help-file-builder">Sandcastle Help File Builder</h2>
+<ul>
+<li><p>Removed Visual Studio 2017 and 2019 support from the extension package.  The extension now only
+supports Visual Studio 2022 and later.</p>
+</li>
+<li><p>Added support for installing the extension package in Visual Studio 2026.</p>
+</li>
+<li><p>Fixed the preview tool window so that it handles duplicate token IDs.  Updated the token editor
+to warn if a duplicate token ID is seen within the same file.</p>
+</li>
+</ul>
+<h2 id="presentation-styles">Presentation Styles</h2>
+<ul>
+<li><p>Added <code>this</code> / <code>Me</code> language specific text support.</p>
+</li>
+<li><p>If the Always Show Top Level Auto-Outline option is used, the In This Article column is now
+hidden to prevent it silently overlaying the main content and blocking links from being clicked.</p>
+</li>
+<li><p>Enabled showing applicable extension methods on enumerated types.</p>
+</li>
+<li><p>Changed the Obsolete notice back to using the standard notice text rather than the attribute
+message.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2025.9.30.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

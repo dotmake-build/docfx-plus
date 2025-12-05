@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ComponentUtilities Class </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ComponentUtilities Class ">
+      
+      <meta name="description" content="This class contains properties and methods used to locate and work with build components, plug-ins, syntax generators, and presentation styles.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/new/main/apiSpec/new?filename=Sandcastle_Core_ComponentUtilities.md&amp;value=---%0Auid%3A%20Sandcastle.Core.ComponentUtilities%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandcastle.Core.ComponentUtilities">
+
+
+
+  <h1 id="Sandcastle_Core_ComponentUtilities" data-uid="Sandcastle.Core.ComponentUtilities" class="text-break">
+ComponentUtilities Class  <a class="header-action link-secondary" title="View source" href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/ComponentUtilities.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <h2 class="section" id="Sandcastle_Core_ComponentUtilities_definition">Definition</h2>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandcastle.Core.html">Sandcastle.Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandcastle.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary">
+  <p>This class contains properties and methods used to locate and work with build components, plug-ins,
+syntax generators, and presentation styles.</p>
+
+  </div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ComponentUtilities</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ComponentUtilities</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+  <table class="table jumplist" aria-label="Properties
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.CoreComponentsFolder.html#Sandcastle_Core_ComponentUtilities_CoreComponentsFolder">CoreComponentsFolder</a>
+      </td>
+      <td>
+      <p>This read-only property returns the core build components folder</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.CoreReflectionDataFolder.html#Sandcastle_Core_ComponentUtilities_CoreReflectionDataFolder">CoreReflectionDataFolder</a>
+      </td>
+      <td>
+      <p>This read-only property returns the core reflection data file folder</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.DefaultSyntaxFilter.html#Sandcastle_Core_ComponentUtilities_DefaultSyntaxFilter">DefaultSyntaxFilter</a>
+      </td>
+      <td>
+      <p>This read-only property returns the default syntax filter setting</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.RootFolder.html#Sandcastle_Core_ComponentUtilities_RootFolder">RootFolder</a>
+      </td>
+      <td>
+      <p>This read-only property returns the path to the Sandcastle Help File Builder root folder</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.SupportedLanguages.html#Sandcastle_Core_ComponentUtilities_SupportedLanguages">SupportedLanguages</a>
+      </td>
+      <td>
+      <p>This read-only property returns a list of languages supported by the help file builder presentation
+styles.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.ThirdPartyComponentsFolder.html#Sandcastle_Core_ComponentUtilities_ThirdPartyComponentsFolder">ThirdPartyComponentsFolder</a>
+      </td>
+      <td>
+      <p>This read-only property returns the common application data build components folder</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.ToolsFolder.html#Sandcastle_Core_ComponentUtilities_ToolsFolder">ToolsFolder</a>
+      </td>
+      <td>
+      <p>This read-only property returns the path to the Sandcastle Help File Builder tools folder</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="methods">Methods
+</h2>
+  <table class="table jumplist" aria-label="Methods
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.AssemblyFolder.html#Sandcastle_Core_ComponentUtilities_AssemblyFolder_System_Reflection_Assembly_">AssemblyFolder(Assembly)</a>
+      </td>
+      <td>
+      <p>This is used to get the physical location of the specified assembly</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.CorrectFilePathSeparators.html#Sandcastle_Core_ComponentUtilities_CorrectFilePathSeparators_System_String_">CorrectFilePathSeparators(string)</a>
+      </td>
+      <td>
+      <p>This is used to ensure that <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.path.directoryseparatorchar">DirectorySeparatorChar</a>is used to separate the parts
+of a file path.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.CreateComponentContainer.html#Sandcastle_Core_ComponentUtilities_CreateComponentContainer_System_Collections_Generic_IEnumerable_System_String__Sandcastle_Core_ComponentAssemblyResolver_System_Threading_CancellationToken_">CreateComponentContainer(IEnumerable&lt;string&gt;, ComponentAssemblyResolver, CancellationToken)</a>
+      </td>
+      <td>
+      <p>This is used to return a composition container filled with the available build components (SHFB
+plug-ins, presentation styles, BuildAssembler components, and syntax generators).</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.GetHashCodeDeterministic.html#Sandcastle_Core_ComponentUtilities_GetHashCodeDeterministic_System_String_">GetHashCodeDeterministic(string)</a>
+      </td>
+      <td>
+      <p>This returns a deterministic hash code that is the same in the full .NET Framework and in .NET Core
+in every session given the same string to hash.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.GetReferencedNamespaces.html#Sandcastle_Core_ComponentUtilities_GetReferencedNamespaces_System_String_System_Collections_Generic_IEnumerable_System_String__">GetReferencedNamespaces(string, IEnumerable&lt;string&gt;)</a>
+      </td>
+      <td>
+      <p>This is used to get an enumerable list of unique namespaces from the given reflection data file</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.ReadWithEncoding.html#Sandcastle_Core_ComponentUtilities_ReadWithEncoding_System_String_System_Text_Encoding__">ReadWithEncoding(string, ref Encoding)</a>
+      </td>
+      <td>
+      <p>This is used to read in a file using an appropriate encoding method</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.SyntaxFilterGeneratorsFrom.html#Sandcastle_Core_ComponentUtilities_SyntaxFilterGeneratorsFrom_System_Collections_Generic_IEnumerable_Sandcastle_Core_BuildAssembler_SyntaxGenerator_ISyntaxGeneratorMetadata__System_String_">SyntaxFilterGeneratorsFrom(IEnumerable&lt;ISyntaxGeneratorMetadata&gt;, string)</a>
+      </td>
+      <td>
+      <p>This returns the syntax generator XML elements to insert into a BuildAssembler configuration file for
+the comma-separated list of syntax filter IDs.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.SyntaxFilterLanguagesFrom.html#Sandcastle_Core_ComponentUtilities_SyntaxFilterLanguagesFrom_System_Collections_Generic_IEnumerable_Sandcastle_Core_BuildAssembler_SyntaxGenerator_ISyntaxGeneratorMetadata__System_String_">SyntaxFilterLanguagesFrom(IEnumerable&lt;ISyntaxGeneratorMetadata&gt;, string)</a>
+      </td>
+      <td>
+      <p>This returns the language filter items to used in the presentation style transformation</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.SyntaxFiltersFrom.html#Sandcastle_Core_ComponentUtilities_SyntaxFiltersFrom_System_Collections_Generic_IEnumerable_Sandcastle_Core_BuildAssembler_SyntaxGenerator_ISyntaxGeneratorMetadata__System_String_">SyntaxFiltersFrom(IEnumerable&lt;ISyntaxGeneratorMetadata&gt;, string)</a>
+      </td>
+      <td>
+      <p>This is used to return a collection of syntax filters based on the comma-separated list of IDs passed
+to the method.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.SyntaxGeneratorResourceItemFiles.html#Sandcastle_Core_ComponentUtilities_SyntaxGeneratorResourceItemFiles_System_ComponentModel_Composition_Hosting_CompositionContainer_System_Globalization_CultureInfo_">SyntaxGeneratorResourceItemFiles(CompositionContainer, CultureInfo)</a>
+      </td>
+      <td>
+      <p>This returns an enumerable list of resource item files for all defined syntax filters</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.ToRecognizedSyntaxFilterIds.html#Sandcastle_Core_ComponentUtilities_ToRecognizedSyntaxFilterIds_System_Collections_Generic_IEnumerable_Sandcastle_Core_BuildAssembler_SyntaxGenerator_ISyntaxGeneratorMetadata__System_String_">ToRecognizedSyntaxFilterIds(IEnumerable&lt;ISyntaxGeneratorMetadata&gt;, string)</a>
+      </td>
+      <td>
+      <p>This is used to convert the given set of comma-separated syntax filter IDs to a set of recognized
+filter IDs.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.ToWebsiteOrZipFilePath.html#Sandcastle_Core_ComponentUtilities_ToWebsiteOrZipFilePath_System_String_">ToWebsiteOrZipFilePath(string)</a>
+      </td>
+      <td>
+      <p>This is used to ensure that a forward slash is used to separate the parts of a website or zip file
+item path.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.XmlStreamAxis.html#Sandcastle_Core_ComponentUtilities_XmlStreamAxis_System_String_System_Collections_Generic_IEnumerable_System_String__">XmlStreamAxis(string, IEnumerable&lt;string&gt;)</a>
+      </td>
+      <td>
+      <p>This provides a fast and efficient way of querying large XML files for specific element types which
+themselves may contain instances of the given elements.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.ComponentUtilities.XmlStreamAxis.html#Sandcastle_Core_ComponentUtilities_XmlStreamAxis_System_String_System_String_">XmlStreamAxis(string, string)</a>
+      </td>
+      <td>
+      <p>This provides a fast and efficient way of querying large XML files for a specific element type</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/ComponentUtilities.cs/#L53" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

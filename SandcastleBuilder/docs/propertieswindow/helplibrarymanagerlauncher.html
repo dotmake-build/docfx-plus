@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Help Library Manager Launcher Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Help Library Manager Launcher Utility ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/helplibrarymanagerlauncher.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="help-library-manager-launcher-utility">Help Library Manager Launcher Utility</h1>
+
+<p>In order to install an MS Help Viewer file, several conditions must be met.  To hide the details and
+save you from having to perform all of the necessary checks, the Help Library Manager Launcher utility was
+created.  It is copied as part of the output of an MS Help Viewer build and is freely distributable and can be
+used as part of your product's installer.  The utility was created based on information found on the HelpWare <a href="http://mshcmigrate.helpmvp.com/faq" title="MSHC Migrate FAQ">MSHC Migrate Utility FAQ</a> and <a href="http://mshcmigrate.helpmvp.com/faq/install" title="How to Install Help">MSHC Migrate Utility How to Install Help</a> pages.</p>
+<h2 id="Overview"> Overview</h2>
+<p>The launcher utility takes care of the following tasks before launching the Help Library Manager:</p>
+<ul>
+<li><p>It checks to be sure that the Help Library Manager has been installed.  If not, it exits with an
+error message requesting that it be installed first.</p>
+</li>
+<li><p>It checks to see if an instance of the Help Library Manager is already running.  If so, the install
+or remove operation would fail so the launcher exits with an error message telling the user to close the
+currently open instance.</p>
+</li>
+<li><p>It checks to make sure that the local store has been initialized.  If not, the launcher exits with
+an error message stating that you need to run the Help Library Manager to initialize it for the first time.</p>
+</li>
+<li><p>It checks for the required <code>product</code> and <code>version</code>
+or <code>catalogName</code> command line options.  If not specified, it exits with an error message
+stating which one was missing.  For Help Viewer 2.x, if a <code>catalogName</code> is not specified,
+it defaults to the appropriate catalog name for the Visual Studio version associated with the specified help
+viewer version.</p>
+</li>
+<li><p>If no <code>locale</code> command line option was supplied, it tries to determine the
+default locale based on the specified product and version.  If a locale cannot be determined, it exits with an
+error message.</p>
+</li>
+</ul>
+<p>If the requirements are met, the Help Library Manager will be launched with the command line options
+passed to the launcher.  If installation is requested via the <code>sourceMedia</code> command line
+option, the Help Library Manager is ran with a request for administrator privileges.  For all other tasks such as
+removal of content, it is ran with normal privileges.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are installing unsigned help content, the Help Library Manager cannot be ran in silent mode
+using the <code>/silent</code> option.  It must be ran interactively so that it can confirm the
+installation.  Removal of content, whether signed or unsigned, can be performed silently.</p>
+</div>
+<h2 id="Installation"> Installing Content</h2>
+<p>Below are a sample <em>HelpContentSetup.msha</em> file and an example command line for
+running the Help Library Manager launcher to install content.  The command line is wrapped for display purposes.</p>
+<pre><code class="lang-xml">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Sandcastle Test Case Library&lt;/title&gt;
+&lt;/head&gt;
+&lt;body class=&quot;vendor-book&quot;&gt;
+    &lt;div class=&quot;details&quot;&gt;
+        &lt;span class=&quot;vendor&quot;&gt;EWSoftware&lt;/span&gt;
+        &lt;span class=&quot;locale&quot;&gt;en-us&lt;/span&gt;
+        &lt;span class=&quot;product&quot;&gt;Sandcastle Help File Builder Example Project&lt;/span&gt;
+        &lt;span class=&quot;name&quot;&gt;Sandcastle Test Case Library&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;package-list&quot;&gt;
+        &lt;div class=&quot;package&quot;&gt;
+            &lt;!-- NOTE: The &quot;name&quot; span value cannot contain any periods! --&gt;
+            &lt;span class=&quot;name&quot;&gt;TestCaseProject&lt;/span&gt;
+            &lt;a class=&quot;current-link&quot; href=&quot;TestCaseProject.mshc&quot;&gt;TestCaseProject.mshc&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="lang-bat">REM Help Viewer 1.0
+HelpLibraryManagerLauncher.exe /product &quot;VS&quot; /version &quot;100&quot; /locale en-us
+    /sourceMedia &quot;C:\FullPathToFile\HelpContentSetup.msha&quot;
+
+REM Help Viewer 2.x
+HelpLibraryManagerLauncher.exe /viewerVersion 2.0 /locale en-us /wait 0
+    /operation install /sourceUri &quot;C:\FullPathToFile\TestCaseProject.msha&quot;
+</code></pre>
+<p>The <code>product</code>, <code>version</code>, <code>locale</code>,
+and <code>viewerVersion</code> options uniquely identify the catalog into which your help file will
+be installed.  By default, the help file builder project properties are set to install it in the Visual Studio
+catalog.  The <code>sourceMedia</code> / <code>sourceUri</code> option tells it to install
+the content based on the settings in the specified <em>HelpContentSetup.msha</em> file.  For more
+information on the available command line options, see the <a href="https://docs.microsoft.com/visualstudio/help-viewer/command-line-arguments?view=vs-2019" title="Help Library Manager Admin Guide">Help Library ManagerAdministrator's Guide</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If the product and/or version values contain spaces, they should be enclosed in quote marks.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To have the launcher determine the installed locale and use it, omit the <code>/locale</code>
+and locale name parameters.</p>
+</div>
+<p>When installing unsigned content, the Help Library Manager's user interface will always appear.  Follow
+these steps to install the content:</p>
+<ol>
+<li><p>You will be presented with a list of content that has already been installed along with content
+waiting to be installed.  Scroll through the list to find your help content.</p>
+</li>
+<li><p>Click the <strong>Add</strong> link next to your content to select it for installation.</p>
+</li>
+<li><p>Next, click the <strong>Update</strong> button to install it.</p>
+</li>
+<li><p>A security alert will appear.  Click <strong>Yes</strong> to confirm the installation of the unsigned
+content.</p>
+</li>
+<li><p>Once confirmed, the content is installed and the indexes are merged.  This may take several
+minutes.</p>
+</li>
+<li><p>Once it has finished installing the content, you an exit the Help Library Manager.</p>
+</li>
+</ol>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you attempt to install a newer version of an already installed package, the install request will
+have no effect.  As such, it is recommended that you always execute a request to remove the content before
+installing it.  You can ignore any errors returned from the remove request if the content is not there.</p>
+</div>
+<h2 id="Removal"> Removing Content</h2>
+<p>Below is an example command line for running the Help Library Manager launcher to remove content.  The
+command line is wrapped for display purposes.</p>
+<pre><code class="lang-bat">REM Help Viewer 1.0
+HelpLibraryManagerLauncher.exe /product &quot;VS&quot; /version &quot;100&quot; /locale en-us
+    /uninstall /silent /vendor &quot;EWSoftware&quot;
+    /productName &quot;Sandcastle Help File Builder Example Project&quot;
+    /mediaBookList &quot;Sandcastle Test Case Library&quot;
+
+REM Help Viewer 2.x
+HelpLibraryManagerLauncher.exe /viewerVersion 2.0 /locale en-us /wait 0
+    /operation uninstall /vendor &quot;EWSoftware&quot;
+    /productName &quot;Sandcastle Help File Builder Example Project&quot;
+    /bookList &quot;Sandcastle Test Case Library&quot;
+</code></pre>
+<p>The <code>product</code>, <code>version</code>, <code>locale</code>,
+and <code>viewerVersion</code> parameters identify the catalog from which to remove the content.  The <code>vendor</code>, <code>mediaBookList</code> / <code>bookList</code>, and <code>productName</code> values should match the values from the <em>HelpContentSetup.msha</em>
+file.  The <code>uninstall</code> and <code>silent</code> options tell it to uninstall
+the content without any interaction on the user's part.</p>
+<h2 id="ExitCodes"> Exit Codes</h2>
+<p>The Help Library Manager launcher will return one of the following exit code values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>The operation completed successfully.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>The Help Library Manager was not found.  It probably needs to be installed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The Help Library Manager is already running.  It needs to be closed first.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The local store is not initialized.  Run the Help Library Manager to initialize it on first time<br>use.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A required command line argument is missing.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The catalog identified by the product and version values is not installed and there wasn't enough<br>information to create it.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>An unknown error occurred in the Help Library Manager launcher.  Post a message on theSHFBDiscussion page requesting help.</td>
+</tr>
+<tr>
+<td>100-9999</td>
+<td>A Help Library Manager exit code.  See the <a href="https://docs.microsoft.com/visualstudio/help-viewer/command-line-arguments?view=vs-2019" title="Help Library Manager Admin Guide">Help Library Manager Administrator's Guide</a> for a list of possible exit codes and their meaning.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="deploymshc.html">Deploying an MS Help Viewer File</a></li>
+<li><a href="signingcontent.html">Signing MS Help Viewer Content</a></li>
+<li><a href="mshelpviewerprops.html">MS Help Viewer Category Properties</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/helplibrarymanagerlauncher.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

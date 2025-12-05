@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Help 1/Website Category Properties </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Help 1/Website Category Properties ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/help1websiteprops.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="help-1website-category-properties">Help 1/Website Category Properties</h1>
+
+<h2 id="HtmlSdkLinkType"> Help 1 SDK link type (HtmlSdkLinkType)</h2>
+<p>This property is used to define the type of links used to reference other help topics referring to
+framework (SDK) help topics. It can be set to <code>None</code> which renders non-clickable links or <code>MSDN</code> (the default) which renders links to the online help content for the topic.
+When set to <code>MSDN</code>, the <a href="helpfileprops.html#SdkLinkTarget">Sdk Link Target</a> property is used to
+define where the external links will open in the browser.</p>
+<h2 id="BinaryTOC"> Create a binary table of contents to reduce load time (BinaryTOC)</h2>
+<p>When set to True, the default, a binary table of contents is created for the help file.  According to
+the HTML Help Compiler documentation this can significantly reduce the amount of time required to load a very
+large help document.</p>
+<h2 id="IncludeFavorites"> Include a Favorites tab in the compiled help file (IncludeFavorites)</h2>
+<p>If this property is set to True, a Favorites tab will be included in the compiled help file. By
+default, it is set to false and only the Contents, Index, and Search tabs are available.</p>
+<h2 id="WebsiteSdkLinkType"> Website/Open XML SDK link type (WebsiteSdkLinkType)</h2>
+<p>This property is used to define the type of links used to reference other help topics referring to
+framework (SDK) help topics. It can be set to <code>None</code> which renders non-clickable links or <code>MSDN</code> (the default) which renders links to the online help content for the topic.
+When set to <code>MSDN</code>, the <a href="helpfileprops.html#SdkLinkTarget">Sdk Link Target</a> property is used to
+define where the external links will open in the browser.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This property is also used as the SDK link type setting for the Open XML and Markdown help file
+formats.  For the Open XML format, the SDK Link Target property is ignored and all URLs are opened in an external
+browser instance.</p>
+</div>
+<h2 id="WebsiteAdContent"> Website Ad Content (WebsiteAdContent)</h2>
+<p>This property is used to insert script and other HTML elements related to ad content providers such
+as Google AdWords or Developer Media advertisement tags.  It only applies to website output.  Enter the necessary
+script and HTML in this property and it will be inserted into the page at the very bottom after the page footer.
+If you want to place the ads in a location other than at the end of the topic, you will need to create your own
+presentation style and modify where the ad content is inserted.</p>
+<h2 id="AppendMarkdownFileExtensionsToUrls"> Include the '.md' filename extension on markdown topic URLs (AppendMarkdownFileExtensionsToUrls)</h2>
+<p>This property is used to determine whether or not to append &quot;.md&quot; extensions to topic URLs in
+markdown output.  This option is off by default, suitable for GitHib wiki content which does not add the filename
+extensions.  Adding them causes the wiki to link to the raw file content rather than the rendered topic.  If your
+site uses them or if you are rendering content to store in source control where they are used, enable this
+property.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="propertieswindow.html">Project Properties Window</a></li>
+<li><a href="mshelpviewerprops.html">MS Help Viewer Category Properties</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/help1websiteprops.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

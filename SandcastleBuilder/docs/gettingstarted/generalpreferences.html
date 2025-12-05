@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>General Preferences </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="General Preferences ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/generalpreferences.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="general-preferences">General Preferences</h1>
+
+<p>This topic describes the general user preferences.  Most are common to both the standalone GUI and
+the Visual Studio extension package.  Options that only apply to one or the other are noted in that option's
+comments.</p>
+<ul>
+<li><p><strong>Alternate MS Help Viewer (.mshc) Viewer Path</strong> - This allows you to specify the path to
+an external application that can be used to view MS Help Viewer (.mshc) files if you have one.  If you want to
+use the default MS Help Viewer, you should leave this value blank.</p>
+</li>
+<li><p><strong>ASP.NET Development Web Server Port</strong> - This allows you to specify the port number to
+use when starting the built-in .NET development web server to view website output.  By default, it is set to port
+12345.  You can alter this if it conflicts with something on your system.</p>
+</li>
+<li><p><strong>Save window state per project for each user</strong> - (Standalone GUI only)  This allows you
+to save the current window layout and currently open file editors when a project is closed.  The window state is
+saved to the same folder as the project using the project filename with a &quot; <em>_[USERNAME]</em> &quot;
+suffix where <code>USERNAME</code> is the user ID of the currently logged in user.  If turned off,
+only the location of the Project Explorer and Project Properties window are saved in the general user
+preferences.  The Visual Studio shell handles this automatically for the extension package.</p>
+</li>
+<li><p><strong>Before Building</strong> - (Standalone GUI only)  This lets you specify whether or not the help
+file builder should save the project and/or modified document windows prior to performing a build or previewing a
+topic.  The options are:</p>
+<ul>
+<li><p>Save all changes - Save the project and any modified document editors.</p>
+</li>
+<li><p>Save changes to open documents only - Only open, modified document editors are saved.
+Changes to the project file are not saved.</p>
+</li>
+<li><p>Prompt to save all changes - You will be asked to save all changes.  If documents are not
+saved, the resulting help file may not contain current information.</p>
+</li>
+<li><p>Don't save any changes - Nothing is saved.  The resulting help file may not contain current
+information if there are unsaved documents.</p>
+</li>
+</ul>
+<p>The Visual Studio shell will save files for the extension package according to the <strong>Beforebuilding</strong> option in the <strong>Tools</strong> | <strong>Options</strong> | <strong>Projects and Solutions</strong> | <strong>Build andRun</strong> category.</p>
+</li>
+<li><p><strong>Build output verbose logging enabled</strong> - This allows you to specify whether or not full
+logging information is displayed in the output window during a build.  In the standalone GUI, it is checked by
+default.  In the Visual Studio extension package, it is unchecked by default.  When unchecked, only build step
+messages are reported during the build.  All messages are still written to the log file.  This is useful for very
+large projects where the generated output can consume large quantities of memory.</p>
+</li>
+<li><p><strong>Open build log viewer on failed build</strong> - (Visual Studio extension package only)  If
+enabled, the build log viewer tool window will be opened after a failed build to display the full log content so
+that you can diagnose the problem.</p>
+</li>
+<li><p><strong>Open help file after successful build</strong> - If enabled, the help file will be opened after
+a successful build.  The format opened will depend on the format chosen in the <code>Help File Format</code>
+project property.  Preference is given to Help 1, then MS Help Viewer, markdown, and finally website output.
+In the standalone GUI, this option can also be toggled on and off via the <strong>Documentation | View Help File</strong>
+menu.</p>
+</li>
+<li><p><strong>Enable MAML/XML comments Go To Definition</strong> - (Visual Studio extension package only)  If
+checked, hovering over certain link target attribute values or element inner text within MAML topics and XML
+comments in C# projects will provide more information about the target (i.e. the topic title and filename for
+MAML target links) and the option to go to the definition of the item if possible when the Go To Definition
+context menu command is selected or Ctrl+Click is pressed while hovering over the text.  Some limitations apply.
+See the <a href="../visualstudio/gotodefinition.html">Go To Definition Support</a> topic for details.</p>
+<p>The sub-option allows you to enable or disable the Ctrl+Click Go To Definition feature.
+This allows you to disable it if you prefer to use the context menu option or its hot key (F12 by default) to
+invoke the Go To Definition option.</p>
+<p>These options can be disabled individually or entirely if you do not wish to use the Go To
+Definition support or if you think the options are causing issues with Visual Studio.</p>
+</li>
+<li><p><strong>Build Output Background/Foreground/Font</strong> - (Standalone GUI only)  These options let you
+specify the background color, foreground color, and font used in the output window for the build output (the text
+shown during the build).</p>
+</li>
+<li><p><strong>Text Editor Font</strong> - (Standalone GUI only)  This option lets you set the font used in
+the text editor windows.  The syntax highlighter controls the colors and they are not editable.</p>
+</li>
+<li><p><strong>Show line numbers in text editor</strong> - (Standalone GUI only)  If enabled, all text editor
+windows will show line numbers down the left side.  If not enabled, no line numbers are shown within the text
+editor windows.</p>
+</li>
+<li><p><strong>Enter matching brackets, parentheses, and quotes</strong> - (Standalone GUI only)  If enabled,
+all editor windows will automatically insert the matching closing character when an opening bracket, parentheses,
+or double quote is entered.  If not enabled, the matching character is not entered automatically.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="userprefs.html">User Preferences</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/generalpreferences.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

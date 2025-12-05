@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Syntax Component </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Syntax Component ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/compconfig/syntaxcomponent.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="syntax-component">Syntax Component</h1>
+
+<p>The Syntax Component is primarily used to insert syntax sections into API reference topics.  In
+addition, it is used by presentation styles that support code snippet grouping to group and sort code snippets
+into tabbed sections that match the syntax section order or show/hide the code snippets based the language filter
+selection.  As each tab is clicked or a language is selected, the same language tab/snippet in the syntax section
+and the other code snippet groups is also selected/shown keeping them all in synch.  By default, the grouping and
+sorting is performed based on the sort order defined by the syntax generators.  By adding this component to your
+project you can change the order of the languages within the syntax section and code snippet groups.  Adding the
+component to your project will also allow you to change the settings of each syntax generator if they have any
+configurable options.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you change the sort order of the languages, use the <code>defaultLangauge</code>
+transformation argument found on the <strong>Transform Args</strong> property page to set the default language selected
+so that it matches the first language in your chosen order.</p>
+</div>
+<p>The following is the default configuration for the Syntax Component. It should be inserted into the
+configuration file before the <code>TransformComponent</code>.  It can be inserted into the
+configuration file for conceptual builds as well as reference builds.  In conceptual builds, no syntax sections
+are inserted but it will allow for grouping and sorting of code snippets.</p>
+<pre><code class="lang-xml">&lt;component id=&quot;Syntax Component&quot;&gt;
+    &lt;!-- The input element and the output element. --&gt;
+    &lt;syntax input=&quot;/document/reference&quot; output=&quot;/document/syntax&quot; /&gt;
+    &lt;!-- The list of syntax generators to use --&gt;
+    &lt;generators&gt;
+        {@SyntaxFilters}
+    &lt;/generators&gt;
+    &lt;!-- Group snippets for languages in the syntax generator set within this element --&gt;
+    &lt;containerElement name=&quot;codeSnippetGroup&quot; addNoExampleTabs=&quot;true&quot; includeOnSingleSnippets=&quot;false&quot;
+    groupingEnabled=&quot;{@CodeSnippetGrouping}&quot; /&gt;
+&lt;/component&gt;
+</code></pre>
+<p>The example given above is taken from the Sandcastle Help File Builder's configuration file.  When
+used with it, the replacement tag <code>{@SyntaxFilters}</code> is used to insert the selected syntax
+filters from the project.  If using the component in your own build scripts, replace the tag with the necessary <code>generator</code> elements for each selected syntax filter.</p>
+<p>When added to a project and the syntax generator order is changed or configuration options for a
+syntax generator are edited, an additional <code>configurations</code> element is added that defines
+the order of the syntax filters and their custom configuration if any.</p>
+<p>The <code>containerElement</code> element defines the name of the container element
+that will hold the grouped code snippets.  The transformations will use this name to find the grouped
+snippets and transform them into tabbed sections.  The <code>addNoExampleTabs</code> attribute
+defines whether or not to insert &quot;No Example&quot; tabs into groups that do not contain examples for all languages
+found in the syntax section.  The default is true to insert them.  When selected, they display a message stating
+that the selected language has no example or is not supported.  The <code>includeOnSingleSnippets</code>
+attribute specifies whether or not to add &quot;No Example&quot; tabs to groups that only contain a single language (not
+including standalone snippets that specify a title).  The default is false to render single language snippets as
+standalone groups.  The <code>groupingEnabled</code> attribute specifies whether or not the grouping
+behavior is enabled.  The help file builder uses the <code>{@CodeSnippetGrouping}</code> replacement
+tag to set the option based on the selected presentation style.  The presentation style must support code snippet
+grouping in order for the grouped elements to be handled correctly by the transformations.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="compconfig.html">BuildAssembler Components</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/compconfig/syntaxcomponent.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
