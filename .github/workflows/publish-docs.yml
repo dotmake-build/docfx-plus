@@ -10,6 +10,7 @@ permissions:
   actions: read
   pages: write
   id-token: write
+  contents: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -37,11 +38,8 @@ jobs:
       # docfx-plus fixes this only required for docfx
       # working-directory: docs
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+    - name: Deploy to GitHub Pages (Update existing)
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        # Upload entire repository
-        path: 'docs/_site'
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site
