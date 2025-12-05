@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using DotMake.DocfxPlus.Cli.Util;
 using HarmonyLib;
 
-namespace DotMake.DocfxPlus.Cli.Patches
+namespace DotMake.DocfxPlus.Cli.Docfx
 {
     internal partial class XmlComment
     {
@@ -19,7 +20,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
             \s*
             (?://)?\s*
             \#region\s*
-            (?:""(?<name>[^""]*)""|(?<name>\S*))
+            (?:""(?<name>[^""]*)""|(?<name>.*?))
             \s*
             $
         ", RegexOptions.IgnorePatternWhitespace)]
@@ -45,10 +46,10 @@ namespace DotMake.DocfxPlus.Cli.Patches
             <!--
             \s*
             (?:
-                <[^/\s](?<name>\S*)>
+                <[^/\s](?<name>.*?)>
                 |
                 \#region\s*
-                (?:""(?<name>[^""]*)""|(?<name>\S*))
+                (?:""(?<name>[^""]*)""|(?<name>.*?))
             )
             \s*
             -->
@@ -65,7 +66,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
             <!--
             \s*
             (?:
-                </(?<name>\S*)>
+                </(?<name>.*?)>
                 |
                 \#endregion
             )
@@ -87,10 +88,9 @@ namespace DotMake.DocfxPlus.Cli.Patches
                     foreach (var node in parentElement.DescendantNodes())
                     {
                         if (node is XText xText
-                            && xText.Parent?.Name.LocalName.ToLowerInvariant() != "code"
-                            && xText.Value.StartsWith('\n'))
+                            && xText.Parent?.Name.LocalName.ToLowerInvariant() != "code")
                         {
-                            var lines = ReadLines(xText.Value)
+                            var lines = StringUtil.ReadLines(xText.Value)
                                 .Select(line => line.TrimStart());
 
                             xText.Value = string.Join("\n", lines);
@@ -118,18 +118,18 @@ namespace DotMake.DocfxPlus.Cli.Patches
                     && int.TryParse(tabSizeAttribute.Value, out var tabSizeValue))
                     tabSize = tabSizeValue;
                 if (tabSize == 0)
-                    tabSize = 4;
+                    tabSize = CodeLanguageUtil.GetTabSize(node.Attribute("source")?.Value);
 
                 var (lang, sourceLines) = ResolveCodeSource(node, context);
                 //var trimEachLine = AccessTools.Method(XmlCommentPatch.XmlCommentType, "TrimEachLine");
                 //value = (string)trimEachLine.Invoke(null, [value ?? node.Value, indent]);
                 if (sourceLines != null)
-                    sourceLines = TrimEachLine(sourceLines, indent, tabSize);
+                    sourceLines = StringUtil.TrimEachLine(sourceLines, indent, tabSize);
                 else
                     (lang, sourceLines) = ResolveCodeContent(node, context, indent, tabSize);
 
                 //var code = new XElement("code", value);
-                var code = FixCodeTagLineBreaks(sourceLines);
+                var code = CreateCodeTag(sourceLines);
 
                 //Store original lang from file (if source was set) for using as title on client-side tabs
                 if (!string.IsNullOrWhiteSpace(lang))
@@ -193,9 +193,9 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 if (subNode is XText subXText)
                 {
                     //Trim trailing non-newline whitespace which may be the indentation of the following <code> tag to avoid extra new lines.
-                    var value = TrimTrailingNonNewlineWhitespace(subXText.Value);
-                    var contentLines = ReadLines(value).ToList();
-                    sourceLines.AddRange(TrimEachLine(contentLines, indent, tabSize, trimEmptyLines: false));
+                    var value = StringUtil.TrimTrailingNonNewlineWhitespace(subXText.Value);
+                    var contentLines = StringUtil.ReadLines(value).ToList();
+                    sourceLines.AddRange(StringUtil.TrimEachLine(contentLines, indent, tabSize, trimEmptyLines: false));
                 }
                 else if (subNode is XElement subXElement && subXElement.Name.LocalName.ToLowerInvariant() == "code")
                 {
@@ -203,11 +203,11 @@ namespace DotMake.DocfxPlus.Cli.Patches
                     if (firstLang == null)
                         firstLang = lang;
 
-                    sourceLines.AddRange(TrimEachLine(nestedSourceLines, indent, tabSize));
+                    sourceLines.AddRange(StringUtil.TrimEachLine(nestedSourceLines, indent, tabSize));
                 }
             }
 
-            return (firstLang, TrimEmptyLines(sourceLines));
+            return (firstLang, StringUtil.TrimEmptyLines(sourceLines));
         }
 
         internal static (string lang, List<string> sourceLines) ResolveCodeSource(XElement node, object context)
@@ -228,7 +228,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 return (lang, null);
 
             //Always read source lines (even if no region) to handle inconsistent line breaks (\n or \r\n)
-            var sourceLines = ReadLines(sourceText).ToList();
+            var sourceLines = StringUtil.ReadLines(sourceText).ToList();
 
             var region = node.Attribute("region")?.Value;
             if (string.IsNullOrEmpty(region))
@@ -274,16 +274,6 @@ namespace DotMake.DocfxPlus.Cli.Patches
             return (lang, regionSourceLines);
         }
 
-        internal static IEnumerable<string> ReadLines(string text)
-        {
-            string line;
-            using var sr = new StringReader(text);
-            while ((line = sr.ReadLine()) != null)
-            {
-                yield return line;
-            }
-        }
-
         internal static (Regex, Regex) GetRegionRegex(string source)
         {
             var ext = Path.GetExtension(source);
@@ -294,6 +284,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
                 case ".HTML":
                 case ".CSHTML":
                 case ".VBHTML":
+                //new
                 case ".ASPX":
                 case ".CSPROJ":
                 case ".SLNX":
@@ -304,72 +295,7 @@ namespace DotMake.DocfxPlus.Cli.Patches
             return (RegionRegex(), EndRegionRegex());
         }
 
-        internal static List<string> TrimEachLine(List<string> lines, string indent = null, int tabSize = 4, bool trimEmptyLines = true)
-        {
-            var minLeadingWhitespace = int.MaxValue;
-            var tab = new string(' ', tabSize);
-
-            // Trim leading and trailing empty lines
-            if (trimEmptyLines)
-                lines = TrimEmptyLines(lines);
-
-            for (var i = 0; i < lines.Count; i++)
-            {
-                //Convert tabs to spaces to always ensure correct indentation
-                var line = lines[i] = lines[i].Replace("\t", tab);
-
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                var leadingWhitespace = 0;
-                while (leadingWhitespace < line.Length && char.IsWhiteSpace(line[leadingWhitespace]))
-                    leadingWhitespace++;
-
-                minLeadingWhitespace = Math.Min(minLeadingWhitespace, leadingWhitespace);
-            }
-
-            var newLines = new List<string>();
-
-            // Apply indentation to all lines except the first,
-            // since the first new line in <pre></code> is significant
-            var firstLine = true;
-
-            foreach (var line in lines)
-            {
-                var newLine = "";
-
-                if (firstLine)
-                    firstLine = false;
-                else if(!string.IsNullOrEmpty(indent))
-                    newLine = indent;
-
-                if (string.IsNullOrWhiteSpace(line))
-                {
-                    newLines.Add(newLine);
-                    continue;
-                }
-
-                newLine += line.Substring(minLeadingWhitespace);
-                newLines.Add(newLine);
-            }
-
-            return newLines;
-        }
-
-        private static List<string> TrimEmptyLines(List<string> lines)
-        {
-            var start = 0;
-            while (start < lines.Count && string.IsNullOrWhiteSpace(lines[start]))
-                start++;
-
-            var end = lines.Count - 1;
-            while (end >= start && string.IsNullOrWhiteSpace(lines[end]))
-                end--;
-
-            return lines.GetRange(start, end - start + 1);
-        }
-
-        private static XElement FixCodeTagLineBreaks(List<string> lines)
+        private static XElement CreateCodeTag(List<string> lines)
         {
             /*
             To prevent Yaml multi-line problems, use comment tags `<!-- -->` for line breaks
@@ -396,21 +322,6 @@ namespace DotMake.DocfxPlus.Cli.Patches
             }
 
             return code;
-        }
-
-        private static string TrimTrailingNonNewlineWhitespace(string input)
-        {
-            var end = input.Length;
-
-            while (end > 0)
-            {
-                var c = input[end - 1];
-                if (c == '\n' || c == '\r') break;
-                if (!char.IsWhiteSpace(c)) break;
-                end--;
-            }
-
-            return input.Substring(0, end);
         }
     }
 }

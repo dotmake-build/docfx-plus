@@ -4,12 +4,12 @@ using System.Xml.Linq;
 using HarmonyLib;
 // ReSharper disable InconsistentNaming
 
-namespace DotMake.DocfxPlus.Cli.Patches
+namespace DotMake.DocfxPlus.Cli.Docfx.Patches
 {
     //[HarmonyPatch]
     internal static class XmlCommentPatch
     {
-        public static Type Type = Assemblies.DocfxDotnetAssembly.GetType("Docfx.Dotnet.XmlComment", true);
+        public static Type Type = PatchAssemblies.DocfxDotnet.GetType("Docfx.Dotnet.XmlComment", true);
 
         [HarmonyPatch]
         internal static class ResolveCode

@@ -4,7 +4,7 @@ using Docfx.DataContracts.ManagedReference;
 using HarmonyLib;
 using Microsoft.CodeAnalysis;
 
-namespace DotMake.DocfxPlus.Cli.Patches
+namespace DotMake.DocfxPlus.Cli.Docfx
 {
     internal static class SymbolVisitorAdapter
     {

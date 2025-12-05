@@ -4,11 +4,11 @@ using HarmonyLib;
 using Microsoft.CodeAnalysis;
 // ReSharper disable InconsistentNaming
 
-namespace DotMake.DocfxPlus.Cli.Patches
+namespace DotMake.DocfxPlus.Cli.Docfx.Patches
 {
     internal static class SymbolVisitorAdapterPatch
     {
-        public static Type Type = Assemblies.DocfxDotnetAssembly.GetType("Docfx.Dotnet.SymbolVisitorAdapter", true);
+        public static Type Type = PatchAssemblies.DocfxDotnet.GetType("Docfx.Dotnet.SymbolVisitorAdapter", true);
 
         [HarmonyPatch]
         internal static class VisitNamespace

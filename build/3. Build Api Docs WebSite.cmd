@@ -3,7 +3,8 @@
 set srcFolder=..\docs
 set publishFolder=..\docs\_site
 
-dotnet tool update -g docfx-plus
+dotnet tool uninstall -g docfx-plus
+dotnet tool update -g docfx-plus --configfile ../src/nuget.config
 docfx-plus %srcFolder%\docfx.json --serve
 
 @echo off

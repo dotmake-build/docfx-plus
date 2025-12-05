@@ -33,7 +33,7 @@ exports.postTransform = function (model) {
 
 function fixTildeHref(items) {
   items?.forEach((item) => {
-    if (item.href.startsWith("~/"))
+    if (item.href?.startsWith("~/"))
       item.href = "./" + item.href.substring(2);
 
     fixTildeHref(item.items);

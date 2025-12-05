@@ -1,0 +1,63 @@
+
+on:
+  workflow_dispatch:   # manual trigger
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  actions: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+  
+jobs:
+  publish-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout external repositories
+    - name: Checkout external repo
+      uses: actions/checkout@v4
+      with:
+        repository: EWSoftware/SHFB
+        path: SHFB
+
+    - name: Dotnet Setup
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.x
+
+    - run: dotnet tool update -g docfx-plus
+
+    - run: docfx-plus convert SHFB/Documentation/SandcastleBuilder -o SHFB/Documentation/SandcastleBuilder/docfx
+    - run: docfx-plus SHFB/Documentation/SandcastleBuilder/docfx/docfx.json
+    - name: Deploy to GitHub Pages (Update existing)
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: SHFB/Documentation/SandcastleBuilder/docfx/_site
+        destination_dir: SandcastleBuilder   # subfolder on Pages site
+        
+    - run: docfx-plus convert SHFB/Documentation/SandcastleMAMLGuide -o SHFB/Documentation/SandcastleMAMLGuide/docfx
+    - run: docfx-plus SHFB/Documentation/SandcastleMAMLGuide/docfx/docfx.json
+    - name: Deploy to GitHub Pages (Update existing)
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: SHFB/Documentation/SandcastleMAMLGuide/docfx/_site
+        destination_dir: SandcastleMAMLGuide   # subfolder on Pages site
+    
+    - run: docfx-plus convert SHFB/Documentation/XMLCommentsGuide -o SHFB/Documentation/XMLCommentsGuide/docfx
+    - run: docfx-plus SHFB/Documentation/XMLCommentsGuide/docfx/docfx.json
+    - name: Deploy to GitHub Pages (Update existing)
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: SHFB/Documentation/XMLCommentsGuide/docfx/_site
+        destination_dir: XMLCommentsGuide   # subfolder on Pages site

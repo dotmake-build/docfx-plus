@@ -60,17 +60,23 @@ function groupCodeBlocks() {
     const group = [preEl];
     let nextPreEl = preEl.nextElementSibling;
     const lang = getLang(codeEl);
+    const groupedLangs = new Set();
+    groupedLangs.add(lang);
     
     while (
       nextPreEl &&
       nextPreEl.tagName === "PRE"
     ) {
       const nextCodeEl = nextPreEl.querySelector("code");
-      if (!nextCodeEl || getLang(nextCodeEl) === lang)
+      if (!nextCodeEl)
+        break;
+      const nextLang = getLang(nextCodeEl);
+      if (groupedLangs.has(nextLang))
         break;
         
       group.push(nextPreEl);
       visited.add(nextPreEl);
+      groupedLangs.add(nextLang);
       nextPreEl = nextPreEl.nextElementSibling;
     }
 
@@ -94,9 +100,10 @@ function createCodeBlockTabs(group, groupId) {
     const codeEl = preEl.querySelector("code");
     
     const lang = getLang(codeEl);
-    setLang(codeEl,  lang ?? "txt"); //fix lang class with supported one
+    const langFallback = getLangFallback(lang);
+    setLang(codeEl, langFallback); //fix lang class with supported one
     
-    const langId = lang ?? ("lang" + i);
+    const langId = langFallback ?? ("lang" + i);
     const langTitle = getLangTitle(codeEl) ?? toLangTitle(getFileType(codeEl) ?? lang);
     
     const tabId = "code-tab-" + groupId + "-" + langId;
@@ -178,7 +185,18 @@ function createCodeBlockTabs(group, groupId) {
 function getLang(codeEl) {
   const langPrefix = "lang-";
   const langCls = Array.from(codeEl.classList).find(cls => cls.startsWith(langPrefix));
-  const lang = (langCls?.slice(langPrefix.length) ?? getFileType(codeEl))?.toLowerCase();
+  const lang = (langCls?.slice(langPrefix.length) ?? getFileType(codeEl))
+    ?.toLowerCase()
+    ?.trim();
+
+  return (lang === "" || lang === "none")
+    ? null
+    : lang;
+}
+
+function getLangFallback(lang) {
+  if (lang && !isString(lang))
+    lang = getLang(lang);
 
   //Handle some language fallbacks (to make compatible with highlight.js) 
   switch (lang)
@@ -192,7 +210,9 @@ function getLang(codeEl) {
     case "xaml":
       return "xml";
     case "none":
-      return null;
+    case "":
+    case null:
+      return "txt";
     default:
       return lang;
   }
@@ -213,7 +233,7 @@ function getFileType(codeEl) {
 }
 
 function getLangTitle(codeEl) {
-  return codeEl.dataset.title;
+  return codeEl.dataset.title ?? codeEl.getAttribute("name");
 }
 
 function toLangTitle(lang) {
@@ -245,4 +265,8 @@ function loc(id, args) {
     }
   }
   return result
+}
+
+function isString(param) {
+  return typeof param === "string" || param instanceof String;
 }

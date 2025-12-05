@@ -16,25 +16,27 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - **Fixed:** Previous fix caused some inline `<code>` tags to lose space between self and the following word.
+        - **Added:** Added new `convert` command to convert/migrate your existing `SHFB (Sandcastle Help File Builder)`
+          projects completely to `docfx` projects:
+          - Project file (`.shfbproj`) will be converted to `docfx.json`
+          - Content Layout files (`.content`) will be converted to `toc.yml`
+          - MAML Topic files (`.aml`) will be converted to Markdown files (`.md`)
+          - Namespace summaries will be converted to overwrite files (`.md`)
+          - Other content files like images will be copied
+          - By default `content` subfolder will be rebased to `docs`  
+            and `icons`, `media` subfolders will be rebased to `images`
+            to match `docfx` conventions.
+      
+        - **Fixed:** Do not group `<code>` tags which have a language already in the group (e.g. stop at third one in `c#`, `vb`, `vb`).
+          In previous versions, the language was only checked against the first tag.
+          
+        - **Fixed:** ApplyTemplatePreprocessorError error (`at fixTildeHref (toc.extension.js:35:3)`) when
+          there were entries without href in `toc.yml`.
 
-        - **Improved:** Performance of reading source of `<code>` blocks, avoid unnecessary string allocations by
-          using lists of source lines in all the methods.
-
-        - **Improved:** When using nested `<code>` blocks, allow the user to adjust line breaks of literal code:
-          ```xml
-          <code language="cs">
-            // The new line below will be significant but above will not
-         
-            <code source="Class1.cs" region="Region1" />
-
-            // New lines above or below will be significant
-
-            <code source="Class2.cs" region="Region2" />
-         
-            // The new line above will be significant but below will not
-          </code>
-          ```        
+        - **Improved:** Allow user to override `_appFooter` in `docfx.json` and put "Made with docfx-plus" text on the right-side.
+        
+        - **Improved:** Define and use default tabSizes for common code file extensions (e.g. 2 for xml-based files),
+          so that code blocks with `source` keep correct indentation when some lines start with tabs and some starts with spaces.
       ]]>
     </PackageReleaseNotes>
 
@@ -44,6 +46,8 @@
 
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+    <PackageReference Include="DotMake.CommandLine" Version="3.0.0" />
+    <PackageReference Include="ReverseMarkdown" Version="4.7.1" />
   </ItemGroup>
 
   <ItemGroup>

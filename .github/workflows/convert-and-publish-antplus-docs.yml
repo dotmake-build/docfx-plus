@@ -1,9 +1,6 @@
-# Your GitHub workflow file under .github/workflows/
-# Trigger the action on push to main
+
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:   # manual trigger
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -24,24 +21,25 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    # Checkout external repositories
+    - name: Checkout external repo
+      uses: actions/checkout@v4
+      with:
+        repository: StephenHidem/AntPlus
+        path: AntPlus
+
     - name: Dotnet Setup
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x
 
     - run: dotnet tool update -g docfx-plus
-    - run: docfx-plus docfx.json
-      # use working-directory for docfx step otherwise codeSourceBasePath is not resolved correctly
-      # docfx-plus fixes this only required for docfx
-      # working-directory: docs
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+    - run: docfx-plus convert AntPlus/Documentation -o SHFB/Documentation/docfx
+    - run: docfx-plus AntPlus/Documentation/docfx/docfx.json
+    - name: Deploy to GitHub Pages (Update existing)
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        # Upload entire repository
-        path: 'docs/_site'
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: AntPlus/Documentation/docfx/_site
+        destination_dir: AntPlus   # subfolder on Pages site

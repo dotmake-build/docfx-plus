@@ -12,6 +12,7 @@ This project includes two parts:
 - The `docfx-plus` **tool** which is a wrapper around `docfx` tool, which at runtime patches the internals to fix some problems;
   currently mainly for advanced support of XML Comments (xmldocs) `<code>` blocks.
   This wrapper is developed because these changes cannot be applied in the template (or in a plugin as it's too late for metadata (`.yml`) changes).
+  The tool can also convert/migrate your existing `SHFB` projects completely to `docfx` projects.
 
 This project was mainly done for migrating our projects' docs from [SHFB (Sandcastle Help File Builder)](https://github.com/EWSoftware/SHFB) 
 which is still very stable but its theme and architecture was outdated.
@@ -54,6 +55,55 @@ docfx-plus build
 ```
 
 Refer to [DocFx Commandline Reference](https://dotnet.github.io/docfx/reference/docfx-cli-reference/overview.html) for more details.
+
+#### Converting existing `SHFB` projects to `docfx` projects
+
+The tool also adds new `convert` command to convert/migrate your existing `SHFB (Sandcastle Help File Builder)` projects completely to `docfx` projects:
+- Project file (`.shfbproj`) will be converted to `docfx.json`
+- Content Layout files (`.content`) will be converted to `toc.yml`
+- MAML Topic files (`.aml`) will be converted to Markdown files (`.md`)
+- Namespace summaries will be converted to overwrite files (`.md`)
+- Other content files like images will be copied
+- By default `content` subfolder will be rebased to `docs`  
+  and `icons`, `media` subfolders will be rebased to `images`
+  to match `docfx` conventions.
+
+Convert the first found `.shfbproj` file in current directory to `docfx` subfolder:
+```console
+docfx-plus convert -o docfx
+```
+
+Convert a specific `.shfbproj` file to `docfx` path:
+```console
+docfx-plus convert path/Documentation.shfbproj -o path/docfx
+```
+
+All options for `convert` command:
+```console
+Usage:
+  docfx-plus convert [<shfb-project-file>] [options]
+
+Arguments:
+  <shfb-project-file>  The path to the SHFB project file (`.shfbproj`). By default, the first found `.shfbproj` file in
+                       current directory is used
+
+Options:
+  -o, --output <output>                             The output base directory to write converted DocFx project files.
+                                                    [required]
+  -dl, --docs-location <docs-location>              The subfolder under DocFx project, to use for markdown (`.md`)
+                                                    files. [default: docs]
+  -il, --images-location <images-location>          The subfolder under DocFx project, to use for image files.
+                                                    [default: images]
+  -al, --api-location <api-location>                The subfolder under DocFx project, to use for generated API
+                                                    metadata (`.yml`) files. [default: api]
+  -ol, --overwrites-location <overwrites-location>  The subfolder under DocFx project, to use for overwrite (`.md` or
+                                                    `.yml`) files. [default: overwrites]
+  -rc, --rebase-content                             Whether to rebase `content` subfolder from SHFB to `docs` location
+                                                    when converting. [default: True]
+  -ri, --rebase-images                              Whether to rebase `icons` and `media` subfolders from SHFB to
+                                                    `images` location when converting. [default: True]
+  -?, -h, --help                                    Show help and usage information
+```
 
 ### Template usage
 

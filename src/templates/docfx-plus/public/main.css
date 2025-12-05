@@ -88,6 +88,13 @@ a:focus:not(.btn, .dropdown-item) {
   padding-left: 1.4rem;
 }
 
+.toc span.name-only {
+  display: block;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 1.4rem;
+}
+
 [data-bs-theme=dark] .toc li > a {
   color: unset;
 }
@@ -213,6 +220,7 @@ body[data-yaml-mime=ApiPage] article h2.section {
   border-bottom-left-radius: var(--bs-border-radius);
   border-bottom-right-radius: var(--bs-border-radius);
   border-width: .125rem !important;
+  background-color: var(--bs-body-bg);
 }
 
 .code-tabs-content pre {
@@ -231,6 +239,7 @@ body[data-yaml-mime=ApiPage] article h2.section {
   font-size: .875rem;
   font-weight: 600;
   border-radius: .25rem;
+  background-color: var(--bs-body-bg);
 }
 
 .code-copy i {

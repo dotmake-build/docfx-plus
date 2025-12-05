@@ -4,11 +4,11 @@ using HarmonyLib;
 using Microsoft.CodeAnalysis;
 // ReSharper disable InconsistentNaming
 
-namespace DotMake.DocfxPlus.Cli.Patches
+namespace DotMake.DocfxPlus.Cli.Docfx.Patches
 {
     internal static class SymbolFilterPatch
     {
-        public static Type Type = Assemblies.DocfxDotnetAssembly.GetType("Docfx.Dotnet.SymbolFilter", true);
+        public static Type Type = PatchAssemblies.DocfxDotnet.GetType("Docfx.Dotnet.SymbolFilter", true);
 
         [HarmonyPatch]
         internal static class IncludeApi
