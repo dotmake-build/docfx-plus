@@ -32,7 +32,7 @@ jobs:
         dotnet-version: 8.x
 
     - run: dotnet tool update -g docfx-plus
-    - run: docfx-plus docfx.json
+    - run: docfx-plus docs/docfx.json
       # use working-directory for docfx step otherwise codeSourceBasePath is not resolved correctly
       # docfx-plus fixes this only required for docfx
       # working-directory: docs
