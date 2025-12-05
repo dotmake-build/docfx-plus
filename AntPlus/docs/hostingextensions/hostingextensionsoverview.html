@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ANT+ Hosting Extensions Overview </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ANT+ Hosting Extensions Overview ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/StephenHidem/AntPlus/blob/main/Documentation/docfx/docs/hostingextensions/hostingextensionsoverview.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            Small Earth Technology ANT+ Class Library
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="ant-hosting-extensions-overview">ANT+ Hosting Extensions Overview</h1>
+
+<p>The ANT+ Hosting Extensions simplify integrating the ANT+ Class Library into applications that use			dependency injection (DI) to compose the host application. MAUI applications use this pattern extensively			and other Windows applications can employ various host builders for DI.</p>
+<h2 id="Section1"> HostExtension Class</h2>
+<p>This class provides two extension methods to add the ANT+ classes to the host builder. UseAntPlus() is overloaded				to work with IHostBuilder implementations and MauiAppBuilder implementations.				Their purpose is identical; inject all the ANT+ devices and support infrastructure into the DI container.</p>
+<p>An additional extension method, AddAntPlusServices(), is provided to add the ANT+ classes to an IServiceCollection when UseAntPlus()				is not suitable.</p>
+<p>The TimeoutOptions class will also be added to the DI container and the configuration is bound by the container.</p>
+<h2 id="setting-timeoutoptions">Setting TimeoutOptions</h2>
+<p>The global timeout setting can come from a variety of sources such as the command line or appsettings.json.				Two options are available - <strong>MissedMessages</strong> and <strong>Timeout</strong>. Timeout is in milliseconds and MissedMessages is the				number of messages missed before signalling the ANT device is considered offline. If no timeout setting				is specified the timeout will default to 8 missed messages. Timeouts can be disabled by setting <strong>Timeout=-1</strong>. This is				equivalent to Timeout.Infinite.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><strong>Disabling Timeouts</strong></p>
+<p>Disabling timeouts is <strong>NOT</strong> recommended. It can lead to unintended consequences such as sending a					message to a device that is no longer present. This can cause a radio channel to be blocked indefinitely.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Prefer MissedMessages as this will scale the timeout based on the broadcast rate of specific ANT devices.</p>
+</div>
+<p>Setting the option from the command line: <strong>--TimeoutOptions:MissedMessages=8</strong>.</p>
+<p>Setting the option from appsetings.json:</p>
+<pre><code class="lang-none">{
+  &quot;TimeoutOptions&quot;: {
+    &quot;MissedMessages&quot;: 8,
+    &quot;Timeout&quot;: null
+  }
+}</code></pre><h2 id="iselectimplementation-interface">ISelectImplementation Interface</h2>
+<p>This is a simple interface that defines a single method - SelectImplementationType(). The purpose of				this method is to provide a mechanism for selecting one specific implementation from multiple implementations				of the same device class. Examples of this are bicycle power and fitness equipment sensors. A data page is				decoded and a specific implementation type is returned or null if the implementation could not be				determined from the data page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You only need to implement this interface for device classes with multiple implementations.</p>
+</div>
+<p>Support for ANT+ devices not supported by the ANT+ Class Library can be added to the DI container and				device types that support multiple implementations will implement this interface and add it to the DI container.				It is added to the DI container with the AddKeyedSingleton() method with the device class value specified				as the key. For example - <code>AddKeyedSingleton&lt;ISelectImplementation, SelectBicyclePowerImplementation&gt;(BicyclePower.DeviceClass);</code></p>
+<p>Here's the SelectBicyclePowerImplementation class -</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Selects the bicycle power implementation type.
+/// &lt;/summary&gt;
+internal class SelectBicyclePowerImplementation : ISelectImplementation
+{
+    /// &lt;summary&gt;
+    /// Gets the type of the bicycle power sensor.
+    /// &lt;/summary&gt;
+    /// &lt;remarks&gt;
+    /// &lt;see cref=&quot;CrankTorqueFrequencySensor&quot;/&gt; sensors only broadcast their main page. Other bicycle power sensors broadcast
+    /// any number of other pages. This allows the method to determine the sensor type.
+    /// &lt;/remarks&gt;
+    /// &lt;inheritdoc /&gt;
+    public Type? SelectImplementationType(byte[] page)
+    {
+        if ((BicyclePower.DataPage)page[0] == BicyclePower.DataPage.CrankTorqueFrequency)
+        {
+            // CTF sensor
+            return typeof(CrankTorqueFrequencySensor);
+        }
+        else
+        {
+            return typeof(StandardPowerSensor);
+        }
+    }
+}</code></pre><h2 id="antcollection-class">AntCollection Class</h2>
+<p>This class replaces the AntDeviceCollection class. It is a thread-safe ObservableCollection of AntDevices.				It exploits the benefits of dependency injection and handles the addition of custom AntDevice to the DI				container. It automatically brings in the TimeoutOptions, resolves any AntDevices present in the DI				container, and resolves any ISelectImplementations required to resolve an AntDevice type.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="how-to-create-and-add-antdevice.html">How-To: Create and Add a Custom AntDevice to Host</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/StephenHidem/AntPlus/blob/main/Documentation/docfx/docs/hostingextensions/hostingextensionsoverview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Documentation built 12/05/2025 20:48:16.<br>&#169; 2022 Stephen Hidem.
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

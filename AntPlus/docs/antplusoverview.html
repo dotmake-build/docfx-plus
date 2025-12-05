@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>AntPlus Class Library Overview </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="AntPlus Class Library Overview ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/StephenHidem/AntPlus/blob/main/Documentation/docfx/docs/antplusoverview.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            Small Earth Technology ANT+ Class Library
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="antplus-class-library-overview">AntPlus Class Library Overview</h1>
+
+<p>The AntPlus class library supports a number of ANT+ device profiles as defined by Garmin/Dynastream. All device profiles			are based on the abstract class AntDevice. Common data pages and timeout options are provided to support the device profiles.			The following device profiles are supported -</p>
+<ul>
+<li><p>Asset Tracker</p>
+</li>
+<li><p>Bicycle Power</p>
+<ul>
+<li><p>Crank Torque Frequency Sensor</p>
+</li>
+<li><p>Standard Power Sensor</p>
+</li>
+<li><p>Standard Crank Torque Sensor</p>
+</li>
+<li><p>Standard Wheel Torque Sensor</p>
+</li>
+</ul>
+</li>
+<li><p>Bike Speed and Cadence</p>
+<ul>
+<li><p>Bike Cadence Sensor</p>
+</li>
+<li><p>Bike Speed Sensor</p>
+</li>
+<li><p>Combined Speed and Cadence Sensor</p>
+</li>
+</ul>
+</li>
+<li><p>Fitness Equipment</p>
+<ul>
+<li><p>Climber</p>
+</li>
+<li><p>Elliptical</p>
+</li>
+<li><p>Nordic Skier</p>
+</li>
+<li><p>Rower</p>
+</li>
+<li><p>Trainer/Stationary Bike</p>
+</li>
+<li><p>Treadmill</p>
+</li>
+</ul>
+</li>
+<li><p>Geocache</p>
+</li>
+<li><p>Heart Rate</p>
+</li>
+<li><p>Muscle Oxygen</p>
+</li>
+<li><p>Stride Based Speed and Distance Monitor</p>
+</li>
+<li><p>Unknown</p>
+</li>
+</ul>
+<p>See <a class="xref" href="../api/SmallEarthTech.AntPlus.DeviceProfiles.html">SmallEarthTech.AntPlus.DeviceProfiles</a> for specific device details.</p>
+<h2 id="antdevice">AntDevice</h2>
+<p>This abstract class provides properties and methods common to all ANT devices. The virtual Parse method handles resetting the				device timeout each time a message is received. The RequestDataPage method sends a data page request to the ANT device.				The SendExtAcknowledgedMessage method sends commands/requests to the ANT device.</p>
+<h2 id="commondatapages">CommonDataPages</h2>
+<p>CommonDataPages are typically added to derived AntDevice classes as a read-only property if the ANT device supports common data pages.</p>
+<pre><code class="lang-c#">public CommonDataPages CommonDataPages { get; }
+</code></pre>
+<p>The AntDevice constructor will create and assign the CommonDataPages class. Here's an example from the BikeRadar class -</p>
+<pre><code class="lang-cs">public BikeRadar(ChannelId channelId, IAntChannel antChannel, ILogger&lt;BikeRadar&gt; logger, TimeoutOptions? options)
+    : base(channelId, antChannel, logger, options)
+{
+    CommonDataPages = new CommonDataPages(logger);
+    for (int i = 0; i &lt; 8; i++) { RadarTargets.Add(new RadarTarget()); }
+}</code></pre><h2 id="antdevicecollection">AntDeviceCollection</h2>
+<p>This is a thread-safe observable collection of ANT devices. The constructor will initialize the ANT radio for continuous scan				mode and direct all messages received from the ANT radio to a private handler. This handler will select an ANT device from				the collection or create a new ANT device and add it to the collection. The message is then passed to the ANT device parser				for handling by the device.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Prefer AntCollection and the hosting extensions if your application uses dependency injection. See <a href="hostingextensions/hostingextensionsoverview.html">ANT+ Hosting Extensions Overview</a> for details.</p>
+</div>
+<h2 id="timeoutoptions">TimeoutOptions</h2>
+<p>Set either Timeout in milliseconds or MissedMessages to the number of missed messages before signaling device offline.				Prefer MissedMessages as this scales the timeout to the ANT device broadcast message rate. Set Timeout to -1 to				disable ANT device timeouts.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="reference">Reference</h4>
+<ul>
+<li><a class="xref" href="../api/SmallEarthTech.AntPlus.DeviceProfiles.html">SmallEarthTech.AntPlus.DeviceProfiles</a></li>
+</ul>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="hostingextensions/hostingextensionsoverview.html">ANT+ Hosting Extensions Overview</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/StephenHidem/AntPlus/blob/main/Documentation/docfx/docs/antplusoverview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Documentation built 12/05/2025 20:48:16.<br>&#169; 2022 Stephen Hidem.
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
