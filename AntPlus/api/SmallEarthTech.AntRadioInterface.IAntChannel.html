@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>IAntChannel Interface </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="IAntChannel Interface ">
+      
+      <meta name="description" content="The ANT channel interface.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../docs/toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/StephenHidem/AntPlus/new/main/apiSpec/new?filename=SmallEarthTech_AntRadioInterface_IAntChannel.md&amp;value=---%0Auid%3A%20SmallEarthTech.AntRadioInterface.IAntChannel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            Small Earth Technology ANT+ Class Library
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SmallEarthTech.AntRadioInterface.IAntChannel">
+
+
+
+  <h1 id="SmallEarthTech_AntRadioInterface_IAntChannel" data-uid="SmallEarthTech.AntRadioInterface.IAntChannel" class="text-break">
+IAntChannel Interface  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntRadioInterface/IAntChannel.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <h2 class="section" id="SmallEarthTech_AntRadioInterface_IAntChannel_definition">Definition</h2>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SmallEarthTech.AntRadioInterface.html">SmallEarthTech.AntRadioInterface</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SmallEarthTech.AntRadioInterface.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary">
+  <p>The ANT channel interface.</p>
+
+  </div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IAntChannel : IDisposable</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+  <table class="table jumplist" aria-label="Properties
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.ChannelNumber.html#SmallEarthTech_AntRadioInterface_IAntChannel_ChannelNumber">ChannelNumber</a>
+      </td>
+      <td>
+      <p>Gets the channel number.</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="methods">Methods
+</h2>
+  <table class="table jumplist" aria-label="Methods
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.AssignChannel.html#SmallEarthTech_AntRadioInterface_IAntChannel_AssignChannel_SmallEarthTech_AntRadioInterface_ChannelType_System_Byte_System_UInt32_">AssignChannel(ChannelType, byte, uint)</a>
+      </td>
+      <td>
+      <p>Assign an ANT channel along with its main parameters.
+Throws exception if the network number is invalid.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.AssignChannelExt.html#SmallEarthTech_AntRadioInterface_IAntChannel_AssignChannelExt_SmallEarthTech_AntRadioInterface_ChannelType_System_Byte_SmallEarthTech_AntRadioInterface_ChannelTypeExtended_System_UInt32_">AssignChannelExt(ChannelType, byte, ChannelTypeExtended, uint)</a>
+      </td>
+      <td>
+      <p>Assign an ANT channel, using extended channel assignment
+Throws exception if the network number is invalid.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.CloseChannel.html#SmallEarthTech_AntRadioInterface_IAntChannel_CloseChannel_System_UInt32_">CloseChannel(uint)</a>
+      </td>
+      <td>
+      <p>Close this channel</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.ConfigFrequencyAgility.html#SmallEarthTech_AntRadioInterface_IAntChannel_ConfigFrequencyAgility_System_Byte_System_Byte_System_Byte_System_UInt32_">ConfigFrequencyAgility(byte, byte, byte, uint)</a>
+      </td>
+      <td>
+      <p>This function configures the three operating RF frequencies for ANT frequency agility mode
+and should be used with the AdvFrequencyAgility extended channel assignment flag.
+Should not be used with shared, or Tx/Rx only channel types.
+This feature is not available on all ANT devices.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.IncludeExcludeListAddChannel.html#SmallEarthTech_AntRadioInterface_IAntChannel_IncludeExcludeListAddChannel_SmallEarthTech_AntRadioInterface_ChannelId_System_Byte_System_UInt32_">IncludeExcludeListAddChannel(ChannelId, byte, uint)</a>
+      </td>
+      <td>
+      <p>Add the given channel ID to the channel's inclusion/exclusion list.
+The channelID is then included or excluded from the wild card search depending on how the list is configured.
+Throws exception if listIndex &gt; 3.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.IncludeExcludeListConfigure.html#SmallEarthTech_AntRadioInterface_IAntChannel_IncludeExcludeListConfigure_System_Byte_System_Boolean_System_UInt32_">IncludeExcludeListConfigure(byte, bool, uint)</a>
+      </td>
+      <td>
+      <p>Configures the inclusion/exclusion list. If isExclusionList is true the channel IDs will be
+excluded from any wild card search on this channel. Otherwise the IDs are the only IDs accepted in the search.
+Throws exception if list size is greater than 4.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.OpenChannel.html#SmallEarthTech_AntRadioInterface_IAntChannel_OpenChannel_System_UInt32_">OpenChannel(uint)</a>
+      </td>
+      <td>
+      <p>Opens this channel</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.RequestChannelID.html#SmallEarthTech_AntRadioInterface_IAntChannel_RequestChannelID_System_UInt32_">RequestChannelID(uint)</a>
+      </td>
+      <td>
+      <p>Requests the channel identifier.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.RequestStatus.html#SmallEarthTech_AntRadioInterface_IAntChannel_RequestStatus_System_UInt32_">RequestStatus(uint)</a>
+      </td>
+      <td>
+      <p>Returns current channel status.
+Throws exception on timeout.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendAcknowledgedData.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendAcknowledgedData_System_Byte___System_UInt32_">SendAcknowledgedData(byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as an acknowledged transmission.
+Throws exception if data &gt; 8-bytes in length</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendAcknowledgedDataAsync.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendAcknowledgedDataAsync_System_Byte___System_UInt32_">SendAcknowledgedDataAsync(byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as an acknowledged transmission.
+Throws exception if data &gt; 8-bytes in length</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendBroadcastData.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendBroadcastData_System_Byte___">SendBroadcastData(byte[])</a>
+      </td>
+      <td>
+      <p>Sends the given data on the broadcast transmission.
+Throws exception if data &gt; 8-bytes in length</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendBurstTransfer.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendBurstTransfer_System_Byte___System_UInt32_">SendBurstTransfer(byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as a burst transmission. Returns: 0=fail, 1=pass, 2=timeout, 3=cancelled</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendBurstTransferAsync.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendBurstTransferAsync_System_Byte___System_UInt32_">SendBurstTransferAsync(byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as a burst transmission. Returns: 0=fail, 1=pass, 2=timeout, 3=cancelled</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendExtAcknowledgedData.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendExtAcknowledgedData_SmallEarthTech_AntRadioInterface_ChannelId_System_Byte___System_UInt32_">SendExtAcknowledgedData(ChannelId, byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as an extended acknowledged transmission.
+Throws exception if data &gt; 8-bytes in length</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendExtAcknowledgedDataAsync.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendExtAcknowledgedDataAsync_SmallEarthTech_AntRadioInterface_ChannelId_System_Byte___System_UInt32_">SendExtAcknowledgedDataAsync(ChannelId, byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as an extended acknowledged transmission.
+Throws exception if data &gt; 8-bytes in length</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendExtBroadcastData.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendExtBroadcastData_SmallEarthTech_AntRadioInterface_ChannelId_System_Byte___">SendExtBroadcastData(ChannelId, byte[])</a>
+      </td>
+      <td>
+      <p>Sends the given data as an extended broadcast transmission.
+Throws exception if data &gt; 8-bytes in length</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendExtBurstTransfer.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendExtBurstTransfer_SmallEarthTech_AntRadioInterface_ChannelId_System_Byte___System_UInt32_">SendExtBurstTransfer(ChannelId, byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as an extended burst transmission. Returns: 0=fail, 1=pass, 2=timeout, 3=cancelled</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SendExtBurstTransferAsync.html#SmallEarthTech_AntRadioInterface_IAntChannel_SendExtBurstTransferAsync_SmallEarthTech_AntRadioInterface_ChannelId_System_Byte___System_UInt32_">SendExtBurstTransferAsync(ChannelId, byte[], uint)</a>
+      </td>
+      <td>
+      <p>Sends the given data as an extended burst transmission. Returns: 0=fail, 1=pass, 2=timeout, 3=cancelled</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelFreq.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelFreq_System_Byte_System_UInt32_">SetChannelFreq(byte, uint)</a>
+      </td>
+      <td>
+      <p>Set this channel's RF frequency, with the given offset from 2400Mhz.
+Note: Changing this frequency may affect the ability to certify the product in certain areas of the world.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelID_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_">SetChannelID(ChannelId, uint)</a>
+      </td>
+      <td>
+      <p>Set the Channel ID of this channel.
+Throws exception if device type is &gt; 127.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelID_UsingSerial_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_">SetChannelID_UsingSerial(ChannelId, uint)</a>
+      </td>
+      <td>
+      <p>Identical to setChannelID, except last two bytes of serial number are used for device number.
+Not available on all ANT devices.
+Throws exception if device type is &gt; 127.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelPeriod.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelPeriod_System_UInt16_System_UInt32_">SetChannelPeriod(ushort, uint)</a>
+      </td>
+      <td>
+      <p>Set this channel's messaging period</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelSearchTimeout.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelSearchTimeout_System_Byte_System_UInt32_">SetChannelSearchTimeout(byte, uint)</a>
+      </td>
+      <td>
+      <p>Set the search timeout</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelTransmitPower.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelTransmitPower_SmallEarthTech_AntRadioInterface_TransmitPower_System_UInt32_">SetChannelTransmitPower(TransmitPower, uint)</a>
+      </td>
+      <td>
+      <p>Set the transmission power of this channel
+Throws exception if device is not capable of per-channel transmit power.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetLowPrioritySearchTimeout.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetLowPrioritySearchTimeout_System_Byte_System_UInt32_">SetLowPrioritySearchTimeout(byte, uint)</a>
+      </td>
+      <td>
+      <p>Sets the search timeout for the channel's low-priority search, where it will not interrupt other open channels.
+When this period expires the channel will drop to high-priority search.
+This feature is not available in all ANT devices.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetProximitySearch.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetProximitySearch_System_Byte_System_UInt32_">SetProximitySearch(byte, uint)</a>
+      </td>
+      <td>
+      <p>Enables a one time proximity requirement for searching.  Only ANT devices within the set proximity bin can be acquired.
+Search threshold values are not correlated to specific distances as this will be dependent on the system design.
+This feature is not available on all ANT devices.
+Throws exception if given bin value is &gt; 10.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.SetSearchThresholdRSSI.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetSearchThresholdRSSI_System_Byte_System_UInt32_">SetSearchThresholdRSSI(byte, uint)</a>
+      </td>
+      <td>
+      <p>Set this channel's RSSI threshold (ARCT)</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.UnassignChannel.html#SmallEarthTech_AntRadioInterface_IAntChannel_UnassignChannel_System_UInt32_">UnassignChannel(uint)</a>
+      </td>
+      <td>
+      <p>Unassign this channel.</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="events">Events
+</h2>
+  <table class="table jumplist" aria-label="Events
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntRadioInterface.IAntChannel.ChannelResponse.html">ChannelResponse</a>
+      </td>
+      <td>
+      <p>The channel response event. Triggered every time a message is received from the ANT device.</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/StephenHidem/AntPlus/blob/main/AntRadioInterface/IAntChannel.cs/#L123" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Documentation built 12/05/2025 22:17:18.<br>&#169; 2022 Stephen Hidem.
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
