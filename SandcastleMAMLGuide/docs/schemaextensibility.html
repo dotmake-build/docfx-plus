@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Schema Extensibility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Schema Extensibility ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/schemaextensibility.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle MAML Guide">
+            Sandcastle MAML Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="schema-extensibility">Schema Extensibility</h1>
+
+<p>This topic will explain how you can change the MAML schema so that you can use elements from other
+namespaces as well. This is useful when extending Sandcastle with build components that provide new
+elements because it still allows you to validate your topic files.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The Sandcastle version of the MAML schema files already contain the necessary changes.</p>
+</div>
+<h2 id="xml-schema-extensibility">XML Schema Extensibility</h2>
+<p>In general, XML schema provides the <code>any</code> element
+for declaring extensibility points in your schema. The
+<code>any</code> element has two attributes that control the
+extensibility contract.</p>
+<p>The <code>namespace</code> attribute allows you to either
+explicitly specify a closed set of namespaces that are allowed or to specify
+one of these pseudo-URIs:</p>
+<ul>
+<li><p>##local</p>
+<ul>
+<li>This allows only to use elements that do not reside in any namespace.
+This is not what we want to use because it forces build component
+authors to declare all elements in the empty namespace. This could
+easily lead to name clashes between different build components.</li>
+</ul>
+</li>
+<li><p>##targetNamespace</p>
+<ul>
+<li>This only allows elements from the target namespace of the declaring
+schema. For our purposes this is useless because it would only allow
+elements from the MAML namespace
+(<em><a href="http://ddue.schemas.microsoft.com/authoring/2003/5">http://ddue.schemas.microsoft.com/authoring/2003/5</a></em>).</li>
+</ul>
+</li>
+<li><p>##any</p>
+<ul>
+<li>This allows any namespace, including the target namespace of the
+declaring schema. We do not want to use this because it would also
+allow to use any element from the MAML namespace
+(<em><a href="http://ddue.schemas.microsoft.com/authoring/2003/5">http://ddue.schemas.microsoft.com/authoring/2003/5</a></em>)
+itself and hence undermine the schema validation for MAML.</li>
+</ul>
+</li>
+<li><p>##other</p>
+<ul>
+<li>This allows any namespaces except the target namespace of the declaring
+schema. For our purposes this is ideal because it allows only to use
+elements from any namespace except the MAML namespace
+(<em><a href="http://ddue.schemas.microsoft.com/authoring/2003/5">http://ddue.schemas.microsoft.com/authoring/2003/5</a></em>).</li>
+</ul>
+</li>
+</ul>
+<p>The <code>processContents</code> attribute allows you to control
+the validation requirements. It can have one of following values:</p>
+<ul>
+<li><p>skip</p>
+<ul>
+<li>This is the least restrictive value. It specifies that the schema processor
+should not try to validate the contents of the new element, even if it is
+able to find a schema for it.</li>
+</ul>
+</li>
+<li><p>strict</p>
+<ul>
+<li>This is the most restrictive setting. It requires the schema processor to
+always validate the contents of the new element. If it is not able to
+find such a schema an error is reported during validation.</li>
+</ul>
+</li>
+<li><p>lax</p>
+<ul>
+<li>This is a compromise between the settings <code>skip</code> and
+<code>strict</code>. The schema processor will validate the schema
+if it is able to find a schema for the new element and will skip it if cannot
+find such a schema. For our purposes this is ideal because it allows build component
+authors to provide a schema for validation but does not force them to do so.</li>
+</ul>
+</li>
+</ul>
+<p>Therefore, our extensibility points will all look like this:</p>
+<pre><code class="lang-xml">&lt;any namespace=&quot;##other&quot; processContents=&quot;lax&quot; /&gt;
+</code></pre>
+<h2 id="extending-inline-text">Extending Inline Text</h2>
+<p>Build components might add elements that you can use inside a <code>para</code>
+element. Examples for such elements are:</p>
+<ul>
+<li><p>Linking</p>
+<ul>
+<li>These are elements that allow you to link to other topics. MAML itself already provides several
+elements for this purpose, such as the <code>link</code> element to link to conceptual
+topics, the <code>codeEntityReference</code> element to link to managed code APIs, and
+the <code>externalLink</code> element to link to some location in the internet.</li>
+</ul>
+</li>
+<li><p>Semantics</p>
+<ul>
+<li>This category includes elements that are used to associate pieces of text with semantics.
+In many cases these semantics are made visible through a consistent formatting, such as italics
+or bold text. Amongst others MAML itself provides the <code>localUri</code>
+element for marking text as representing local paths and the <code>ui</code>
+element for marking text as representing elements in your user interface.</li>
+</ul>
+</li>
+</ul>
+<p>To extend the <code>para</code> element we will extend the underlying type
+<code>inlineType</code>.</p>
+<p>Open the file <em>inline.xsd</em>, goto line 62, and add the <code>any</code>
+element to the type:</p>
+<pre><code class="lang-xml">&lt;complexType name=&quot;inlineType&quot; mixed=&quot;true&quot;&gt;
+    &lt;annotation&gt;
+        &lt;documentation&gt;
+            The inlineType complexType describes a simple inline-only
+            content model. It provides both text and elements with
+            similarly simple content models.
+        &lt;/documentation&gt;
+    &lt;/annotation&gt;
+    &lt;choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;
+        &lt;group ref=&quot;maml:inlineGroup&quot;/&gt;
+        &lt;element ref=&quot;maml:sharedContent&quot;/&gt;
+        &lt;element name=&quot;conditionalSection&quot;&gt;
+            &lt;complexType&gt;
+                &lt;sequence&gt;
+                    &lt;element ref=&quot;maml:conditions&quot;/&gt;
+                    &lt;element name=&quot;conditionalContent&quot; type=&quot;maml:inlineType&quot;/&gt;
+                &lt;/sequence&gt;
+            &lt;/complexType&gt;
+        &lt;/element&gt;
+        &lt;!-- PATCH HERE --&gt;
+        &lt;any namespace=&quot;##other&quot; processContents=&quot;lax&quot; /&gt;
+    &lt;/choice&gt;
+    &lt;attributeGroup ref=&quot;maml:contentIdentificationSharingAndConditionGroup&quot;/&gt;
+&lt;/complexType&gt;
+</code></pre>
+<h2 id="extending-related-topics">Extending Related Topics</h2>
+<p>For build components that provide elements for linking we also want to be able to use them inside the
+<code>relatedTopics</code> element. To do this, we will extend the type
+<code>relatedTopicsType</code>.</p>
+<p>Open the file <em>hierarchy.xsd</em>, goto line 123 and add the <code>any</code>
+element to the type:</p>
+<pre><code class="lang-xml">&lt;complexType name=&quot;relatedTopicsType&quot; mixed=&quot;false&quot;&gt;
+    &lt;choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;
+        &lt;group   ref=&quot;maml:relatedTopicLinkGroup&quot;/&gt;
+        &lt;!-- PATCH HERE --&gt;
+        &lt;any namespace=&quot;##other&quot; processContents=&quot;lax&quot; /&gt;
+    &lt;/choice&gt;
+    &lt;attributeGroup ref=&quot;maml:contentIdentificationSharingAndConditionGroup&quot;/&gt;
+&lt;/complexType&gt;
+</code></pre>
+<h2 id="extending-section-structure">Extending Section Structure</h2>
+<p>Last but not least build components might also provide elements that allow you to build a structure.
+For this purpose MAML itself already provides the <code>table</code>,
+<code>code</code>, and <code>para</code> elements.  To allow new structural
+elements we have to extend the type <code>sectionContentType</code>.</p>
+<p>Open the file <em>structure.xsd</em>, goto line 66 and add the <code>any</code>
+element to the type:</p>
+<pre><code class="lang-xml">&lt;complexType name=&quot;sectionContentType&quot; mixed=&quot;false&quot;&gt;
+    &lt;choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;
+        &lt;group ref=&quot;maml:structureGroup&quot;/&gt;
+        &lt;element name=&quot;conditionalSection&quot; type=&quot;maml:conditionalSectionType&quot;/&gt;
+        &lt;!-- PATCH HERE --&gt;
+        &lt;any namespace=&quot;##other&quot; processContents=&quot;lax&quot; /&gt;
+    &lt;/choice&gt;
+    &lt;attributeGroup ref=&quot;maml:contentIdentificationSharingAndConditionGroup&quot;/&gt;
+&lt;/complexType&gt;
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="intellisense.html">Visual Studio IntelliSense</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/schemaextensibility.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle MAML Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

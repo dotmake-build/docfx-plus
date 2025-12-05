@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>section </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="section ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/blockelements/section.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle MAML Guide">
+            Sandcastle MAML Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="section">section</h1>
+
+<p>This element is used to create a section within a topic.</p>
+<h2 id="usage">Usage</h2>
+<p>Enter the element in the topic with a nested <code>content</code> element that contains
+the section's content.  An optional <code>title</code> element can be used to provide a title for
+the section.  The content element will contain other MAML elements, nested lists, tables, etc.  Text should be
+contained in a <code>para</code> element.</p>
+<p>A section can contain a <code>sections</code> element that is used to create
+subsections.  The <code>sections</code> element contains one or more <code>section</code>
+elements for the subsections.  Subsections can themselves contain a <code>sections</code> element for
+additional subsections nested any number of levels deep.    See the <a href="../miscelements/autooutline.html">autoOutline</a> topic for an example with subsections.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-xml">&lt;section&gt;
+    &lt;title&gt;Usage&lt;/title&gt;
+    &lt;content&gt;
+        &lt;para&gt;Enter the element in the topic with a nested
+&lt;codeInline&gt;content&lt;/codeInline&gt; element that contains the section's
+content.  An optional &lt;codeInline&gt;title&lt;/codeInline&gt; element can be
+used to provide a title for the section.  The content element will contain other
+MAML elements, nested lists, tables, etc.  Text should be contained in a
+&lt;codeInline&gt;para&lt;/codeInline&gt; element.&lt;/para&gt;
+
+        &lt;para&gt;A section can contain a &lt;codeInline&gt;sections&lt;/codeInline&gt;
+element that is used to create subsections.  The &lt;codeInline&gt;sections&lt;/codeInline&gt;
+element contains one or more &lt;codeInline&gt;section&lt;/codeInline&gt; elements
+for the subsections.  Subsections can themselves contain a
+&lt;codeInline&gt;sections&lt;/codeInline&gt; element for additional subsections
+nested any number of levels deep.    See the
+&lt;link xlink:href=&quot;b9a1daac-a2d8-41b7-83b0-b7dc7b28b898&quot; /&gt; topic for an
+example with subsections.  &lt;/para&gt;
+        &lt;/content&gt;
+&lt;/section&gt;
+</code></pre>
+<h2 id="example-output">Example Output</h2>
+<p>See the <strong>Usage</strong> section above for an
+example of the output.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="blockelements.html">Block Elements</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/blockelements/section.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle MAML Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

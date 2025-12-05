@@ -1,0 +1,1085 @@
+{
+  "source_base_path": "/home/runner/work/docfx-plus/docfx-plus/SHFB/Documentation/SandcastleMAMLGuide/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/alert.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/alert.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/bibliography.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/bibliography.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/blockelements.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/blockelements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/code.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/code.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/codereference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/codereference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/definitiontable.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/definitiontable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/list.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/list.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/para.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/para.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/quote.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/quote.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/relatedtopics.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/relatedtopics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/section.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/section.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/blockelements/table.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/blockelements/table.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/application.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/application.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/codeinline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/codeinline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/command.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/command.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/commoninline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/commoninline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/computeoutputinline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/computeoutputinline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/database.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/database.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/environmentvariable.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/environmentvariable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/errorinline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/errorinline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/fictiousuri.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/fictiousuri.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/foreignphrase.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/foreignphrase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/hardware.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/hardware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/languagekeyword.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/languagekeyword.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/legacybold.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/legacybold.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/legacyitalic.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/legacyitalic.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/legacyunderline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/legacyunderline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/linebreak.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/linebreak.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/literal.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/literal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/localuri.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/localuri.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/math.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/math.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/newterm.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/newterm.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/phrase.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/phrase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/placeholder.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/placeholder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/quoteinline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/quoteinline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/replaceable.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/replaceable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/subscript.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/subscript.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/superscript.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/superscript.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/system.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/system.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/ui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/unmanagedcodeentityreference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/unmanagedcodeentityreference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/commoninline/userinput.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/commoninline/userinput.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/conceptualtemplates/xml-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/conceptualtemplates/xml-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/donate.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/donate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/codesnippetsfile.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/codesnippetsfile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/companionfile.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/companionfile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/filetypes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/filetypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/mediacontentfile.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/mediacontentfile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/tokenfile.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/tokenfile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/conceptual.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/conceptual.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/error-message.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/error-message.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/glossary.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/glossary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/how-to.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/how-to.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/orientation.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/orientation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/reference-with-syntax.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/reference-with-syntax.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/reference-without-syntax.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/reference-without-syntax.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/sample.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/sample.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/sdk-technology-architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/sdk-technology-architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/sdk-technology-code-directory.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/sdk-technology-code-directory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/sdk-technology-orientation.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/sdk-technology-orientation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/sdk-technology-scenarios.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/sdk-technology-scenarios.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/sdk-technology-summary.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/sdk-technology-summary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/topicfile.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/topicfile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/troubleshooting.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/troubleshooting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/user-interface-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/user-interface-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/walkthrough.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/walkthrough.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/whitepaper.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/whitepaper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/filetypes/topicfiles/xml-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/filetypes/topicfiles/xml-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/glossary.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/glossary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/intellisense.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/intellisense.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/knownissues.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/knownissues.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/license.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/license.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/linkelements/codeentityreference.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/linkelements/codeentityreference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/linkelements/externallink.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/linkelements/externallink.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/linkelements/link.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/linkelements/link.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/linkelements/linkelements.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/linkelements/linkelements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/links.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/links.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/mediaelements/mediaelements.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/mediaelements/mediaelements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/mediaelements/medialink.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/mediaelements/medialink.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/mediaelements/medialinkinline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/mediaelements/medialinkinline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/miscelements/autooutline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/miscelements/autooutline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/miscelements/autooutlineexample.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/miscelements/autooutlineexample.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/miscelements/markup.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/miscelements/markup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/miscelements/miscelements.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/miscelements/miscelements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/miscelements/token.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/miscelements/token.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/schemaextensibility.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/schemaextensibility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/v1.0.0.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/v1.0.0.0.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/v1.1.0.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/v1.1.0.0.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/v1.1.0.1.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/v1.1.0.1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/v1.1.0.2.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/v1.1.0.2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/v1.1.0.3.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/v1.1.0.3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/v2017.5.15.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/v2017.5.15.0.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/v2022.4.16.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/v2022.4.16.0.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versionhistory/versionhistory.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/versionhistory/versionhistory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/welcome.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/welcome.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/PayPal.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/PayPal.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sandcastle.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sandcastle.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SandcastleLogoLarge.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/SandcastleLogoLarge.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SandcastleLogoSmall.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/SandcastleLogoSmall.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SecuritySuccess.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SecuritySuccess.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SmallInformation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SmallInformation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Redirection",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
