@@ -1,0 +1,1123 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: XMLCommentsExamples
+  name: XMLCommentsExamples
+  href: api/XMLCommentsExamples.html
+  commentId: N:XMLCommentsExamples
+  fullName: XMLCommentsExamples
+  nameWithType: XMLCommentsExamples
+- uid: XMLCommentsExamples.DocumentationInheritance
+  name: XMLCommentsExamples.DocumentationInheritance
+  href: api/XMLCommentsExamples.DocumentationInheritance.html
+  commentId: N:XMLCommentsExamples.DocumentationInheritance
+  fullName: XMLCommentsExamples.DocumentationInheritance
+  nameWithType: XMLCommentsExamples.DocumentationInheritance
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest
+  name: AttachedEventsAndPropertiesTest
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.html
+  commentId: T:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest
+  nameWithType: AttachedEventsAndPropertiesTest
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)
+  name: AddItemActivateHandler(DependencyObject, RoutedEventHandler)
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler.html#XMLCommentsExamples_DocumentationInheritance_AttachedEventsAndPropertiesTest_AddItemActivateHandler_System_Windows_DependencyObject_System_Windows_RoutedEventHandler_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler(System.Windows.DependencyObject, System.Windows.RoutedEventHandler)
+  nameWithType: AttachedEventsAndPropertiesTest.AddItemActivateHandler(DependencyObject, RoutedEventHandler)
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler*
+  name: AddItemActivateHandler
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler
+  nameWithType: AttachedEventsAndPropertiesTest.AddItemActivateHandler
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected(System.Windows.Controls.TreeViewItem)
+  name: GetIsBroughtIntoViewWhenSelected(TreeViewItem)
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected.html#XMLCommentsExamples_DocumentationInheritance_AttachedEventsAndPropertiesTest_GetIsBroughtIntoViewWhenSelected_System_Windows_Controls_TreeViewItem_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected(System.Windows.Controls.TreeViewItem)
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected(System.Windows.Controls.TreeViewItem)
+  nameWithType: AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected(TreeViewItem)
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected*
+  name: GetIsBroughtIntoViewWhenSelected
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected
+  nameWithType: AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty
+  name: IsBroughtIntoViewWhenSelectedProperty
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty.html
+  commentId: F:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty
+  nameWithType: AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.ItemActivateEvent
+  name: ItemActivateEvent
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.ItemActivateEvent.html
+  commentId: F:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.ItemActivateEvent
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.ItemActivateEvent
+  nameWithType: AttachedEventsAndPropertiesTest.ItemActivateEvent
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)
+  name: RemoveItemActivateHandler(DependencyObject, RoutedEventHandler)
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler.html#XMLCommentsExamples_DocumentationInheritance_AttachedEventsAndPropertiesTest_RemoveItemActivateHandler_System_Windows_DependencyObject_System_Windows_RoutedEventHandler_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler(System.Windows.DependencyObject, System.Windows.RoutedEventHandler)
+  nameWithType: AttachedEventsAndPropertiesTest.RemoveItemActivateHandler(DependencyObject, RoutedEventHandler)
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler*
+  name: RemoveItemActivateHandler
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.RemoveItemActivateHandler
+  nameWithType: AttachedEventsAndPropertiesTest.RemoveItemActivateHandler
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected(System.Windows.Controls.TreeViewItem,System.Boolean)
+  name: SetIsBroughtIntoViewWhenSelected(TreeViewItem, bool)
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected.html#XMLCommentsExamples_DocumentationInheritance_AttachedEventsAndPropertiesTest_SetIsBroughtIntoViewWhenSelected_System_Windows_Controls_TreeViewItem_System_Boolean_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected(System.Windows.Controls.TreeViewItem,System.Boolean)
+  name.vb: SetIsBroughtIntoViewWhenSelected(TreeViewItem, Boolean)
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected(System.Windows.Controls.TreeViewItem, bool)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected(System.Windows.Controls.TreeViewItem, Boolean)
+  nameWithType: AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected(TreeViewItem, bool)
+  nameWithType.vb: AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected(TreeViewItem, Boolean)
+- uid: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected*
+  name: SetIsBroughtIntoViewWhenSelected
+  href: api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected
+  fullName: XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected
+  nameWithType: AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc
+  name: BaseInheritDoc
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.html
+  commentId: T:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc
+  nameWithType: BaseInheritDoc
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.#ctor
+  name: BaseInheritDoc()
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.-ctor.html#XMLCommentsExamples_DocumentationInheritance_BaseInheritDoc__ctor
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.#ctor
+  name.vb: New()
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.BaseInheritDoc()
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.New()
+  nameWithType: BaseInheritDoc.BaseInheritDoc()
+  nameWithType.vb: BaseInheritDoc.New()
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.#ctor*
+  name: BaseInheritDoc
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.-ctor.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.#ctor
+  name.vb: New
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.BaseInheritDoc
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.New
+  nameWithType: BaseInheritDoc.BaseInheritDoc
+  nameWithType.vb: BaseInheritDoc.New
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample
+  name: MethodWithExample()
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample.html#XMLCommentsExamples_DocumentationInheritance_BaseInheritDoc_MethodWithExample
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample()
+  nameWithType: BaseInheritDoc.MethodWithExample()
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample*
+  name: MethodWithExample
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample
+  nameWithType: BaseInheritDoc.MethodWithExample
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments(System.Int32)
+  name: MethodWithLotsOfComments(int)
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments.html#XMLCommentsExamples_DocumentationInheritance_BaseInheritDoc_MethodWithLotsOfComments_System_Int32_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments(System.Int32)
+  name.vb: MethodWithLotsOfComments(Integer)
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments(int)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments(Integer)
+  nameWithType: BaseInheritDoc.MethodWithLotsOfComments(int)
+  nameWithType.vb: BaseInheritDoc.MethodWithLotsOfComments(Integer)
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments*
+  name: MethodWithLotsOfComments
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments
+  nameWithType: BaseInheritDoc.MethodWithLotsOfComments
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples
+  name: MethodWithTwoExamples()
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples.html#XMLCommentsExamples_DocumentationInheritance_BaseInheritDoc_MethodWithTwoExamples
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples()
+  nameWithType: BaseInheritDoc.MethodWithTwoExamples()
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples*
+  name: MethodWithTwoExamples
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples
+  nameWithType: BaseInheritDoc.MethodWithTwoExamples
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString
+  name: ToString()
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString.html#XMLCommentsExamples_DocumentationInheritance_BaseInheritDoc_ToString
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString()
+  nameWithType: BaseInheritDoc.ToString()
+- uid: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString*
+  name: ToString
+  href: api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString
+  fullName: XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.ToString
+  nameWithType: BaseInheritDoc.ToString
+- uid: XMLCommentsExamples.DocumentationInheritance.CustomException
+  name: CustomException
+  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.html
+  commentId: T:XMLCommentsExamples.DocumentationInheritance.CustomException
+  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException
+  nameWithType: CustomException
+- uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor
+  name: CustomException()
+  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html#XMLCommentsExamples_DocumentationInheritance_CustomException__ctor
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor
+  name.vb: New()
+  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException()
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New()
+  nameWithType: CustomException.CustomException()
+  nameWithType.vb: CustomException.New()
+- uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: CustomException(SerializationInfo, StreamingContext)
+  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html#XMLCommentsExamples_DocumentationInheritance_CustomException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name.vb: New(SerializationInfo, StreamingContext)
+  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: CustomException.CustomException(SerializationInfo, StreamingContext)
+  nameWithType.vb: CustomException.New(SerializationInfo, StreamingContext)
+- uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String,System.Exception)
+  name: CustomException(string, Exception)
+  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html#XMLCommentsExamples_DocumentationInheritance_CustomException__ctor_System_String_System_Exception_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException(string, System.Exception)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New(String, System.Exception)
+  nameWithType: CustomException.CustomException(string, Exception)
+  nameWithType.vb: CustomException.New(String, Exception)
+- uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String)
+  name: CustomException(string)
+  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html#XMLCommentsExamples_DocumentationInheritance_CustomException__ctor_System_String_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException(string)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New(String)
+  nameWithType: CustomException.CustomException(string)
+  nameWithType.vb: CustomException.New(String)
+- uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor*
+  name: CustomException
+  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor
+  name.vb: New
+  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New
+  nameWithType: CustomException.CustomException
+  nameWithType.vb: CustomException.New
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs
+  name: DerivedClassWithInheritedDocs
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.html
+  commentId: T:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs
+  nameWithType: DerivedClassWithInheritedDocs
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample
+  name: MethodUsingSharedExample()
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_MethodUsingSharedExample
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample()
+  nameWithType: DerivedClassWithInheritedDocs.MethodUsingSharedExample()
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample*
+  name: MethodUsingSharedExample
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodUsingSharedExample
+  nameWithType: DerivedClassWithInheritedDocs.MethodUsingSharedExample
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample
+  name: MethodWithExample()
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_MethodWithExample
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample()
+  nameWithType: DerivedClassWithInheritedDocs.MethodWithExample()
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample*
+  name: MethodWithExample
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithExample
+  nameWithType: DerivedClassWithInheritedDocs.MethodWithExample
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments(System.Int32)
+  name: MethodWithLotsOfComments(int)
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_MethodWithLotsOfComments_System_Int32_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments(System.Int32)
+  name.vb: MethodWithLotsOfComments(Integer)
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments(int)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments(Integer)
+  nameWithType: DerivedClassWithInheritedDocs.MethodWithLotsOfComments(int)
+  nameWithType.vb: DerivedClassWithInheritedDocs.MethodWithLotsOfComments(Integer)
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments*
+  name: MethodWithLotsOfComments
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithLotsOfComments
+  nameWithType: DerivedClassWithInheritedDocs.MethodWithLotsOfComments
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples
+  name: MethodWithTwoExamples()
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_MethodWithTwoExamples
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples()
+  nameWithType: DerivedClassWithInheritedDocs.MethodWithTwoExamples()
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples*
+  name: MethodWithTwoExamples
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples
+  nameWithType: DerivedClassWithInheritedDocs.MethodWithTwoExamples
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String,System.Int32)
+  name: OverloadedMethod(string, int)
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_OverloadedMethod_System_String_System_Int32_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String,System.Int32)
+  name.vb: OverloadedMethod(String, Integer)
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(string, int)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(String, Integer)
+  nameWithType: DerivedClassWithInheritedDocs.OverloadedMethod(string, int)
+  nameWithType.vb: DerivedClassWithInheritedDocs.OverloadedMethod(String, Integer)
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String,System.String)
+  name: OverloadedMethod(string, string)
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_OverloadedMethod_System_String_System_String_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String,System.String)
+  name.vb: OverloadedMethod(String, String)
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(string, string)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(String, String)
+  nameWithType: DerivedClassWithInheritedDocs.OverloadedMethod(string, string)
+  nameWithType.vb: DerivedClassWithInheritedDocs.OverloadedMethod(String, String)
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String)
+  name: OverloadedMethod(string)
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_OverloadedMethod_System_String_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String)
+  name.vb: OverloadedMethod(String)
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(string)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(String)
+  nameWithType: DerivedClassWithInheritedDocs.OverloadedMethod(string)
+  nameWithType.vb: DerivedClassWithInheritedDocs.OverloadedMethod(String)
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod*
+  name: OverloadedMethod
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod
+  nameWithType: DerivedClassWithInheritedDocs.OverloadedMethod
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString
+  name: ToString()
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_ToString
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString()
+  nameWithType: DerivedClassWithInheritedDocs.ToString()
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString*
+  name: ToString
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString
+  nameWithType: DerivedClassWithInheritedDocs.ToString
+- uid: XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation
+  name: ExplicitImplementation
+  href: api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.html
+  commentId: T:XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation
+  fullName: XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation
+  nameWithType: ExplicitImplementation
+- uid: XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone
+  name: Clone()
+  href: api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone.html#XMLCommentsExamples_DocumentationInheritance_ExplicitImplementation_Clone
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone
+  fullName: XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone()
+  nameWithType: ExplicitImplementation.Clone()
+- uid: XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone*
+  name: Clone
+  href: api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone
+  fullName: XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone
+  nameWithType: ExplicitImplementation.Clone
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation
+  name: SetDocumentation
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.html
+  commentId: T:XMLCommentsExamples.DocumentationInheritance.SetDocumentation
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation
+  nameWithType: SetDocumentation
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add(System.Int32)
+  name: Add(int)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_Add_System_Int32_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add(System.Int32)
+  name.vb: Add(Integer)
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add(int)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add(Integer)
+  nameWithType: SetDocumentation.Add(int)
+  nameWithType.vb: SetDocumentation.Add(Integer)
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add*
+  name: Add
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add
+  nameWithType: SetDocumentation.Add
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear
+  name: Clear()
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_Clear
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear()
+  nameWithType: SetDocumentation.Clear()
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear*
+  name: Clear
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Clear
+  nameWithType: SetDocumentation.Clear
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains(System.Int32)
+  name: Contains(int)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_Contains_System_Int32_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains(System.Int32)
+  name.vb: Contains(Integer)
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains(int)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains(Integer)
+  nameWithType: SetDocumentation.Contains(int)
+  nameWithType.vb: SetDocumentation.Contains(Integer)
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains*
+  name: Contains
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Contains
+  nameWithType: SetDocumentation.Contains
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo(System.Int32[],System.Int32)
+  name: CopyTo(int[], int)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_CopyTo_System_Int32___System_Int32_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo(System.Int32[],System.Int32)
+  name.vb: CopyTo(Integer(), Integer)
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo(int[], int)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo(Integer(), Integer)
+  nameWithType: SetDocumentation.CopyTo(int[], int)
+  nameWithType.vb: SetDocumentation.CopyTo(Integer(), Integer)
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo*
+  name: CopyTo
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo
+  nameWithType: SetDocumentation.CopyTo
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count
+  name: Count
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_Count
+  commentId: P:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count
+  nameWithType: SetDocumentation.Count
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count*
+  name: Count
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count
+  nameWithType: SetDocumentation.Count
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name: ExceptWith(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_ExceptWith_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: ExceptWith(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.ExceptWith(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.ExceptWith(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith*
+  name: ExceptWith
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith
+  nameWithType: SetDocumentation.ExceptWith
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator
+  name: GetEnumerator()
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_GetEnumerator
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator()
+  nameWithType: SetDocumentation.GetEnumerator()
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator*
+  name: GetEnumerator
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator
+  nameWithType: SetDocumentation.GetEnumerator
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name: IntersectWith(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_IntersectWith_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: IntersectWith(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.IntersectWith(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.IntersectWith(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith*
+  name: IntersectWith
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith
+  nameWithType: SetDocumentation.IntersectWith
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name: IsProperSubsetOf(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_IsProperSubsetOf_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: IsProperSubsetOf(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.IsProperSubsetOf(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.IsProperSubsetOf(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf*
+  name: IsProperSubsetOf
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSubsetOf
+  nameWithType: SetDocumentation.IsProperSubsetOf
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name: IsProperSupersetOf(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_IsProperSupersetOf_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: IsProperSupersetOf(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.IsProperSupersetOf(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.IsProperSupersetOf(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf*
+  name: IsProperSupersetOf
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsProperSupersetOf
+  nameWithType: SetDocumentation.IsProperSupersetOf
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly
+  name: IsReadOnly
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_IsReadOnly
+  commentId: P:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly
+  nameWithType: SetDocumentation.IsReadOnly
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly*
+  name: IsReadOnly
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly
+  nameWithType: SetDocumentation.IsReadOnly
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name: IsSubsetOf(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_IsSubsetOf_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: IsSubsetOf(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.IsSubsetOf(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.IsSubsetOf(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf*
+  name: IsSubsetOf
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSubsetOf
+  nameWithType: SetDocumentation.IsSubsetOf
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name: IsSupersetOf(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_IsSupersetOf_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: IsSupersetOf(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.IsSupersetOf(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.IsSupersetOf(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf*
+  name: IsSupersetOf
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsSupersetOf
+  nameWithType: SetDocumentation.IsSupersetOf
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps(System.Collections.Generic.IEnumerable{System.Int32})
+  name: Overlaps(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_Overlaps_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: Overlaps(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.Overlaps(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.Overlaps(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps*
+  name: Overlaps
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Overlaps
+  nameWithType: SetDocumentation.Overlaps
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove(System.Int32)
+  name: Remove(int)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_Remove_System_Int32_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove(System.Int32)
+  name.vb: Remove(Integer)
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove(int)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove(Integer)
+  nameWithType: SetDocumentation.Remove(int)
+  nameWithType.vb: SetDocumentation.Remove(Integer)
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove*
+  name: Remove
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove
+  nameWithType: SetDocumentation.Remove
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals(System.Collections.Generic.IEnumerable{System.Int32})
+  name: SetEquals(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_SetEquals_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SetEquals(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.SetEquals(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.SetEquals(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals*
+  name: SetEquals
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals
+  nameWithType: SetDocumentation.SetEquals
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name: SymmetricExceptWith(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_SymmetricExceptWith_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SymmetricExceptWith(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.SymmetricExceptWith(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.SymmetricExceptWith(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith*
+  name: SymmetricExceptWith
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith
+  nameWithType: SetDocumentation.SymmetricExceptWith
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name: UnionWith(IEnumerable<int>)
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith.html#XMLCommentsExamples_DocumentationInheritance_SetDocumentation_UnionWith_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: UnionWith(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SetDocumentation.UnionWith(IEnumerable<int>)
+  nameWithType.vb: SetDocumentation.UnionWith(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith*
+  name: UnionWith
+  href: api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith.html
+  commentId: Overload:XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith
+  fullName: XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith
+  nameWithType: SetDocumentation.UnionWith
+- uid: XMLCommentsExamples.GenericClass`2
+  name: GenericClass<T1, T2>
+  href: api/XMLCommentsExamples.GenericClass-2.html
+  commentId: T:XMLCommentsExamples.GenericClass`2
+  name.vb: GenericClass(Of T1, T2)
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2)
+  nameWithType: GenericClass<T1, T2>
+  nameWithType.vb: GenericClass(Of T1, T2)
+- uid: XMLCommentsExamples.GenericClass`2.GenericMethod*
+  name: GenericMethod
+  href: api/XMLCommentsExamples.GenericClass-2.GenericMethod.html
+  commentId: Overload:XMLCommentsExamples.GenericClass`2.GenericMethod
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.GenericMethod
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).GenericMethod
+  nameWithType: GenericClass<T1, T2>.GenericMethod
+  nameWithType.vb: GenericClass(Of T1, T2).GenericMethod
+- uid: XMLCommentsExamples.GenericClass`2.GenericMethod``2(``0)
+  name: GenericMethod<T3, T4>(T3)
+  href: api/XMLCommentsExamples.GenericClass-2.GenericMethod.html#XMLCommentsExamples_GenericClass_2_GenericMethod__2___0_
+  commentId: M:XMLCommentsExamples.GenericClass`2.GenericMethod``2(``0)
+  name.vb: GenericMethod(Of T3, T4)(T3)
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.GenericMethod<T3, T4>(T3)
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).GenericMethod(Of T3, T4)(T3)
+  nameWithType: GenericClass<T1, T2>.GenericMethod<T3, T4>(T3)
+  nameWithType.vb: GenericClass(Of T1, T2).GenericMethod(Of T3, T4)(T3)
+- uid: XMLCommentsExamples.GenericClass`2.Method(`0)
+  name: Method(T1)
+  href: api/XMLCommentsExamples.GenericClass-2.Method.html#XMLCommentsExamples_GenericClass_2_Method__0_
+  commentId: M:XMLCommentsExamples.GenericClass`2.Method(`0)
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.Method(T1)
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).Method(T1)
+  nameWithType: GenericClass<T1, T2>.Method(T1)
+  nameWithType.vb: GenericClass(Of T1, T2).Method(T1)
+- uid: XMLCommentsExamples.GenericClass`2.Method*
+  name: Method
+  href: api/XMLCommentsExamples.GenericClass-2.Method.html
+  commentId: Overload:XMLCommentsExamples.GenericClass`2.Method
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.Method
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).Method
+  nameWithType: GenericClass<T1, T2>.Method
+  nameWithType.vb: GenericClass(Of T1, T2).Method
+- uid: XMLCommentsExamples.GenericClass`2.OnSomethingHappened(`1)
+  name: OnSomethingHappened(T2)
+  href: api/XMLCommentsExamples.GenericClass-2.OnSomethingHappened.html#XMLCommentsExamples_GenericClass_2_OnSomethingHappened__1_
+  commentId: M:XMLCommentsExamples.GenericClass`2.OnSomethingHappened(`1)
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.OnSomethingHappened(T2)
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).OnSomethingHappened(T2)
+  nameWithType: GenericClass<T1, T2>.OnSomethingHappened(T2)
+  nameWithType.vb: GenericClass(Of T1, T2).OnSomethingHappened(T2)
+- uid: XMLCommentsExamples.GenericClass`2.OnSomethingHappened*
+  name: OnSomethingHappened
+  href: api/XMLCommentsExamples.GenericClass-2.OnSomethingHappened.html
+  commentId: Overload:XMLCommentsExamples.GenericClass`2.OnSomethingHappened
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.OnSomethingHappened
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).OnSomethingHappened
+  nameWithType: GenericClass<T1, T2>.OnSomethingHappened
+  nameWithType.vb: GenericClass(Of T1, T2).OnSomethingHappened
+- uid: XMLCommentsExamples.GenericClass`2.Property
+  name: Property
+  href: api/XMLCommentsExamples.GenericClass-2.Property.html#XMLCommentsExamples_GenericClass_2_Property
+  commentId: P:XMLCommentsExamples.GenericClass`2.Property
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.Property
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).Property
+  nameWithType: GenericClass<T1, T2>.Property
+  nameWithType.vb: GenericClass(Of T1, T2).Property
+- uid: XMLCommentsExamples.GenericClass`2.Property*
+  name: Property
+  href: api/XMLCommentsExamples.GenericClass-2.Property.html
+  commentId: Overload:XMLCommentsExamples.GenericClass`2.Property
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.Property
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).Property
+  nameWithType: GenericClass<T1, T2>.Property
+  nameWithType.vb: GenericClass(Of T1, T2).Property
+- uid: XMLCommentsExamples.GenericClass`2.SomethingHappened
+  name: SomethingHappened
+  href: api/XMLCommentsExamples.GenericClass-2.SomethingHappened.html
+  commentId: E:XMLCommentsExamples.GenericClass`2.SomethingHappened
+  fullName: XMLCommentsExamples.GenericClass<T1, T2>.SomethingHappened
+  fullName.vb: XMLCommentsExamples.GenericClass(Of T1, T2).SomethingHappened
+  nameWithType: GenericClass<T1, T2>.SomethingHappened
+  nameWithType.vb: GenericClass(Of T1, T2).SomethingHappened
+- uid: XMLCommentsExamples.RevisionHistoryClass
+  name: RevisionHistoryClass
+  href: api/XMLCommentsExamples.RevisionHistoryClass.html
+  commentId: T:XMLCommentsExamples.RevisionHistoryClass
+  fullName: XMLCommentsExamples.RevisionHistoryClass
+  nameWithType: RevisionHistoryClass
+- uid: XMLCommentsExamples.RevisionHistoryClass.ExampleMethod
+  name: ExampleMethod()
+  href: api/XMLCommentsExamples.RevisionHistoryClass.ExampleMethod.html#XMLCommentsExamples_RevisionHistoryClass_ExampleMethod
+  commentId: M:XMLCommentsExamples.RevisionHistoryClass.ExampleMethod
+  fullName: XMLCommentsExamples.RevisionHistoryClass.ExampleMethod()
+  nameWithType: RevisionHistoryClass.ExampleMethod()
+- uid: XMLCommentsExamples.RevisionHistoryClass.ExampleMethod*
+  name: ExampleMethod
+  href: api/XMLCommentsExamples.RevisionHistoryClass.ExampleMethod.html
+  commentId: Overload:XMLCommentsExamples.RevisionHistoryClass.ExampleMethod
+  fullName: XMLCommentsExamples.RevisionHistoryClass.ExampleMethod
+  nameWithType: RevisionHistoryClass.ExampleMethod
+- uid: XMLCommentsExamples.RevisionHistoryClass.Revision
+  name: Revision
+  href: api/XMLCommentsExamples.RevisionHistoryClass.Revision.html#XMLCommentsExamples_RevisionHistoryClass_Revision
+  commentId: P:XMLCommentsExamples.RevisionHistoryClass.Revision
+  fullName: XMLCommentsExamples.RevisionHistoryClass.Revision
+  nameWithType: RevisionHistoryClass.Revision
+- uid: XMLCommentsExamples.RevisionHistoryClass.Revision*
+  name: Revision
+  href: api/XMLCommentsExamples.RevisionHistoryClass.Revision.html
+  commentId: Overload:XMLCommentsExamples.RevisionHistoryClass.Revision
+  fullName: XMLCommentsExamples.RevisionHistoryClass.Revision
+  nameWithType: RevisionHistoryClass.Revision
+- uid: XMLCommentsExamples.SampleClass
+  name: SampleClass
+  href: api/XMLCommentsExamples.SampleClass.html
+  commentId: T:XMLCommentsExamples.SampleClass
+  fullName: XMLCommentsExamples.SampleClass
+  nameWithType: SampleClass
+- uid: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})
+  name: AverageValues(IEnumerable<double>, IEnumerable<double>)
+  href: api/XMLCommentsExamples.SampleClass.AverageValues.html#XMLCommentsExamples_SampleClass_AverageValues_System_Collections_Generic_IEnumerable_System_Double__System_Collections_Generic_IEnumerable_System_Double__
+  commentId: M:XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})
+  name.vb: AverageValues(IEnumerable(Of Double), IEnumerable(Of Double))
+  fullName: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable<double>, System.Collections.Generic.IEnumerable<double>)
+  fullName.vb: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable(Of Double), System.Collections.Generic.IEnumerable(Of Double))
+  nameWithType: SampleClass.AverageValues(IEnumerable<double>, IEnumerable<double>)
+  nameWithType.vb: SampleClass.AverageValues(IEnumerable(Of Double), IEnumerable(Of Double))
+- uid: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double})
+  name: AverageValues(IEnumerable<double>)
+  href: api/XMLCommentsExamples.SampleClass.AverageValues.html#XMLCommentsExamples_SampleClass_AverageValues_System_Collections_Generic_IEnumerable_System_Double__
+  commentId: M:XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double})
+  name.vb: AverageValues(IEnumerable(Of Double))
+  fullName: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable<double>)
+  fullName.vb: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable(Of Double))
+  nameWithType: SampleClass.AverageValues(IEnumerable<double>)
+  nameWithType.vb: SampleClass.AverageValues(IEnumerable(Of Double))
+- uid: XMLCommentsExamples.SampleClass.AverageValues*
+  name: AverageValues
+  href: api/XMLCommentsExamples.SampleClass.AverageValues.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.AverageValues
+  fullName: XMLCommentsExamples.SampleClass.AverageValues
+  nameWithType: SampleClass.AverageValues
+- uid: XMLCommentsExamples.SampleClass.BibliographyCiteExample
+  name: BibliographyCiteExample()
+  href: api/XMLCommentsExamples.SampleClass.BibliographyCiteExample.html#XMLCommentsExamples_SampleClass_BibliographyCiteExample
+  commentId: M:XMLCommentsExamples.SampleClass.BibliographyCiteExample
+  fullName: XMLCommentsExamples.SampleClass.BibliographyCiteExample()
+  nameWithType: SampleClass.BibliographyCiteExample()
+- uid: XMLCommentsExamples.SampleClass.BibliographyCiteExample*
+  name: BibliographyCiteExample
+  href: api/XMLCommentsExamples.SampleClass.BibliographyCiteExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.BibliographyCiteExample
+  fullName: XMLCommentsExamples.SampleClass.BibliographyCiteExample
+  nameWithType: SampleClass.BibliographyCiteExample
+- uid: XMLCommentsExamples.SampleClass.CallStoredProcedure(System.String,System.Int32)
+  name: CallStoredProcedure(string, int)
+  href: api/XMLCommentsExamples.SampleClass.CallStoredProcedure.html#XMLCommentsExamples_SampleClass_CallStoredProcedure_System_String_System_Int32_
+  commentId: M:XMLCommentsExamples.SampleClass.CallStoredProcedure(System.String,System.Int32)
+  name.vb: CallStoredProcedure(String, Integer)
+  fullName: XMLCommentsExamples.SampleClass.CallStoredProcedure(string, int)
+  fullName.vb: XMLCommentsExamples.SampleClass.CallStoredProcedure(String, Integer)
+  nameWithType: SampleClass.CallStoredProcedure(string, int)
+  nameWithType.vb: SampleClass.CallStoredProcedure(String, Integer)
+- uid: XMLCommentsExamples.SampleClass.CallStoredProcedure*
+  name: CallStoredProcedure
+  href: api/XMLCommentsExamples.SampleClass.CallStoredProcedure.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.CallStoredProcedure
+  fullName: XMLCommentsExamples.SampleClass.CallStoredProcedure
+  nameWithType: SampleClass.CallStoredProcedure
+- uid: XMLCommentsExamples.SampleClass.ConceptualLinkExample
+  name: ConceptualLinkExample()
+  href: api/XMLCommentsExamples.SampleClass.ConceptualLinkExample.html#XMLCommentsExamples_SampleClass_ConceptualLinkExample
+  commentId: M:XMLCommentsExamples.SampleClass.ConceptualLinkExample
+  fullName: XMLCommentsExamples.SampleClass.ConceptualLinkExample()
+  nameWithType: SampleClass.ConceptualLinkExample()
+- uid: XMLCommentsExamples.SampleClass.ConceptualLinkExample*
+  name: ConceptualLinkExample
+  href: api/XMLCommentsExamples.SampleClass.ConceptualLinkExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.ConceptualLinkExample
+  fullName: XMLCommentsExamples.SampleClass.ConceptualLinkExample
+  nameWithType: SampleClass.ConceptualLinkExample
+- uid: XMLCommentsExamples.SampleClass.DoSomething
+  name: DoSomething()
+  href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething
+  commentId: M:XMLCommentsExamples.SampleClass.DoSomething
+  fullName: XMLCommentsExamples.SampleClass.DoSomething()
+  nameWithType: SampleClass.DoSomething()
+- uid: XMLCommentsExamples.SampleClass.DoSomething(System.Int32,System.String)
+  name: DoSomething(int, string)
+  href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething_System_Int32_System_String_
+  commentId: M:XMLCommentsExamples.SampleClass.DoSomething(System.Int32,System.String)
+  name.vb: DoSomething(Integer, String)
+  fullName: XMLCommentsExamples.SampleClass.DoSomething(int, string)
+  fullName.vb: XMLCommentsExamples.SampleClass.DoSomething(Integer, String)
+  nameWithType: SampleClass.DoSomething(int, string)
+  nameWithType.vb: SampleClass.DoSomething(Integer, String)
+- uid: XMLCommentsExamples.SampleClass.DoSomething(System.Int32)
+  name: DoSomething(int)
+  href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething_System_Int32_
+  commentId: M:XMLCommentsExamples.SampleClass.DoSomething(System.Int32)
+  name.vb: DoSomething(Integer)
+  fullName: XMLCommentsExamples.SampleClass.DoSomething(int)
+  fullName.vb: XMLCommentsExamples.SampleClass.DoSomething(Integer)
+  nameWithType: SampleClass.DoSomething(int)
+  nameWithType.vb: SampleClass.DoSomething(Integer)
+- uid: XMLCommentsExamples.SampleClass.DoSomething(System.String)
+  name: DoSomething(string)
+  href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething_System_String_
+  commentId: M:XMLCommentsExamples.SampleClass.DoSomething(System.String)
+  name.vb: DoSomething(String)
+  fullName: XMLCommentsExamples.SampleClass.DoSomething(string)
+  fullName.vb: XMLCommentsExamples.SampleClass.DoSomething(String)
+  nameWithType: SampleClass.DoSomething(string)
+  nameWithType.vb: SampleClass.DoSomething(String)
+- uid: XMLCommentsExamples.SampleClass.DoSomething*
+  name: DoSomething
+  href: api/XMLCommentsExamples.SampleClass.DoSomething.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.DoSomething
+  fullName: XMLCommentsExamples.SampleClass.DoSomething
+  nameWithType: SampleClass.DoSomething
+- uid: XMLCommentsExamples.SampleClass.FilterPriorityExample
+  name: FilterPriorityExample()
+  href: api/XMLCommentsExamples.SampleClass.FilterPriorityExample.html#XMLCommentsExamples_SampleClass_FilterPriorityExample
+  commentId: M:XMLCommentsExamples.SampleClass.FilterPriorityExample
+  fullName: XMLCommentsExamples.SampleClass.FilterPriorityExample()
+  nameWithType: SampleClass.FilterPriorityExample()
+- uid: XMLCommentsExamples.SampleClass.FilterPriorityExample*
+  name: FilterPriorityExample
+  href: api/XMLCommentsExamples.SampleClass.FilterPriorityExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.FilterPriorityExample
+  fullName: XMLCommentsExamples.SampleClass.FilterPriorityExample
+  nameWithType: SampleClass.FilterPriorityExample
+- uid: XMLCommentsExamples.SampleClass.GetRandomNumber
+  name: GetRandomNumber()
+  href: api/XMLCommentsExamples.SampleClass.GetRandomNumber.html#XMLCommentsExamples_SampleClass_GetRandomNumber
+  commentId: M:XMLCommentsExamples.SampleClass.GetRandomNumber
+  fullName: XMLCommentsExamples.SampleClass.GetRandomNumber()
+  nameWithType: SampleClass.GetRandomNumber()
+- uid: XMLCommentsExamples.SampleClass.GetRandomNumber*
+  name: GetRandomNumber
+  href: api/XMLCommentsExamples.SampleClass.GetRandomNumber.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.GetRandomNumber
+  fullName: XMLCommentsExamples.SampleClass.GetRandomNumber
+  nameWithType: SampleClass.GetRandomNumber
+- uid: XMLCommentsExamples.SampleClass.IncludeAllExample
+  name: IncludeAllExample()
+  href: api/XMLCommentsExamples.SampleClass.IncludeAllExample.html#XMLCommentsExamples_SampleClass_IncludeAllExample
+  commentId: M:XMLCommentsExamples.SampleClass.IncludeAllExample
+  fullName: XMLCommentsExamples.SampleClass.IncludeAllExample()
+  nameWithType: SampleClass.IncludeAllExample()
+- uid: XMLCommentsExamples.SampleClass.IncludeAllExample*
+  name: IncludeAllExample
+  href: api/XMLCommentsExamples.SampleClass.IncludeAllExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.IncludeAllExample
+  fullName: XMLCommentsExamples.SampleClass.IncludeAllExample
+  nameWithType: SampleClass.IncludeAllExample
+- uid: XMLCommentsExamples.SampleClass.IncludeSectionsExample
+  name: IncludeSectionsExample()
+  href: api/XMLCommentsExamples.SampleClass.IncludeSectionsExample.html#XMLCommentsExamples_SampleClass_IncludeSectionsExample
+  commentId: M:XMLCommentsExamples.SampleClass.IncludeSectionsExample
+  fullName: XMLCommentsExamples.SampleClass.IncludeSectionsExample()
+  nameWithType: SampleClass.IncludeSectionsExample()
+- uid: XMLCommentsExamples.SampleClass.IncludeSectionsExample*
+  name: IncludeSectionsExample
+  href: api/XMLCommentsExamples.SampleClass.IncludeSectionsExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.IncludeSectionsExample
+  fullName: XMLCommentsExamples.SampleClass.IncludeSectionsExample
+  nameWithType: SampleClass.IncludeSectionsExample
+- uid: XMLCommentsExamples.SampleClass.Increment
+  name: Increment()
+  href: api/XMLCommentsExamples.SampleClass.Increment.html#XMLCommentsExamples_SampleClass_Increment
+  commentId: M:XMLCommentsExamples.SampleClass.Increment
+  fullName: XMLCommentsExamples.SampleClass.Increment()
+  nameWithType: SampleClass.Increment()
+- uid: XMLCommentsExamples.SampleClass.Increment*
+  name: Increment
+  href: api/XMLCommentsExamples.SampleClass.Increment.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.Increment
+  fullName: XMLCommentsExamples.SampleClass.Increment
+  nameWithType: SampleClass.Increment
+- uid: XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions
+  name: MethodRequiringSpecificPermissions()
+  href: api/XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions.html#XMLCommentsExamples_SampleClass_MethodRequiringSpecificPermissions
+  commentId: M:XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions
+  fullName: XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions()
+  nameWithType: SampleClass.MethodRequiringSpecificPermissions()
+- uid: XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions*
+  name: MethodRequiringSpecificPermissions
+  href: api/XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions
+  fullName: XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions
+  nameWithType: SampleClass.MethodRequiringSpecificPermissions
+- uid: XMLCommentsExamples.SampleClass.OnSomethingHappened
+  name: OnSomethingHappened()
+  href: api/XMLCommentsExamples.SampleClass.OnSomethingHappened.html#XMLCommentsExamples_SampleClass_OnSomethingHappened
+  commentId: M:XMLCommentsExamples.SampleClass.OnSomethingHappened
+  fullName: XMLCommentsExamples.SampleClass.OnSomethingHappened()
+  nameWithType: SampleClass.OnSomethingHappened()
+- uid: XMLCommentsExamples.SampleClass.OnSomethingHappened*
+  name: OnSomethingHappened
+  href: api/XMLCommentsExamples.SampleClass.OnSomethingHappened.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.OnSomethingHappened
+  fullName: XMLCommentsExamples.SampleClass.OnSomethingHappened
+  nameWithType: SampleClass.OnSomethingHappened
+- uid: XMLCommentsExamples.SampleClass.op_Addition(XMLCommentsExamples.SampleClass,XMLCommentsExamples.SampleClass)
+  name: operator +(SampleClass, SampleClass)
+  href: api/XMLCommentsExamples.SampleClass.op_Addition.html#XMLCommentsExamples_SampleClass_op_Addition_XMLCommentsExamples_SampleClass_XMLCommentsExamples_SampleClass_
+  commentId: M:XMLCommentsExamples.SampleClass.op_Addition(XMLCommentsExamples.SampleClass,XMLCommentsExamples.SampleClass)
+  name.vb: +(SampleClass, SampleClass)
+  fullName: XMLCommentsExamples.SampleClass.operator +(XMLCommentsExamples.SampleClass, XMLCommentsExamples.SampleClass)
+  fullName.vb: XMLCommentsExamples.SampleClass.+(XMLCommentsExamples.SampleClass, XMLCommentsExamples.SampleClass)
+  nameWithType: SampleClass.operator +(SampleClass, SampleClass)
+  nameWithType.vb: SampleClass.+(SampleClass, SampleClass)
+- uid: XMLCommentsExamples.SampleClass.op_Addition*
+  name: operator +
+  href: api/XMLCommentsExamples.SampleClass.op_Addition.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.op_Addition
+  name.vb: +
+  fullName: XMLCommentsExamples.SampleClass.operator +
+  fullName.vb: XMLCommentsExamples.SampleClass.+
+  nameWithType: SampleClass.operator +
+  nameWithType.vb: SampleClass.+
+- uid: XMLCommentsExamples.SampleClass.ParagraphExample
+  name: ParagraphExample()
+  href: api/XMLCommentsExamples.SampleClass.ParagraphExample.html#XMLCommentsExamples_SampleClass_ParagraphExample
+  commentId: M:XMLCommentsExamples.SampleClass.ParagraphExample
+  fullName: XMLCommentsExamples.SampleClass.ParagraphExample()
+  nameWithType: SampleClass.ParagraphExample()
+- uid: XMLCommentsExamples.SampleClass.ParagraphExample*
+  name: ParagraphExample
+  href: api/XMLCommentsExamples.SampleClass.ParagraphExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.ParagraphExample
+  fullName: XMLCommentsExamples.SampleClass.ParagraphExample
+  nameWithType: SampleClass.ParagraphExample
+- uid: XMLCommentsExamples.SampleClass.PerformAnAction
+  name: PerformAnAction()
+  href: api/XMLCommentsExamples.SampleClass.PerformAnAction.html#XMLCommentsExamples_SampleClass_PerformAnAction
+  commentId: M:XMLCommentsExamples.SampleClass.PerformAnAction
+  fullName: XMLCommentsExamples.SampleClass.PerformAnAction()
+  nameWithType: SampleClass.PerformAnAction()
+- uid: XMLCommentsExamples.SampleClass.PerformAnAction*
+  name: PerformAnAction
+  href: api/XMLCommentsExamples.SampleClass.PerformAnAction.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.PerformAnAction
+  fullName: XMLCommentsExamples.SampleClass.PerformAnAction
+  nameWithType: SampleClass.PerformAnAction
+- uid: XMLCommentsExamples.SampleClass.PreliminaryExample
+  name: PreliminaryExample()
+  href: api/XMLCommentsExamples.SampleClass.PreliminaryExample.html#XMLCommentsExamples_SampleClass_PreliminaryExample
+  commentId: M:XMLCommentsExamples.SampleClass.PreliminaryExample
+  fullName: XMLCommentsExamples.SampleClass.PreliminaryExample()
+  nameWithType: SampleClass.PreliminaryExample()
+- uid: XMLCommentsExamples.SampleClass.PreliminaryExample*
+  name: PreliminaryExample
+  href: api/XMLCommentsExamples.SampleClass.PreliminaryExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.PreliminaryExample
+  fullName: XMLCommentsExamples.SampleClass.PreliminaryExample
+  nameWithType: SampleClass.PreliminaryExample
+- uid: XMLCommentsExamples.SampleClass.ProcessText(System.String)
+  name: ProcessText(string)
+  href: api/XMLCommentsExamples.SampleClass.ProcessText.html#XMLCommentsExamples_SampleClass_ProcessText_System_String_
+  commentId: M:XMLCommentsExamples.SampleClass.ProcessText(System.String)
+  name.vb: ProcessText(String)
+  fullName: XMLCommentsExamples.SampleClass.ProcessText(string)
+  fullName.vb: XMLCommentsExamples.SampleClass.ProcessText(String)
+  nameWithType: SampleClass.ProcessText(string)
+  nameWithType.vb: SampleClass.ProcessText(String)
+- uid: XMLCommentsExamples.SampleClass.ProcessText*
+  name: ProcessText
+  href: api/XMLCommentsExamples.SampleClass.ProcessText.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.ProcessText
+  fullName: XMLCommentsExamples.SampleClass.ProcessText
+  nameWithType: SampleClass.ProcessText
+- uid: XMLCommentsExamples.SampleClass.SampleNumber
+  name: SampleNumber
+  href: api/XMLCommentsExamples.SampleClass.SampleNumber.html#XMLCommentsExamples_SampleClass_SampleNumber
+  commentId: P:XMLCommentsExamples.SampleClass.SampleNumber
+  fullName: XMLCommentsExamples.SampleClass.SampleNumber
+  nameWithType: SampleClass.SampleNumber
+- uid: XMLCommentsExamples.SampleClass.SampleNumber*
+  name: SampleNumber
+  href: api/XMLCommentsExamples.SampleClass.SampleNumber.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.SampleNumber
+  fullName: XMLCommentsExamples.SampleClass.SampleNumber
+  nameWithType: SampleClass.SampleNumber
+- uid: XMLCommentsExamples.SampleClass.SeeElementExternalExample
+  name: SeeElementExternalExample()
+  href: api/XMLCommentsExamples.SampleClass.SeeElementExternalExample.html#XMLCommentsExamples_SampleClass_SeeElementExternalExample
+  commentId: M:XMLCommentsExamples.SampleClass.SeeElementExternalExample
+  fullName: XMLCommentsExamples.SampleClass.SeeElementExternalExample()
+  nameWithType: SampleClass.SeeElementExternalExample()
+- uid: XMLCommentsExamples.SampleClass.SeeElementExternalExample*
+  name: SeeElementExternalExample
+  href: api/XMLCommentsExamples.SampleClass.SeeElementExternalExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.SeeElementExternalExample
+  fullName: XMLCommentsExamples.SampleClass.SeeElementExternalExample
+  nameWithType: SampleClass.SeeElementExternalExample
+- uid: XMLCommentsExamples.SampleClass.SeeLangWordExamples
+  name: SeeLangWordExamples()
+  href: api/XMLCommentsExamples.SampleClass.SeeLangWordExamples.html#XMLCommentsExamples_SampleClass_SeeLangWordExamples
+  commentId: M:XMLCommentsExamples.SampleClass.SeeLangWordExamples
+  fullName: XMLCommentsExamples.SampleClass.SeeLangWordExamples()
+  nameWithType: SampleClass.SeeLangWordExamples()
+- uid: XMLCommentsExamples.SampleClass.SeeLangWordExamples*
+  name: SeeLangWordExamples
+  href: api/XMLCommentsExamples.SampleClass.SeeLangWordExamples.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.SeeLangWordExamples
+  fullName: XMLCommentsExamples.SampleClass.SeeLangWordExamples
+  nameWithType: SampleClass.SeeLangWordExamples
+- uid: XMLCommentsExamples.SampleClass.SomethingHappened
+  name: SomethingHappened
+  href: api/XMLCommentsExamples.SampleClass.SomethingHappened.html
+  commentId: E:XMLCommentsExamples.SampleClass.SomethingHappened
+  fullName: XMLCommentsExamples.SampleClass.SomethingHappened
+  nameWithType: SampleClass.SomethingHappened
+- uid: XMLCommentsExamples.SampleClass.SummaryRemarksExample
+  name: SummaryRemarksExample()
+  href: api/XMLCommentsExamples.SampleClass.SummaryRemarksExample.html#XMLCommentsExamples_SampleClass_SummaryRemarksExample
+  commentId: M:XMLCommentsExamples.SampleClass.SummaryRemarksExample
+  fullName: XMLCommentsExamples.SampleClass.SummaryRemarksExample()
+  nameWithType: SampleClass.SummaryRemarksExample()
+- uid: XMLCommentsExamples.SampleClass.SummaryRemarksExample*
+  name: SummaryRemarksExample
+  href: api/XMLCommentsExamples.SampleClass.SummaryRemarksExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.SummaryRemarksExample
+  fullName: XMLCommentsExamples.SampleClass.SummaryRemarksExample
+  nameWithType: SampleClass.SummaryRemarksExample
+- uid: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})
+  name: SumValues(IEnumerable<int>, IEnumerable<int>)
+  href: api/XMLCommentsExamples.SampleClass.SumValues.html#XMLCommentsExamples_SampleClass_SumValues_System_Collections_Generic_IEnumerable_System_Int32__System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SumValues(IEnumerable(Of Integer), IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable<int>, System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable(Of Integer), System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SampleClass.SumValues(IEnumerable<int>, IEnumerable<int>)
+  nameWithType.vb: SampleClass.SumValues(IEnumerable(Of Integer), IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32})
+  name: SumValues(IEnumerable<int>)
+  href: api/XMLCommentsExamples.SampleClass.SumValues.html#XMLCommentsExamples_SampleClass_SumValues_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SumValues(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SampleClass.SumValues(IEnumerable<int>)
+  nameWithType.vb: SampleClass.SumValues(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.SampleClass.SumValues*
+  name: SumValues
+  href: api/XMLCommentsExamples.SampleClass.SumValues.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.SumValues
+  fullName: XMLCommentsExamples.SampleClass.SumValues
+  nameWithType: SampleClass.SumValues
+- uid: XMLCommentsExamples.SampleClass.TemporaryMethod
+  name: TemporaryMethod()
+  href: api/XMLCommentsExamples.SampleClass.TemporaryMethod.html#XMLCommentsExamples_SampleClass_TemporaryMethod
+  commentId: M:XMLCommentsExamples.SampleClass.TemporaryMethod
+  fullName: XMLCommentsExamples.SampleClass.TemporaryMethod()
+  nameWithType: SampleClass.TemporaryMethod()
+- uid: XMLCommentsExamples.SampleClass.TemporaryMethod*
+  name: TemporaryMethod
+  href: api/XMLCommentsExamples.SampleClass.TemporaryMethod.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.TemporaryMethod
+  fullName: XMLCommentsExamples.SampleClass.TemporaryMethod
+  nameWithType: SampleClass.TemporaryMethod
+- uid: XMLCommentsExamples.SampleClass.TokenExample
+  name: TokenExample()
+  href: api/XMLCommentsExamples.SampleClass.TokenExample.html#XMLCommentsExamples_SampleClass_TokenExample
+  commentId: M:XMLCommentsExamples.SampleClass.TokenExample
+  fullName: XMLCommentsExamples.SampleClass.TokenExample()
+  nameWithType: SampleClass.TokenExample()
+- uid: XMLCommentsExamples.SampleClass.TokenExample*
+  name: TokenExample
+  href: api/XMLCommentsExamples.SampleClass.TokenExample.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.TokenExample
+  fullName: XMLCommentsExamples.SampleClass.TokenExample
+  nameWithType: SampleClass.TokenExample
+- uid: XMLCommentsExamples.SampleClass.VariousListExamples
+  name: VariousListExamples()
+  href: api/XMLCommentsExamples.SampleClass.VariousListExamples.html#XMLCommentsExamples_SampleClass_VariousListExamples
+  commentId: M:XMLCommentsExamples.SampleClass.VariousListExamples
+  fullName: XMLCommentsExamples.SampleClass.VariousListExamples()
+  nameWithType: SampleClass.VariousListExamples()
+- uid: XMLCommentsExamples.SampleClass.VariousListExamples*
+  name: VariousListExamples
+  href: api/XMLCommentsExamples.SampleClass.VariousListExamples.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.VariousListExamples
+  fullName: XMLCommentsExamples.SampleClass.VariousListExamples
+  nameWithType: SampleClass.VariousListExamples
+- uid: XMLCommentsExamples.SampleClass.VariousNoteExamples
+  name: VariousNoteExamples()
+  href: api/XMLCommentsExamples.SampleClass.VariousNoteExamples.html#XMLCommentsExamples_SampleClass_VariousNoteExamples
+  commentId: M:XMLCommentsExamples.SampleClass.VariousNoteExamples
+  fullName: XMLCommentsExamples.SampleClass.VariousNoteExamples()
+  nameWithType: SampleClass.VariousNoteExamples()
+- uid: XMLCommentsExamples.SampleClass.VariousNoteExamples*
+  name: VariousNoteExamples
+  href: api/XMLCommentsExamples.SampleClass.VariousNoteExamples.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.VariousNoteExamples
+  fullName: XMLCommentsExamples.SampleClass.VariousNoteExamples
+  nameWithType: SampleClass.VariousNoteExamples
+- uid: XMLCommentsExamples.ThreadSafetyClass
+  name: ThreadSafetyClass
+  href: api/XMLCommentsExamples.ThreadSafetyClass.html
+  commentId: T:XMLCommentsExamples.ThreadSafetyClass
+  fullName: XMLCommentsExamples.ThreadSafetyClass
+  nameWithType: ThreadSafetyClass
+- uid: XMLCommentsExamples.ThreadSafetyClass.InstanceMethod
+  name: InstanceMethod()
+  href: api/XMLCommentsExamples.ThreadSafetyClass.InstanceMethod.html#XMLCommentsExamples_ThreadSafetyClass_InstanceMethod
+  commentId: M:XMLCommentsExamples.ThreadSafetyClass.InstanceMethod
+  fullName: XMLCommentsExamples.ThreadSafetyClass.InstanceMethod()
+  nameWithType: ThreadSafetyClass.InstanceMethod()
+- uid: XMLCommentsExamples.ThreadSafetyClass.InstanceMethod*
+  name: InstanceMethod
+  href: api/XMLCommentsExamples.ThreadSafetyClass.InstanceMethod.html
+  commentId: Overload:XMLCommentsExamples.ThreadSafetyClass.InstanceMethod
+  fullName: XMLCommentsExamples.ThreadSafetyClass.InstanceMethod
+  nameWithType: ThreadSafetyClass.InstanceMethod
+- uid: XMLCommentsExamples.ThreadSafetyClass.StaticMethod
+  name: StaticMethod()
+  href: api/XMLCommentsExamples.ThreadSafetyClass.StaticMethod.html#XMLCommentsExamples_ThreadSafetyClass_StaticMethod
+  commentId: M:XMLCommentsExamples.ThreadSafetyClass.StaticMethod
+  fullName: XMLCommentsExamples.ThreadSafetyClass.StaticMethod()
+  nameWithType: ThreadSafetyClass.StaticMethod()
+- uid: XMLCommentsExamples.ThreadSafetyClass.StaticMethod*
+  name: StaticMethod
+  href: api/XMLCommentsExamples.ThreadSafetyClass.StaticMethod.html
+  commentId: Overload:XMLCommentsExamples.ThreadSafetyClass.StaticMethod
+  fullName: XMLCommentsExamples.ThreadSafetyClass.StaticMethod
+  nameWithType: ThreadSafetyClass.StaticMethod

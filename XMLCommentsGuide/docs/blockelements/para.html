@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>para </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="para ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/blockelements/para.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle XML Comments Guide">
+            Sandcastle XML Comments Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="para">para</h1>
+
+<p>This element is used to start a new paragraph within other elements.</p>
+<h2 id="syntax">Syntax</h2>
+<p>This inline block element can be used within any other element.</p>
+<pre><code class="lang-xml">&lt;para&gt;paragraph content&lt;/para&gt;
+</code></pre>
+<h2 id="remarks">Remarks</h2>
+<p>As an alternative, you can use the HTML &lt;p /&gt; or &lt;p&gt; &lt;/p&gt; tags to create
+paragraphs.  Making the element self-closing or empty will cause the element to be ignored unless it creates an
+initial paragraph break.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// A simple demonstration of the &lt;c&gt;para&lt;/c&gt; element.
+/// &lt;/summary&gt;
+/// &lt;returns&gt;Always returns 0.&lt;/returns&gt;
+/// &lt;remarks&gt;
+/// &lt;para&gt;The &lt;c&gt;para&lt;/c&gt; element is optional if the text in the parent
+/// element consists of a single sentence or paragraph such as in the
+/// &lt;c&gt;summary&lt;/c&gt; and &lt;c&gt;returns&lt;/c&gt; elements on this method.&lt;/para&gt;
+/// 
+/// &lt;para&gt;When multiple blocks of text are present, each must be
+/// wrapped in it to create new paragraphs.&lt;/para&gt;
+/// 
+/// &lt;para&gt;Paragraph 1.&lt;/para&gt;
+/// &lt;para&gt;Paragraph 2.&lt;/para&gt;
+/// &lt;para /&gt;
+/// &lt;para&gt;&lt;/para&gt;
+/// &lt;para&gt;Self-closing and empty paragraphs are ignored unless they create
+/// an initial paragraph break.&lt;/para&gt;
+/// &lt;para&gt;Paragraph 4.&lt;/para&gt;
+/// 
+/// &lt;p /&gt;HTML paragraph elements can also be used.
+/// &lt;p&gt;They work the same way.&lt;/p&gt;&lt;/remarks&gt;
+/// &lt;conceptualLink target=&quot;c7973ac7-5a4f-4e4d-9786-5ce659ac8e24&quot; /&gt;
+public int ParagraphExample()
+{
+    return 0;
+}</code></pre><h2 id="see-also">See Also</h2>
+<h4 id="reference">Reference</h4>
+<ul>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.ParagraphExample.html#XMLCommentsExamples_SampleClass_ParagraphExample">SampleClass.ParagraphExample()</a></li>
+</ul>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="blockelements.html">Block Elements</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/blockelements/para.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle XML Comments Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

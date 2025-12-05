@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>revisionHistory </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="revisionHistory ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/sectionelements/revisionhistory.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle XML Comments Guide">
+            Sandcastle XML Comments Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="revisionhistory">revisionHistory</h1>
+
+<p>This element is used to display revision history for a type or its members.  It originated in the
+old NDoc and VBCommenter tools but is still useful today to communicate revision history in the documentation.</p>
+<h2 id="syntax">Syntax</h2>
+<p>This top-level element is valid on all types and type members.</p>
+<pre><code class="lang-xml">&lt;revisionHistory [visible=&quot;true|false&quot;]&gt;
+    &lt;revision date=&quot;MM/dd/yyyy&quot; version=&quot;#.#.#.#&quot; [author=&quot;XXXXX&quot;] [visible=&quot;true|false&quot;]&gt;
+        Comments about the revision.
+    &lt;/revision&gt;
+&lt;/revisionHistory&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This is a custom XML comments element implemented by the SHFB.  It will not appear
+in the list of valid elements for XML comments IntelliSense.</p>
+</div>
+<p>An optional <code>visible</code> attribute on the <code>revisionHistory</code>
+parent element controls visibility of the section within the generated topic.  If omitted or set to true, the
+revision history is included.  If set to false, it is not included in the topic.</p>
+<p>The <code>revision</code> elements describe one or more revisions to the type or
+member.  The following attributes are supported:</p>
+<ul>
+<li><p>date</p>
+<ul>
+<li>This attribute specifies the date of the revision.  The value is treated as a string field and
+is displayed as-is in the generated help topic.  No locale date formatting is applied.</li>
+</ul>
+</li>
+<li><p>version</p>
+<ul>
+<li>This attribute specifies the version in which the revision was made. As with the date, the
+value is treated as a string field and is displayed as-is in the generated help topic.</li>
+</ul>
+</li>
+<li><p>author</p>
+<ul>
+<li>This attribute is optional and specifies the name of the person that made the revision.  This
+attribute's value will not appear in the generated help topic.</li>
+</ul>
+</li>
+<li><p>visible</p>
+<ul>
+<li>This optional attribute can be used to control visibility of the revision in the generated
+topic.  If omitted or set to true, the revision entry is included.  If set to false, it is not included in the
+topic.</li>
+</ul>
+</li>
+</ul>
+<p>The content of the <code>revision</code> element can contain other XML comments
+elements similar to a remarks section to add additional details.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// This class demonstrates the revision history
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;The revision history element can be used on the class and its
+/// members.&lt;/remarks&gt;
+/// &lt;revisionHistory&gt;
+///     &lt;revision date=&quot;04/11/2014&quot; version=&quot;9.0.1.0&quot; author=&quot;THLUCAS&quot;&gt;This
+/// revision will be displayed since the &quot;visible&quot; attribute is not present
+/// (i.e. default).&lt;/revision&gt;
+///     &lt;revision date=&quot;04/12/2014&quot; version=&quot;9.0.1.1&quot; author=&quot;THLUCAS&quot;
+/// visible=&quot;true&quot;&gt;This revision will be displayed due to it's
+/// &quot;visible=true&quot; attribute setting.&lt;/revision&gt;
+///     &lt;revision date=&quot;04/15/2014&quot; version=&quot;9.0.1.2&quot; author=&quot;THLUCAS&quot;
+/// visible=&quot;false&quot;&gt;This revision will NOT be displayed due to it's
+/// &quot;visible=false&quot; attribute setting.
+///     &lt;/revision&gt;
+///     &lt;revision date=&quot;04/20/2014&quot; version=&quot;9.0.1.3&quot; author=&quot;THLUCAS&quot;&gt;
+///         &lt;para&gt;This revision will be displayed since the &quot;visible&quot;
+/// attribute is not present (i.e. default).&lt;/para&gt;
+/// 
+///         &lt;para&gt;Other XML comments elements are supported here and can be
+/// used as in a remarks section to add additional details.&lt;/para&gt;
+/// 
+///         &lt;list type=&quot;bullet&quot;&gt;
+///             &lt;item&gt;Point #1&lt;/item&gt;
+///             &lt;item&gt;Point #2&lt;/item&gt;
+///             &lt;item&gt;Point #3&lt;/item&gt;
+///         &lt;/list&gt;
+///     &lt;/revision&gt;
+/// &lt;/revisionHistory&gt;
+/// &lt;conceptualLink target=&quot;2a973959-9c9a-4b3b-abcb-48bb30382400&quot;/&gt;
+public class RevisionHistoryClass
+{
+    /// &lt;summary&gt;
+    /// This property has revision history
+    /// &lt;/summary&gt;
+    /// &lt;revisionHistory&gt;
+    ///     &lt;revision date=&quot;05/25/2014&quot; version=&quot;9.0.1.4&quot;
+    /// author=&quot;EWOODRUFF&quot;&gt;Added an example property&lt;/revision&gt;
+    /// &lt;/revisionHistory&gt;
+    public string Revision { get; set; }
+
+    /// &lt;summary&gt;
+    /// This method has revision history
+    /// &lt;/summary&gt;
+    /// &lt;revisionHistory&gt;
+    ///     &lt;revision date=&quot;05/25/2014&quot; version=&quot;9.0.1.4&quot;
+    /// author=&quot;EWOODRUFF&quot;&gt;Added an example method&lt;/revision&gt;
+    /// &lt;/revisionHistory&gt;
+    public void ExampleMethod()
+    {
+    }
+}</code></pre><h2 id="see-also">See Also</h2>
+<h4 id="reference">Reference</h4>
+<ul>
+<li><a class="xref" href="../../api/XMLCommentsExamples.RevisionHistoryClass.html">RevisionHistoryClass</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.RevisionHistoryClass.Revision.html#XMLCommentsExamples_RevisionHistoryClass_Revision">RevisionHistoryClass.Revision</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.RevisionHistoryClass.ExampleMethod.html#XMLCommentsExamples_RevisionHistoryClass_ExampleMethod">RevisionHistoryClass.ExampleMethod()</a></li>
+</ul>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="sectionelements.html">Section Elements</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/sectionelements/revisionhistory.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle XML Comments Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

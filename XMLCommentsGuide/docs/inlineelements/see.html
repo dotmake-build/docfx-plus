@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>see </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="see ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/inlineelements/see.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle XML Comments Guide">
+            Sandcastle XML Comments Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="see">see</h1>
+
+<p>This element is used to create an inline link to another API topic or an external website within the
+text in which it occurs.  It can also be used to apply language-specific formatting to a limited set of keywords.</p>
+<h2 id="Syntax"> Syntax</h2>
+<p>This inline element can be used within any other element.  Any of the following formats may be used
+based on the need.</p>
+<h3 id="CodeReference"> Code Reference</h3>
+<pre><code class="lang-xml">&lt;see cref=&quot;member&quot; [qualifyHint=&quot;true&quot;] [autoUpgrade=&quot;true&quot;] /&gt;
+
+or
+
+&lt;see cref=&quot;member&quot; [autoUpgrade=&quot;true&quot;]&gt;inner text&lt;/see&gt;
+</code></pre>
+<p>The code reference form uses a <code>cref</code> attribute to specify the
+member name to which the link should be connected.  The compiler will check that the target member name exists
+and will generate a warning if it is not found.  The member name does not have to be fully qualified as long as
+the reference is within the containing class or if the appropriate <code>using</code>
+(<code>Imports</code> in VB) statements are present.</p>
+<p>If the self-closing form is used, the inner text of the link will be set to the member name
+without a namespace or type qualifier.  You can specify inner text on the element to use an alternate value for
+the link text or to add a qualifying namespace or type to the member name.  By adding the <code>qualifyHint</code> attribute and setting it to true, you can indicate that the inner text
+should be qualified.  Type names are fully qualified with their namespace.  Class members are qualified with
+their class name.</p>
+<p>When specifying type, field, property, event, and non-overloaded method names, the name alone
+will suffice as the <code>cref</code> attribute value.  However, when referencing overloaded methods,
+you must supply parameter type information to help the compiler determine to which overload you are referring.
+The parameter type names are enclosed in parentheses and can be specified using the types for the language being
+used (i.e. <code>int</code> or <code>string</code> for C# or <code>Integer</code>
+or <code>String</code> for VB).  They can also be specified using the .NET Framework type names such
+as <code>Int32</code>, <code>System.Int32</code>, etc.  If an overload takes no
+parameters, just specify an empty set of parentheses.  If you want to link to the auto-generated member overloads
+help topic, you can specify the <code>autoUpgrade</code> attribute.  If set to false or omitted, the
+link will take you directly to the referenced member.  If set to true and the method has overloads, the link will
+take you to the method overloads page instead.  If the method has no overloads, it works the same as	if set to
+false and it takes you to the method page.  This is equivalent to the same attribute on the MAML <code>codeEntityReference</code> element.  Another alternative is to use the fully qualified member
+name with an &quot; <code>O:</code> &quot; prefix.  See the <a href="#Examples">Method Overload Examples</a>
+below for details.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To link to the root namespace container page, use the ID <code>R:Project_[HtmlHelpName]</code>
+where &quot; <code>[HtmlHelpName]</code> &quot; is the value of your project's HTML Help Name property with
+spaces replaced by underscores. Use the <strong>Entity References</strong> tool window to search for the ID if in doubt
+about its value.</p>
+</div>
+<h3 id="ExternalRef"> External Reference</h3>
+<pre><code class="lang-xml">&lt;see href=&quot;url&quot; [target=&quot;_blank | _self | _parent | _top&quot;]
+    [alt=&quot;alternate text&quot;] /&gt;
+
+or
+
+&lt;see href=&quot;url&quot; [target=&quot;_blank | _self | _parent | _top&quot;]
+    [alt=&quot;alternate text&quot;]&gt;inner text&lt;/see&gt;
+</code></pre>
+<p>The external reference form is a customization implemented by Sandcastle.  It uses an <code>href</code> attribute to specify the URL of an external website or resource to which the link
+should be connected.  If the self-closing form is used, the inner text of the link will be set to the URL.  You
+can specify inner text on the element to use an alternate value for the link text.</p>
+<p>The optional <code>target</code> attribute can be used to specify where the
+content will be opened.  If not specified, <code>_blank</code> is used to open the content in a new
+browser window.  The <code>_self</code> option can be used to replace the current topic with the
+content of the target URL.  The <code>_parent</code> and <code>_top</code> options can be
+used to force the content to be displayed in the parent frame or full window if the current topic is hosted in
+one of those manners.</p>
+<p>The optional <code>alt</code> attribute can be used to specify alternate text to
+display for the link's tooltip when the mouse hovers over it.  If not specified, no alternate text is added for
+the tooltip.</p>
+<h3 id="LangWord"> Language Keyword Formatting</h3>
+<pre><code class="lang-xml">&lt;see langword=&quot;null | Nothing | nullptr | static | shared | virtual |
+    Overridable | true | True | false | False | abstract | MustInherit |
+    sealed | NotInheritable | async | await | async/await | Async | Await |
+        Async/Await | let! | async/let! | this | Me&quot; /&gt;
+</code></pre>
+<p>The language keyword formatting form uses a <code>langword</code> attribute to
+specify a language keyword that will receive special handling when the topic is viewed.  When one of the noted
+keywords is used, the keyword text displayed is based on the language selected in the language filter if the
+presentation style has one.  If a keyword other than one of those listed is specified, it is passed through with
+no special formatting or handling.</p>
+<h2 id="Remarks"> Remarks</h2>
+<p>Use this element to insert an inline link.  Use the <a href="../sectionelements/seealso.html">seealso</a>
+element to insert a link in the <strong>See Also</strong> section of the topic.</p>
+<h2 id="Examples"> Examples</h2>
+<pre><code class="lang-cs" name="Code Reference Examples">/// &lt;summary&gt;
+/// This event is raised when something interesting happens.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;&lt;para&gt;The &lt;see cref=&quot;OnSomethingHappened&quot;/&gt; method is used to
+/// raise this event.  This event uses the general &lt;see cref=&quot;EventHandler&quot;/&gt;
+/// delegate that passes &lt;see cref=&quot;EventArgs.Empty&quot;&gt;EventArgs.Empty&lt;/see&gt;
+/// to the handlers.&lt;/para&gt;
+/// 
+/// &lt;para&gt;Alternate &lt;c&gt;see&lt;/c&gt; syntax: &lt;see cref=&quot;EventArgs.Empty&quot; qualifyHint=&quot;true&quot;/&gt;&lt;/para&gt;
+/// &lt;/remarks&gt;
+/// &lt;seealso cref=&quot;EventArgs&quot;/&gt;
+/// &lt;seealso cref=&quot;EventArgs.Empty&quot;/&gt;
+/// &lt;seealso cref=&quot;EventArgs.Empty&quot; qualifyHint=&quot;true&quot;/&gt;
+/// &lt;seealso cref=&quot;EventHandler&quot;/&gt;
+/// &lt;seealso cref=&quot;OnSomethingHappened&quot;&gt;XMLCommentsExamples.SampleClass.OnSomethingHappened&lt;/seealso&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+/// &lt;conceptualLink target=&quot;16cdb957-a35b-4c17-bf5e-ea511b0218e3&quot; /&gt;
+public event EventHandler SomethingHappened;
+
+/// &lt;summary&gt;
+/// This is a protected virtual method used to raise the
+/// &lt;see cref=&quot;SomethingHappened&quot;/&gt; event.
+/// &lt;/summary&gt;
+/// &lt;seealso cref=&quot;SomethingHappened&quot;/&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+/// &lt;conceptualLink target=&quot;16cdb957-a35b-4c17-bf5e-ea511b0218e3&quot; /&gt;
+protected virtual void OnSomethingHappened()
+{
+    SomethingHappened?.Invoke(this, EventArgs.Empty);
+}</code></pre><pre><code class="lang-cs" name="Method Overload Examples">/// &lt;summary&gt;
+/// This version of the method takes no parameters.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;&lt;para&gt;To see all overloads, refer to the
+/// &lt;see cref=&quot;DoSomething()&quot; autoUpgrade=&quot;true&quot; /&gt; topic.&lt;/para&gt;
+/// 
+/// &lt;para&gt;Other overloads:&lt;/para&gt;
+/// 
+/// &lt;list type=&quot;bullet&quot;&gt;
+///   &lt;item&gt;
+///     &lt;description&gt;&lt;see cref=&quot;DoSomething(Int32)&quot;/&gt;&lt;/description&gt;
+///   &lt;/item&gt;
+///   &lt;item&gt;
+///     &lt;description&gt;&lt;see cref=&quot;DoSomething(String)&quot;/&gt;&lt;/description&gt;
+///   &lt;/item&gt;
+///   &lt;item&gt;
+///     &lt;description&gt;&lt;see cref=&quot;DoSomething(Int32, String)&quot;/&gt;&lt;/description&gt;
+///   &lt;/item&gt;
+/// &lt;/list&gt;
+/// 
+/// &lt;para&gt;Alternate syntax to link to the overloads topic:
+/// &lt;see cref=&quot;O:XMLCommentsExamples.SampleClass.DoSomething&quot;&gt;DoSomething
+/// Overloads&lt;/see&gt;&lt;/para&gt;
+/// &lt;/remarks&gt;
+/// &lt;overloads&gt;This method has four overloads&lt;/overloads&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+/// &lt;conceptualLink target=&quot;16cdb957-a35b-4c17-bf5e-ea511b0218e3&quot; /&gt;
+public void DoSomething()
+{
+}
+
+/// &lt;summary&gt;
+/// This version of the method takes an integer parameter.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;number&quot;&gt;A number to use&lt;/param&gt;
+/// &lt;seealso cref=&quot;DoSomething()&quot; autoUpgrade=&quot;true&quot; /&gt;
+/// &lt;seealso cref=&quot;DoSomething()&quot; /&gt;
+/// &lt;seealso cref=&quot;DoSomething(String)&quot; /&gt;
+/// &lt;seealso cref=&quot;DoSomething(Int32, String)&quot; /&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+/// &lt;conceptualLink target=&quot;16cdb957-a35b-4c17-bf5e-ea511b0218e3&quot; /&gt;
+public void DoSomething(int number)
+{
+}
+
+/// &lt;summary&gt;
+/// This version of the method takes a string parameter.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;text&quot;&gt;A text value to use&lt;/param&gt;
+/// &lt;seealso cref=&quot;DoSomething()&quot;/&gt;
+/// &lt;seealso cref=&quot;DoSomething(Int32)&quot;/&gt;
+/// &lt;seealso cref=&quot;DoSomething(Int32, String)&quot;/&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+/// &lt;conceptualLink target=&quot;16cdb957-a35b-4c17-bf5e-ea511b0218e3&quot; /&gt;
+public void DoSomething(string text)
+{
+}
+
+/// &lt;summary&gt;
+/// This version of the method takes both an integer and a string parameter.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;number&quot;&gt;A number to use&lt;/param&gt;
+/// &lt;param name=&quot;text&quot;&gt;A text value to use&lt;/param&gt;
+/// &lt;seealso cref=&quot;DoSomething()&quot;/&gt;
+/// &lt;seealso cref=&quot;DoSomething(Int32)&quot;/&gt;
+/// &lt;seealso cref=&quot;DoSomething(String)&quot;/&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+/// &lt;conceptualLink target=&quot;16cdb957-a35b-4c17-bf5e-ea511b0218e3&quot; /&gt;
+public void DoSomething(int number, string text)
+{
+}</code></pre><pre><code class="lang-cs" name="External Reference Examples">/// &lt;summary&gt;
+/// This is used to demonstrate the external reference type of &lt;c&gt;see&lt;/c&gt;
+/// and &lt;c&gt;seealso&lt;/c&gt; elements.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;
+/// &lt;list type=&quot;bullet&quot;&gt;
+///   &lt;item&gt;
+///     &lt;description&gt;Basic link: &lt;see href=&quot;https://GitHub.com/EWSoftware/SHFB&quot;/&gt;&lt;/description&gt;
+///   &lt;/item&gt;
+///   &lt;item&gt;
+///     &lt;description&gt;Link with target: &lt;see href=&quot;https://GitHub.com/EWSoftware/SHFB/wiki&quot;
+///       target=&quot;_self&quot; /&gt;&lt;/description&gt;
+///   &lt;/item&gt;
+///   &lt;item&gt;
+///     &lt;description&gt;Link with alternate text: &lt;see href=&quot;https://GitHub.com/EWSoftware/issues&quot;
+///       alt=&quot;Discuss SHFB on GitHub&quot; /&gt;&lt;/description&gt;
+///   &lt;/item&gt;
+///   &lt;item&gt;
+///     &lt;description&gt;Link with inner text: &lt;see href=&quot;https://GitHub.com/EWSoftware/SHFB&quot;&gt;
+///       SHFB on GitHub&lt;/see&gt;&lt;/description&gt;
+///   &lt;/item&gt;
+/// &lt;/list&gt;
+/// &lt;para&gt;Equivalent &lt;c&gt;seealso&lt;/c&gt; links are shown below.&lt;/para&gt;
+/// &lt;/remarks&gt;
+/// &lt;seealso href=&quot;https://GitHub.com/EWSoftware/SHFB&quot;/&gt;
+/// &lt;seealso href=&quot;https://GitHub.com/EWSoftware/SHFB/wiki&quot; target=&quot;_self&quot; /&gt;
+/// &lt;seealso href=&quot;https://GitHub.com/EWSoftware/SHFB/issues&quot; alt=&quot;Discuss SHFB on GitHub&quot; /&gt;
+/// &lt;seealso href=&quot;https://GitHub.com/EWSoftware/SHFB&quot;&gt;SHFB on GitHub&lt;/seealso&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+/// &lt;conceptualLink target=&quot;16cdb957-a35b-4c17-bf5e-ea511b0218e3&quot; /&gt;
+public void SeeElementExternalExample()
+{
+}</code></pre><pre><code class="lang-cs" name="Language Keyword Examples">/// &lt;summary&gt;
+/// This demonstrates the &lt;c&gt;see&lt;/c&gt; element's &lt;c&gt;langword&lt;/c&gt; form
+/// &lt;/summary&gt;
+/// &lt;returns&gt;This method is &lt;see langword=&quot;static&quot; /&gt; and always returns
+/// &lt;see langword=&quot;null&quot;/&gt;.&lt;/returns&gt;
+/// &lt;conceptualLink target=&quot;983fed56-321c-4daf-af16-e3169b28ffcd&quot; /&gt;
+public static string SeeLangWordExamples()
+{
+    return null;
+}</code></pre><h2 id="see-also">See Also</h2>
+<h4 id="reference">Reference</h4>
+<ul>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.SomethingHappened.html">SampleClass.SomethingHappened</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.OnSomethingHappened.html#XMLCommentsExamples_SampleClass_OnSomethingHappened">SampleClass.OnSomethingHappened()</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.SeeElementExternalExample.html#XMLCommentsExamples_SampleClass_SeeElementExternalExample">SampleClass.SeeElementExternalExample()</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.SeeLangWordExamples.html#XMLCommentsExamples_SampleClass_SeeLangWordExamples">SampleClass.SeeLangWordExamples()</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething">SampleClass.DoSomething()</a></li>
+</ul>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="inlineelements.html">Inline Elements</a></li>
+<li><a href="../sectionelements/seealso.html">seealso</a></li>
+<li><a href="../miscelements/conceptuallink.html">conceptualLink</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/inlineelements/see.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle XML Comments Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
