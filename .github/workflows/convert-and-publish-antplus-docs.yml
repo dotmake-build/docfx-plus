@@ -35,7 +35,7 @@ jobs:
 
     - run: dotnet tool update -g docfx-plus
 
-    - run: docfx-plus convert AntPlus/Documentation -o SHFB/Documentation/docfx
+    - run: docfx-plus convert AntPlus/Documentation -o AntPlus/Documentation/docfx
     - run: docfx-plus AntPlus/Documentation/docfx/docfx.json
     - name: Deploy to GitHub Pages (Update existing)
       uses: peaceiris/actions-gh-pages@v4
