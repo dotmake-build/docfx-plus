@@ -43,7 +43,8 @@ jobs:
       with:
         folder: SHFB/Documentation/SandcastleBuilder/docfx/_site
         target-folder: SandcastleBuilder   # subfolder on Pages site
-        
+        force: false
+
     - run: docfx-plus convert SHFB/Documentation/SandcastleMAMLGuide -o SHFB/Documentation/SandcastleMAMLGuide/docfx
     - run: docfx-plus SHFB/Documentation/SandcastleMAMLGuide/docfx/docfx.json
     - name: Deploy to GitHub Pages (Update existing)
@@ -51,7 +52,8 @@ jobs:
       with:
         folder: SHFB/Documentation/SandcastleMAMLGuide/docfx/_site
         target-folder: SandcastleMAMLGuide   # subfolder on Pages site
-   
+        force: false
+
     - run: docfx-plus convert SHFB/Documentation/XMLCommentsGuide -o SHFB/Documentation/XMLCommentsGuide/docfx
     - run: docfx-plus SHFB/Documentation/XMLCommentsGuide/docfx/docfx.json
     - name: Deploy to GitHub Pages (Update existing)
@@ -59,3 +61,4 @@ jobs:
       with:
         folder: SHFB/Documentation/XMLCommentsGuide/docfx/_site
         target-folder: XMLCommentsGuide   # subfolder on Pages site
+        force: false

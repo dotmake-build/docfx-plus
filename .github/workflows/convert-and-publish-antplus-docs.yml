@@ -39,8 +39,8 @@ jobs:
     - run: docfx-plus convert AntPlus/Documentation -o AntPlus/Documentation/docfx
     - run: docfx-plus AntPlus/Documentation/docfx/docfx.json
     - name: Deploy to GitHub Pages (Update existing)
-      uses: peaceiris/actions-gh-pages@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: AntPlus/Documentation/docfx/_site
-        destination_dir: AntPlus   # subfolder on Pages site
+        folder: AntPlus/Documentation/docfx/_site
+        target-folder: AntPlus   # subfolder on Pages site
+        force: false
