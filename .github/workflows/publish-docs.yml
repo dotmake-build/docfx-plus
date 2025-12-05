@@ -39,7 +39,11 @@ jobs:
       # working-directory: docs
 
     - name: Deploy to GitHub Pages (Update existing)
-      uses: peaceiris/actions-gh-pages@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_site
+        folder: docs/_site # The folder the action should deploy.
+        target-folder: .
+        clean-exclude: |
+          AntPlus/
+          SandcastleBuilder/
+          XMLCommentsGuide/

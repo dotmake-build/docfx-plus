@@ -39,26 +39,23 @@ jobs:
     - run: docfx-plus convert SHFB/Documentation/SandcastleBuilder -o SHFB/Documentation/SandcastleBuilder/docfx
     - run: docfx-plus SHFB/Documentation/SandcastleBuilder/docfx/docfx.json
     - name: Deploy to GitHub Pages (Update existing)
-      uses: peaceiris/actions-gh-pages@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: SHFB/Documentation/SandcastleBuilder/docfx/_site
-        destination_dir: SandcastleBuilder   # subfolder on Pages site
+        folder: SHFB/Documentation/SandcastleBuilder/docfx/_site
+        target-folder: SandcastleBuilder   # subfolder on Pages site
         
     - run: docfx-plus convert SHFB/Documentation/SandcastleMAMLGuide -o SHFB/Documentation/SandcastleMAMLGuide/docfx
     - run: docfx-plus SHFB/Documentation/SandcastleMAMLGuide/docfx/docfx.json
     - name: Deploy to GitHub Pages (Update existing)
-      uses: peaceiris/actions-gh-pages@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: SHFB/Documentation/SandcastleMAMLGuide/docfx/_site
-        destination_dir: SandcastleMAMLGuide   # subfolder on Pages site
-    
+        folder: SHFB/Documentation/SandcastleMAMLGuide/docfx/_site
+        target-folder: SandcastleMAMLGuide   # subfolder on Pages site
+   
     - run: docfx-plus convert SHFB/Documentation/XMLCommentsGuide -o SHFB/Documentation/XMLCommentsGuide/docfx
     - run: docfx-plus SHFB/Documentation/XMLCommentsGuide/docfx/docfx.json
     - name: Deploy to GitHub Pages (Update existing)
-      uses: peaceiris/actions-gh-pages@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: SHFB/Documentation/XMLCommentsGuide/docfx/_site
-        destination_dir: XMLCommentsGuide   # subfolder on Pages site
+        folder: SHFB/Documentation/XMLCommentsGuide/docfx/_site
+        target-folder: XMLCommentsGuide   # subfolder on Pages site
