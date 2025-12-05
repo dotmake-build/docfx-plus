@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2017.12.30.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2017.12.30.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2015.7.26.0tov2021.4.9.0/v2017.12.30.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-201712300">Version 2017.12.30.0</h1>
+
+<h2 id="BreakingChanges"> Breaking Changes</h2>
+<ul>
+<li><p>Various utility classes, designer classes, and enumerations were moved between the <em>Sandcastle.Core</em>, <em>SandcastleBuilder.Utils</em>, and standalone GUI assemblies
+to move code specific to the standalone GUI out of the common assemblies and to better share the code for the new
+WPF property pages and configuration forms.  Support for several new project properties was also added.</p>
+<p>If you have created custom build components, syntax generators, plug-ins, or presentation
+styles, you will need to rebuild them against the latest release.</p>
+</li>
+<li><p>Added support for the <code>websiteAdContent</code> shared content item in the
+VS2010 and VS2013 presentation styles.  If you have custom presentation styles and want to support the <code>WebsiteAdContent</code> help file builder project property, you will need to add the content
+item to your custom presentation style resource item and transformation files.</p>
+</li>
+<li><p>Added the <code>{@SearchResultsDisplayVersion}</code> substitution tag to the MS
+Help Viewer Additional Header Content definitions in the VS2010 and VS2013 presentation styles.  If you have
+custom presentation styles and want to support the property, you will need to add it to your <em>BuildAssembler.config</em> configuration files.</p>
+</li>
+</ul>
+<h2 id="SandcastleTools"> Sandcastle Tools</h2>
+<ul>
+<li><p>Fixed a couple of null reference exceptions in MRefBuilder caused by obfuscated code.</p>
+</li>
+<li><p>Fixed up issues with unsigned long enumerated types and duplicate flag values in MRefBuilder.</p>
+</li>
+<li><p>Fixed MRefBuilder so that if an overridden member is removed, the matching overridden/virtual
+members in the base types are also removed to prevent them showing up in place of the removed override.</p>
+</li>
+<li><p>Fixed MRefBuilder so that it automatically redirects the <code>System</code>
+assembly for .NETStandard 2.0 assemblies.</p>
+</li>
+<li><p>Added code to auto-redirect to a like-named assembly in the cache if one is found.  This helps
+correct missing assembly issues in .NETCore/.NETStandard projects which can vary by version number.</p>
+</li>
+<li><p>Added support to MRefBuilder for excluding types and members based on the presence of <code>EditorBrowsableAttribute(Never)</code> and <code>BrowsableAttribute(False)</code>
+settings.</p>
+</li>
+<li><p>Fixed the BuildAssembler Save Component so that if the writer task fails it stops the build and
+reports the problem rather than causing a hang.</p>
+</li>
+<li><p>Modified the <em>AddFilenames.xsl</em> transformation and added a more specific
+exception message in XslTransform to clarify the solution to issues caused by the FIPS policy being enabled which
+prevents the MD5 hash from being used with the GUID file naming method.</p>
+</li>
+<li><p>Updated the GenerateInheritedDocs tool so that it doesn't generate false GID0002 errors for
+inherited attached events and properties that never actually appear in the documentation.</p>
+</li>
+</ul>
+<h2 id="SHFB"> Sandcastle Help File Builder</h2>
+<ul>
+<li><p>Fixed a bug in the Managed Package Framework that could cause renamed files to get saved under
+the old name if the filename was changed with the file open in an editor in Visual Studio.</p>
+</li>
+<li><p>Fixed the Help Library Manager Launcher tool so that it finds the correct registry keys when
+SQL Server Management Studio is installed which can result in the 64-bit parent key existing without the expected
+subkeys.</p>
+</li>
+<li><p>Fixed the scan for build components so that it ignores bad image format exceptions nested
+within argument exceptions.</p>
+</li>
+<li><p>Fixed the package reference resolver so that it can handle multiple NuGet package folder paths.</p>
+</li>
+<li><p>Added code to the XML comments file handling to automatically fix invalid comments files from
+framework NuGet packages that have an invalid <code>span</code> element as the root element.</p>
+</li>
+<li><p>Added the new <code>DocumentEditorBrowsableNever</code> and <code>DocumentNonBrowsable</code> project properties on the Visibility category property page.  For
+backward compatibility, these options will be enabled when the project format is updated.  Turn them off if you
+no longer want members decorated with the related attributes to appear in the help file.</p>
+</li>
+<li><p>Added the new <code>AppendMarkdownFileExtensionsToUrls</code> property on the
+Help 1/Website category property page to allow adding extensions to the URLs in markdown topics so that the
+output will work in non-GitHub wikis and for topics in source control.</p>
+</li>
+<li><p>Added the new <code>WebsiteAdContent</code> property on the Help1/Website category
+property page which allows you to define ad content provider script and HTML in website output.</p>
+</li>
+<li><p>Added the <code>SearchResultsDisplayVersion</code> property to the MS Help Viewer
+category property page which allows you to set the content of the <code>Microsoft.Help.DisplayVersion</code>
+metadata item in MS Help Viewer output.  This helps differentiate search results with the same title in the
+search results by adding the specified module name and/or display version to each entry in the help file.</p>
+</li>
+<li><p>Moved the Presentation Style and Syntax Filters properties from the Help File properties page
+to the Build properties page.  This allows the help file formats to be filtered based on what is supported by the
+selected presentation style.</p>
+</li>
+<li><p>Replaced the Windows Forms based project property pages and Visual Studio options page with WPF
+versions for better high DPI scaling support on 4K displays.  Several build component configuration forms have
+also been converted to WPF for the same reason.  Work is on going to replace all of the remaining Windows Forms
+based build component and plug-in configuration forms with WPF versions.</p>
+</li>
+</ul>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<ul>
+<li><p>Fixed the Markdown presentation style so that it handles <code>see[@langword]</code>
+correctly.</p>
+</li>
+<li><p>Added support for adding the &quot;.md&quot; extensions to topic URLs in the Markdown presentation style.</p>
+</li>
+<li><p>Added code to the VS2010 and VS2013 presentation style script to add the extra space in Help 1
+files after language specific text.</p>
+</li>
+<li><p>Merged a change from Scott Hunter to construct website TOC URLs in the VS2013 presentation
+style relative to the root instead of assuming the target is in the <em>.\html</em> folder.  This
+allows additional content to be added to the project using a site map file and for links to such topics to be
+generated correctly in the TOC fragments.</p>
+</li>
+<li><p>Merged changes from OpportunityLiu to fix typos in the Chinese translations.</p>
+</li>
+<li><p>Removed generation of the <code>indexEntry_aboutType</code> (&quot;about
+TypeName class&quot;) index entries as they were just duplicates of the &quot;TypeName class&quot; index entries.</p>
+</li>
+<li><p>Removed the unused index content items from the Markdown and Open XML presentation styles.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2015.7.26.0tov2021.4.9.0/v2017.12.30.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

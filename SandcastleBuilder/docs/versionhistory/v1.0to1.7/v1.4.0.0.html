@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 1.4.0.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 1.4.0.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.0to1.7/v1.4.0.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-1400">Version 1.4.0.0</h1>
+
+<p>Version 1.4.0.0 was released on March 11, 2007.</p>
+<h2 id="changes-in-this-release">Changes in This Release</h2>
+<ul>
+<li><p>Added support for the March 2007 CTP of Sandcastle.</p>
+</li>
+<li><p><strong>NOTE:</strong> The default configurations for the <code>CodeBlockComponent</code>
+and <code>PostTransformComponent</code> have changed and <strong>++must be reset++</strong> and reconfigured if you customized them
+via the <code>ComponentConfigurations</code> project option.  Line numbering and outlining are now
+off by default.  A new option &quot;Connect code blocks to language filter&quot; has been added to allow connecting the
+code blocks to the language filter.  If enabled (the default), code blocks are shown or hidden based on the
+language filter setting.  If disabled, code blocks are always shown regardless of the language filter setting.
+Options are also present to set the location of the &quot;Copy&quot; image and the file path for it.</p>
+</li>
+<li><p>Made some significant performance improvements.  Build times in some cases involving extremely
+large numbers of topics can be reduced by up to 50% or more.  The larger the number of topics to document, the
+more significant the decrease in build time.</p>
+<ul>
+<li><p>Optimized loading and saving of the reflection information file and the XML comments
+files within the build engine.</p>
+</li>
+<li><p>Optimized the purge item code and duplicate checking in the name generation code to
+eliminate unnecessary XPath lookups.</p>
+</li>
+<li><p>The processing for the <code>ShowMissing*</code> options has been moved into
+a new build component (<code>ShowMissingComponent</code>).  On extremely large documentation builds
+(tens of thousands of topics), the XPath queries that were used to look up the member comments and the
+information in the reflection file took an extremely long time.  By moving the processing to a build component,
+the amount of information to search is greatly reduced and the time to add missing item comments is now negligible.</p>
+</li>
+<li><p>The version information lookup part of the <code>PostTransformComponent</code>
+was split out into a new <code>VersionInfoComponent</code> that runs before transformation of the
+topic occurs.  This allows for an optimized lookup of the version information and the whole reflection file does
+not need to be loaded thus reducing memory usage for large builds and speeding up the searches for version
+information.</p>
+</li>
+<li><p>Added build step timing information so that it is easier to see which steps are taking
+the longest during a build.</p>
+</li>
+</ul>
+</li>
+<li><p>The console mode builder can now accept project properties as command line options to override
+or add settings to a project.  A response file can also be used to avoid problems with long command lines.  See
+the <a href="../../gettingstarted/consolebuild.html">Building Projects Outside the GUI</a> topic for details.</p>
+</li>
+<li><p>Added the <code>WorkingPath</code> property so that you can specify an alternate
+location with a shorter path in which to perform the build if it fails due to long file path names.</p>
+</li>
+<li><p>The following file and folder project properties have been converted from strings to objects.
+This allows them to be persisted as paths relative to the current project location rather than as absolute paths
+at your choosing.  In addition, environment variables such as <code>%DXROOT%</code>, <code>%WINDIR%</code>, etc. can be specified in the paths and they will be expanded
+at build time to the value of the specified environment variable. Properties affected:</p>
+<ul>
+<li><p>SandcastleProject.HtmlHelp1xCompilerPath</p>
+</li>
+<li><p>SandcastleProject.HtmlHelp2xCompilerPath</p>
+</li>
+<li><p>SandcastleProject.SandcastlePath</p>
+</li>
+<li><p>SandcastleProject.WorkingPath</p>
+</li>
+<li><p>DocumentAssembly.AssemblyPath</p>
+</li>
+<li><p>DocumentAssembly.XmlCommentsPath</p>
+</li>
+<li><p>ContentItem.SourcePath</p>
+</li>
+<li><p>DependencyItem.DependencyPath</p>
+</li>
+</ul>
+<p>The <code>OutputPath</code> property is still a string.  If relative, it is always
+relative to the project folder and thus should not point at the prior location if the project is saved in a new
+folder.  For similar reasons, the <code>DestinationPath</code> property of additional content items
+has also been left as a string.</p>
+<p>All fully qualified paths in the affected properties in projects created by prior versions of
+the help file builder will become relative paths automatically when opened in the latest version.  If you need a
+fixed path, expand the property and set the <code>IsFixedPath</code> property to true so that it is
+saved as an absolute rather than a relative path.</p>
+</li>
+<li><p>It is now possible to resolve project option values and shared content items in additional
+content files.</p>
+</li>
+<li><p>Fixed a bug in the code to resolve links to namespace content from additional content that
+caused it to add too many relative path parts to the URLs.  Fixed a bug that caused it to miss the default page
+setting if the page was associated with a folder.  Also fixed a bug that caused it to ignore the page if it was
+associated with a folder and it was the only file in the folder.</p>
+</li>
+<li><p>Fixed a bug in the code colorizer caused by the description for the collapsed region not being
+HTML encoded.  Also fixed up the definitions so that it doesn't colorize preprocessor text within quotes and
+comments and handles XML attribute names containing colons.</p>
+</li>
+<li><p>Fixed the <code>CodeBlockComponent</code> and the code colorizer so that they
+recognize VB.NET style <code>#Else If</code>, <code>#End If</code>, and <code>#End Region</code> statements.</p>
+</li>
+<li><p>The code colorizer now renders a &quot;Copy&quot; icon and text to the right of each title line on the
+code blocks and allows you to copy the code to the clipboard.  The code is copied as plain text without the
+highlighting and line numbers if used. Default titles are also used on code block that do not have a title.  The
+default title is based on the language specified.</p>
+</li>
+<li><p>Modified the C++ comments fix-up code so that it only strips out the unnecessary characters
+if they appear in a declaration involving the <code>System.Collections.Generic</code> namespace.</p>
+</li>
+<li><p>The <code>PresentationStyle</code> property now uses a type converter that allows
+you to select any folder under the <strong>.\Presentation</strong> folder in the main Sandcastle
+installation folder.  This allows you to create custom versions of the Prototype and VS2005 styles using
+different names and select them for use from within a help file builder project.</p>
+</li>
+<li><p>The build process now tries to delete the help file first if it exists so that it stops
+immediately if the help file is open and cannot be overwritten.</p>
+</li>
+<li><p>Made the file extension checks case-insensitive when adding assemblies and comments files to
+the project and when examining additional content files during the build.</p>
+</li>
+<li><p>When documenting internals, private fields backing events are now removed as they can never be
+documented with comments.</p>
+</li>
+<li><p>Removed extraneous paragraph tags from the formatted footer replacement tag values.</p>
+</li>
+<li><p>Modified the <code>comments</code> shared content item so that the e-mail link in
+the page footers now appends the current topic's title to the help file's title for the e-mail's subject.</p>
+</li>
+<li><p>Added a <strong>FooterText</strong> property to the project that lets you add
+additional text to the footer of each page without having to modify the shared content file.  The text is
+inserted at the start of the <code>footer</code> shared content item.</p>
+</li>
+<li><p>The post-transform component now turns off all file attributes when copying the highlighter and
+logo files so that they can be deleted at the end of the build when <code>CleanIntermediates</code>
+is set to true.</p>
+</li>
+<li><p>Added <code>placement</code> and <code>alignment</code> attributes to
+the <code>logoFile</code> element of the post-transform component.  This allows the logo to be placed
+to the left, right, or above the topic title.  When placed above the topic title, it can be aligned to the left
+or right or centered.</p>
+</li>
+<li><p>Moved the version information text to the end of the location information shared content items.
+The <code>PostTransformComponent</code> now moves the location/version text to the end of the footer
+in the Prototype style.</p>
+</li>
+<li><p>Added a <strong>Delete</strong> button to the <strong>Namespaces</strong>
+dialog that lets you remove old namespaces from the list that no longer appear in the assemblies.</p>
+</li>
+<li><p>Added <code>Help1xAndHelp2x</code> and <code>Help1xAnd2xAndWebsite</code>
+options to the <code>HelpFileFormat</code> project option.</p>
+</li>
+<li><p>Added an <code>ExcludeItems</code> property to the additional content items.  If
+set to true, the file or files matching the source path are excluded.  If used with a wildcard source path, all
+matching files in subfolders are excluded as well.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="v1.0to1.7.html">Versions 1.0.0.0 through 1.7.0.0</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.0to1.7/v1.4.0.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

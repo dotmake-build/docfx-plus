@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 1.9.3.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 1.9.3.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.9.3.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-1930">Version 1.9.3.0</h1>
+
+<h2 id="BreakingChanges"> Breaking Changes</h2>
+<ul>
+<li><p>The Sandcastle Help File Builder GUI and build engine are now built with .NET 4.0 and use MSBuild 4.0.
+As such, you will need to update any build scripts that call <strong>MSBuild.exe</strong> to use the .NET 4.0
+version of MSBuild.  The Sandcastle build components and the code colorizer library still target .NET 3.5 as they are loaded
+and used by the Sandcastle tools which are still built using .NET 2.0.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Even though it is built with .NET 4.0, the Sandcastle Help File Builder can still build help files for any
+assembly that targets any version of .NET from version 1.1 to 4.0 and can use solution and project files as documentation
+sources from Visual Studio 2005, 2008, or 2010.</p>
+</div>
+</li>
+</ul>
+<h2 id="OtherChanges"> Other Changes in This Release</h2>
+<ul>
+<li><p>Fixed bug that caused an exception if at least one version of the Silverlight Framework
+was not installed.</p>
+</li>
+<li><p>Fixed the platform path passed to <strong>MRefBuilder</strong> so that it
+correctly generates member IDs for .NET 4.0 assemblies.  The incorrect path in prior versions was causing member
+IDs to be generated incorrectly which caused missing documentation issues.</p>
+</li>
+<li><p>Fixed a bug in <code>PostTranformComponent</code> that caused an exception when
+trying to place the logo if no syntax filters where defined.  However, be aware that turning off all syntax filters
+will cause several API member elements to be omitted as they are rendered as part of the syntax section by the
+Sandcastle XSL transformation (parameters, type parameters, returns, etc.).</p>
+</li>
+<li><p>Fixed a bug in <code>ShowMissingComponent</code> that caused it to miss
+the auto-documented comments on the Member List page when the constructor was overloaded.</p>
+</li>
+<li><p>The build engine will now locate the .NET 4.0 Framework, F# core, and Silverlight Framework
+XML comments files and include them where needed to provide comments for base class members.</p>
+</li>
+<li><p>Updated the <code>FrameworkVersion</code> project property to allow selection
+of any installed .NET Framework version or Silverlight Framework version.  This allows for the proper documentation
+of Silverlight projects using assemblies and XML comments files specific to that framework.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because Silverlight projects use an entirely different framework, it is not possible to build a help project
+containing assemblies and/or Visual Studio projects that target both the Silverlight framework and the normal .NET
+Framework.  Each must be built in their own separate help project.  You can use the Version Builder plug-in to merge
+the information from both projects into one help file if necessary.</p>
+</div>
+</li>
+<li><p>For Silverlight projects where the assemblies are added directly as documentation sources
+rather than their Visual Studio project, the build engine will now automatically include all known Silverlight Framework
+assemblies as references.  This frees you from having to manually add the Silverlight Framework assemblies as
+references.  However, a large number of references will be added, many of which are not needed.  If you have a choice,
+using the Visual Studio solution or project file as the documentation source is preferred as it will only include the
+required reference assemblies.</p>
+</li>
+<li><p>Added the <a href="../../plugins/wildcardreferencesplugin.html">Wildcard References Plug-In</a> that can be used
+to add all assemblies found in a given folder and its sub-folders as references to use when generating reflection
+information with the <strong>MRefBuilder</strong> tool.</p>
+</li>
+<li><p>Added the <code>DisableCodeBlockComponent</code> project property to allow
+removal of the custom Code Block Component so that the <code>&lt;code&gt;</code> elements are rendered
+in their default format by the Sandcastle XSL transformations.  This was requested by some Microsoft users so that
+their help topics generated by the help file builder can be transformed and used as MSDN content.</p>
+</li>
+<li><p>By default, the GUI will now save the project window state per user for each project.  When
+re-opened, the project window state is restored.  Window state is saved to a file in the project folder using the
+same name as the project file with a &quot; <em>_[USERNAME]</em> &quot; suffix.  This option can be turned off in
+the <strong>User Preferences</strong> dialog.</p>
+</li>
+<li><p>Thanks to euphory for providing additional translations in the Japanese
+shared builder content resource item file.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="v1.8tov1.9.8.0.html">Versions 1.8.0.0 through 1.9.8.0</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.9.3.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Creating a BuildAssembler Build Component </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Creating a BuildAssembler Build Component ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/customcomponents/createbuildcomponent.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="creating-a-buildassembler-build-component">Creating a BuildAssembler Build Component</h1>
+
+<h2 id="DefineConfig"> Defining the Build Component Configuration</h2>
+<p>The first step is to determine what items will appear in the build component configuration.  The
+configuration is stored as an XML fragment in the help file builder project file.  The root node is always <code>component</code>.  Define your own elements to contain the build component configuration that
+will be nested within the root element.  It is possible that a build component will have no configurable
+elements.  In that case, there is nothing to add to the default configuration.  Below is an example of a
+configuration that is passed to a build component.</p>
+<pre><code class="lang-xml">&lt;component id=&quot;Copy From Index Component&quot;&gt;
+    &lt;index name=&quot;reflection&quot; value=&quot;/reflection/apis/api&quot; key=&quot;@id&quot; cache=&quot;15&quot;&gt;
+        &lt;data base=&quot;{@FrameworkReflectionDataFolder}&quot; recurse=&quot;true&quot; files=&quot;*.xml&quot;
+            duplicateWarning=&quot;false&quot; /&gt;
+        &lt;data files=&quot;reflection.xml&quot; /&gt;
+    &lt;/index&gt;
+    &lt;copy name=&quot;reflection&quot; source=&quot;*&quot; target=&quot;/document/reference&quot; /&gt;
+&lt;/component&gt;
+</code></pre>
+<h2 id="CreateProject"> Creating the Project</h2>
+<p>This section describes how to create and configure the build component project.  It will describe
+the process for a C# project but the steps should be fairly similar for a VB.NET project with a few differences
+in the configuration option titles.</p>
+<h3 id="create-the-build-component-project">Create the Build Component Project</h3>
+<ol>
+<li><p>In Visual Studio, select the <strong>New Project</strong> option.  In the <strong>New Project</strong>
+dialog box, select the C# or VB.NET language, and then select the <strong>Documentation</strong> subcategory.  Select
+the <strong>BuildAssembler Build Component</strong> template, give it a name and click <strong>OK</strong> to create it.
+Once it has been created, right click on the project and select <strong>Properties</strong>.</p>
+</li>
+<li><p>In the <strong>Application</strong> tab, set the assembly name and default namespace as you see fit.</p>
+</li>
+<li><p>In the <strong>Package</strong> tab, set the NuGet package properties.</p>
+</li>
+<li><p>By default, the Debug project properties are set to use the standalone GUI for debugging
+which will help you see if the component can be located, that the configuration form is working if you
+created one for the component, and that it is working within the build as expected.  See the <a href="debuggingcomponents.html">Debugging Components and Plug-Ins</a> for some special requirements when debugging
+components and plug-ins.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Using the standalone GUI as the host is easier than using Visual Studio as the package
+locks the assemblies once the help file builder project has loaded them for use and you will not be able to
+rebuild them.  Shutting down the standalone GUI frees the assemblies so that you can rebuild them and start a
+new debugging session.</p>
+<p>In the help file builder project that you use to test your build component, set the
+project's <code>Component Path</code> property to the folder containing your build component's
+assembly.  If you have opened the project's <strong>Components</strong> property page before setting the component path,
+you may need to close and reopen the project in order for it to discover your build component assembly.</p>
+</div>
+</li>
+<li><p>Optionally, select the <strong>Signing</strong> tab and check the &quot;Sign the assembly&quot; checkbox.
+Select &quot;&lt;New...&gt;&quot; from the &quot;Choose a strong name key file&quot; dropdown, enter a filename, and click OK to
+create the key file.  You can protect the key file with a password if you like or uncheck the option to create
+one without a password.</p>
+</li>
+</ol>
+<p>You are now ready to edit the build component class itself.  See the comments in the template class
+for information on how to get started.  Some general information is given below.  Note that multiple build
+components can reside within the same assembly.  Add new class files to the project and implement the necessary
+methods as described below and as shown in the template class.</p>
+<p>The build component is derived from the <code>Sandcastle.Core.BuildAssembler.BuildComponent.BuildComponentCore</code> class and consists of a
+few methods that you must implement along with a nested Managed Extensibility Framework (MEF) factory class that
+describes the component, creates instances, and allows interaction with the design tools and build engine.
+These are described below.  Review the code for &quot; <code>TODO:</code> &quot; comments to find sections that
+need attention such as setting the build component's ID, the configuration file insertion points, the default
+configuration, etc.  If you followed the steps in the <strong>Creating the Project</strong> section, you
+can run the project and debug it by setting breakpoints in the build component's code.  As noted above, set the
+test project's <code>Component Path</code> property to the folder containing the build component
+assembly first.  If necessary, close and reopen the test project so that it can discover the build component.</p>
+<h2 id="Metadata"> The Export Attribute Metadata</h2>
+<p>The nested factory class is a MEF component.  The <code>BuildComponentExportAttribute</code>
+is used to define the necessary metadata that enables the help file builder to load and use the component.</p>
+<h3 id="MetadataId"> Id</h3>
+<p>The <code>Id</code> parameter is required and is used to uniquely identify the
+build component.</p>
+<h3 id="MetadataVersion"> Version</h3>
+<p>The <code>Version</code> property is optional and allows you to define the build
+component version displayed in the help file builder property page when the build component is selected.</p>
+<h3 id="MetadataCopyright"> Copyright</h3>
+<p>The <code>Copyright</code> property is optional and allows you to define the
+build component copyright displayed in the help file builder property page when the build component is selected.</p>
+<h3 id="MetadataDescription"> Description</h3>
+<p>The <code>Description</code> property is optional and allows you to define the
+build component description displayed in the help file builder property page when the build component is
+selected.</p>
+<h3 id="MetadataIsVisible"> IsVisible</h3>
+<p>The <code>IsVisible</code> property is optional and allows you to define
+whether or not the build component should be visible in the help file builder's property page.  The default if
+omitted is false and the build component will not show up in the list of build components that can be added to
+the project.  It will only be included in a project if referenced as a dependency in another build component.</p>
+<h2 id="FactoryClass"> The Factory Class</h2>
+<p>The factory class is derived from <code>Sandcastle.Core.BuildAssembler.BuildComponent.BuildComponentFactory</code> and contains the
+following properties and methods.</p>
+<h3 id="Constructor"> Constructor</h3>
+<p>In the constructor, set the <code>ReferenceBuildPlacement</code> and <code>ConceptualBuildPlacement</code> properties which describe how to place the component in the <strong>BuildAssembler</strong> configuration file.  Each uses a <code>ComponentPlacement</code>
+instance to describe how they component should be inserted.  Placement is defined using a required placement
+action value, a required component ID, and an optional component instance value.  If a component is not usable
+in either a reference or conceptual build, the corresponding property can be omitted.</p>
+<ul>
+<li><p>The <code>PlacementAction</code> parameter defines where to insert the
+configuration relative to the indicated component ID where relevant.  It can have one of the following values:</p>
+<ul>
+<li><p><code>Start</code> - The configuration is inserted at the start of the
+configuration file ahead of all others.  If multiple build components use this option they are all inserted at
+the start in no particular order.  The component ID is ignored with this option.</p>
+</li>
+<li><p><code>End</code> - The configuration is inserted at the end of the
+configuration file after all others.  If multiple build components use this option they are all inserted at the
+end in no particular order.  The component ID is ignored with this option.</p>
+</li>
+<li><p><code>Before</code> - The configuration is inserted before the component
+indicated by the required ID and optional instance parameters.</p>
+</li>
+<li><p><code>After</code> - The configuration is inserted after the component
+indicated by the required ID and optional instance parameters.</p>
+</li>
+<li><p><code>Replace</code> - The configuration for the custom component replaces
+an existing component indicated by the required ID and optional instance parameters.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If a component already exists in the configuration file with a matching ID attribute it
+is assumed to be the same component in the correct location and is automatically replaced with the custom
+configuration.</p>
+</div>
+</li>
+<li><p>The ID parameter can be used to identify another component in the configuration file by ID.</p>
+</li>
+<li><p>The instance parameter can be used to identify a specific instance of a build component in
+the configuration file.  For example, the <code>Copy From Index</code> component appears multiple
+times in the standard configuration file.  If you need to merge a custom build component before or after one of
+these occurrences or replace one, you can use this attribute to specify which one.  If omitted, the first
+instance is assumed.</p>
+</li>
+</ul>
+<h3 id="Dependencies"> Dependencies</h3>
+<p>Override this property to specify an enumerable list of component IDs on which the current
+component depends.  If the indicated components do not exist in the project settings or in the configuration
+file template already, they will be added automatically with their default configuration at build time.  This
+property does not need to be overridden if there are no dependencies.  Dependent configurations are merged prior
+to project settings.  As such, it is not required that a dependent component appear in the project as well.  If
+it does, the project settings will override the default configuration.</p>
+<h3 id="DefaultConfig"> DefaultConfiguration</h3>
+<p>Override this property to specify the default configuration for a custom build component.  This
+information is used when the component is added as a dependency and when the component is added to the project
+and the user does not modify it.  You can use the various replacement tags as attribute values.  These will be
+replaced at build time with the appropriate project values.  The default if not overridden is an empty string.</p>
+<h3 id="Create"> Create</h3>
+<p>This method must be implemented to create an instance of the build component.  Simply create
+the component instance and return it.</p>
+<h2 id="Template"> The Build Component Template Class</h2>
+<p>In its simplest form, the only two methods you need to implement are the <code>Initialize</code>
+and <code>Apply</code> methods.  A few supporting properties and methods in the base class are also
+available for use.</p>
+<h3 id="Initialize"> Initialize</h3>
+<p>This method is implemented to initialize the component.  It is passed an XML navigator that
+contains the configuration information.</p>
+<h3 id="Apply"> Apply</h3>
+<p>This method is implemented to apply the component's changes to the document.  It is passed
+an XML document containing the current document and a key that identifies it (the API member in reference builds
+or the topic ID in conceptual builds.</p>
+<h3 id="WriteMessage"> WriteMessage</h3>
+<p>This method is used to output a message from the component.  The message level parameter
+indicates the severity of the message.  If <code>Error</code> is used, it will stop the build.
+An overload is supplied to which you can pass the key.  This can help associate a message with a particular
+topic or member ID to make the problem easier to find and fix.</p>
+<h3 id="OnComponentEvent"> OnComponentEvent</h3>
+<p>This method is used to invoke the <code>ComponentEvent</code> event on the <code>BuildAssembler</code> instance.  This is a way to communicate information between components.
+To use it, the receiving component attaches an event handler to the <code>BuildAssembler.ComponentEvent</code>
+event.  The sending component invokes this method and passes an event argument instance containing any data
+relevant to the event.  It is up to the receiving event handler to cast the event argument parameter to a
+particular type that it is interested in to see if it should handle the event.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="creatingcustomcomponents.html">Creating Custom Components</a></li>
+<li><a href="../compconfig/compconfig.html">BuildAssembler Components</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/customcomponents/createbuildcomponent.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

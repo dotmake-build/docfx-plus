@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>References </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="References ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/projectexplorer/references.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="references">References</h1>
+
+<p>The <strong>MRefBuilder</strong> tool may not resolve references to all assemblies used by
+a target, especially those found in the Global Assembly Cache (GAC).  As such, it needs a hint to find the files
+and load them when needed.  The <strong>References</strong> project node is used to specify a list of dependencies used
+by the <strong>MRefBuilder</strong> tool when it generates reflection information for the documentation
+source assemblies.  Dependency information allows inherited members to be listed for a type but topics will not
+be generated for them and the information will not appear in the table of contents of the help file.</p>
+<h2 id="adding-a-reference">Adding a Reference</h2>
+<p>To add a reference, right click on the <strong>References</strong> project node and select <strong>Add File/Project Reference...</strong> or <strong>Add GAC Reference...</strong>.  These options can also be selected from
+the <strong>File | Project Explorer | References</strong> menu.  Files can also be dragged and dropped on the node from
+Windows Explorer.  The following reference types are supported in the project.</p>
+<ul>
+<li><p><strong>File Reference</strong> - Select an assembly to use as the reference.</p>
+</li>
+<li><p><strong>Project Reference</strong> - Select a Visual Studio project to use as a
+reference.  In this case, the output assembly of the project is used as the reference unless the <code>ReferenceOutputAssembly</code> property is set to false (see below).</p>
+</li>
+<li><p><strong>GAC Reference</strong> - Select an entry from the Global Assembly Cache to use
+as the reference.</p>
+</li>
+<li><p><strong>COM Reference</strong> - COM references are also supported.  However, they
+can only be added in Visual Studio.  They cannot be added via the standalone GUI.  As an alternative, you can add
+the COM-callable wrappers that Visual Studio creates as file references.</p>
+</li>
+</ul>
+<p>SolutionDocSource</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you have one or more folders containing reference assemblies that you would like to scan and
+include at build time, you can use the <a href="../plugins/wildcardreferencesplugin.html">Wildcard References Plug-In</a></p>
+</div>
+<h2 id="editing-a-reference">Editing a Reference</h2>
+<p>When selected, file and project references allow you to edit the <code>HintPath</code>
+property to specify the referenced file.  All other references have read-only properties.  To change them, remove
+them and add the desired references in their place.  Project references also contain a <code>ReferenceOutputAssembly</code> property.  If set to true (the default), the project's output
+assembly will be used as a reference.  If set to false, the reference will be ignored.  This is useful for
+defining project dependencies that MSBuild can use to determine the build order of projects within a solution
+without including the project's assembly as an actual reference.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If using environment variables in the hint path, use the MSBuild format rather than percent signs
+so that they are expanded correctly (i.e. <code>$(MyVar)\Reference.dll</code>).</p>
+</div>
+<h2 id="removing-a-reference">Removing a Reference</h2>
+<p>To remove a reference, right click on it and select the <strong>Remove</strong> option.  This can also be
+selected from the <strong>File | Project Explorer | References</strong> menu.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="projectexplorer.html">Solution/Project Explorer Window</a></li>
+<li><a href="../propertieswindow/propertieswindow.html">Project Properties Window</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/projectexplorer/references.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

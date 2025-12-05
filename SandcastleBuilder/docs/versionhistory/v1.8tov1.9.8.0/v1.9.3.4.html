@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 1.9.3.4 (Beta 2) </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 1.9.3.4 (Beta 2) ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.9.3.4.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-1934-beta-2">Version 1.9.3.4 (Beta 2)</h1>
+
+<p>Version 1.9.3.4 was released on January 30th, 2012.</p>
+<p>The primary purpose of this release is to move the <a href="../../visualstudio/visualstudiopackage.html">Visual Studio Integration Package</a>
+into a beta stage so that more people can start using it and to test and get feedback on the new file editors and
+the new topic previewer window.  The build engine and the package in general are quite stable and are suitable
+for general use.  As before, if there are issues you can drop back to the last stable release as there have been
+no changes that would affect the project file format.  However, some support for newer features such as Portable
+Framework and Silverlight 5 support are not available in the prior stable release.</p>
+<p>With this release, the Visual Studio package now matches the standalone GUI with regard to features
+and functionality.  Projects can now be managed completely from within Visual Studio without having to open a
+copy of the project in the standalone GUI.  For more information on the new features available in the beta
+release, see the following help topics:</p>
+<ul>
+<li><p><a href="v1.9.3.3.html">Version 1.9.3.3 (Beta 1)</a></p>
+</li>
+<li><p><a href="../../gettingstarted/logfile.html">The Log File</a></p>
+</li>
+<li><p><a href="../../topicpreviewerwindow.html">Topic Previewer Window</a></p>
+</li>
+</ul>
+<h2 id="changes-in-this-release">Changes in This Release</h2>
+<ul>
+<li><p>Updated the build log viewer tool window in the standalone GUI and VSPackage to use the new shared
+build log viewer WPF user control.  The new control uses a default setting of plain text which loads much faster.
+It also provides options to highlight warnings and errors and to filter the log to only show warnings and errors.</p>
+</li>
+<li><p>Removed highlighting of script names from the build log XSL transformation as it wasn't really
+useful anymore since they all refer to <strong>MSBuild.exe</strong> now.  Also made the warning and
+error regular expressions case sensitive which improves the loading speed a bit when filtering.  The warning and
+error text is typically in a fixed style case-wise so this shouldn't be an issue.</p>
+</li>
+<li><p>Removed the <strong>Filter Log</strong> setting from the standalone GUI settings and the VSPackage tool
+window since it is no longer used.</p>
+</li>
+<li><p>Added the <strong>New Project from Other Format</strong> project template to the VSPackage to allow the
+creation of new projects from other file formats from within Visual Studio.</p>
+</li>
+<li><p>Fixed a bug in the base project converter class caused by the way MSBuild 4.0 adds new file items
+to projects.  The file paths are typically fully qualified rather than relative on newly added items.</p>
+</li>
+<li><p>Added a new shared topic previewer WPF user control.  This new version is a complete rewrite of the
+topic previewer from past versions.  Instead of doing a partial build on the conceptual content, it now converts
+topics to flow documents on the fly.  This significantly reduces the time needed to preview a topic and lets you
+view any topic in the project via links in the topic or using the new table of contents tree view that appears in
+the browser.  The control also takes into account unsaved changes in all token, content layout, and topic files
+when presenting them so that current content is displayed regardless of whether or not you have saved changes to
+all of the affected files.</p>
+</li>
+<li><p>Updated the topic previewer window in the standalone GUI to use the new shared topic previewer
+control.</p>
+</li>
+<li><p>Added the topic previewer window feature to the VSPackage.  You will find it on the <strong>View</strong> | <strong>Other Windows</strong> menu and in the <strong>Other Windows</strong> tool bar button dropdown.</p>
+</li>
+<li><p>Updated the <strong>GenerateInheritedDocs</strong> tool as follows:</p>
+<ul>
+<li><p>To provide default comments for the compiler-generated WPF attached property and attached
+event class members, it retrieves the comments from the related backing field if comments do not exist for the
+related compiler-generated members already.  This provides default comments for them rather than a &quot;missing
+comments&quot; warning.</p>
+</li>
+<li><p>If comments are found for the attached property or event field and they contain an <code>AttachedPropertyComments</code> element (for attached properties) or an <code>AttachedEventComments</code> element (for attached events), it will use the nested XML
+comments from those elements instead for the related compiler-generated member.  This allows adding different
+comments for the field and the auto-generated property/event members but keeps them all on the related field
+to make managing the comments much easier.</p>
+</li>
+<li><p>It now skips inherited documentation for members that do not appear in the reflection
+information data file.  This suppresses unnecessary <code>GID0003</code> warnings for the excluded
+members because it cannot find the comments to inherit.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="v1.8tov1.9.8.0.html">Versions 1.8.0.0 through 1.9.8.0</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.8tov1.9.8.0/v1.9.3.4.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

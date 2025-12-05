@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Deploying an MS Help Viewer File </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Deploying an MS Help Viewer File ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/deploymshc.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="deploying-an-ms-help-viewer-file">Deploying an MS Help Viewer File</h1>
+
+<p>The MS Help Viewer system maintains a catalog of all help packages currently installed on a machine.
+This catalog determines what books are included in each package as well as maintaining references between the
+packages.  More information can be found on the <a href="http://kb.helpwaregroup.com/ms-help-viewer/hvinfo" title="MS Help Viewer">Introducing MS Help Viewer 1.0</a> page at the HelpWare Group website.</p>
+<p>Unlike HTML Help 1 (CHM) files, an MS Help Viewer package or book must be installed in order to view
+it. This makes deploying MS Help Viewer documentation more complex than simply delivering a single file and
+creating a shortcut to it.  However, it is much simpler than its predecessor, MS Help 2.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Due to the requirement that MS Help Viewer files be installed before you can view them which can be time
+consuming, it is recommended that you generate one of the other help formats such as Help 1 or website while
+developing and proofreading your help file.</p>
+</div>
+<p>When producing an MS Help Viewer file, the help file builder produces a valid help content setup file
+suitable for use by the Help Library Manager.  It also includes a Help Library Manager launcher utility that
+takes care of the standard housekeeping tasks required when installing and removing MS Help Viewer content.  It
+is a command line tool that can be included by scripted installers as well as Windows Installer packages as a
+custom action.  In order to deploy the generated MS Help Viewer file, follow these steps:</p>
+<ol>
+<li><p>Set the MS Help Viewer <a href="mshelpviewerprops.html">project properties</a>
+as needed.  At the minimum, you should set the <code>Vendor Name</code> and <code>Product Title</code>
+properties to something other than their default values.</p>
+</li>
+<li><p>Build the help project.</p>
+</li>
+<li><p>In order to install an MS Help Viewer file, a help content setup file is required.  The help file
+builder automatically creates a help content setup file for you named after the help file but with a <em>.msha</em> extension.  This allows you to build and deploy multiple MS Help Viewer files to the
+same location.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>For MS Help Viewer 1.0, the name of the help content setup file used during installation must be <em>HelpContentSetup.msha</em>.  If you only have one help file, you can rename the setup file
+created by the help file builder to <em>HelpContentSetup.msha</em>.  If you have multiple help
+files, you can rename one of the setup files and merge the package information from the others into it.</p>
+</div>
+</li>
+<li><p>Include all of the generated help files (the <em>.mshc</em> files) as well as the <em>HelpContentSetup.msha</em> and the <em>HelpLibraryManagerLauncher.exe</em> executable
+in your installer.</p>
+</li>
+<li><p>During installation, copy the help files, the help content setup file, and <em>HelpLibraryManagerLauncher.exe</em> to their installed location.</p>
+</li>
+<li><p>Execute the <a href="helplibrarymanagerlauncher.html">Help Library Manager launcher</a>
+or a script to install the help file.  This step will vary based on whether or not you are using signed cabinet
+files to deploy your help content.  Note that silent installs are only allowed with signed cabinet files.  For
+unsigned files, the Help Library Manager will always appear and confirm the installation.  Below is an example of
+the script that the help file builder creates to install the help file (lines wrapped for display purposes).</p>
+<pre><code class="lang-bat">@ECHO OFF
+CLS
+
+REM This is an example script to show how to use the Help Library Manager Launcher
+REM to install an MS Help Viewer file.  You can use this as an example for creating
+REM a script to run from your product's installer.
+
+REM NOTE: If not executed from within the same folder as the executable, a full path
+REM is required on the executable and the HelpContentSetup.msha file.
+
+IF &quot;%1%&quot;==&quot;&quot; GOTO MissingVersion
+IF &quot;%1%&quot;==&quot;1.0&quot; GOTO HelpViewer1
+
+GOTO HelpViewer2:
+
+:HelpViewer1
+
+REM Help Viewer 1.0
+REM Uninstall first in case it is already there.  If not, it won't install below.
+REM We'll ignore any error output by redirecting it to NUL.
+HelpLibraryManagerLauncher.exe /product &quot;VS&quot; /version &quot;100&quot; /locale en-us
+    /uninstall /silent /vendor &quot;EWSoftware&quot;
+    /productName &quot;Sandcastle Help File Builder Example Project&quot;
+    /mediaBookList &quot;Sandcastle Test Case Library&quot; &gt; NUL
+
+REM For Help Viewer 1.0. the setup name must be HelpContentSetup.msha so make sure
+REM we copy the setup file to that name.  SHFB names it after the help file so that
+REM multiple files can be deployed to the same output older at build time.
+IF EXIST &quot;TestCaseProject.msha&quot; COPY /Y &quot;TestCaseProject.msha&quot; HelpContentSetup.msha
+
+REM Install the new content.
+HelpLibraryManagerLauncher.exe /product &quot;VS&quot; /version &quot;100&quot; /locale en-us
+    /sourceMedia &quot;%CD%\HelpContentSetup.msha&quot;
+
+GOTO Exit
+
+:HelpViewer2
+
+REM Help Viewer 2.x
+REM Uninstall first in case it is already there.  If not, it won't install below.
+REM We'll ignore any error output by redirecting it to NUL.
+HelpLibraryManagerLauncher.exe /viewerVersion %1 /locale en-us /wait 0
+    /operation uninstall /vendor &quot;EWSoftware&quot;
+    /productName &quot;Sandcastle Help File Builder Example Project&quot;
+    /bookList &quot;Sandcastle Test Case Library&quot; &gt; NUL
+
+REM Install the new content.
+HelpLibraryManagerLauncher.exe /viewerVersion %1 /locale en-us /wait 0
+    /operation install /sourceUri &quot;%CD%\TestCaseProject.msha&quot;
+
+GOTO Exit
+
+:MissingVersion
+ECHO A help viewer version parameter is required
+
+:Exit
+</code></pre>
+</li>
+<li><p>During uninstallation, before the help files are removed, execute the Help Library Manager launcher
+to uninstall your help file.  Below is an example of the script that the help file builder creates to remove the
+help file  (lines wrapped for display purposes).</p>
+<pre><code class="lang-bat">@ECHO OFF
+CLS
+
+REM This is an example script to show how to use the Help Library Manager Launcher
+REM to remove an MS Help Viewer file.  You can use this as an example for creating
+REM a script to run from your product's uninstaller.
+
+REM NOTE: If not executed from within the same folder as the executable, a full path
+REM is required on the executable.
+
+IF &quot;%1%&quot;==&quot;&quot; GOTO MissingVersion
+IF &quot;%1%&quot;==&quot;1.0&quot; GOTO HelpViewer1
+
+GOTO HelpViewer2
+
+:HelpViewer1
+
+REM Help Viewer 1.0
+HelpLibraryManagerLauncher.exe /product &quot;VS&quot; /version &quot;100&quot; /locale en-us
+    /uninstall /silent /vendor &quot;EWSoftware&quot;
+    /productName &quot;Sandcastle Help File Builder Example Project&quot;
+    /mediaBookList &quot;Sandcastle Test Case Library&quot;
+
+GOTO Exit
+
+:HelpViewer2
+
+REM Help Viewer 2.x
+HelpLibraryManagerLauncher.exe /viewerVersion %1 /locale en-us /wait 0
+    /operation uninstall /vendor &quot;EWSoftware&quot;
+    /productName &quot;Sandcastle Help File Builder Example Project&quot;
+    /bookList &quot;Sandcastle Test Case Library&quot;
+
+GOTO Exit
+
+:MissingVersion
+ECHO A help viewer version parameter is required
+
+:Exit
+</code></pre>
+</li>
+</ol>
+<p>Your product's installer can create a shortcut to open your Help Viewer file by executing the
+following command (lines wrapped for display purposes):</p>
+<pre><code class="lang-none">&quot;ms-xhelp:///?method=page&amp;id=57301AAE-7D51-4006-A9EF-C82B6C0FF21E&amp;product=vs&amp;
+productversion=100&amp;locale=en-us&quot;
+</code></pre>
+<p>Substitute the ID of a page in your product's help file and adjust the product, version, and locale
+as needed in the example above.  See the <a href="http://mshcmigrate.helpmvp.com/default/starthere" title="Install and view MSHV files">Getting Started with HV 1.0</a> page at the HelpWare Group website for more information on
+installing help files and viewing help content.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="helplibrarymanagerlauncher.html">Help Library Manager Launcher Utility</a></li>
+<li><a href="mshelpviewerprops.html">MS Help Viewer Category Properties</a></li>
+<li><a href="signingcontent.html">Signing MS Help Viewer Content</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/propertieswindow/deploymshc.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

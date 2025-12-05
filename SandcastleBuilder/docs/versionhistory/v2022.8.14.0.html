@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2022.8.14.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2022.8.14.0 ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2022.8.14.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-20228140">Version 2022.8.14.0</h1>
+
+<p>This release contains significant breaking changes related to how the presentation styles are
+implemented.  All XSL transformations have been removed and a new code-based API is now used to generate all
+topics.  This makes it much easier to extend and modify presentation styles with simple plug-ins and build
+components rather than cloning and modifying an entire presentation style and working with cumbersome XSL
+transformations.  Such components will work with whatever presentation style is selected.</p>
+<p>Many of the build tools have been merged into the build engine and now run in process rather than
+out of process as MSBuild tasks.  This will affect custom plug-ins that relied on modifying the related build
+scripts for those tools.  See the Build Components and Tools section below for details.</p>
+<p>All custom build components and plug-ins will need to be updated to use the latest NuGet packages.
+The constructor for all build components will need to be updated to accept a parameter of the type <code>IBuildAssembler</code> rather than <code>BuildAssemblerCore</code>.  See the <a href="migrationsupport.html">Component Migration Support</a> topic for information on how to update custom
+components created for use with version v2021.4.9.0 and earlier for use with the latest release of the help file
+builder.</p>
+<h2 id="Help1HelpViewer"> Help 1 (CHM) and Help Viewer (MSHC) Support Deprecated</h2>
+<p>With this release, support for the Help 1 (CHM) and Help Viewer (MSHC) formats is deprecated.  With
+the end of support for Internet Explorer, it seems unlikely that either of the help viewers for these formats
+will receive any future support or updates from Microsoft as they both use the Internet Explorer control to
+display the help content.  This makes it difficult if not impossible to support the latest HTML features in the
+new presentation style.  The VS2010 presentation style has been removed and the VS2013 presentation style is now
+considered the legacy presentation style.  It is the only presentation style that will support generation of
+Help 1 or Help Viewer output.  All future presentation styles will only support website, Open XML, or Markdown
+output.</p>
+<p>The HTML Help Workshop used to compile Help 1 files no longer appears to be available from
+Microsoft.  A copy is available from the project website if you still need it.  See the <a href="../gettingstarted/installation.html">Installation Instructions</a> topic for a link.</p>
+<p>In the event that the MSHC Help Viewer is updated to use something newer such as the WebView2
+control that does support the latest HTML features, support will be added back for that format.</p>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<p>The following changes were made to the presentation styles.</p>
+<h3 id="PSGeneral"> General Changes</h3>
+<ul>
+<li><p>All presentation styles have been rewritten to use the new code-based API that is much
+easier to extend and modify without having to clone and implement a full presentation style.  The new API
+contains support for adding, removing, and reordering sections as well as adding new element handlers via
+standard help file builder plug-ins.  Topic templates are supported to define the general structure of the
+topics and can be replaced via plug-ins to alter the overall topic layout.  This can also be applied at the
+element level and is currently used by the alert/note, code block, and syntax section element handlers.</p>
+</li>
+<li><p>Minor updates were made to the styling and topic layout of all existing presentation styles
+to make them more consistent with each other and so that common element handlers could be used for all of them
+where possible.</p>
+</li>
+<li><p>Support for the code contracts elements was removed from all presentation styles as the
+related Microsoft project appears to have been abandoned.  Support for these elements may be provided in a
+separate component package as an example of how to use the new API at a later date.</p>
+</li>
+<li><p>The icons, style sheets, and scripts paths were removed from the resource items and made
+properties on the transformation class so that they can be modified more easily by plug-ins.</p>
+</li>
+<li><p>All presentation style resource items have been merged into a single, shared set that is
+used by all presentation styles.  All unused resource items (about 50% of them) were removed.</p>
+</li>
+<li><p>Removed the <em>HelpFileBuilderTokens.tokens</em> file as it only contained the
+auto-outline token and auto-outlining is supported directly within MAML topics.  The reference in the
+presentation style BuildAssembler configuration files was also removed.</p>
+</li>
+<li><p>Removed the <code>BuildAssemblerVerbosity</code> substitution tag and the
+reference to it in the presentation style configuration files.</p>
+</li>
+<li><p>Removed the component locations element from the presentation style BuildAssembler
+configuration files as it is no longer used.</p>
+</li>
+<li><p>Added a <code>BibliographyDataFile</code> transformation argument in all
+presentation styles to support the <code>bibliography</code> and <code>cite</code>
+elements natively.  This replaces the plug-in used in prior versions for bibliography support.</p>
+</li>
+<li><p>Added a <code>RobotsMetadata</code> transformation argument in all presentation
+styles to allow adding an optional robots metadata value to all topics (e.g. <code>noindex</code>, <code>nofollow</code>).</p>
+</li>
+<li><p>Added an <code>EnumMemberSortOrder</code> transformation argument in all
+presentation styles to allow specifying how enumeration members are sorted (by value or by name).</p>
+</li>
+<li><p>Added a <code>FlagsEnumValueFormat</code> transformation argument in all
+presentation styles to allow specifying the format of flags enumeration values (integer value, hex value, or
+bit flags).</p>
+</li>
+<li><p>Added a <code>FlagsEnumSeparatorSize</code> transformation argument in all
+presentation styles to allow specifying the separator group size for flags enumeration values (0, 4, or 8).  This
+determines where separators are placed in the formatted value (e.g. <code>0b0000_0000</code>, <code>0x1234_ABCD</code>).  If set to zero, no separators will be inserted.</p>
+</li>
+<li><p>Extended the <code>markup</code> element with a <code>contentType</code>
+attribute that can be used to define for what output format the content should be rendered (Html, OpenXml, or
+Markdown).</p>
+</li>
+<li><p>Extended the <code>note</code> and <code>alert</code> elements with
+a new <code>todo</code> note type for To Do lists.  Also added support for an optional <code>title</code> attribute to allow overriding the note/alert title.</p>
+</li>
+<li><p>Found various inconsistencies on when types were and were not qualified in the various
+topic sections.  Updated them to be consistent with how Microsoft Docs qualifies names for the most part.</p>
+</li>
+<li><p>Fixed up some inconsistencies in the formatting of the syntax section code generated by the
+syntax components.</p>
+</li>
+<li><p>For website presentation styles, the minimum search keyword length was reduced to two
+characters.  The ASPX search pages were modified to allow &quot;contains&quot; searches so that it will find partial
+keyword matches.</p>
+</li>
+</ul>
+<h3 id="Default2022"> Default2022 Presentation Style</h3>
+<p>This is the new default presentation style.  It only produces website output and has been
+written to use a more modern style with a responsive layout that should work well on any device from mobile
+to widescreen desktop displays.  The topic and section layout is similar to that of Microsoft Docs.</p>
+<ul>
+<li><p>Topic structure and styling is implemented using <a href="https://bulma.io/" title="Bulma">Bulma</a> and <a href="https://fontawesome.com/license/free" title="Font Awesome">Font Awesome</a>.</p>
+</li>
+<li><p>Code colorizing is handled client-side using <a href="https://github.com/highlightjs/highlight.js" title="highlight.js">highlight.js</a>.</p>
+</li>
+<li><p>It uses a slightly different TOC structure from the VS2013 presentation style consisting of
+a breadcrumb trail at the top of the page and a hierarchical table of content that shows an appropriate fragment
+of the overall table of contents based on the selected topic.</p>
+</li>
+<li><p>A <code>RootBreadcrumbTitleText</code> transformation argument is available to
+set the root breadcrumb title.</p>
+</li>
+<li><p>A <code>CollabsibleSections</code> transformation argument is available to
+allow turning off rendering of collapsible section headers within the topics.</p>
+</li>
+</ul>
+<h3 id="OpenXml"> Open XML Presentation Style</h3>
+<ul>
+<li><p>Fixed the Open XML file generator so that it produces a valid archive file that works with
+the updated .NET Framework packaging types.</p>
+</li>
+<li><p>Member list pages are now suppressed in the Open XML output as they did not serve any
+useful purpose and were repetitive.</p>
+</li>
+</ul>
+<h3 id="Markdown"> Markdown Presentation Style</h3>
+<ul>
+<li>Fixed up some issues with how the markdown was rendered under certain conditions.</li>
+</ul>
+<h3 id="VS2010and2013"> VS2010 and VS2013 Presentation Styles</h3>
+<ul>
+<li><p>The VS2010 presentation style has been removed.  It was simply too old and the VS2013
+presentation style is close enough in format to it that it didn't make sense to keep it going forward.  Use the
+VS2013 presentation style if you need support for Help 1 or Help Viewer output.  See the Help 1/Help Viewer
+section above for related information.</p>
+</li>
+<li><p>Updated the VS2013 icon image name casing to match how the presentation style renders them
+now.</p>
+</li>
+<li><p>Updated member list rendering to show the extension method icon for extension methods in
+their containing type to match IntelliSense.</p>
+</li>
+</ul>
+<h2 id="Tools"> Build Components and Tools</h2>
+<ul>
+<li><p>Corrected the casing in the <em>.\tools</em> path in the help file builder NuGet
+package properties file so that it works correctly on Linux-based systems.</p>
+</li>
+<li><p>Added <code>ProgIdAttribute</code> to the attribute filter in the <em>MRefBuilder.config</em> file so that it is included in the syntax sections.</p>
+</li>
+<li><p>Updated MRefBuilder to add type hierarchy information for structures.</p>
+</li>
+<li><p>Fixed the extension methods MRefBuilder add-in so that it correctly associates extension
+methods with a nullable, reference, or nullable reference type parameter with the actual related type so that
+they show up in the type's topic.</p>
+</li>
+<li><p>The BuildAssembler code has been moved in to <em>SandcastleBuilder.Utils</em> and
+is called directly from within the build engine.  The related <em>BuildTopics.proj</em> template was
+removed.</p>
+</li>
+<li><p>Build component constructors are now passed an <a class="xref" href="../../api/Sandcastle.Core.BuildAssembler.IBuildAssembler.html">IBuildAssembler</a>
+interface reference used to interact with the build engine.</p>
+</li>
+<li><p>A new <a class="xref" href="../../api/Sandcastle.Core.BuildAssembler.BuildComponent.BuildComponentCore.BuildAssembler.html#Sandcastle_Core_BuildAssembler_BuildComponent_BuildComponentCore_BuildAssembler">BuildComponentCore.BuildAssembler</a>
+property was added to <code>BuildComponentCore</code> that allows build components to interact with the build engine.</p>
+</li>
+<li><p>The static <code>Data</code> property in <code>BuildComponentCore</code>
+was removed and an instance-based <a class="xref" href="../../api/Sandcastle.Core.BuildAssembler.IBuildAssembler.Data.html#Sandcastle_Core_BuildAssembler_IBuildAssembler_Data">IBuildAssembler.Data</a>
+property was added to the <code>IBuildAssembler</code> interface.</p>
+</li>
+<li><p>The <code>LogLevel</code> enumeration was removed and replaced with the <a class="xref" href="../../api/Sandcastle.Core.MessageLevel.html">MessageLevel</a> enumeration as it
+contained duplicate values.  The <code>MessageLevel.Ignore</code> enumeration value was removed as it
+was unused.  The <code>MessageLevel</code> enumeration was also moved to the <code>Sandcastle.Core</code> namespace so build components will need to add a <code>using</code>
+statement for it if they log messages.</p>
+</li>
+<li><p>Added <a class="xref" href="../../api/Sandcastle.Core.BuildEngine.IBuildProcess.BuildAssemblerConfigurationFile.html#Sandcastle_Core_BuildEngine_IBuildProcess_BuildAssemblerConfigurationFile">IBuildProcess.BuildAssemblerConfigurationFile</a>
+and <a class="xref" href="../../api/Sandcastle.Core.BuildEngine.IBuildProcess.BuildAssemblerManifestFile.html#Sandcastle_Core_BuildEngine_IBuildProcess_BuildAssemblerManifestFile">IBuildProcess.BuildAssemblerManifestFile</a>
+properties to <code>BuildProcess</code>.  These should be used in place of the hard-coded <em>sandcastle.config</em> and <em>manifest.xml</em> filenames.</p>
+</li>
+<li><p>Removed the Sandcastle HTML Extract tool and moved the code into the build engine.  The
+related <em>ExtractHtmlInfo.proj</em> template was removed.</p>
+</li>
+<li><p>A new <code>BuildProcess.HtmlExtractTool</code> property was added to the build
+engine to allow plug-ins to adjust how the tool runs.</p>
+</li>
+<li><p>Removed the Open XML file generator task and moved the code into the build engine.  The related <em>BuildOpenXmlFile.proj</em> template was removed.</p>
+</li>
+<li><p>Removed the markdown generator task and moved the code into the build engine.  The related <em>GenerateMarkdownContent.proj</em> template was removed.</p>
+</li>
+<li><p>Removed generation of the website keyword index file (<em>WebKI.xml</em>) file as
+it is not longer used anywhere.</p>
+</li>
+<li><p>Update the IntelliSense build component to include remarks elements.  These are shown by
+Visual Studio 2022 in the quick info tips now.</p>
+</li>
+</ul>
+<h2 id="SHFB"> Sandcastle Help File Builder</h2>
+<ul>
+<li><p>Fixed an issue with the package reference resolver so that it correctly finds package
+reference assemblies whether or not the version number contains or does not contain the trailing zeros in the
+version numbers.</p>
+</li>
+<li><p>Added a <code>notopic</code> attribute to the root group API entry (G:) generated
+by the namespace grouping code when the root namespace container option is disabled.  This prevents the topic ID
+from being incorrectly included in the topic manifest.</p>
+</li>
+<li><p>Removed the HTML to MAML converter tool from the tools distribution.  It has been moved into
+its own <a href="https://GitHub.com/EWSoftware/HtmlToMamlConverter" title="HTML to MAML Converter">project repository</a>.</p>
+</li>
+<li><p>Removed the web code providers assembly from the tools distribution.  It has been moved into
+its own <a href="https://GitHub.com/EWSoftware/WebCodeProviders" title="Web Code Providers">project repository</a>.</p>
+</li>
+<li><p>Removed the bibliography support plug-in.  It has been replaced by a <code>BibliographyDataFile</code> transformation argument in all presentation styles to support the <code>bibliography</code> and <code>cite</code> elements natively.</p>
+</li>
+<li><p>Removed the AjaxDoc plug-in, Script# plug-in, Manual Visibility/API Filter plug-in, and the
+ESent and SQL data cache components.   These will be distributed as one or more separate legacy component NuGet
+packages at a later date.</p>
+</li>
+<li><p>The presentation style project templates have been temporarily removed from the Visual Studio
+package.  Updated presentation style project templates will be added to a future release.</p>
+</li>
+<li><p>Due to a breaking change in the version of MSBuild deployed with Visual Studio 2022 17.3, the
+standalone GUI is restricted to using a version of MSBuild for Visual Studio 2017, 2019, or a version of 2022
+less than 17.3.  If you do not have Visual Studio 2017 or 2019 installed, install the related version of the
+build tools instead.  See the installation instructions for a link.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2022.8.14.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

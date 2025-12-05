@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Architecture </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Architecture ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/sandcastletools/architecture.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="architecture">Architecture</h1>
+
+<h2 id="Layers"> Sandcastle Layers</h2>
+<p>At a high level, Sandcastle can be seen as a set of tools that transforms raw input into
+documentation output.</p>
+<p align="center">
+<img alt="Sandcastle Layers" src="../../images/SandcastleLayers.jpg">
+</p>
+<p>Inputs of various types are supported such as managed assemblies and raw XML documentation files,
+which are typically compiler-generated along with the assemblies, as well as MAML topics and additional content
+such as images and code snippets.  With this input, Sandcastle performs a highly configurable set of
+transformations using a presentation style to produce web-ready HTML files or other file formats as output.</p>
+<p>Sandcastle's output can be used as-is by hosting the generated HTML files and their dependencies
+(namely, CSS, scripts, and images) on a web server.  Alternatively, and more common, the generated HTML files can
+be passed as input to help compilers to produce compiled help in various forms.  Compilers are additional tools
+(downloaded separately) that aggregate all of the HTML files produced by Sandcastle to create compiled help
+files.  These are files that can be downloaded and viewed in a special desktop application such as the HTML Help
+Viewer, Microsoft Document Explorer, or Microsoft Help Viewer.  Typically, compiled help files are distributed
+with the products being documented, or at least made available as a separate download.</p>
+<p>Other presentation styles can be created to produce non-HTML output as well.  For example, there
+is a presentation styles that outputs markdown content suitable for GitHub wikis and another that produces an
+Open XML document that can be opened by Microsoft Word or Open Office.</p>
+<h2 id="Modes"> Modes of Operation</h2>
+<p>There are two modes of operation supported by Sandcastle: Reference and Conceptual.  The
+differences between them can be found in both the input and output of Sandcastle. To provide a quick definition
+of each, consider reference documentation to provide information about the physical properties of a managed
+library or application, such as the actual namespaces, types, members and method arguments, and consider
+conceptual documentation to provide instructional information about the overall design and conceptual properties
+of a managed library or application, such as how to accomplish specific usage scenarios and providing an in-depth
+analysis of specifically complex APIs. More distinctions between the two modes can be found in their
+corresponding sections below.</p>
+<p align="center">
+<img alt="Sandcastle Modes" src="../../images/SandcastleModes.jpg">
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although built separately, the outputs from the reference and conceptual builds are compatible
+and are typically combined into a single help file.</p>
+</div>
+<h3 id="ReferenceMode"> Reference Mode</h3>
+<p>To produce reference documentation, Sandcastle requires managed assemblies as input. The <strong>MRefBuilder</strong> command-line tool is used to analyze the physical properties of the
+assemblies, as well as their dependencies, ultimately producing an XML reflection file that becomes input for the
+next steps of the process. This XML reflection file contains all of the information that is required to document
+the physical properties of the input assemblies.</p>
+<p>Sandcastle also accepts XML documentation files as input. XML documentation files are typically
+generated by code compilers from the triple-slash (C#) or triple-apostrophe (VB) comments found in source code
+files, at the same time that their corresponding assemblies are compiled. XML documentation files contain
+specific identifiers that allow Sandcastle to correlate XML documentation for each API to the same API in the XML
+reflection file that is produced by <strong>MRefBuilder</strong>.  Additionally, reference mode
+supports shared inputs of various types such as images and code snippets to be included in the documentation.</p>
+<p>The output of Sandcastle in reference mode is created by the <strong>BuildAssembler</strong>
+tool with a specific configuration. It produces a set of files that document the physical structure of the XML
+reflection file (generated by <strong>MRefBuilder</strong>) passed in as input.  XML documentation
+comments that are discovered during the process are also injected into the files in the appropriate places;
+e.g., contents of the <code>&lt;summary&gt;</code> elements appear at the top of the file, while <code>&lt;remarks&gt;</code> contents appear after the syntax section.</p>
+<p>Sandcastle also automatically generates a table of contents (TOC) and a keyword index based on
+the XML reflection file. Each auto-generated API topic also includes appropriate hyperlinks. Typically,
+pseudo-topics are automatically generated as well; e.g., a topic containing a list of all the types in a
+particular namespace, and another topic containing a list of all properties in a particular type, etc.</p>
+<h3 id="ConceptualMode"> Conceptual Mode</h3>
+<p>To produce conceptual documentation, Sandcastle depends on a special XML schema called
+Microsoft Assistance Markup Language (MAML). The input to Sandcastle in conceptual mode must be a set of XML
+documentation files written against the MAML schema. XML companion files can be provided as input to specify
+metadata for each MAML topic; e.g., index keywords.  Additionally, conceptual mode supports shared inputs of
+various types such as images and code snippets to be included in the documentation.</p>
+<p>The output of Sandcastle in conceptual mode is created by the <strong>BuildAssembler</strong>
+tool with a specific configuration.  It produces a set of files that are created by transforming the individual
+MAML files, where one output file is created per MAML file.  The files display the data in each MAML topic
+according to the document type of that topic; e.g., all <strong>How-To</strong> topics will
+have an introduction and at least one procedural section that contains an ordered list of steps for the reader
+to follow.  Most, but not all MAML topics also contain a <strong>See Also</strong> section at the bottom.
+Special MAML document types, such as <strong>Glossary</strong>, use a very different type of
+transformation from the other document types.</p>
+<p>It is up to the author to specify a table of contents (TOC) in conceptual mode. Likewise, a
+keyword index is not automatically generated, so it is the author's responsibility to specify relevant keywords
+for each MAML topic using an XML companion file.</p>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<p>The presentation styles in Sandcastle contain all of the aesthetic resources that are required to
+build documentation in different styles.  Each presentation style includes a code-based transformation, XML files
+containing localizable shared content, and other supporting files such as CSS files, images, scripts, etc.  The
+set transformation is executed once for each topic that <strong>BuildAssembler</strong> processes to
+produce an individual HTML or other file type as output.  Each presentation style can have a different set of
+transformations (although usually similar in many ways); therefore, each presentation style also must provide a
+custom configuration for the <strong>BuildAssembler</strong> tool.  The XML files contain look-up
+information, such as localizable textual content.  The other supporting files such as CSS files and images are
+referenced by the generated files so technically, they are just static output.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="sandcastletools.html">Sandcastle Tools</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/sandcastletools/architecture.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

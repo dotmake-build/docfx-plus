@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 1.7.0.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 1.7.0.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.0to1.7/v1.7.0.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-1700">Version 1.7.0.0</h1>
+
+<h2 id="BreakingChanges"> Potential Breaking Changes</h2>
+<ul>
+<li><p>The default configuration for all cached build components has changed.  They no longer store
+their cache files in the help file builder folder.  Instead, they store them in the <em>%APPDATA%\EWSoftware\Sandcastle Help File Builder\Cache</em> folder.  This removes the need to
+run the help file builder as an administrator under Vista x64 when using the cached build components.  If you
+are using them, you ++<strong>must</strong>++ remove them from the project
+and re-add them so that they pick up the new default configuration.  You can also delete the cache files from the
+old location.  You can find them in the <strong>.\BuildComponents\Cache</strong> folder under the main
+help file builder installation folder.</p>
+</li>
+<li><p>The default configuration for the <strong>Cached Framework Comments Index Data</strong>
+custom build component has changed.  If you are using it, you ++<strong>must</strong>++
+remove it from the project and re-add it so that it picks up the new default configuration.  You can also delete
+the <strong>Comments.cache</strong> file as the naming method has changed and the old version is
+obsolete.  You can find it in the <strong>.\BuildComponents\Cache</strong> folder under the main help
+file builder installation folder or in the new folder noted above if you moved the cache files.</p>
+</li>
+<li><p>A new <code>insertConceptual</code> configuration option was added to the build
+component definition configuration file.  It is used to define a build component's placement within the <strong>conceptual.config</strong> file.  The existing <code>insert</code> option will
+continue to be used for the reference build configuration file (<strong>sandcastle.config</strong>).  If
+either element is omitted from a component's definition, it will not be merged into the given configuration file.
+This is a change from prior behavior which inserted the component at the start of the configuration file if a
+placement option was not specified.</p>
+</li>
+<li><p>Components defined in the project's <code>ComponentConfigurations</code> property
+will be merged into the appropriate configuration files based on the presence of the <code>insert</code>
+and <code>insertConceptual</code> configuration elements.  As such, the settings will be shared and
+the conceptual content will match the reference content in appearance.</p>
+</li>
+<li><p>A distinction is now made between JScript and JavaScript in the code colorizer to match the
+usage in Sandcastle.  JScript now has its own rule set and is considered to be JScript.NET.  JavaScript is
+regular JavaScript.  Code examples using &quot;JScript&quot; or one of its variants as the language will be connected to
+the JScript language filter.  Code examples using &quot;JavaScript&quot; or one of its variants as the language will be
+connected to the JavaScript language filter.</p>
+</li>
+<li><p>&quot;XAML&quot; has been added as a separate language in the code colorizer rules so that it can be
+correctly connected to the XAML language filter.</p>
+</li>
+<li><p>To support conceptual content, the following changes have been made to the build steps:</p>
+<ul>
+<li><p>The <code>CreateConfig</code> build step has been renamed <code>CreateBuildAssemblerConfigs</code>.  This step will now create the <strong>conceptual.config</strong>
+file as well.</p>
+</li>
+<li><p>The <code>BuildHelpTopics</code> build step has been renamed <code>BuildReferenceTopics</code>.  This builds the reference (API) help topics.</p>
+</li>
+<li><p>Added the build steps <code>CopyConceptualContent</code>, <code>CreateConceptualTopicConfigs</code>, <code>MergeTablesOfContents</code>, and <code>BuildConceptualTopics</code>.</p>
+</li>
+<li><p>The <strong>BuildHelpTopics.bat</strong> script file has been renamed <strong>BuildReferenceTopics.bat</strong>.  A new script file, <strong>BuildConceptualTopics.bat</strong>,
+was added to build the conceptual help topics.</p>
+</li>
+<li><p>If both conceptual content and additional content are included in a project, conceptual
+content will take precedence.  Any additional content will appear after the conceptual content in the table of
+contents.  Likewise, if specified, the default topic and split TOC topic in the conceptual content will take
+precedence.  The equivalent settings in the additional content will only be used if not specified in the
+conceptual content.</p>
+</li>
+</ul>
+</li>
+<li><p>A bug in the standard <code>ResolveConceptualLinksComponent</code> causes any
+specified inner text on <code>&lt;link&gt;</code> tags to be ignored and instead it always uses the
+title.  I have reimplemented the component to fix that bug and added a couple of new features (see below).  As
+such, any links you may have in your conceptual content files will start showing the inner text when built with
+the help file builder.  You may need to review your documentation and either remove or update the inner text to
+something more appropriate on your links.</p>
+</li>
+</ul>
+<h2 id="NonBreaking"> Non-breaking Changes in Behavior</h2>
+<ul>
+<li><p>The requirement that an XML comments file be associated with an assembly has been removed and
+the build behavior has changed for cases where the XML comments file for an assembly is blank.  In such cases,
+the XML comments file is ignored and no comments will be associated with the assembly.  This allows you to build
+a help file for an assembly without a comments file and is useful in a couple of the new plug-ins.</p>
+</li>
+<li><p>Wildcards are now supported in the <code>AssemblyPath</code> and <code>XmlCommentsPath</code> properties on each of the documented assemblies.  This allows you to add
+one entry that will include multiple assemblies and/or comments files for documenting.  This is also useful for
+documenting website projects in which the last part of the assembly names and comments files can change each time
+the website is published.</p>
+</li>
+<li><p>The behavior of the console mode builder's <code>-assembly</code> and <code>-comments</code> command line options has been adjusted accordingly to account for the new
+wildcard support.</p>
+</li>
+<li><p>The log file will list all assemblies and XML comments files copied during the <code>ValidatingAssemblies</code> build step so that you can verify it found the correct files.
+Warnings are also issued if duplicate files are copied that overwrite previously copied files in the working
+folder.</p>
+</li>
+<li><p>The <code>PurgeDuplicateTopics</code> project property has been removed as
+duplicates are now handled via the <strong>MergeDuplicates.xsl</strong> Sandcastle transformation
+immediately after <strong>MRefBuilder</strong> has been executed.</p>
+</li>
+<li><p>The <strong>Additional Content</strong> property category is now called <strong>Additional and Conceptual Content</strong>.</p>
+</li>
+<li><p>The <code>ContentSiteMap</code> and <code>TopicFileTransform</code>
+properties are now sub-properties of the <code>AdditionalContent</code> property.  You must expand it
+to see them.  This change was made to make their association with the additional content clear and to avoid
+incorrectly associating them with the new <code>ConceptualContent</code> property which does not make
+use of them.</p>
+</li>
+<li><p>The <code>AdditonalContent</code> and <code>ContentSiteMap</code>
+properties now share a common property editor to make it easier to edit their settings together and to make their
+association more apparent.</p>
+</li>
+<li><p>The help file builder will now include the necessary .NET Framework comments files based on the
+setting of the <code>FrameworkVersion</code> property.  This ensures that all of the necessary
+comments files are included when using the .NET 3.0 and .NET 3.5 Frameworks.</p>
+</li>
+<li><p>The <code>CachedCopyFromIndexComponent</code> used for the comments index now names
+its cache files after the language and framework version.</p>
+</li>
+<li><p>Renamed the <code>SyntaxFilters.ScriptSharp</code> value to <code>JavaScript</code>
+as that is what it renders and this makes it more apparent that it can be used for other projects such as those
+that use the AjaxDoc plug-in.  The old value will be translated to the new value automatically when an older
+project that contains it is loaded.</p>
+</li>
+<li><p>Added a customized version of the JavaScript declaration syntax generator component that will
+correctly document normal JavaScript.  It will only convert the first letter of each member name to lowercase
+when documenting a Script# project.</p>
+</li>
+<li><p>The <code>ShowMissingComponent</code> messages are now localized.  The messages
+appear in each of the <strong>SharedBuilderContent_[lang].xml</strong> files in the help file builder's <strong>.\SharedContent</strong> folder.  The component also inserts the &quot;missing namespace&quot; message as
+well rather than the build process.  A <code>contentFile</code> configuration option was added to the
+component that is used to specify the file containing the localized messages.  If omitted, it defaults to using
+the English message text.</p>
+</li>
+<li><p>Due to a significant change in the way the language filters work in the Hana and Prototype
+presentation styles, the <code>PostTransformComponent</code> no longer connects example code blocks
+to the language filter in those presentation styles.  Given the way they are implemented, this feature would be
+better handled in the transformations and script files themselves.</p>
+</li>
+<li><p>The default topic transformation files now contain a default set of <code>MSHelp:Attr</code>
+elements for (name/value) <code>DocSet/NetFramework</code>, <code>DocSet/{@HtmlHelpName}</code>, <code>Locale/{@Locale}</code>, and <code>TargetOS/Windows</code> where the replacement
+tags will be replaced with the appropriate project option at build time.  Any additional XML data island elements
+from the transformed topics will be merged with the default set.</p>
+</li>
+<li><p><strong>Generate1xIndex.bat</strong>, <strong>Generate1xTOC.bat</strong>, <strong>GenerateWebsiteTOC.bat</strong>, and <strong>TocToWebContents.xsl</strong> have been
+removed.  In their place is a new script template, <strong>ExtractHtmlInfo.bat</strong>, that runs a new
+tool that extracts TOC and keyword information from the HTML files to produce a better index and TOC with proper
+encoding support for foreign languages for the HTML Help 1 file and a TOC for websites.</p>
+</li>
+<li><p>If a new project is created from a Visual Studio 2008 solution or project, the <code>FrameworkVersion</code> property will be set based on the highest target framework specified
+within the Visual Studio project.  This also applies to Visual Studio projects imported by the console mode
+builder.</p>
+</li>
+</ul>
+<h2 id="Conceptual"> Conceptual Content Support</h2>
+<ul>
+<li><p>Support for building conceptual content in addition to reference (API) content has been fully
+integrated into the build process.  The new <code>ConceptualContent</code> property in the <strong>Additional and Conceptual Content</strong> property category allows you to manage the conceptual
+content.</p>
+</li>
+<li><p>The current conceptual content editor allows you to add, edit, and delete tokens, images, and
+conceptual topics in the project.  The layout of the conceptual topics in the editor will determine their layout
+in the table of contents when built similar to how the site map works for additional content.  Enhanced design
+support will be added in a later release.</p>
+</li>
+<li><p>Full support for colorized code blocks is included.  Simply specify the <code>code</code>
+elements as you would in XML comments using all of the same options.  This include support for imported code
+blocks.</p>
+</li>
+<li><p>The post-transform component is also supported and thus logos can be added to the conceptual
+topic headers.  The conceptual build shares the same component configurations as the reference build so they will
+maintain the same look.</p>
+</li>
+<li><p>Documentation for conceptual content and its use with the help file builder is rather sparse at
+the moment.  This will also be addressed in a future release.</p>
+</li>
+<li><p>An improved version of the <code>ResolveConceptualLinksComponent</code> has been
+added with the following features and fixes:</p>
+<ul>
+<li><p>Broken links use the <strong>None</strong> style rather than the <strong>Index</strong>
+style so that it is apparent that they do not work.</p>
+</li>
+<li><p>The inner text from the conceptual link is used if specified. See the <strong>PotentialBreaking Changes</strong> section above as this may affect any existing conceptual content that you have.</p>
+</li>
+<li><p>On broken links, when the <code>showBrokenLinkText</code> option is true and
+there is no inner text, the target value is displayed.</p>
+</li>
+<li><p>Conceptual link targets can include an optional anchor name from within the target such as
+&quot;#Name&quot; (i.e. <code>&lt;link xlink:href=&quot;3bdb6eb5-5e23-51c2-0051-3e224f82c201#Section2&quot; /&gt;</code>).</p>
+</li>
+<li><p>Unnecessary whitespace is removed from the link text.</p>
+</li>
+<li><p>If the companion file contains a <code>&lt;linkText&gt;</code> element and no
+inner text is specified, its value will be used for the link text rather than the title.  This allows for a
+shorter title or description to use as the default link text.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Deprecated"> Additional Content Models Deprecated</h2>
+<p>See the <a href="../../addconceptcontent/addconceptcontent.html">Conceptual and Additional Content</a> topic for details.</p>
+<h2 id="OtherChanges"> Other Changes in This Release</h2>
+<ul>
+<li><p>Added support for the <code>&lt;inheritdoc /&gt;</code> XML comments tag.</p>
+</li>
+<li><p>Added the <code>GenerateInheritedDocumentation</code> build step to handle
+generation of inherited documentation.</p>
+</li>
+<li><p>Added the <code>FeedbackEMailLinkText</code> project property.  If specified with a
+feedback e-mail address, the text in this property will be used as the link text.  If left blank, the e-mail
+address will be used.</p>
+</li>
+<li><p>The <code>BinaryTOC</code> and <code>IncludeFavorites</code> properties
+are now found in their own category in the property grid (<strong>HTML Help 1</strong>).</p>
+</li>
+<li><p>Added the <strong>MS Help 2</strong> property category containing the following new
+project properties:</p>
+<ul>
+<li><p><code>CollectionTocStyle</code> - This defines the collection table of contents
+style used when plugged into an MS Help 2 collection.</p>
+</li>
+<li><p><code>HelpAttributes</code> - A collection of additional help attributes to add
+to the XML data island in each generated API topic.</p>
+</li>
+<li><p><code>HelpFileVersion</code> - Specify the version number that should be
+applied to the help file.</p>
+</li>
+<li><p><code>IncludeStopWordList</code> - Indicate whether or not to include the stop
+word list used to identify words to omit from Help 2 full text search index.</p>
+</li>
+<li><p><code>PlugInNamespaces</code> - Specify a comma-separated list of namespaces
+that the collection will be plugged into when deployed using <strong>H2Reg.exe</strong>.</p>
+</li>
+</ul>
+</li>
+<li><p>When performing a build that includes producing an MS Help 2 file, a valid set of collection
+files and a configuration file for <strong>H2Reg.exe</strong> are now produced as well.  They are located
+in the output folder with the help file.</p>
+</li>
+<li><p>Added the project property <code>BuildLogFile</code> that allows you to specify an
+alternate location and name for the build log file.  If not set, it defaults to the filename <strong>LastBuild.log</strong> and stores it in the output folder identified by the <code>OutputPath</code> project property.</p>
+</li>
+<li><p>The log file is now in XML format to allow for running it through an XSL transform to make it
+more readable.  A default XSL transform is supplied with the GUI (<strong>Templates\TransformBuildLog.xsl</strong>)
+and it is used in the GUI's log viewer dialog.</p>
+</li>
+<li><p>Added the <code>IndentHtml</code> project property as a debugging aid.  When set to
+true, the HTML rendered by <strong>BuildAssembler</strong> is indented to make it more readable.  Leave
+it set to false to produce more compact HTML.</p>
+</li>
+<li><p>Added a <strong>&quot;-vsimport=solution|project,configName&quot;</strong> option to the console
+mode builder that lets you specify a Visual Studio solution or project file from which to import the assemblies
+and XML comments files to document for the named configuration.</p>
+</li>
+<li><p>Added a <strong>&quot;-helpattr=name,value&quot;</strong> option to the console mode builder that
+lets you specify additional MS Help 2 help attribute name/value pairs to add to the XML data island in each API
+topic.</p>
+</li>
+<li><p>The <strong>Namespace Summaries</strong> dialog box has been completely reworked.  It
+now uses a partial build to gather the namespace information which will prevent the &quot;assembly not found&quot; errors
+that could occur due to nested dependencies that could not always be properly detected.  In addition, namespaces
+can now be filtered by assembly and/or by some search text or a regular expression.  A list of assemblies in
+which the selected namespace appears is also shown.</p>
+</li>
+<li><p>If comments for a class called <code>NamespaceDoc</code> within a namespace appear
+in the XML comments files, those comments will be used as the namespace comments.  To keep the class from being
+included in the help file, leave off the <code>public</code> keyword and mark it with a <code>CompilerGenerated</code> attribute.  See the <a href="../../propertieswindow/namespacedoc.html">Using NamespaceDoc and NamespaceGroupDoc Classes</a>
+help topic for details.</p>
+</li>
+<li><p>Added a new <code>keepSeeTags</code> option to the <strong>Code Block Component</strong>
+that allows <code>&lt;see&gt;</code> tags that appear within the code to be passed through as-is so
+that they are rendered as clickable links to the referenced help topic (project topics or online MSDN topics).
+This option is also supported in additional content files on colorized <code>&lt;pre&gt;</code> tags
+but will only resolve links to project help topics.</p>
+</li>
+<li><p>Added a new <code>filter</code> option to the <strong>Code Block Component</strong>
+that allows you to specify whether or not a code block is connected to the appropriate language filter.  If
+omitted or set to true, it will be connected.  If set to false, it will not be connected.</p>
+</li>
+<li><p>The attribute name <code>language</code> is now recognized by the colorizer and the
+code block component as an acceptable alternative for the <code>lang</code> attribute name.</p>
+</li>
+<li><p>The <code>CodeBlockComponent</code> and <code>PostTransformComponent</code>
+where reworked to allow their use in conceptual content builds.  This allows code blocks in conceptual content
+files to be colorized using the same options as in reference content builds.</p>
+</li>
+<li><p>Added the <strong>MS Help 2 Attributes</strong> component which is used to insert
+additional help attributes into the XML data island in each generated API topic.  Support for this component is
+built into the help file builder via the <code>HelpAttributes</code> project property.</p>
+</li>
+<li><p>Abstract classes that implement the <code>IPlugIn</code> interface are now ignored
+when looking for plug-ins to load.</p>
+</li>
+<li><p>Added the following new plug-ins:</p>
+<ul>
+<li><p><a href="../../plugins/addreflinksplugin.html">Additional Reference Links Plug-In</a> - This is used to add additional
+reference link targets to the <strong>Reflection Index Data</strong> and <strong>Resolve ReferenceLinks</strong> build components so that links can be created to other third party help in a Help 2 collection
+or to other online MSDN content.</p>
+</li>
+<li><p><a href="../../plugins/dbcsfixplugin.html">DBCS Fix for CHM Builds Plug-In</a> - This is designed to modify the
+HTML files and alter the build so as to overcome the encoding issues encountered when building HTML Help 1 (.chm)
+files for various foreign languages.</p>
+</li>
+<li><p>Hierarchical TOC Plug-In - This is used to rearrange the table of contents such that
+namespaces are nested within their parent namespaces rather than appearing as a flat list of all namespaces at
+the root level.</p>
+</li>
+<li><p>Script# Reflection File Fixer - This is used to fix up the reflection file produced from
+assemblies created by the <strong>Script#</strong> compiler so that they are documented correctly.</p>
+</li>
+<li><p><a href="../../plugins/tocexcludeplugin.html">Table of Contents Exclusion Plug-In</a> - This is used to exclude API
+members from the table of contents via the <code>&lt;tocexclude /&gt;</code> XML comment tag.</p>
+</li>
+</ul>
+</li>
+<li><p>The <strong>AjaxDoc Plug-In</strong> now supports the <code>ApiFilter</code>
+property.  Other plug-ins like it that generate their own reflection information can also apply the API filter
+manually by using the new <code>ApplyManualApiFilter</code> method on the <code>BuildProcess</code>
+object.</p>
+</li>
+<li><p>The <strong>Completion Notification</strong> plug-in now supports an optional XSL
+transform filename option.  If specified and the log file is to be attached to the e-mail, the log file is ran
+through the transform and the resulting HTML file is attached in its place.  If not specified, the raw log file
+is attached.  The default transform can be used by specifying **{@SHFBFolder}Templates\TransformBuildLog.xsl**.</p>
+</li>
+<li><p>The <strong>Output Deployment</strong> plug-in now correctly supports relative file
+paths for the deployment locations.  Relative file paths will be relative to the project file folder.</p>
+</li>
+<li><p>The table of contents entries for additional content items can now be split such that some
+appear before and some after the API topics.  The <code>ContentPlacement</code> property's setting
+will be ignored if the table of contents is split via a custom tag in one of the additional content files or a <a href="../../addconceptcontent/sitemapeditor.html">site map</a> is defined that specifies a split table
+of contents.  In such cases, items prior to the entry with the &quot;split&quot; option will appear before the API content.
+The item with the &quot;split&quot; option and all items after it will appear below the API content.</p>
+</li>
+<li><p>Fixed a bug in the component configuration merging code that could cause the wrong component
+configuration to be replaced when more than one instance of the same component appeared in the project
+configuration.</p>
+</li>
+<li><p>Fixed a bug in <code>ShowMissingComponent</code> that caused the link in
+auto-documented constructors to point to the constructor topic rather than the class topic.</p>
+</li>
+<li><p>Updated the <code>ShowMissingComponent</code> so that it auto-documents
+constructors on the class's member and overloads list pages as well.</p>
+</li>
+<li><p>Added the <code>ShowMissingTypeParams</code> project property.  When set to true
+(the default), it will show a &quot;missing&quot; message if generic type or method type parameter documentation is
+missing.  This maps to the equivalent parameter added to the <code>ShowMissingComponent</code>.</p>
+</li>
+<li><p>The <code>IntelliSenseComponent</code>, <code>PostTransformComponent</code>,
+and <code>VersionInfoComponent</code> were updated to handle multiple assembly references in an API
+topic.</p>
+</li>
+<li><p>Fixed a bug in the <code>PostTransformComponent</code> that caused the VS2005
+member list pages to be laid out incorrectly when using a logo and the version builder's framework menu was
+present.</p>
+</li>
+<li><p>Fixed a bug in the code colorizer rules for &quot;//&quot; style line comments that contained a &quot;/*&quot;
+which was incorrectly interpreted as the start of a block comment.</p>
+</li>
+<li><p>Fixed the XML colorizer rules so that they recognize string literals that span lines.</p>
+</li>
+<li><p>The code block component and additional content files can now extract commented regions from
+within XML, XAML, and SQL scripts.  Just surround the snippet with comment lines containing <code>#region</code> and <code>#endregion</code> markers.</p>
+</li>
+<li><p>All logo placement options are now supported by the default topic transformation files.</p>
+</li>
+<li><p>If <code>&lt;MSHelp:Keyword Index=&quot;K&quot; Term=&quot;[term]&quot; /&gt;</code> tags exist in the
+XML data island in additional content files, the terms will now appear in the CHM file's index.  The SHFB help
+file's additional content is now indexed using this method.</p>
+</li>
+<li><p>Fixed a JavaScript error in the website output that occurred if the full text search did not
+find any results.</p>
+</li>
+<li><p>The <strong>Index.aspx</strong> page now supports a <code>topic</code>
+query string parameter.  If set to the path of a page in the website, it will display that page instead of the
+normal default topic page.</p>
+</li>
+<li><p>Thanks to Ferdinand Prantl for supplying the code necessary to add a keyword index pane to the
+ASP.NET index page.</p>
+</li>
+<li><p>Thanks to TimerLandChapel for providing additional translations for the Japanese content files.</p>
+</li>
+<li><p>Added some more common problems and solutions to the FAQ.</p>
+</li>
+<li><p>The entire project is now licensed using the <a href="../../license.html">Microsoft Public License (Ms-PL)</a> to match the
+license used by Sandcastle itself.</p>
+</li>
+</ul>
+<h2 id="DocWebSites"> Documenting Website Projects</h2>
+<p>A set of custom code providers is now available that simplifies obtaining XML comments files for C#
+and VB.NET website projects.  In combination with the new wildcard support in the help file builder's Assemblies
+to Document list, producing a help file for websites is now a much simpler task. Use the custom code providers
+available as part of the Sandcastle Help File Builder.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="v1.0to1.7.html">Versions 1.0.0.0 through 1.7.0.0</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.0to1.7/v1.7.0.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

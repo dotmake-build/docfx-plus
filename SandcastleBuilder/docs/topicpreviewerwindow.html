@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Topic Previewer Window </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Topic Previewer Window ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/topicpreviewerwindow.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="topic-previewer-window">Topic Previewer Window</h1>
+
+<p>When editing a conceptual content MAML topic, the help file builder allows you to quickly see how
+your edits will look in the help file by previewing the topic in a separate window.  To do so in the standalone
+GUI, select the <strong>Topic Previewer Window</strong> option on the <strong>Window</strong> menu, click the related main
+toolbar button, or hit <strong>F5</strong>.  In Visual Studio, select the <strong>Topic Previewer Window</strong> option from
+the <strong>View</strong> | <strong>Other Windows</strong> menu or the <strong>Other Windows</strong> toolbar button dropdown.</p>
+<h2 id="PreviewTopic"> Topic Previewer Window</h2>
+<p>The topic previewer window consists of a toolbar at the top, a table of contents tree view on the left,
+and the rendered content for the selected topic on the right with the topic title above it.  The toolbar contains
+options that let you navigate backwards and forwards through topics that you have viewed, refresh the content so
+that it reflects any recent changes to the related token, content layout, and topic files, open the selected
+topic in a file editor, expand or collapse the topics in the table of contents tree view, and open this help
+topic.  The currently selected project filename is displayed to the right of the buttons.</p>
+<p align="center">
+<img alt="Topic Previewer" src="../images/TopicPreviewer.png">
+</p>
+<p>The tool window tracks the active project and will refresh the contents automatically if it detects
+a change in the selected project (i.e. moving from one project to another in the Solution Explorer).  It will
+also automatically refresh the content and display the active topic if you invoke the command to display the
+previewer window while editing a topic.  In the event that current content is not displayed, click the <strong>Refresh</strong> button to force a reload of the current content.  The tool window takes into account all open
+and unsaved token files, content layout files, and MAML topic files so there is no need to save anything before
+opening the topic previewer.</p>
+<p>Use the tree view on the left to navigate through the topics.  If the current topic contains links to
+other MAML topics, you can click on them to immediately navigate to that topic.  Using the <strong>Browse Back</strong>
+(Alt+Left) and <strong>Browse Forward</strong> (Alt+Right) options, you can navigate backwards and forwards through the
+previously viewed topics.  Links to external content such as files and website URLs will be opened using the
+default viewer for the given content (i.e. Internet Explorer for website URLs).</p>
+<h2 id="Differences"> Differences Between Previewed and Built Topics</h2>
+<p>The topic previewer does not perform a build on the project.  Instead, it renders the topics into a
+flow document that resembles the built topic as closely as possible.  This process is extremely fast and lets you
+make changes on the fly without having to save files or wait for a full or partial build of the project.  Since
+it does not perform a build, you will notice some differences between the previewed topics and the built topics
+as summarized below:</p>
+<ul>
+<li><p>The topics are rendered in a style similar to the latest Visual Studio related presentation style.
+However, except for the topic title, all other page header and footer elements will not appear nor will
+additional elements such as logo images added to the topic using build components.</p>
+</li>
+<li><p>The spacing and font size on certain elements is slightly different but the overall appearance
+should be close enough for you to get a good idea of how the topic will look in the resulting help file with
+the presentation style applied.</p>
+</li>
+<li><p>Section headers are present but are not collapsible.</p>
+</li>
+<li><p>Flow documents do not size table columns the same way that HTML does.  By default, space is
+distributed evenly across all columns rather than allotting more space to columns containing wider content.
+To remedy this, the parser uses a simple algorithm to adjust the column widths based on the maximum width of the
+content in each table cell across all rows.  While it does not result in an exact match to the table column
+widths seen in the built topics, it is fairly close and should be fine for almost all cases.  You will see that
+it wraps the text in shorter columns more often than the HTML layout but the column width differences are usually
+minor.</p>
+</li>
+<li><p>Code entity reference links will appear as bold text in the rendered topic rather than links to
+the referenced API member topic.</p>
+</li>
+<li><p>Code blocks will have leading whitespace and tab character spacing normalized and will be
+colorized.  Line numbering is supported but collapsible sections are not.</p>
+</li>
+<li><p>If a code block imports code from an external file, the matching code will be imported if possible.
+However, you may notice differences in the spacing due to the way the previewer treats whitespace ahead of the
+code element.</p>
+</li>
+<li><p>Token replacement is supported.  However, if the token contains help file builder replacement tags,
+they will be passed through to the topic as-is rather than being replaced with their project property value.</p>
+</li>
+<li><p>Elements that require specialized formatting handled by build components will be ignored.  Default
+handling is supplied for certain elements such as <code>codeReference</code> that display the
+attribute values or the content of the element.  All others are treated like unrecognized elements as described
+below.</p>
+</li>
+<li><p>Unrecognized custom elements with inner text will be ignored but the inner text will be rendered in
+the topic as normal text.  If an unrecognized inline element contains no inner text or child content, the element
+name will be displayed within the content in bold text.  The parser will take a best guess as to whether it is
+block or inline content based on the current context.</p>
+</li>
+<li><p>Any content in <code>markup</code> elements is passed through in its literal form.
+Inline <code>markup</code> element content is rendered inline where it appears with a colored
+background so that it is apparent that it is not standard inline content.  The content of block level <code>markup</code> elements are rendered in a style similar to a code block.</p>
+</li>
+<li><p>Sandcastle itself is quite forgiving when it comes to ill-formed topic content such as invalid
+element placement and inline elements appearing where they should not.  The parser used by the previewer is not
+as kind and will point out mistakes related to ill-formed documents with an error message appearing at the top
+of the document in a red border.  If the error is caused by invalid XML such as a missing, misspelled, or
+misplaced end element, the error message will point out the line and column where the error occurred.  For other
+errors such as ill-formed content, the error will most likely refer to a missing or unexpected parent element for
+a block or inline element.  The content that could be parsed will appear below the error to help you locate the
+point at which the problem occurred.  Using Visual Studio with the MAML schemas installed will help identify
+problems as the IntelliSense will point out invalid markup and help you correct it via the information in the
+error tool tip.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="texteditorwindow.html">Text Editor Window</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/topicpreviewerwindow.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

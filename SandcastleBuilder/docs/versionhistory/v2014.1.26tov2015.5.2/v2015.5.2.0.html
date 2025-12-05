@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2015.5.2.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2015.5.2.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2015.5.2.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-2015520">Version 2015.5.2.0</h1>
+
+<div class="WARNING">
+<h5>Warning</h5>
+<p>In a future release, support for all deprecated features will be removed in an effort to simplify
+and clean up the code base.  With so many deprecated features, it is starting to get unwieldy when adding support
+for new features and presentation styles.  As such, the deprecated features need to be removed.  In addition,
+when the deprecated features are removed, I plan on dropping support for Visual Studio 2010 and 2012 from the
+Visual Studio package.  With Visual Studio 2015 on the horizon, I need to reduce the number of versions for which
+I can realistically provide support.  Four versions is starting to be too many.</p>
+<p>For a list of the deprecated features slated for removal, see <a href="https://GitHub.com/EWSoftware/SHFB/issues/83" title="work item #83">work item #83</a>.</p>
+</div>
+<h2 id="HelpFileBuilder"> Help File Builder</h2>
+<ul>
+<li><p>Fixed handling of the <code>GenerateProjectSpecificOutputFolder</code> MSBuild
+option so that it finds the documentation source assembly and XML comments files correctly.</p>
+</li>
+<li><p>Fixed determination of the tools folder when running from the VSPackage so that the build
+engine can find the supporting files correctly when the package is installed for all users.</p>
+</li>
+<li><p>Fixed determination of the tools folder so that the build engine can find the supporting files
+correctly in cases where the assemblies are running from the shadow copy folder.</p>
+</li>
+<li><p>Fixed a few theme and font size issues in the VSPackage.</p>
+</li>
+<li><p>Fixed component configuration merging so that it merges help output format specific
+configuration elements correctly in presentation styles that do not use the multi-format output build component.</p>
+</li>
+<li><p>Fixed the multi-format output component configuration merging so that configuration elements
+outside of the help format specific sections are not lost.</p>
+</li>
+<li><p>Fixed Go To Definition so that it supports anchor names in MAML link elements.</p>
+</li>
+<li><p>Fixed the topic previewer so that links with anchor names work consistently.</p>
+</li>
+<li><p>Applied fix from dgedge33 to the Member ID Fix-Ups plug-in so that <code>cref</code> fix-ups are applied to group topic IDs as well.</p>
+</li>
+<li><p>Added <code>Microsoft.VisualStudio.TestTools.UITest.Playback</code> to the default
+list of &quot;ignore if unresolved&quot; assemblies in the binding redirection plug-in's default configuration.</p>
+</li>
+<li><p>Fixed the Lightweight TOC plug-in so that it outputs the TOC elements as valid XML allowing the
+topics to be post-processed and transformed by other tools.</p>
+</li>
+<li><p>Added support for Help Viewer 2.2 which comes with Visual Studio 2015.</p>
+</li>
+<li><p>Updated the <strong>HelpLibraryManagerLauncher</strong> tool so that the <code>catalogName</code> parameter is optional.  If not specified, it defaults to the appropriate
+catalog name for the Visual Studio version associated with the specified help viewer version.</p>
+</li>
+<li><p>The <code>CatalogName</code> project option now has a default value of an empty
+string.  This allows the catalog name to be determined based solely on the help viewer version being used.</p>
+</li>
+<li><p>Removed the <strong>Launch Help Content Manager</strong> menu commands from the standalone GUI and the
+VSPackage.</p>
+</li>
+<li><p>Added a <strong>Launch Content Manager</strong> option to the <strong>View MS Help Viewer</strong> interactive
+dialog box.</p>
+</li>
+<li><p>Added support for the new Markdown Content help format.  There are limitations so see the
+related <a href="../../markdowncontent.html">Markdown Content Help File Format</a> topic for details.</p>
+</li>
+<li><p>Updated the ESent and SQL Server cached data components to work with the new markdown format.
+If you switch to the markdown presentation style in an existing project with these components, they will need to
+be removed and re-added to pick up the new configuration elements.</p>
+</li>
+</ul>
+<h2 id="SandcastleTools"> Sandcastle Tools</h2>
+<ul>
+<li><p>Fixed some bugs in the <code>AddNamespaceGroups</code> tool and made inclusion of
+the root container more consistent based on the content and whether or not a root namespace container is
+present.</p>
+</li>
+<li><p>Fixed another issue in MRefBuilder's <code>ParametersMatch()</code> method related
+to array types in method parameters in derived generic types.</p>
+</li>
+<li><p>Removed the obsolete <code>BrandingComponent</code>.</p>
+</li>
+<li><p>Changed the <code>href-Format</code> attribute on the <code>ResolveReferenceLinksComponent</code>
+to a nested <code>hrefFormat</code> configuration element so that it can be altered in derived
+components.</p>
+</li>
+</ul>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<ul>
+<li><p>Fixed the code contracts setter transformations so that they correctly strip the last parameter
+on the setter contracts elements to form the proper member ID for MSDN lookups.</p>
+</li>
+<li><p>Fixed the keyword search script in the VS2013 presentation style so that it correctly decodes
+the file indices when there are more than 65,535 files.</p>
+</li>
+<li><p>Merged various VS2013 presentation style adjustments from Sam Harwell.</p>
+</li>
+<li><p>Removed a superfluous quote from the URL in the VS2013 presentation style's <em>SearchHelp.aspx</em> reported by Joris Zwart.</p>
+</li>
+<li><p>Changed period to colon in auto-outline lead-in text content items reported by neoliet.</p>
+</li>
+<li><p>Added a Markdown Content presentation style that generates GitHub flavored markdown topic
+files.</p>
+</li>
+<li><p>Thanks to Alexis Yannuzzi for supplying Spanish translations for the VS 2013 presentation style
+content item files.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2015.5.2.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

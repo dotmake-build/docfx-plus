@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Build Engine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Build Engine ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/errorsandwarnings/buildengine/buildengine.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="build-engine">Build Engine</h1>
+
+<p>Select a build engine error or warning below:</p>
+<ul>
+<li><p><a href="be0001.html">BE0001: The PresentationStyle property value of 'XXXX' is not recognized</a></p>
+</li>
+<li><p><a href="be0002.html">BE0002: Shared builder content for the '[langId]' language could not be found</a></p>
+</li>
+<li><p><a href="be0003.html">BE0003: Sandcastle shared content for the '[langId]' language could not be found</a></p>
+</li>
+<li><p><a href="be0004.html">BE0004: The selected presentation style ([styleName]) is not valid.  Reason(s): [reasons]</a></p>
+</li>
+<li><p><a href="be0005.html">BE0005: File '[file]' does not contain a 'doc/members' node</a></p>
+</li>
+<li><p><a href="be0006.html">BE0006: Unable to location any documentation sources for '[source]'</a></p>
+</li>
+<li><p><a href="be0007.html">BE0007: A project with a higher framework version was found</a></p>
+</li>
+<li><p><a href="be0008.html">BE0008: Namespace '[namespace]' excluded via namespace comments conflicted with API filter</a></p>
+</li>
+<li><p><a href="be0009.html">BE0009: '[memberId]' is marked with <exclude></exclude> but conflicted with the API filter</a></p>
+</li>
+<li><p><a href="be0010.html">BE0010: Image file '[imageFile]' already exists</a></p>
+</li>
+<li><p><a href="be0011.html">BE0011: Unable to load package reference information for '[path]'</a></p>
+</li>
+<li><p><a href="be0012.html">BE0012: Error generating namespace summaries (Namespace = [namespace]): [error]</a></p>
+</li>
+<li><p><a href="be0013.html">BE0013: Possible invalid path '[path]'</a></p>
+</li>
+<li><p><a href="be0014.html">BE0014: Unable to load source file '[file]'</a></p>
+</li>
+<li><p><a href="be0015.html">BE0015: Unable to locate start of region '[region]' in source file '[file]'</a></p>
+</li>
+<li><p><a href="be0016.html">BE0016: Unable to extract region '[region]' in source file '[file]' (missing #endregion?)</a></p>
+</li>
+<li><p><a href="be0017.html">BE0017: Unexpected error using '[transformFile]' to transform additional content file</a></p>
+</li>
+<li><p><a href="be0018.html">BE0018: Unable to transform template text '[value]': [error]</a></p>
+</li>
+<li><p><a href="be0019.html">BE0019: Unable to transform template '[file]': [error]</a></p>
+</li>
+<li><p><a href="be0020.html">BE0020: Unknown field tag: '[tagName]'</a></p>
+</li>
+<li><p><a href="be0021.html">BE0021: The project contains a reference to a custom build component '[name]' that could not be found</a></p>
+</li>
+<li><p><a href="be0022.html">BE0022: The project's ApiTocParent property value '[ID]' must be associated with a topic in your project</a></p>
+</li>
+<li><p><a href="be0023.html">BE0023: The project contains a reference to a custom build component '[name]'...</a></p>
+</li>
+<li><p><a href="be0024.html">BE0024: Unable to add dependent configuration: [name]</a></p>
+</li>
+<li><p><a href="be0025.html">BE0025: Unable to remove prior build output: [error]</a></p>
+</li>
+<li><p><a href="be0026.html">BE0026: Unable to determine default topic in '[tocFile]'.</a></p>
+</li>
+<li><p><a href="be0027.html">BE0027: Namespace grouping was requested but the selected presentation style does not support it</a></p>
+</li>
+<li><p><a href="be0028.html">BE0028: [Plug-in loading error]</a></p>
+</li>
+<li><p><a href="be0029.html">BE0029: Unexpected error while executing plug-in '[plugInName]': [error]</a></p>
+</li>
+<li><p><a href="be0030.html">BE0030: The OutputPath and WorkingPath properties cannot be set to the same path</a></p>
+</li>
+<li><p><a href="be0031.html">BE0031: Ignoring invalid XML comments file '[file]'.  Reason: [reason]</a></p>
+</li>
+<li><p><a href="be0032.html">BE0032: Reflection data files for the selected framework do not exist yet</a></p>
+</li>
+<li><p><a href="be0033.html">BE0033: No APIs found to document</a></p>
+</li>
+<li><p><a href="be0034.html">BE0034: The '[propName]' property resolved to '[folder]' which is a reserved folder name</a></p>
+</li>
+<li><p><a href="be0035.html">BE0035: The framework version is set to Cross-platform but no reference assemblies were specified</a></p>
+</li>
+<li><p><a href="be0036.html">BE0036: The FIPS validated cryptographic algorithms policy appears to be enabled</a></p>
+</li>
+<li><p><a href="be0037.html">BE0037: Could not find the path to the HTML Help 1 compiler</a></p>
+</li>
+<li><p><a href="be0039.html">BE0039: The project does not have any documentation sources defined</a></p>
+</li>
+<li><p><a href="be0040.html">BE0040: Project assembly does not exist: [assembly]</a></p>
+</li>
+<li><p><a href="be0041.html">BE0041: Project XML comments file does not exist: [commentsFile]</a></p>
+</li>
+<li><p><a href="be0042.html">BE0042: You must specify at least one documentation source in the form...</a></p>
+</li>
+<li><p><a href="be0043.html">BE0043: Unexpected error detected in the last build step</a></p>
+</li>
+<li><p><a href="be0044.html">BE0044: Error applying Visibility properties: [error]</a></p>
+</li>
+<li><p><a href="be0045.html">BE0045: Error removing attributes nodes: [error]</a></p>
+</li>
+<li><p><a href="be0046.html">BE0046: Error removing EII nodes: [error]</a></p>
+</li>
+<li><p><a href="be0047.html">BE0047: Error removing inherited members: [error]</a></p>
+</li>
+<li><p><a href="be0048.html">BE0048: Error removing [memberType]: [error]</a></p>
+</li>
+<li><p><a href="be0049.html">BE0049: Error changed protected internal to protected: [error]</a></p>
+</li>
+<li><p><a href="be0050.html">BE0050: Error removing protected members from sealed classes: [error]</a></p>
+</li>
+<li><p><a href="be0051.html">BE0051: The specified project file does not exist: [projectFile]</a></p>
+</li>
+<li><p><a href="be0052.html">BE0052: One or more token files could not be found</a></p>
+</li>
+<li><p><a href="be0053.html">BE0053: One or more code snippets files could not be found</a></p>
+</li>
+<li><p><a href="be0054.html">BE0054: The conceptual topic '[title]' (ID: [id]) does not match any file in the project</a></p>
+</li>
+<li><p><a href="be0055.html">BE0055: The conceptual topic '[title]' (ID: [id]) must either specify a topic file or it must contains sub-topics</a></p>
+</li>
+<li><p><a href="be0056.html">BE0056: The conceptual content file '[file]' with ID '[id]' does not exist</a></p>
+</li>
+<li><p><a href="be0057.html">BE0057: The conceptual content file '[file]' with ID '[id]' is not valid: [error]</a></p>
+</li>
+<li><p><a href="be0058.html">BE0058: Two conceptual content files have the same ID ({0})</a></p>
+</li>
+<li><p><a href="be0059.html">BE0059: LCID '[id]' not found in configuration file</a></p>
+</li>
+<li><p><a href="be0060.html">BE0060: The [itemType] '[item]' contains a comma or '.h' which may cause the Help 1 compiler to fail</a></p>
+</li>
+<li><p><a href="be0061.html">BE0061: File '[file]' could not be loaded and will not be used as an XML comments file</a></p>
+</li>
+<li><p><a href="be0062.html">BE0062: No XML comments found.  The help file will not contain any member comments</a></p>
+</li>
+<li><p><a href="be0063.html">BE0063: '[file]' matches a previously copied comments filename</a></p>
+</li>
+<li><p><a href="be0064.html">BE0064: BUILD CANCELLED BY USER</a></p>
+</li>
+<li><p><a href="be0065.html">BE0065: BUILD FAILED: [error]</a></p>
+</li>
+<li><p><a href="be0066.html">BE0066: [warning]</a></p>
+</li>
+<li><p><a href="be0067.html">BE0067: Unable to obtain assembly name from project file</a></p>
+</li>
+<li><p><a href="be0068.html">BE0068: Incompatible Visual Studio project file format</a></p>
+</li>
+<li><p><a href="be0069.html">BE0069: The project's RootContentContainer property value '[ID]' must be associated with a topic in your project</a></p>
+</li>
+<li><p><a href="be0070.html">BE0070: Differing framework types were detected in the documentation sources</a></p>
+</li>
+<li><p><a href="be0071.html">BE0071: Unable to locate information for the project framework version 'XXXX'</a></p>
+</li>
+<li><p><a href="be0072.html">BE0072: Project framework version 'XXXX' not found.  It has been redirected.</a></p>
+</li>
+<li><p><a href="be0073.html">BE0073: A project with a different or higher framework version was found but that version was not found</a></p>
+</li>
+<li><p><a href="be0074.html">BE0074: The selected presentation style (XXX) does not support one or more of the selected help file formats</a></p>
+</li>
+<li><p><a href="be0075.html">BE0075: For MS Help Viewer builds, the HtmlHelpName property cannot contain periods</a></p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../errorsandwarnings.html">Errors and Warnings</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/errorsandwarnings/buildengine/buildengine.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

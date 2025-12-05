@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2014.1.26.0 Beta </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2014.1.26.0 Beta ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2014.1.26.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-20141260-beta">Version 2014.1.26.0 Beta</h1>
+
+<h2 id="BreakingChanges"> Breaking Changes</h2>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The Sandcastle tools are now installed as part of the Sandcastle Help File Builder and there is
+no longer a separate installer for them.  As such, you will need to manually remove the prior release of the
+Sandcastle tools.  Leaving them installed will not cause any issues as the new release is located in a different
+folder.  However, removing them will avoid any confusion in the future.</p>
+</div>
+<p>The majority of the following changes will only affect those that have created custom build
+components, syntax generators, plug-ins, and presentation styles.  If you have, carefully read the following
+items as you will need to update your components to work with the new Managed Extensibility Framework based
+implementation.</p>
+<ul>
+<li><p>Consolidated the Sandcastle Help File Builder and Sandcastle tools under a single, common
+folder structure.  These changes were necessary in order to simplify deployment and support changes to the
+component model.  Although combined, the Sandcastle tools can still be used independently of the help file
+builder as in prior releases.</p>
+</li>
+<li><p>Since the tools have been consolidated under a single folder, the <code>DXROOT</code>
+environment variable is no longer needed.  All tools now use the common <code>SHFBROOT</code>
+environment variable instead where needed.</p>
+</li>
+<li><p>Removed support for the <code>SHFBCOMPONENTROOT</code>
+environment variable as its functionality is handled by the new <code>ComponentPath</code> project
+property.</p>
+</li>
+<li><p>Updated all build components, syntax generators, plug-ins, and presentation styles so that they
+are implemented using the Manged Extensibility Framework (MEF).  A lot of code was moved into a new <em>Sandcastle.Core</em> library that holds the base classes and MEF implementation classes common to
+all of the other projects in the tool set.  This change allows for dynamic discoverability of components at
+runtime without the need for special configuration files or file naming conventions.  It also allows for the use
+of project-specific components located within a help file project's folder or one that it refers to through the
+new <code>ComponentPath</code> property.</p>
+</li>
+<li><p>Presentation styles are now implemented as MEF components as well.  As with the other build
+components, this allows for the same dynamic discoverability at runtime and project-specific presentation styles.</p>
+</li>
+<li><p>Changed the syntax generator IDs to their actual language names so that they are displayed
+using the language name in the help file builder.  This should be transparent to most projects but if you have <strong>BuildAssembler</strong> configuration files you will need to update the syntax generator IDs in
+them.</p>
+</li>
+<li><p>Switched to a date-based version numbering scheme (YYYY.MM.DD.RR) and updated all tools to use
+a common version number.  Changes were also made to the versioning attributes to minimize the need to rebuild
+third party components with each new release of the tools.  In future, it should only be necessary to rebuild
+third party components if a breaking changes was made requiring an update to the version number used in the
+strong name of the dependency assemblies.</p>
+</li>
+<li><p>Removed the example SandcastleGUI project since it is out of date and serves no real purpose
+anymore.  Use the Sandcastle Help File Builder standalone GUI or Visual Studio Package instead if you need a
+project management system.</p>
+</li>
+<li><p>Removed the Examples folder since they were out of date and cannot be built properly from the
+installed location.  I will create better standalone build examples and distribute them separately so that they
+can be downloaded and built from a usable location at a later date.</p>
+</li>
+<li><p>Updated several of the tools to allow running them as MSBuild tasks and removed the PowerShell
+scripts.  They were out of date and I know very little about PowerShell so support for them would be problematic.
+In any event, since the tools have been updated to run as MSBuild tasks, it makes better sense to standardize on
+MSBuild projects rather than PowerShell scripts.</p>
+</li>
+<li><p>Removed the <code>SandcastlePath</code> project property and all references to it
+as it is no longer needed.  It may show up in the <strong>User Defined Properties</strong> property page.  If so, it can
+be removed from there.</p>
+</li>
+<li><p>The help file builder presentation style resource item files have been moved into each
+presentation style so that the presentation styles are self-contained.</p>
+</li>
+<li><p>The help file builder stop word list files have been moved into the <em>Shared\StopWordList</em> folder under the presentation style folder so that the localizable
+resources are all in one common location.</p>
+</li>
+<li><p>Removed the <code>ApplyVisibilityProperties</code> build step as visibility
+properties are applied to the reflection information by <strong>MRefBuilder</strong> now. The <code>ApplyVisibilityProperties()</code> method was modified to take a filename so that plug-ins can
+use it to remove members from reflection files generated by other means.</p>
+</li>
+<li><p>Moved the <code>TransformReflectionInfo</code> build step to run ahead of the <code>GenerateNamespaceSummaries</code> build step to allow generation of group topics for use in
+the namespace summary editor dialog in a partial build.</p>
+</li>
+<li><p>Redefined the partial build in the build engine to allow stopping it after generating
+reflection information or after the document model XSL transformation and grouping options have been applied.</p>
+</li>
+<li><p>The following obsolete and deprecated help file builder build components have been deleted so
+that they did not have to updated for use with MEF.  If you still have them in older projects, they will need to
+be removed, re-added, and re-configured as needed:</p>
+<ul>
+<li><p><code>CachedCopyFromIndexComponent</code> - Superseded by the base components
+and the ESent/SQL caching components.</p>
+</li>
+<li><p><code>CachedResolveReferenceLinksComponent</code> - Superseded by the base
+components and the ESent/SQL caching components.</p>
+</li>
+<li><p><code>IntelliSenseComponent</code> - Moved to the <strong>BuildAssembler</strong>
+components project.</p>
+</li>
+<li><p><code>MSHelpAttrComponent</code> - Moved to the <strong>BuildAssembler</strong>
+components project.</p>
+</li>
+<li><p><code>PostTransformComponent</code> - Code block handling moved to the code
+block component and logo support moved to the XSL transformations.</p>
+</li>
+<li><p><code>ShowMissingComponent</code> - Moved to the <strong>BuildAssembler</strong>
+components project.</p>
+</li>
+</ul>
+<p>See the prior version release notes for more details.</p>
+</li>
+</ul>
+<h2 id="HelpFileBuilder"> Help File Builder</h2>
+<ul>
+<li><p>Fixed the project class so that it does not incorrectly try to update the tools version and
+mark the project as dirty under Visual Studio 2013.</p>
+</li>
+<li><p>Fixed the <code>BuildHelp</code> task and standalone GUI so that all warnings
+regardless of format are output to the console when verbose logging is disabled.</p>
+</li>
+<li><p>Fixed the framework XML comments file enumerator method so that it ignores folders that exist
+but contain no XML comments files.</p>
+</li>
+<li><p>Fixed the Sandcastle HTML extract tool so that it finds the <em>HxLink.css</em>
+reference regardless of the element's attribute order.</p>
+</li>
+<li><p>Fixed the Version Builder plug-in so that it finds the correct XML comments file when the <code>GenerateProjectSpecificOutputFolder</code> MSBuild option is used.</p>
+</li>
+<li><p>Fixed the standalone GUI so that it loads per project user state properly.</p>
+</li>
+<li><p>Fixed the build log viewer so that it transforms the log correctly under Visual Studio.</p>
+</li>
+<li><p>Added support for installing and removing MS Help Viewer content in Help Viewer 2.1 from the
+standalone GUI and VSPackage.  Updated the example scripts to show how to do it as well.</p>
+</li>
+<li><p>Updated the standalone GUI to use the evaluated output path value if it contains MSBuild
+variables.  This allows it to clean and display the output under such conditions.</p>
+</li>
+<li><p>Updated the build engine to run the Sandcastle tools as MSBuild tasks.</p>
+</li>
+<li><p>Added support for a <code>ComponentPath</code> project property used to specify the
+location of project-specific build components, syntax generators, plug-ins, and presentation styles.  If not
+specified, the project's folder alone is used.</p>
+</li>
+<li><p>Added support for the &quot;No-PIA embedded interop types&quot; visibility option.</p>
+</li>
+<li><p>Exposed the <code>ReferenceOutputAssembly</code> property on project references.
+If set to false, the project reference will only be used for MSBuild dependency determination and will not be
+used as a reference for <strong>MRefBuilder</strong>.  This allows MSBuild to determine the correct
+project build order when building projects in a solution in parallel.</p>
+</li>
+<li><p>Added F# to the standard set of syntax filters to match MSDN.  Note that if you have been
+using the standard set (C#, VB.NET, C++), you will gain F# by default. Turn it off in the <code>SyntaxFilters</code> property on the <strong>Help File</strong> properties page if you do not want it included in the
+topics.</p>
+</li>
+<li><p>Added namespace grouping support in the form of two new properties located on the <strong>HelpFile</strong> property page: <code>NamespaceGrouping</code> and <code>MaximumGroupParts</code>.
+Note that the selected presentation style must support namespace grouping for these properties to be effective.
+Only the VS2005 and VS2010 styles support namespace grouping in this release.</p>
+</li>
+<li><p>Updated the <strong>Namespace Summaries</strong> dialog to allow editing of namespace group summaries.</p>
+</li>
+<li><p>Deprecated the <strong>Hierarchical TOC</strong> plug-in as its functionality has been replaced by the
+namespace grouping options.  It is still available for presentation styles that do not support MS Help Viewer
+output or namespace grouping (Prototype and Hana).</p>
+</li>
+<li><p>Removed the <strong>Expand All</strong> button from the website index pages as it was not very useful
+and could cause a heavy load on the web server.</p>
+</li>
+<li><p>Applied changes to the web table of contents style from Sam Harwell.</p>
+</li>
+<li><p>Minimized the use of the <code>SHFBROOT</code> environment
+variable where possible.  It is still needed in some places to allow for XCOPY deployment of the tools.  It is
+possible to run without it defined if you create a <code>SHFBROOT</code> project property that points
+to the tools.  See the <a href="../../gettingstarted/xcopydeployment.html">XCOPY/NuGet Build Server Deployment</a> topic for details.</p>
+</li>
+<li><p>Added code the VSPackage to allow using a locally defined <code>SHFBROOT</code>
+project variable to set the <code>SHFBROOT</code> environment variable if it does
+not exist.  This allows using it without the <code>SHFBROOT</code> environment
+variable  defined.</p>
+</li>
+<li><p>Added template projects for C# and VB.NET in the <strong>Documentation</strong> subcategory used to
+create plug-ins, build components, syntax generators, and presentation style components.  The template code
+contains the necessary MEF attribute and/or factory class to produce a valid component.</p>
+</li>
+</ul>
+<h2 id="General"> General</h2>
+<ul>
+<li><p>Fixed a bug in the <strong>SegregateByNamespace</strong> tool so that it does not
+fail for namespaces containing characters that are not legal in a filename.</p>
+</li>
+<li><p>Added conditions to the two document model transformations to favor <code>AssemblyInformationalVersionAttribute</code> if present for the version information.
+If not, the existing behavior is used (<code>AssemblyVersionAttribute</code> plus <code>AssemblyFileVersionAttribute</code> value if present).  It was also marked as a required
+attribute in the <strong>MRefBuilder</strong> configuration files.</p>
+</li>
+<li><p>Added the <strong>AddNamespaceGroups</strong> tool which adds namespace groups to
+the reflection information file.  The grouping information is used to implement the namespace grouping option in
+the document model transformations and presentation styles.</p>
+</li>
+<li><p>Deleted several unused transformations from the production transforms folder.</p>
+</li>
+</ul>
+<h2 id="MRefBuilder"> MRefBuilder</h2>
+<ul>
+<li><p>Added a workaround to allow documenting the compiler generated public types in WINMD
+assemblies that actually represent user code.</p>
+</li>
+<li><p>Fixed a couple of bugs in <strong>MRefBuilder</strong> found while regenerating
+the reflection data using the .NETFramework 4.5.1 assemblies and testing it with the .NETCore 4.6 assemblies.</p>
+</li>
+<li><p>Removed the <code>protectedSealed</code> and <code>noPIA</code>
+configuration elements from <em>MRefBuilder.config</em>.</p>
+</li>
+<li><p>Added the <code>visibility</code> element to <em>MRefBuilder.config</em>
+to control API member visibility in the output.  The options it contains are equivalent to the Sandcastle Help
+File Builder options of the same name and are now handled by <strong>MRefBuilder</strong>.</p>
+</li>
+<li><p>Deprecated support for the <code>/internal</code>   <code>MRefBuilder</code>
+command line option.  The new <code>visibility</code> configuration element provides finer grained
+control over member visibility in the output.</p>
+</li>
+<li><p>Added code to output the interop metadata so that the syntax components can add the interop
+attributes to the declarations (<code>ComImport</code>, <code>StructLayout</code>, <code>FieldOffset</code>, <code>PreserveSig</code>, and <code>DllImport</code>).</p>
+</li>
+</ul>
+<h2 id="BuildAssembler"> BuildAssembler and Build Components</h2>
+<ul>
+<li><p>Fixed <code>BrandingComponent</code> so that it applies the language specific
+text fix-up on elements in syntax sections which the branding transformations miss for some reason.  This was
+only noticeable on members and properties that return a nested type and resulted in multiple separators between
+the parts of the qualified type name.</p>
+</li>
+<li><p>Applied a patch to <code>ResolveReferenceLinksComponent</code> from Stazzz to
+write out nested XML elements within the link's inner XML.</p>
+</li>
+<li><p>Updated <code>IntelliSenseComponent</code> to export code contracts XML
+comments elements (<code>requires</code>, <code>ensures</code>, <code>ensuresOnThrow</code>, <code>pure</code>, <code>invariant</code>, <code>getter</code>, and <code>setter</code>).</p>
+</li>
+<li><p>Added code to the syntax components to output the interop attributes to the declarations
+based on the metadata (<code>ComImport</code>, <code>StructLayout</code>, <code>FieldOffset</code>, <code>PreserveSig</code>, and <code>DllImport</code>).</p>
+</li>
+<li><p>Deleted <code>ScriptSharpSyntaxGenerator</code>.  The JavaScript syntax
+generator has been used in its place for quite some time.</p>
+</li>
+<li><p>The <code>SyntaxComponent</code> is now exposed as a configurable component.
+It allows you to enable rendering of reference links in the syntax section and to edit the configuration of those
+syntax generators that support it such as the Visual Basic and Visual Basic Usage syntax generators.</p>
+</li>
+</ul>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<ul>
+<li><p>Added namespace grouping support to the VS2005 and VS2010 presentation styles.  When
+enabled, it mimics the nested layout of the namespaces on MSDN that have a common root.</p>
+</li>
+<li><p>Fixed the tab border and footer background image handling in the VS2010 style so that they
+work in all output formats.</p>
+</li>
+<li><p>Fixed <em>branding.js</em> in VS2010 so that the proper tab is selected when
+switching topics in website output.</p>
+</li>
+<li><p>Removed <em>dev10.mshc</em> and extracted the content into the <em>.\branding</em> folder.  The configuration files reference it from there now.</p>
+</li>
+<li><p>Removed the external link icon from all external links in the VS2010 style.</p>
+</li>
+<li><p>Fixed the incorrect <code>devlang</code> and <code>null</code>
+keywords for F# in the VS2010 style.</p>
+</li>
+<li><p>Removed the <code>label</code> attribute from the <code>language</code>
+element passed to the XSL Transform Component in the <code>languages</code> parameter as it is not
+needed now.</p>
+</li>
+<li><p>Merged the Sandcastle Help File Builder shared content into each presentation style so that
+they are self-contained.</p>
+</li>
+<li><p>Moved the stop word lists from the Sandcastle Help File Builder into the <em>Shared\StopWordList</em> folder in the presentation style project so that all localizable
+resources are kept together in one project.</p>
+</li>
+<li><p>Simplified the naming of the help file builder shared content files and stop word lists to
+be just the language that they represent.</p>
+</li>
+<li><p>Added a boilerplate <code>threadsafety</code> condition to all presentation
+styles used when the <code>threadsafety</code> XML comments element is used without any options.</p>
+</li>
+<li><p>Added <code>async</code>, <code>await</code>, <code>let!</code>, <code>async/await</code>, and <code>async/let!</code> as <code>langword</code>
+options on the <code>see</code> XML comments element in the VS2005 and VS2010 styles.</p>
+</li>
+<li><p>Updated the <strong>BuildAssembler</strong> configuration files to propagate the <code>preliminary</code> XML comments element from types to all of their members.  This marks all
+members of the type as preliminary without having to add the element to each member's comments.</p>
+</li>
+<li><p>Added the <code>maxVersionParts</code> transformation argument to the VS2005
+and VS2010 presentation styles.  This is used to specify the maximum number of assembly version parts to show in
+API member topics.  Set it to 2, 3, or 4 to limit it to 2, 3, or 4 parts or leave it blank for all parts
+including the assembly file version value if specified.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2014.1.26tov2015.5.2/v2014.1.26.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

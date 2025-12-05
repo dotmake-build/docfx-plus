@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Markdown Content Help File Format </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Markdown Content Help File Format ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/markdowncontent.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="markdown-content-help-file-format">Markdown Content Help File Format</h1>
+
+<p>The Markdown help format is used to produce content that can be viewed on websites that can transform
+markdown files into HTML.  The presentation style supplied with the help file builder renders GitHub flavored
+markdown content suitable for use on GitHub project wikis.  However, there are some known issues and limitations
+as noted below.</p>
+<h2 id="knowns-issues-and-limitations">Knowns Issues and Limitations</h2>
+<p>If these limitations are not acceptable, it is suggested that you generate the content as a
+true website and host it somewhere such as the GitHub Pages site related to your project rather than the wiki.</p>
+<ul>
+<li><p>The markdown format works best for projects with a small number of conceptual topics and API
+members.  Sites like GitHub render a sidebar which, for large projects, can become cumbersome to use when the
+content is deeply nested.  You will have to be the judge as to whether or not the generated content is suitable
+for use on a markdown website.</p>
+</li>
+<li><p>As noted, the markdown generated is geared towards GitHub flavored markdown.  Results may vary
+on other sites.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The content generated is specifically for wiki sites.  It will not work properly if checked
+into a source repository and viewed from the source code browser.</p>
+</div>
+</li>
+<li><p>Code colorization is left to the markdown processor provided it knows how to handle fenced code
+blocks.  The line numbering and collapsible region features of the code block component are not supported.  Those
+features will be ignored.</p>
+</li>
+<li><p>Obviously, the language filter from the HTML help formats is not supported.  As such,
+language-specific text is shown using the generic, multi-language style.  Likewise, syntax sections and code
+blocks are shown in a sequential fashion similar to the topic previewer.</p>
+</li>
+<li><p>Markdown processors make certain assumptions about the text based on the way it is formatted
+which do not always hold true for the content generated by the presentation style.  In addition, certain HTML
+elements must be formatted very specifically to work around issues in the markdown processors.  On GitHub for
+example:</p>
+<ul>
+<li><p>Table cells written in markdown cannot span multiple lines.</p>
+</li>
+<li><p>List items written in markdown cannot contain multiple paragraphs.</p>
+</li>
+<li><p>Markdown elements embedded within certain HTML elements (i.e. HTML list items and table
+cells elements) may not get processed in all cases.</p>
+</li>
+<li><p>Various HTML block elements such as tables and lists must be preceded and followed by a
+non-breaking space or the markdown processor may ignore markdown elements within the block elements.</p>
+</li>
+</ul>
+<p>As such, a lot more HTML is generated by the presentation style than you would see if it was
+written by hand to work around such limitations since the presentation style cannot assume the content fits the
+layout requirements expected by the markdown processors.</p>
+</li>
+<li><p>Address anchors on elements such as list items and table cells are not supported as GitHub
+strips most attributes from elements.  Links to title elements and the introduction (page header) are
+supported.</p>
+</li>
+<li><p>&quot;No Bullet&quot; style lists and image placement options are not supported as GitHub strips the
+style attribute from all elements.</p>
+</li>
+<li><p>Literal HTML in conceptual topics and XML comments may not be rendered as expected since the
+markdown processor strips most attributes from the elements (<code>id</code>, <code>style</code>, etc.).</p>
+</li>
+<li><p>It is not possible to check for and escape every possible markdown directive in conceptual
+topic text and XML comments text.  As such, certain constructs may be interpreted as markdown and rendered
+differently.  For example, if your comments contain the literal text ~&quot;*Some text surrounded byasterisks*&quot;~, it will most likely be rendered as emphasized text rather than literal text in
+asterisks as it would in website output.</p>
+</li>
+<li><p>GitHub uses the filename as the page title.  Topics will continue to use the selected naming
+method and, as such, you will see that filename at the top of each page.  The topic title rendered by the
+presentation style will appear below it.  This may not be ideal but is necessary.  The topic title cannot be used
+as the filename since they need to be unique across all topics documented.  For example, if <code>Class1</code>
+appeared in two separate namespaces and the topic titles were used as filenames, the topics from one of the
+classes would overwrite the other.  Fully qualifying the names and including parameter information would allow
+them to be unique but would most likely result in extremely long filenames that could exceed the maximum filename
+length limit.</p>
+</li>
+<li><p>GitHub expects there to be a <em>Home.md</em> topic within the site.  If one does
+not appear, a copy of the default topic is made and named <em>Home.md</em> to satisfy this
+requirement.  If your project contains a <em>Home.md</em> file included as content in the root of
+your project or in a site map file, it will be copied to the build output and used instead.</p>
+</li>
+<li><p>Conceptual topics can be written in markdown, saved as <em>.md</em> files, and
+included in the project.  However, they must be saved to the root folder of the project, their <code>Build Action</code> property must be set to <code>Content</code>, and they must be
+included in a site map file if you want them to appear in the table of contents (sidebar) generated by the
+build.</p>
+</li>
+<li><p>A page header is not supported and the page footer is a separate file in markdown content.  As
+such, localized resource items cannot be used within the footer.  A default <em>_Footer.md</em> file
+containing the help title, the additional footer information property content, the copyright URL, and contact
+e-mail address is included by default.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>As in other help file formats, stock content file overrides are supported.  Including a <em>Home.md</em> and/or <em>_Footer.md</em> file containing appropriate content in your
+project's root folder with the Build Action set to <code>Content</code> will override the default
+home page and/or footer in the generated content.</p>
+</div>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="propertieswindow/buildprops.html">Build Category Properties</a></li>
+<li><a href="propertieswindow/helpfileprops.html">Help File Category Properties</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/markdowncontent.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2021.11.7.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2021.11.7.0 ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2021.11.7.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-20211170">Version 2021.11.7.0</h1>
+
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This release supports both .NET Framework (<em>MSBuild.exe</em>) and .NET Core
+(<em>dotnet.exe</em>) builds.  Many significant breaking changes were made in order to provide this
+support.</p>
+<p>All third-party build components, plug-ins, presentation styles, and syntax generators built against
+v2021.4.9.0 and earlier must be updated for use with the latest release.  Unlike past releases, this will require
+more rework than usual.  However, the benefits are components that will work with both build types and simpler
+deployment of the components as NuGet packages.  See the <a href="migrationsupport.html">Component Migration Support</a>
+topic for more information.</p>
+<p>See the <a href="../knownissues.html">Known Issues and Limitations</a> topic for known issues with
+.NET Core builds.</p>
+</div>
+<p>This release is a minor update to version 2021.10.23.0 which originally contained these changes.</p>
+<h2 id="BreakingChanges"> Breaking Changes</h2>
+<ul>
+<li><p>Updated all build engine components to target .NET 4.7.2 and .NETCoreApp 3.1.  The latter
+allows for builds using the <em>dotnet.exe</em> tool.  The core libraries, build components,
+plug-ins, and presentation styles target .NET Standard 2.0 so that they are universal.</p>
+</li>
+<li><p>Restructured the <code>SHFBROOT</code> folders to allow for the
+tool version and platform-specific code to be cleanly separated.  See the <a href="../sandcastletools/shfbbuildengine.html">Help File Builder Build Engine</a> topic for details.</p>
+</li>
+<li><p>Separated Windows platform-specific code out into separate assemblies.  The <em>Sandcastle.Platform.Windows</em> assembly contains the shared code.  Reworked all build
+components and plug-ins to separate the configuration UIs into separate Windows platform-specific assemblies.
+This allows the components themselves to be used with both .NET Framework and .NET Core builds while allowing the
+IDEs to still configure them interactively.</p>
+</li>
+<li><p>All build tasks were moved from <em>SandcastleBuilder.Utils</em> to their own
+assembly (<em>SandcastleBuilder.MSBuild</em>).</p>
+</li>
+<li><p>Consolidated the tools and components into common namespaces and merged the help file builder
+build components into the main build components assembly.</p>
+</li>
+<li><p>The Add Namespace Groups tool was removed.  The code was merged into the build engine under a
+new build step (<code>BuildStep.AddNamespaceGroups</code>).</p>
+</li>
+<li><p>The Version Builder tool was removed and the code from it was merged into the related plug-in
+were it runs directly now at build time.</p>
+</li>
+<li><p>The XSL Transform tool and the related production XSL transformations were removed.  The XSL
+transformation processing was moved into the build engine in three new build steps: <code>BuildStep.ApplyDocumentModel</code> handles the processing formerly in <em>ApplyVsDocModel.xsl</em>, <code>BuildStep.AddApiTopicFilenames</code> handles
+the processing formerly in <em>AddFilenames.xsl</em>, and <code>BuildStep.GenerateApiTopicManifest</code> handles the processing formerly in <em>ReflectionToManifest.xsl</em>.  Along with <code>BuildStep.AddNamespaceGroups</code>,
+these new build steps replace <code>BuildStep.TransformReflectionInfo</code> which was removed.</p>
+<p>The processing formerly in <em>CreateVSToc.xsl</em> is handled by new code in the
+build engine that runs under the existing build step <code>BuildStep.GenerateIntermediateTableOfContents</code>.
+These changes should allow for better extensibility of the related build steps in the future.</p>
+</li>
+<li><p>Updated all presentation styles to use the code-based interfaces for applying the document
+model to the reflection information file and generating the intermediate table of contents.  These replace the
+old properties that specified the related XSL transformations to use.  Custom presentation styles are free to use
+the default implementations or supply their own.  It is also now possible for plug-ins to replace them at runtime
+as long as the replacements meet the requirements of the presentation style.</p>
+</li>
+<li><p>Removed <code>BuildStep.GenerateHelpFormatTableOfContents</code> and <code>BuildStep.GenerateHelpFileIndex</code> as they effectively did nothing anymore.</p>
+</li>
+<li><p>Removed the BuildAssembler build components <code>DisplayComponent</code>, <code>InheritDocumentationComponent</code> (not used by the help file builder to generate inherited
+documentation), <code>PlatformsComponent</code>, <code>SnippetComponent</code>, <code>TaskGrabberComponent</code>, and <code>ValidateComponent</code> as they were never
+used.</p>
+</li>
+<li><p>Updated all Visual Studio component template projects so that they work with the updated build
+engine.  The template projects were also updated to use the new SDK format and generate their output as NuGet
+packages.  This makes them easier to find and use and no longer requires a common component path setting be used
+in the help file builder projects to locate them.</p>
+</li>
+<li><p>Updated the build engine to search for build components, plug-ins, presentation styles, and
+syntax generators added to the project as NuGet packages by looking for their <code>SHFBComponentPath</code>
+build property items.  The component path project property, common application data, and local application data
+folder locations are still supported but are not necessary when components are added as NuGet packages.</p>
+</li>
+<li><p>Due to changes in the folder structure of the tools, some component and plug-in configurations
+may need updating.  In most cases, simply opening the configuration form and saving the configuration should
+correct these issues.  If there are still problems after doing that, it may be necessary to remove the component
+from the project, add it back, and set the configuration options again.</p>
+</li>
+</ul>
+<h2 id="Tools"> Build Components and Tools</h2>
+<ul>
+<li><p>Fixed the Show Missing Component so that it handles parameter names containing single quotes
+which can occur in F# code.</p>
+</li>
+<li><p>Added the <code>InternalAndPrivateIfExternal</code> visibility setting to control
+whether or not internal members from other assemblies and private members of base type are included.  It is set
+to false by default to exclude them.</p>
+</li>
+<li><p>All build component and plug-in configuration forms were updated to use WPF for better high DPI
+scaling support on 4K displays.  The standalone GUI hosts all of the WPF controls and UI forms but is a Windows
+Forms application at its core.  That probably will not change anytime soon.</p>
+</li>
+<li><p>All reflection data NuGet packages were republished with updated build properties so that they
+support the new <code>SHFBComponentPath</code> item used to locate components in NuGet packages.</p>
+</li>
+<li><p>The AjaxDoc plug-in has been deprecated.  AjaxDoc itself has been deprecated in favor of JSDoc.
+The plug-in is also dependent on Windows platform-specific features and cannot be used with .NET Core builds.</p>
+</li>
+</ul>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<ul>
+<li>Added a new <code>logoUrl</code> transform argument property to the VS2010 and
+VS2013 presentation styles.  This allows you to specify a URL to navigate to when the logo is clicked.</li>
+</ul>
+<h2 id="SHFB"> Sandcastle Help File Builder</h2>
+<ul>
+<li><p>Fixed the API content placement option so that it works again in site map files.</p>
+</li>
+<li><p>Updated the standalone GUI and Visual Studio package to support adding package references to
+help file builder projects for build components, plug-ins, presentation styles, and syntax generators
+interactively with a search dialog box.  The component packages are shown in a separate node in the
+project/solution explorer tool window.  This option can also be used to add the tools package and reflection data
+packages to the project for build server support.</p>
+</li>
+<li><p>Updated the Visual Studio package to install the MAML schemas rather than installing them
+separately through the guided installer.  This prevents them from being lost when Visual Studio is updated.</p>
+</li>
+<li><p>Added support for Visual Studio 2022.  Because Visual Studio 2022 is a 64-bit application the
+help file builder package for it is installed separately from the Visual Studio 2017/2019 version.  Although
+tested as much as possible, due to the large number of features in the project system, there may be issues.  If
+any are found, please open an issue on the project site so that they can be investigated.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2021.11.7.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

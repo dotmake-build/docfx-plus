@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>IBuildProcess Interface </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="IBuildProcess Interface ">
+      
+      <meta name="description" content="This defines the interface used to interact with a help file builder build process">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/new/main/apiSpec/new?filename=Sandcastle_Core_BuildEngine_IBuildProcess.md&amp;value=---%0Auid%3A%20Sandcastle.Core.BuildEngine.IBuildProcess%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandcastle.Core.BuildEngine.IBuildProcess">
+
+
+
+  <h1 id="Sandcastle_Core_BuildEngine_IBuildProcess" data-uid="Sandcastle.Core.BuildEngine.IBuildProcess" class="text-break">
+IBuildProcess Interface  <a class="header-action link-secondary" title="View source" href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/BuildEngine/IBuildProcess.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <h2 class="section" id="Sandcastle_Core_BuildEngine_IBuildProcess_definition">Definition</h2>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandcastle.Core.BuildEngine.html">Sandcastle.Core.BuildEngine</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandcastle.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary">
+  <p>This defines the interface used to interact with a help file builder build process</p>
+
+  </div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IBuildProcess</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+  <table class="table jumplist" aria-label="Properties
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.BuildAssemblerConfigurationFile.html#Sandcastle_Core_BuildEngine_IBuildProcess_BuildAssemblerConfigurationFile">BuildAssemblerConfigurationFile</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the name of the BuildAssembler configuration file</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.BuildAssemblerManifestFile.html#Sandcastle_Core_BuildEngine_IBuildProcess_BuildAssemblerManifestFile">BuildAssemblerManifestFile</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the name of the BuildAssembler topic manifest file</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.CancellationToken.html#Sandcastle_Core_BuildEngine_IBuildProcess_CancellationToken">CancellationToken</a>
+      </td>
+      <td>
+      <p>This is used to get or set the cancellation token for the build if running as a task</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.CommentsFiles.html#Sandcastle_Core_BuildEngine_IBuildProcess_CommentsFiles">CommentsFiles</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the XML comments files collection</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ConceptualContent.html#Sandcastle_Core_BuildEngine_IBuildProcess_ConceptualContent">ConceptualContent</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the conceptual content settings in effect for the build</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.CurrentBuildStep.html#Sandcastle_Core_BuildEngine_IBuildProcess_CurrentBuildStep">CurrentBuildStep</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the current build step</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.CurrentFormat.html#Sandcastle_Core_BuildEngine_IBuildProcess_CurrentFormat">CurrentFormat</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the current help file format being generated</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.CurrentProject.html#Sandcastle_Core_BuildEngine_IBuildProcess_CurrentProject">CurrentProject</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the current project being used for the build</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.DefaultTopicFile.html#Sandcastle_Core_BuildEngine_IBuildProcess_DefaultTopicFile">DefaultTopicFile</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the filename of the default topic as determined by the build
+engine.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.FrameworkReflectionDataFolder.html#Sandcastle_Core_BuildEngine_IBuildProcess_FrameworkReflectionDataFolder">FrameworkReflectionDataFolder</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the name of the folder that contains the reflection data for
+the selected framework platform and version (.NETFramework 4., .NETCore 4.5, Silverlight 5.0, etc.).</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.Help1CompilerFolder.html#Sandcastle_Core_BuildEngine_IBuildProcess_Help1CompilerFolder">Help1CompilerFolder</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the name of the HTML Help 1 compiler folder determined by the
+build process.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.Help1Files.html#Sandcastle_Core_BuildEngine_IBuildProcess_Help1Files">Help1Files</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get a list of the HTML Help 1 (CHM) files that were built</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.HelpFormatOutputFolders.html#Sandcastle_Core_BuildEngine_IBuildProcess_HelpFormatOutputFolders">HelpFormatOutputFolders</a>
+      </td>
+      <td>
+      <p>This read-only property returns a collection of the output folders specific to each help file format
+produced by the build.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.HelpViewerFiles.html#Sandcastle_Core_BuildEngine_IBuildProcess_HelpViewerFiles">HelpViewerFiles</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get a list of the MS Help Viewer (MSHC) files that were built</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.HtmlExtractHelp1Folder.html#Sandcastle_Core_BuildEngine_IBuildProcess_HtmlExtractHelp1Folder">HtmlExtractHelp1Folder</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the Help 1 folder for the title and keyword HTML extract tool
+during the <a class="xref" href="Sandcastle.Core.BuildEngine.BuildStep.html#Sandcastle_Core_BuildEngine_BuildStep_ExtractingHtmlInfo">ExtractingHtmlInfo</a>build step.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.HtmlExtractLocalizedFolder.html#Sandcastle_Core_BuildEngine_IBuildProcess_HtmlExtractLocalizedFolder">HtmlExtractLocalizedFolder</a>
+      </td>
+      <td>
+      <p>This property is used to get or set the localized folder for the title and keyword HTML extract tool
+during the <a class="xref" href="Sandcastle.Core.BuildEngine.BuildStep.html#Sandcastle_Core_BuildEngine_BuildStep_ExtractingHtmlInfo">ExtractingHtmlInfo</a>build step.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.InheritedDocsReflectionFiles.html#Sandcastle_Core_BuildEngine_IBuildProcess_InheritedDocsReflectionFiles">InheritedDocsReflectionFiles</a>
+      </td>
+      <td>
+      <p>This read-only property provides access to the generate inherited documentation tool's reflection
+data files during the <a class="xref" href="Sandcastle.Core.BuildEngine.BuildStep.html#Sandcastle_Core_BuildEngine_BuildStep_GenerateInheritedDocumentation">GenerateInheritedDocumentation</a>build step.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.Language.html#Sandcastle_Core_BuildEngine_IBuildProcess_Language">Language</a>
+      </td>
+      <td>
+      <p>This read-only property returns the language used for resource items, etc.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.LogFilename.html#Sandcastle_Core_BuildEngine_IBuildProcess_LogFilename">LogFilename</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the name of the log file used for saving the build progress
+messages.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.MarkdownFiles.html#Sandcastle_Core_BuildEngine_IBuildProcess_MarkdownFiles">MarkdownFiles</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get a list of the Markdown files that were built</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.OpenXmlFiles.html#Sandcastle_Core_BuildEngine_IBuildProcess_OpenXmlFiles">OpenXmlFiles</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get a list of the Open XML files that were built</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.OutputFolder.html#Sandcastle_Core_BuildEngine_IBuildProcess_OutputFolder">OutputFolder</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the output folder where the log file and help file can be
+found after the build process has finished.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.PresentationStyle.html#Sandcastle_Core_BuildEngine_IBuildProcess_PresentationStyle">PresentationStyle</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the presentation instance being used by the build process</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ProgressReportProvider.html#Sandcastle_Core_BuildEngine_IBuildProcess_ProgressReportProvider">ProgressReportProvider</a>
+      </td>
+      <td>
+      <p>This is used to get or set the progress report provider</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ProjectFilename.html#Sandcastle_Core_BuildEngine_IBuildProcess_ProjectFilename">ProjectFilename</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the project filename without the folder</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ProjectFolder.html#Sandcastle_Core_BuildEngine_IBuildProcess_ProjectFolder">ProjectFolder</a>
+      </td>
+      <td>
+      <p>This read-only property returns the project folder name</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ReferencedNamespaces.html#Sandcastle_Core_BuildEngine_IBuildProcess_ReferencedNamespaces">ReferencedNamespaces</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get a hash set used to contain a list of namespaces referenced by
+the project reflection data files, project XML comments files, and base framework XML comments files.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ReflectionInfoFilename.html#Sandcastle_Core_BuildEngine_IBuildProcess_ReflectionInfoFilename">ReflectionInfoFilename</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the name of the reflection information file</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ResolvedHelpTitle.html#Sandcastle_Core_BuildEngine_IBuildProcess_ResolvedHelpTitle">ResolvedHelpTitle</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the <a class="xref" href="Sandcastle.Core.Project.ISandcastleProject.HelpTitle.html#Sandcastle_Core_Project_ISandcastleProject_HelpTitle">HelpTitle</a>project property
+value with all substitution tags it contains, if any, resolved to actual values.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.SubstitutionTags.html#Sandcastle_Core_BuildEngine_IBuildProcess_SubstitutionTags">SubstitutionTags</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the substitution tag handler</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.SuppressApiFilter.html#Sandcastle_Core_BuildEngine_IBuildProcess_SuppressApiFilter">SuppressApiFilter</a>
+      </td>
+      <td>
+      <p>This controls whether or not the API filter is suppressed</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.WebsiteFiles.html#Sandcastle_Core_BuildEngine_IBuildProcess_WebsiteFiles">WebsiteFiles</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get a list of the website files that were built</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.WorkingFolder.html#Sandcastle_Core_BuildEngine_IBuildProcess_WorkingFolder">WorkingFolder</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the name of the working files folder</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="methods">Methods
+</h2>
+  <table class="table jumplist" aria-label="Methods
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.Build.html#Sandcastle_Core_BuildEngine_IBuildProcess_Build">Build()</a>
+      </td>
+      <td>
+      <p>Call this method to perform the build on the project.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ExecuteAfterStepPlugIns.html#Sandcastle_Core_BuildEngine_IBuildProcess_ExecuteAfterStepPlugIns">ExecuteAfterStepPlugIns()</a>
+      </td>
+      <td>
+      <p>This can be used by plug-ins using the <a class="xref" href="Sandcastle.Core.PlugIn.ExecutionBehaviors.html#Sandcastle_Core_PlugIn_ExecutionBehaviors_InsteadOf">InsteadOf</a>execution behavior
+to execute plug-ins that want to run after the plug-in has executed its main processing.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ExecuteBeforeStepPlugIns.html#Sandcastle_Core_BuildEngine_IBuildProcess_ExecuteBeforeStepPlugIns">ExecuteBeforeStepPlugIns()</a>
+      </td>
+      <td>
+      <p>This can be used by plug-ins using the <a class="xref" href="Sandcastle.Core.PlugIn.ExecutionBehaviors.html#Sandcastle_Core_PlugIn_ExecutionBehaviors_InsteadOf">InsteadOf</a>execution behavior
+to execute plug-ins that want to run before the plug-in executes its main processing.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.Load.html#Sandcastle_Core_BuildEngine_IBuildProcess_Load_System_String_System_Boolean_System_Boolean_">Load(string, bool, bool)</a>
+      </td>
+      <td>
+      <p>Load a help file builder project from the given filename unrelated to the current build process</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ReportError.html#Sandcastle_Core_BuildEngine_IBuildProcess_ReportError_Sandcastle_Core_BuildEngine_BuildStep_System_String_System_String_System_Object___">ReportError(BuildStep, string, string, params object[])</a>
+      </td>
+      <td>
+      <p>This is used to report an error that will abort the build</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ReportProgress.html#Sandcastle_Core_BuildEngine_IBuildProcess_ReportProgress_System_String_System_Object___">ReportProgress(string, params object[])</a>
+      </td>
+      <td>
+      <p>This is used to report progress during the build process within the current step</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.ReportWarning.html#Sandcastle_Core_BuildEngine_IBuildProcess_ReportWarning_System_String_System_String_System_Object___">ReportWarning(string, string, params object[])</a>
+      </td>
+      <td>
+      <p>This is used to report a warning that may need attention</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.Run.html#Sandcastle_Core_BuildEngine_IBuildProcess_Run_System_String_System_String_System_String_">Run(string, string, string)</a>
+      </td>
+      <td>
+      <p>Run the specified process with the given arguments</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.Run32BitProject.html#Sandcastle_Core_BuildEngine_IBuildProcess_Run32BitProject_System_String_System_Boolean_">Run32BitProject(string, bool)</a>
+      </td>
+      <td>
+      <p>Run the specified MSBuild project using the 32-bit version of MSBuild</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.BuildEngine.IBuildProcess.RunProject.html#Sandcastle_Core_BuildEngine_IBuildProcess_RunProject_System_String_System_Boolean_">RunProject(string, bool)</a>
+      </td>
+      <td>
+      <p>Run the specified MSBuild project using MSBuild.exe or dotnet.exe</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/BuildEngine/IBuildProcess.cs/#L38" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

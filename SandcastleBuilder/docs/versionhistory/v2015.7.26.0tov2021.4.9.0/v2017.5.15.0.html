@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 2017.5.15.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 2017.5.15.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2015.7.26.0tov2021.4.9.0/v2017.5.15.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-20175150">Version 2017.5.15.0</h1>
+
+<h2 id="ImportantNotes"> Important Notes and Potential Breaking Changes</h2>
+<ul>
+<li><p>The help file builder Visual Studio package, standalone GUI, and all of the Sandcastle tools
+that run as MSBuild tasks have been updated to use the MSBuild 14.0 references.  This was necessary to enable
+support for Universal Windows and the new .NETStandard format projects.  If you are using the standalone GUI
+you may need to install the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48159">Microsoft Build Tools 2015</a>.</p>
+<p>Any build components, plug-ins, etc. that reference the MSBuild assemblies may need to be
+updated to use the MSBuild 14.0 reference assemblies and then rebuilt.</p>
+</li>
+<li><p>Unfortunately, since I needed to upgrade to MSBuild 14.0 support, I had to drop support for the
+Visual Studio 2013 package as it does not work correctly with MSBuild 14.0.  If you still need Visual Studio 2013
+support, you will need to use the prior release.  The standalone GUI from the current release may also be used.</p>
+</li>
+<li><p>A new cross-platform reflection data set file (<em>CrossPlatform.reflection</em>)
+was added.  This is the preferred framework version setting to use for all .NETCore and .NETStandard assemblies
+and projects that you want to document.  In addition, using this framework version will allow you to use any
+combination of .NETCore, .NETStandard, and .NETFramework Visual Studio projects or assemblies as documentation
+sources.</p>
+</li>
+</ul>
+<h2 id="Documentation"> Documentation</h2>
+<ul>
+<li><p>Added a <code>lineBreak</code> element topic to the MAML Guide.</p>
+</li>
+<li><p>Revised the topic on how to install the MAML schemas in the MAML guide so that it shows how to
+use the help file builder copies of the files so that they do not need to be copied into the Visual Studio
+schema cache.</p>
+</li>
+</ul>
+<h2 id="SandcastleTools"> Sandcastle Tools</h2>
+<ul>
+<li><p>Fixed an exception in BuildAssembler caused by an ill-formed <code>cref</code>
+attribute value.</p>
+</li>
+<li><p>Fixed MRefBuilder so that it does not match a nested type to an incorrect file as its source
+code location under certain circumstances.</p>
+</li>
+<li><p>Updated MRefBuilder to output value tuple element names to support value tuple syntax in the
+syntax generators.</p>
+</li>
+<li><p>Added support for value tuple syntax in the C# and VB syntax generators.</p>
+</li>
+<li><p>Updated the Resolve Reference Links Component to try and resolve missing overload IDs to an
+equivalent non-overload method ID if the overload ID is not found.</p>
+</li>
+<li><p>Updated the Code Block Component so that it removes the trailing <code>REM</code>
+on regions imported from batch scripts.</p>
+</li>
+<li><p>Thanks to Robert van der Hulst for providing the syntax generator to support the X# language
+syntax (<a href="https://www.xsharp.info"></a>)</p>
+</li>
+</ul>
+<h2 id="SHFB"> Sandcastle Help File Builder</h2>
+<ul>
+<li><p>Fixed project file handling so that it can locate assemblies and XML comments files in
+.NETCore/.NETStandard projects that use the <code>TargetFrameworks</code> property.</p>
+</li>
+<li><p>Fixed the Version Builder plug-in so that it handles version numbers with trailing text
+correctly when sorting the versions.</p>
+</li>
+<li><p>Fixed the IIS Express check when starting the web server to view web output.</p>
+</li>
+<li><p>Made various updates to the build engine to handle .NETCore/.NETStandard projects and the
+cross-platform reflection data set.</p>
+</li>
+<li><p>Modified the build engine so that it compares the full strong name when determining whether or
+not to exclude reference assemblies that are in the selected reflection data set.  This allows for like-named
+assemblies with a different version to be included as references when generating reflection information (i.e.
+NuGet versions of the .NETCore and .NETStandard framework assemblies).</p>
+</li>
+<li><p>Added support for resolving package references (the <code>PackageReference</code>
+element) in .NET Core and .NET Standard project files.  All assemblies from the package and any dependent
+packages are automatically added as reference assemblies when generating reflection information.</p>
+</li>
+<li><p>XML comments files for reference assemblies with hint paths are now added to the comments file
+list.  This allows for comments from base class members to be included from package references.</p>
+</li>
+<li><p>Removed the exception thrown in the help file builder project if an attempt is made to set a
+read-only or ignored property.  Instead, it just ignores the attempt.  Such things can happen on rare occasions
+and it is better to ignore it than abort loading the project.</p>
+</li>
+<li><p>Added an overload topic ID fix-up as a common fix-up expression in the Member ID Fix-Ups plug-in.</p>
+</li>
+<li><p>Added a default extension type entry when adding new files to the project in the standalone GUI.</p>
+</li>
+</ul>
+<h2 id="PresentationStyles"> Presentation Styles</h2>
+<ul>
+<li><p>Fixed the XSL transformations in the Open XML and Markdown presentation styles to prevent
+insertion of extraneous spaces when normalizing text.</p>
+</li>
+<li><p>Fixed the script in the VS2010 and VS2013 presentation styles so that it only inserts a
+trailing space after language-specific text elements when really needed.</p>
+</li>
+<li><p>Fixed the markdown content build task so that it handles duplicate in-page link target
+addresses and issues a warning if any are found.</p>
+</li>
+<li><p>Updated the code colorizer to support colorizing batch file script.  Use <code>bat</code>
+or <code>batch</code> as the language ID.</p>
+</li>
+<li><p>Moved the three &quot;Notes to&quot; title items from the reference content files to the shared content
+files in all presentation styles so that they can be used in MAML topics as expected.</p>
+</li>
+<li><p>Added support for the <code>lineBreak</code> MAML element which inserts a line
+break within a body of text without creating a new paragraph.</p>
+</li>
+<li><p>Added <em>GeneralError.htm</em> and <em>PageNotFound.htm</em> to the
+VS2010 and VS2013 presentation styles and updated their <em>Web.config</em> files to use them for
+general errors and 404 errors respectively in website output.</p>
+</li>
+<li><p>Thanks to Holger Boskugel for providing updated German resource item files.  In addition, he
+provided updates to the MAML schema files so that they include all known elements used by the help file builder
+and can be referenced directly from the help file builder installation location so that they remain current with
+each new release without having to reinstall them in the Visual Studio schema cache.</p>
+</li>
+<li><p>Thanks to Cyber-EX for providing a fix to the VS2013 presentation style search script so that
+it works correctly with non-Latin language keywords.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="../versionhistory.html">Version History</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v2015.7.26.0tov2021.4.9.0/v2017.5.15.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

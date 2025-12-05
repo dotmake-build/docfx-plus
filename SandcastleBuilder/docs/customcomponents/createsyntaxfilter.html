@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Creating a Syntax Filter Generator Component </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Creating a Syntax Filter Generator Component ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/customcomponents/createsyntaxfilter.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="creating-a-syntax-filter-generator-component">Creating a Syntax Filter Generator Component</h1>
+
+<p>Syntax generators are used to add language and usage syntax sections to each API topic for a
+programming language.  They are executed in <strong>BuildAssembler</strong> as part of the <code>SyntaxComponent</code>.  Several language and usage syntax generators are supplied with
+Sandcastle by default.  This topic will walk you through the creation of a syntax generator project used to add a
+new language or usage syntax section.</p>
+<h2 id="DefineConfig"> Defining the Syntax Generator Configuration</h2>
+<p>The first step is to determine what items will appear in the syntax generator configuration.  The
+configuration is stored as an XML fragment in the help file builder project file.  The root node is always <code>generator</code>.  Define your own elements to contain the syntax generator configuration that
+will be nested within the root element.  It is possible that a syntax generator will have no configurable
+elements.  In that case, there is nothing to add to the default configuration.  Below is an example of a
+configuration that is passed to a syntax generator.</p>
+<pre><code class="lang-xml">&lt;generator id=&quot;VisualBasic&quot;&gt;
+    &lt;includeLineContinuation value=&quot;false&quot; /&gt;
+&lt;/generator&gt;
+</code></pre>
+<h2 id="CreateProject"> Creating the Project</h2>
+<p>This section describes how to create and configure the syntax generator project.  It will describe
+the process for a C# project but the steps should be fairly similar for a VB.NET project with a few differences
+in the configuration option titles.</p>
+<h3 id="create-the-syntax-generator-project">Create the Syntax Generator Project</h3>
+<ol>
+<li><p>In Visual Studio, select the <strong>New Project</strong> option.  In the <strong>New Project</strong>
+dialog box, select the C# or VB.NET language, and then select the <strong>Documentation</strong> subcategory.  Select
+the <strong>BuildAssembler Syntax Generator</strong> template, give it a name and click <strong>OK</strong> to create it.
+Once it has been created, right click on the project and select <strong>Properties</strong>.</p>
+</li>
+<li><p>In the <strong>Application</strong> tab, set the assembly name and default namespace as you see
+fit.</p>
+</li>
+<li><p>In the <strong>Package</strong> tab, set the NuGet package properties.</p>
+</li>
+<li><p>By default, the Debug project properties are set to use the standalone GUI for debugging
+which will help you see if the component can be located, that the configuration form is working if you
+created one for the component, and that it is working within the build as expected.  See the <a href="debuggingcomponents.html">Debugging Components and Plug-Ins</a> for some special requirements when debugging
+components and plug-ins.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Using the standalone GUI as the host is easier than using Visual Studio as the package
+locks the assemblies once the help file builder project has loaded them for use and you will not be able to
+rebuild them.  Shutting down the standalone GUI frees the assemblies so that you can rebuild them and start a
+new debugging session.</p>
+<p>In the help file builder project that you use to test your build component, set the
+project's <code>Component Path</code> property to the folder containing your build component's
+assembly.  If you have opened the project's <strong>Components</strong> property page before setting the component path,
+you may need to close and reopen the project in order for it to discover your build component assembly.</p>
+</div>
+</li>
+<li><p>Optionally, select the <strong>Signing</strong> tab and check the &quot;Sign the assembly&quot; checkbox.
+Select &quot;&lt;New...&gt;&quot; from the &quot;Choose a strong name key file&quot; dropdown, enter a filename, and click OK to
+create the key file.  You can protect the key file with a password if you like or uncheck the option to create
+one without a password.</p>
+</li>
+</ol>
+<p>You are now ready to edit the syntax generator class itself.  See the comments in the template
+class for information on how to get started.  Some general information is given below.  Note that multiple build
+components can reside within the same assembly.  Add new class files to the project and implement the necessary
+methods as described below and as shown in the template class.</p>
+<p>The syntax generator can be derived from either <code>Sandcastle.Core.BuildAssembler.SyntaxGenerator.SyntaxGeneratorCore</code> which is a simpler
+base class suitable for usage syntax generators or from <code>Sandcastle.Core.BuildAssembler.SyntaxGenerator.SyntaxGeneratorTemplate</code> which is more
+suited for language syntax as it contains more methods related to language-specific elements.  A nested Managed
+Extensibility Framework (MEF) factory class that describes the component, creates instances, and allows
+interaction with the design tools and build engine must also be implemented.  These are described below.  Review
+the code for &quot; <code>TODO:</code> &quot; comments to find sections that need attention such as setting the
+syntax generator's ID, language name, the default configuration, etc.  If you followed the steps in the <strong>Creating the Project</strong> section, you can run the project and debug it by setting
+breakpoints in the syntax generator's code.  As noted above, set the test project's <code>Component Path</code>
+property to the folder containing the syntax generator assembly first.  If necessary, close and reopen the test
+project so that it can discover the syntax generator.</p>
+<h2 id="Metadata"> The Export Attribute Metadata</h2>
+<p>The nested factory class is a MEF component.  The <code>SyntaxGeneratorExportAttribute</code>
+is used to define the necessary metadata that enables the help file builder to load and use the component.</p>
+<h3 id="MetadataId"> Id</h3>
+<p>The <code>Id</code> parameter is required and is used to uniquely identify the
+syntax generator.  Typically, the ID is the language name.</p>
+<h3 id="MetadataLangName"> Language Element Name</h3>
+<p>The <code>Language Element Name</code> parameter is required and is used to
+uniquely identify the syntax language element generated in each topic by the component.  This value should be
+valid as an XML element name.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you change the language name, rename the matching language resource item file in the *SyntaxContent* folder to the same name and update the IDs of the content items in it with
+the new name.  This is required to ensure that the file and its content items are matched correctly to the
+syntax sections in the generated topics.</p>
+</div>
+<h3 id="MetadataKeywordStyle"> Keyword Style Parameter</h3>
+<p>The <code>Keyword Style Parameter</code> parameter is required and is used to get
+the keyword style parameter value used by the client side script in the topics for language specific
+keyword/separator text.  This will typically be one of the following: <code>cs</code> (C# or
+equivalent), <code>vb</code> (VB.NET or equivalent), <code>cpp</code> (C++ or
+equivalent), <code>fs</code> (F# or equivalent).  The value <code>cs</code> is typically
+used as a default.</p>
+<h3 id="MetadataVersion"> Version</h3>
+<p>The <code>Version</code> property is optional and allows you to define the build
+component version displayed in the help file builder property page when the syntax generator is selected.</p>
+<h3 id="MetadataCopyright"> Copyright</h3>
+<p>The <code>Copyright</code> property is optional and allows you to define the syntax
+generator copyright displayed in the help file builder property page when the syntax generator is selected.</p>
+<h3 id="MetadataDescription"> Description</h3>
+<p>The <code>Description</code> property is optional and allows you to define the
+syntax generator description displayed in the help file builder property page when the syntax generator is
+selected.</p>
+<h3 id="MetadataSortOrder"> SortOrder</h3>
+<p>The <code>SortOrder</code> property is optional and allows you to define the
+sort order of the presentation style when used in conjunction with other syntax generators.  The syntax build
+component will use this sort order to define the order in which the syntax sections are emitted to the topic.</p>
+<h3 id="MetadataAlternateIds"> AlternateIds</h3>
+<p>The <code>AlternateIds</code> property is optional and allows you to define a
+comma-separated list of other language names that can be mapped to this generator.</p>
+<h3 id="MetadataIsConfigurable"> IsConfigurable</h3>
+<p>The <code>IsConfigurable</code> property is optional and allows you to define
+whether or not the syntax generator supports interactive editing of its configuration.  If false, the default,
+the syntax generator will not be configurable.  If true, the <code>SyntaxComponent</code> 's
+configuration editor will allow modifications to the syntax generator configuration.  The <code>SyntaxComponent</code> must be added to the help file builder project in order to edit the
+configuration settings.</p>
+<h3 id="DefaultConfig"> DefaultConfiguration</h3>
+<p>The <code>DefaultConfiguration</code> property is optional and is used to specify
+the default configuration for a custom syntax generator.  This information is used when the component is selected
+for use and the <code>SyntaxComponent</code> does not contain an alternate configuration for it.  You
+can use the various replacement tags as attribute values.  These will be replaced at build time with the
+appropriate project values.  The default if not overridden is an empty string.</p>
+<h2 id="FactoryClass"> The Factory Class</h2>
+<p>The factory class for a syntax generator is quite simple.  It is derived from <code>Sandcastle.Core.BuildAssembler.SyntaxGenerator.ISyntaxGeneratorFactory</code> and contains the
+following abstract members that must be implemented:</p>
+<ul>
+<li><p><code>ResourceItemFileLocation</code> - This property is used to return the
+location of the language's resource item file.  This file contains the localized string resources used for
+labels, messages, etc. and allows syntax generators to be developed and deployed without having to make changes
+to the presentation styles.  By default, the project contains a *SyntaxContent* folder with a
+single XML file named after the language.  These are the default resources if no language-specific resources
+are defined.  To create language-specific versions of the resource files (i.e. French, German, Chinese), create
+sub-folders named after the language ID (i.e. fr-FR, de-DE, ch-CN) and place a copy of the file in each language
+sub-folder containing the translated resource items.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you change the language name, rename the matching language resource item file in the *SyntaxContent* folder to the same name and update the IDs of the content items in it with
+the new name.  This is required to ensure that the file and its content items are matched correctly to the
+syntax sections in the generated topics.</p>
+</div>
+</li>
+<li><p><code>Create</code> - This is used to create an instance of the syntax generator
+and return it.</p>
+</li>
+</ul>
+<h2 id="Template"> The Syntax Generator Template Class</h2>
+<p>Syntax generators are more complex than a standard build component and contain several abstract
+methods that must be overridden.  They also rely heavily on the reflection information present in each document
+to produce the correct syntax.  It is recommended that you take a look at the existing syntax components to see
+how they are implemented.  If one represents a language close to the one you are implementing, you can use it as
+a starting point.  More information on creating syntax generators will be added at a later date.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="creatingcustomcomponents.html">Creating Custom Components</a></li>
+<li><a href="../compconfig/compconfig.html">BuildAssembler Components</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/customcomponents/createsyntaxfilter.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

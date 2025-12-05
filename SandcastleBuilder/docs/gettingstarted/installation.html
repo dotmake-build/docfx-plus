@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Installation Instructions </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Installation Instructions ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/installation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="installation-instructions">Installation Instructions</h1>
+
+<p>This topic describes the additional tools that are required to use the Sandcastle Help File Builder
+along with some general configuration information.</p>
+<h2 id="GuidedInstall"> Guided Installation</h2>
+<p>Due to the number of products that need to be installed to get a working build environment, a
+guided installation package has been created to simplify the process.  The guided installer contains most of the
+necessary parts and various optional components.  For those parts that cannot be distributed such as the help
+compilers, it contains instructions on where to get them and how to install them if you need them.</p>
+<p><a href="https://GitHub.com/EWSoftware/SHFB/releases">Download the latest Sandcastle Help File Builder Guided Installer</a></p>
+<p>When using the guided installation, you can skip the <strong>Requirements</strong> section below as it
+takes care of all of the required steps.  See the <strong>Recommended Additions</strong> sections for additional tools
+not included in the guided installation that you may find useful.</p>
+<p>The help file builder tools and the Visual Studio package can be installed manually by running the
+MSI and VSIX installers found in the <em>.\InstallResources</em> folder extracted from the guided
+installer download.  If installing the tools manually, the optional components such as the snippets will not be
+installed.  You will also need to ensure the requirements noted below are also present if needed.</p>
+<h2 id="Requirements"> Requirements</h2>
+<p>The latest version of the Sandcastle Help File Builder and Tools can always be found at theSHFBproject site (SandcastleVersionwhen this help file was produced).</p>
+<ul>
+<li><p><a href="https://www.microsoft.com/net">.NET Framework 4.7.2</a> or later is required to run the desktop tools and build projects with MSBuild.</p>
+</li>
+<li><p><a href="https://www.microsoft.com/net">.NET Core 3.1</a> or later is required to build projects with <em>dotnet.exe</em>.</p>
+</li>
+<li><p>If you are using the standalone GUI to build help file projects, you will need to install the <a href="https://visualstudio.microsoft.com/downloads/">Microsoft Build Tools for Visual Studio 2022</a>.  If you are using VisualStudioMinVersionor later to build help file projects,
+there is no need to install the build tools separately.  The version of MSBuild deployed with Visual Studio will
+work as expected from the command line or within Visual Studio.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The underlying Sandcastle tools were originally created by Microsoft.  The help file builder uses
+them to produce the help file topics.  Microsoft officially discontinued development in October 2012.  The
+Sandcastle tools have been merged with the SHFBproject and are developed and supported there
+now as part of that project.</p>
+</div>
+<p>In order to use the help file builder, the following additional tools are required based on the
+types of help files that you want to produce.  Each must be installed prior to building a help file of that
+particular type:</p>
+<ul>
+<li><p>The <a href="https://docs.microsoft.com/previous-versions/windows/desktop/htmlhelp/microsoft-html-help-downloads">HTML Help Workshop</a> for building HTML Help 1 (.chm) help files.  The Microsoft download link appears to have been
+discontinued.  If you need a copy to install, it can be downloaded from the <a href="https://github.com/EWSoftware/SHFB/raw/master/ThirdPartyTools/htmlhelp.exe" title="HTML Help Workshop download">Sandcastle Help File Builder project website</a></p>
+</li>
+<li><p>The Microsoft Help Library Viewer for installing and viewing Microsoft Help Viewer (.mshc) help
+files.  These are installed as part of Visual Studio.</p>
+</li>
+</ul>
+<p>The additional tools can be installed in any order.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may need to reboot the system in order for any environment variable changes to take effect.</p>
+</div>
+<h2 id="Recommended"> Recommended Additions</h2>
+<p>The following tools are optional but you may find them useful:</p>
+<ul>
+<li><p>If you need a spell checker for Visual Studio, the <strong>Visual Studio Spell Checker</strong>
+extension can be downloaded and installed from the Visual Studio Gallery.  It is an editor extension that checks
+the spelling of comments, strings, and plain text as you type or interactively with a tool window.  Support is
+included for spell checking source code, XML files, and MAML topic files.  Versions are available for <a href="https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellChecker" title="Visual Studio Spell Checker (VS2013/2015)">Visual Studio 2013 and 2015</a>, <a href="https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater" title="Visual Studio Spell Checker (VS2017/2019)">Visual Studio 2017 and 2019</a> and <a href="https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2022andLater" title="Visual Studio Spell Checker (VS2022+)">Visual Studio 2022 and Later</a>.</p>
+</li>
+<li><p>For extended XML comments completion support in Visual Studio 2019 and later, install the <strong>Extended XML Documentation Comments Completion Provider</strong> extension which can be
+downloaded and installed from the Visual Studio Gallery.  Versions are available for <a href="https://marketplace.visualstudio.com/items?itemName=EWoodruff.ExtendedDocCommentsProvider" title="Extended XML Documentation Comments Completion Provider (VS2019)">Visual Studio 2019</a> and <a href="https://marketplace.visualstudio.com/items?itemName=EWoodruff.ExtendedDocCommentsProvider2022" title="Extended XML Documentation Comments Completion Provider (VS2022+)">Visual Studio 2022 and later</a>.</p>
+</li>
+<li><p>For a Visual Studio add-in used to create XML comments automatically, check out SubMain's <a href="https://submain.com/products/ghostdoc.aspx">GhostDoc</a>.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="gettingstarted.html">Getting Started</a></li>
+<li><a href="../links.html">Links to Resources</a></li>
+<li><a href="overview.html">Sandcastle Help File Builder Overview</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/gettingstarted/installation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

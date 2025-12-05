@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 1.2.0.0 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 1.2.0.0 ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.0to1.7/v1.2.0.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../.././">
+            <img id="logo" class="svg" src="../../../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-1200">Version 1.2.0.0</h1>
+
+<p>Version 1.2.0.0 was released on September 6th, 2006.</p>
+<h2 id="changes-in-this-release">Changes in This Release</h2>
+<ul>
+<li><p>A new <strong>Prj Summary</strong> button appears on the main form in the
+Assemblies to Document section.  It opens a form in which you can enter
+summary comments that should appear in the root namespaces page of the
+compiled help file.</p>
+</li>
+<li><p>A new <strong>Namespaces</strong> button appears on the main form that allows
+you to specify which assemblies should appear in the help file and the
+namespace summaries to display in the root namespaces page and on the help
+page for each namespace.  By default, all namespaces in all assemblies are
+documented with the exception of the global (unnamed) namespace that
+sometimes appears and contains private module details.</p>
+</li>
+<li><p>The <strong>Add</strong> button used to add an assembly to document now opens a
+file selection dialog in which you can select one or more assemblies,
+executables, or comments files to document.  It will assume that the matching
+file (assembly or comments file) has the same name as the selected file.  If a
+match is not found, the missing file's name is set to <strong>Unknown</strong> and the <strong>Edit</strong> option can be used to fix it.</p>
+</li>
+<li><p>The dependencies editor now allows the selection of a GAC item.
+This allows you to specify a dependency that only resides in the GAC and
+has no copy that resides elsewhere.  At build-time, the GAC is queried and
+the necessary assembly is copied to the working folder for use by
+MRefBuilder.</p>
+</li>
+<li><p>Added the <code>ContentPlacement</code> property that allows you to
+specify whether the additional content goes in ahead of the namespaces or
+after the namespaces in the table of contents.</p>
+</li>
+<li><p>Added the <code>IsDefaultPage</code> property to the <code>ContentItem</code> class that allows you to indicate whether or not
+the content item is the default page.  If no item is marked as the default
+page, the root namespaces page is used as the default page.</p>
+</li>
+<li><p>Fixed a bug that caused the <code>RootNamespaceContainer</code>
+property to be ignored if there was no additional content defined.</p>
+</li>
+<li><p>Fixed up issues in various properties related to ampersands causing
+exceptions because they cannot be interpreted by the .NET XML parser.  The
+values are now HTML or URL encoded as needed.</p>
+</li>
+<li><p>The value of the <code>CopyrightText</code> property is now treated
+as plain text.  It will be HTML encoded where necessary to resolve issues
+related to the ampersand and the .NET XML parser.  In addition, you can
+encode special characters such as the copyright symbol using an escaped hex
+value (i.e. © = \xA9).</p>
+</li>
+<li><p>Reworked the &quot;run process&quot; code so that it now reports progress as
+the tools are running rather than at the end after the tool completes.
+This gives more immediate feedback especially during long running builds so
+that you can see that it is still alive.  It also captures the standard
+error stream output so that if a tool throws an exception, that information
+is now captured in the log file as well.  Where appropriate, the name of
+the script being executed is also logged.</p>
+</li>
+<li><p>Increased the font size in the log viewer dialog box to 10pt so
+that it is easier to read.</p>
+</li>
+<li><p>Path-related properties are now grouped in a new <strong>Paths</strong>
+category in the property grid on the main form.</p>
+</li>
+<li><p>Visual Studio 2003 projects are now loaded using the default encoding
+rather than UTF-8 encoding to handle foreign language characters in the
+project properties.</p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="v1.0to1.7.html">Versions 1.0.0.0 through 1.7.0.0</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleBuilder/docfx/docs/versionhistory/v1.0to1.7/v1.2.0.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

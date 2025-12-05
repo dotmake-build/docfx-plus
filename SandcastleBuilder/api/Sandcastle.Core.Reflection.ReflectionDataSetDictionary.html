@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ReflectionDataSetDictionary Class </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ReflectionDataSetDictionary Class ">
+      
+      <meta name="description" content="This dictionary contains reflection data settings for the various .NET Framework platforms and versions">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/new/main/apiSpec/new?filename=Sandcastle_Core_Reflection_ReflectionDataSetDictionary.md&amp;value=---%0Auid%3A%20Sandcastle.Core.Reflection.ReflectionDataSetDictionary%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle Help File Builder Documentation">
+            Sandcastle Help File Builder Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandcastle.Core.Reflection.ReflectionDataSetDictionary">
+
+
+
+  <h1 id="Sandcastle_Core_Reflection_ReflectionDataSetDictionary" data-uid="Sandcastle.Core.Reflection.ReflectionDataSetDictionary" class="text-break">
+ReflectionDataSetDictionary Class  <a class="header-action link-secondary" title="View source" href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/Reflection/ReflectionDataSetDictionary.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <h2 class="section" id="Sandcastle_Core_Reflection_ReflectionDataSetDictionary_definition">Definition</h2>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandcastle.Core.Reflection.html">Sandcastle.Core.Reflection</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandcastle.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary">
+  <p>This dictionary contains reflection data settings for the various .NET Framework platforms and versions</p>
+
+  </div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ReflectionDataSetDictionary : Dictionary&lt;string, ReflectionDataSet&gt;, IDictionary&lt;string, ReflectionDataSet&gt;, ICollection&lt;KeyValuePair&lt;string, ReflectionDataSet&gt;&gt;, IReadOnlyDictionary&lt;string, ReflectionDataSet&gt;, IReadOnlyCollection&lt;KeyValuePair&lt;string, ReflectionDataSet&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;string, ReflectionDataSet&gt;&gt;, IDictionary, ICollection, IEnumerable, IDeserializationCallback, ISerializable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSet.html">ReflectionDataSet</a>&gt;</div>
+      <div><span class="xref">ReflectionDataSetDictionary</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSet.html">ReflectionDataSet</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSet.html">ReflectionDataSet</a>&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSet.html">ReflectionDataSet</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSet.html">ReflectionDataSet</a>&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSet.html">ReflectionDataSet</a>&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.idictionary">IDictionary</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.ideserializationcallback">IDeserializationCallback</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a></div>
+    </dd>
+  </dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+  <table class="table jumplist" aria-label="Constructors
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSetDictionary.-ctor.html#Sandcastle_Core_Reflection_ReflectionDataSetDictionary__ctor_System_Collections_Generic_IEnumerable_System_String__">ReflectionDataSetDictionary(IEnumerable&lt;string&gt;)</a>
+      </td>
+      <td>
+      <p>Constructor</p>
+
+      
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="properties">Properties
+</h2>
+  <table class="table jumplist" aria-label="Properties
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.comparer">Comparer</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.count">Count</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSetDictionary.DefaultFrameworkTitle.html#Sandcastle_Core_Reflection_ReflectionDataSetDictionary_DefaultFrameworkTitle">DefaultFrameworkTitle</a>
+      </td>
+      <td>
+      <p>This read-only property is used to get the title of the default framework version to use</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.keys">Keys</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.item">this[TKey]</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.values">Values</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h2 class="section" id="methods">Methods
+</h2>
+  <table class="table jumplist" aria-label="Methods
+">
+  <tbody>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.add">Add(TKey, TValue)</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSetDictionary.BestMatchFor.html#Sandcastle_Core_Reflection_ReflectionDataSetDictionary_BestMatchFor_System_Collections_Generic_IEnumerable_System_ValueTuple_System_String_System_String___">BestMatchFor(IEnumerable&lt;(string PlatformType, string Version)&gt;)</a>
+      </td>
+      <td>
+      <p>This is used to find the best match for the given set of framework identifiers</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.clear">Clear()</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.containskey">ContainsKey(TKey)</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.containsvalue">ContainsValue(TValue)</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSetDictionary.CoreFrameworkByTitle.html#Sandcastle_Core_Reflection_ReflectionDataSetDictionary_CoreFrameworkByTitle_System_String_System_Boolean_">CoreFrameworkByTitle(string, bool)</a>
+      </td>
+      <td>
+      <p>This is used to find the first core framework matching the specified title or the next highest
+version if found but not installed if redirection is requested.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSetDictionary.CoreFrameworkMatching.html#Sandcastle_Core_Reflection_ReflectionDataSetDictionary_CoreFrameworkMatching_System_String_System_Version_System_Boolean_">CoreFrameworkMatching(string, Version, bool)</a>
+      </td>
+      <td>
+      <p>This is used to find the first core framework matching the specified platform and version or the next
+highest version if not found and redirection is requested.</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="Sandcastle.Core.Reflection.ReflectionDataSetDictionary.CoreFrameworkMostRecent.html#Sandcastle_Core_Reflection_ReflectionDataSetDictionary_CoreFrameworkMostRecent_System_String_">CoreFrameworkMostRecent(string)</a>
+      </td>
+      <td>
+      <p>This is used to find the most recent core framework matching the specified platform</p>
+
+      
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.getenumerator">GetEnumerator()</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.getobjectdata">GetObjectData(SerializationInfo, StreamingContext)</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.ondeserialization">OnDeserialization(object)</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.remove">Remove(TKey)</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trygetvalue">TryGetValue(TKey, out TValue)</a>
+      </td>
+      <td>
+      
+      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;string, ReflectionDataSet&gt;</a>)
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/SHFB/Source/SandcastleCore/Reflection/ReflectionDataSetDictionary.cs/#L34" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Copyright \xA9 2006-2025, Eric Woodruff, All rights reserved
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
