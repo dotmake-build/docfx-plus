@@ -43,7 +43,6 @@ jobs:
       with:
         folder: docs/_site # The folder the action should deploy.
         target-folder: .
-        force: false
         clean-exclude: |
           AntPlus/
           SandcastleBuilder/
