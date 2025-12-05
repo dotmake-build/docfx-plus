@@ -463,3 +463,15 @@ DotMake.DocfxPlus.Cli-net8.0
 docfx-plus.1.0.0.nupkg
 ```
 
+## Sample Outputs
+
+### These documentation projects are converted from SHFB to Docfx-Plus:
+- [Sandcastle Help File Builder Documentation](https://dotmake.build/docfx-plus/SandcastleBuilder/)
+- [Sandcastle MAML Guide](https://dotmake.build/docfx-plus/SandcastleMAMLGuide/)
+- [Sandcastle XML Comments Guide](https://dotmake.build/docfx-plus/XMLCommentsGuide/)
+- [Small Earth Technology ANT+ Class Library](https://dotmake.build/docfx-plus/AntPlus/)
+
+### These documentation projects are created by Docfx-Plus:
+- [DotMake Command-Line](https://dotmake.build/command-line/)
+- [DotMake Svg-Sprite](https://dotmake.build/svg-sprite/)
+
