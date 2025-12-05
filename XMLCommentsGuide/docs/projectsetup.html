@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Walkthrough: Enabling and Using XML Comments </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Walkthrough: Enabling and Using XML Comments ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/projectsetup.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href=".././">
+            <img id="logo" class="svg" src="../images/Sandcastle.jpg" alt="Sandcastle XML Comments Guide">
+            Sandcastle XML Comments Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="walkthrough-enabling-and-using-xml-comments">Walkthrough: Enabling and Using XML Comments</h1>
+
+<p>This walkthrough will describe the steps needed to enable XML comments file output in your Visual
+Studio projects, provides information on where to get more information on using XML comments to decorate your
+code, and describes how to open help file builder projects from within Visual Studio.</p>
+<h2 id="Setup"> Enabling XML Comments File Generation</h2>
+<p>In order to create a help file that contains reference content (API documentation), you must enable
+XML comments in your Visual Studio projects so that an XML file is generated to contain them when the project is
+built.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If not using the Visual Studio IDE, the various managed language compilers support a <em>/doc</em> command line option that will produce the XML comments file.  See your language
+compiler command line option documentation for details.</p>
+</div>
+<h3 id="all-projects-except-managed-c-projects">All Projects Except Managed C++ Projects</h3>
+<ol>
+<li><p>In the Solution Explorer, right click on the project and select <strong>Properties</strong>.</p>
+</li>
+<li><p>Select the <strong>Build</strong> property page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The XML comments filename is a configuration option.  As such, you can either select the <strong>All Configurations</strong> option at the top of the page to set the XML comments options for all configurations
+at the same time or select each configuration individually and repeat the next steps for each one.</p>
+</div>
+</li>
+<li><p>In the <strong>Output</strong> section, check the checkbox next to the <strong>Xml documentation file</strong>
+text box and specify a name for the XML file.  Although not required, a common convention is to name the XML
+comments file after the related assembly (except with a <em>.xml</em> extension).  The assembly name
+can be found on the <strong>Application</strong> property page.</p>
+</li>
+<li><p>If you have a solution with multiple projects that need to be documented, repeat the above
+steps for each project in the solution.  It is recommended that you give each project's XML comments file a
+unique name.</p>
+</li>
+</ol>
+<p>If documenting a managed C++ project, the procedure differs and you need to follow these steps
+instead.</p>
+<h3 id="managed-c-projects">Managed C++ Projects</h3>
+<ol>
+<li><p>In the Solution Explorer, right click on the project and select <strong>Properties</strong>.</p>
+</li>
+<li><p>Expand the <strong>Configuration Properties</strong> category and then expand the <strong>C/C++</strong>
+sub-category and select the <strong>Output Files</strong> option below it.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The XML comments file option is a configuration option.  As such, you can either select
+the <strong>All Configurations</strong> option at the top of the dialog box to set the XML comments options for all
+configurations at the same time or select each configuration individually and repeat the next step for each
+one.</p>
+</div>
+</li>
+<li><p>In the <strong>Output Files</strong> options, change the <strong>Generate XML Documentation Files</strong>
+option to <strong>Yes (/doc)</strong>.</p>
+</li>
+<li><p>By default, the comments file is named after the project target with a <em>.xml</em>
+extension and is placed in the target folder.  If you want to change the name, select the <strong>XML Document Generator</strong>
+category below the <strong>Configuration Properties</strong> category and change the filename using the <strong>OutputDocument File</strong> property.</p>
+</li>
+<li><p>If you have a solution with multiple projects that need to be documented, repeat the above
+steps for each project in the solution.  If you explicitly specify a name for the comments file, it is
+recommended that you give each project's XML comments file a unique name.</p>
+</li>
+</ol>
+<p>Once the above has been done, Visual Studio will create the XML comments file each time the
+project is built.</p>
+<h2 id="DecorateCode"> Decorating Your Code</h2>
+<p>In addition to setting the project option to create the file, you must also add XML comments to
+your source code.  At a minimum, you should add a <code>&lt;summary&gt;</code> element to each public
+type and to the public and protected members of those types.  There are many other elements available that will
+help improve the quality of your documentation.  See the other sections in this guide for more information</p>
+<p>The XML comments elements and their format is consistent across all languages.  The only variable
+is the comment characters that precede them.  Here are some examples.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// This is an example of triple slash XML comments.  This is the most common
+/// form of XML comments delimiter in C#, C++, and F# code.
+/// &lt;/summary&gt;
+
+NOTE: The multi-line XML comments delimiters shown below are only supported by C# and C++.
+
+/** &lt;summary&gt;
+  * This is an example of using the multi-line XML comments delimiters.  In this
+  * case, the common pattern &quot;  * &quot; at the start of each line after the first one
+  * is ignored by the compiler and will not appear in the comments.
+  * &lt;/summary&gt;
+  */
+
+/**
+&lt;summary&gt;This example does not use a common leading pattern on each line of
+the summary comments using the multi-line XML comments delimiters.&lt;/summary&gt;
+*/
+
+/** &lt;summary&gt;A single-line summary using the multi-line delimiters.&lt;/summary&gt; */
+</code></pre>
+<pre><code class="lang-vb">''' &lt;summary&gt;
+''' This is an example of triple apostrophe XML comments.  These are the only
+''' delimiters supported by Visual Basic.
+''' &lt;/summary&gt;
+</code></pre>
+<p>Refer to the other sections in this guide for more information about the various XML comments
+elements and how to use them.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="welcome.html">Welcome</a></li>
+<li><a href="usagenotes.html">Usage Notes</a></li>
+<li><a href="namespacecomments.html">Namespace Comments</a></li>
+<li><a href="sectionelements/sectionelements.html">Section Elements</a></li>
+<li><a href="blockelements/blockelements.html">Block Elements</a></li>
+<li><a href="inlineelements/inlineelements.html">Inline Elements</a></li>
+<li><a href="miscelements/miscelements.html">Miscellaneous Elements</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/projectsetup.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle XML Comments Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

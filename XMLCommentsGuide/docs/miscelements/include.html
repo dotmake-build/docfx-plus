@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>include </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="include ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/miscelements/include.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle XML Comments Guide">
+            Sandcastle XML Comments Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="include">include</h1>
+
+<p>This element lets you import comments from another XML file that describe the types and members in
+your source code.  The comments are imported into the XML comments file generated at build time by the compiler.</p>
+<h2 id="syntax">Syntax</h2>
+<p>This element is valid on all types and type members as a top-level or an inline element.</p>
+<pre><code class="lang-xml">&lt;include file=&quot;xmlFilename&quot; path=&quot;xpath-filter-expr&quot; /&gt;
+</code></pre>
+<p>The <code>file</code> attribute specifies the path to an external XML file.  The
+filename can be a fully qualified or a relative path.  If no path is specified on the filename or it is prefixed
+with a folder name alone, the file is assumed to be in the same folder as the Visual Studio project or a
+subfolder beneath it.  If a relative path is given that starts with *..*, the file is assumed
+to be in a location relative to the current source code file.</p>
+<p>The <code>path</code> element specifies an XPath query used to import one or more
+elements into the member's XML comments.  The structure of the XML file is entirely up to you.  A common
+convention is to use elements with an ID attribute and to look them up with an XPath query such as
+&quot; <code>rootElement/subElement[@id='idValue']/*</code> &quot;.  The &quot;/*&quot; at the end of the query pulls in
+the content of the matching element.</p>
+<h2 id="remarks">Remarks</h2>
+<p>Using this element allows you to keep common sets of XML comments or examples in a shared file as
+an alternative to repeatedly cutting and pasting the same elements into multiple locations in your source code.
+This allows you to maintain the comment elements in a single location.  When the project is built, the updated
+comments will automatically be imported into each of the locations where they are referenced.  It also allows
+one person to work on the code while another writes the comments.  If the goal is to cut down on duplicated
+comments, the <a href="inheritdoc.html">inheritdoc</a> element may be a better choice.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The XPath query typically uses quote marks to surround an ID value.  If you use double quotes to
+surround the XPath expression, use single quotes to surround the ID value.  You can also use single quotes to
+surround the XPath expression and use double quotes to surround the ID value.  Examples of both ways are shown
+below.</p>
+<p>A missing XML file or an ill-formed XPath query will result in a compiler warning being generated.
+A valid XPath query that fails to locate anything will not generate any warning but will cause missing comments
+in the resulting XML comments file.</p>
+</div>
+<h2 id="examples">Examples</h2>
+<pre><code class="lang-cs" name="Comments Examples">/// &lt;include file=&quot;IncludeComments.xml&quot; path=&quot;Comments/IncludeAllExample/*&quot; /&gt;
+public void IncludeAllExample()
+{
+    // This pulls in all comments for the method.
+}
+
+/// &lt;summary&gt;
+/// In this example, the &lt;c&gt;include&lt;/c&gt; element is used to pull in sections of
+/// the comments.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;
+/// &lt;para&gt;As shown in these examples (see source code).  Single and double quotes
+/// can be used on the XPath query when nested quotes are required.  The key is to
+/// be consistent.&lt;/para&gt;
+/// 
+/// &lt;para&gt;This pulls in a single paragraph element.&lt;/para&gt;
+/// 
+/// &lt;include file=&quot;IncludeComments.xml&quot; path=&quot;Comments/Example[@id='paraExample']/para&quot; /&gt;
+/// 
+/// &lt;para&gt;This pulls in a all the content of the element.&lt;/para&gt;
+/// 
+/// &lt;include file=&quot;IncludeComments.xml&quot; path='Comments/Example[@id=&quot;AnotherExample&quot;]/*' /&gt;
+/// &lt;/remarks&gt;
+/// &lt;conceptualLink target=&quot;3de64a85-dafb-4a01-85dc-7f69a76ef790&quot; /&gt;
+/// &lt;seealso cref=&quot;IncludeAllExample&quot;/&gt;
+public void IncludeSectionsExample()
+{
+}</code></pre><pre><code class="lang-xml" name="Example XML File">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;Comments&gt;
+  &lt;!-- This element's content is imported by element name --&gt;
+  &lt;IncludeAllExample&gt;
+    &lt;summary&gt;
+      This summary came from an external XML file.
+    &lt;/summary&gt;
+
+    &lt;remarks&gt;
+      These remarks came from an external XML file.
+    &lt;/remarks&gt;
+
+    &lt;conceptualLink target=&quot;db2703b4-12bc-4cf5-8642-544b41002809&quot; /&gt;
+    &lt;seealso cref=&quot;IncludeSectionsExample&quot; /&gt;
+  &lt;/IncludeAllExample&gt;
+
+  &lt;!-- These examples use an ID attribute to identify the element content to import --&gt;
+  &lt;Example id=&quot;paraExample&quot;&gt;
+    &lt;para&gt;This paragraph was imported from an external XML file.&lt;/para&gt;
+
+    &lt;remarks&gt;This element is not imported as it is not referenced.&lt;/remarks&gt;
+  &lt;/Example&gt;
+
+  &lt;Example id=&quot;AnotherExample&quot;&gt;
+    &lt;para&gt;Paragraph 1&lt;/para&gt;
+    &lt;para&gt;Paragraph 2&lt;/para&gt;
+  &lt;/Example&gt;
+&lt;/Comments&gt;</code></pre><h2 id="see-also">See Also</h2>
+<h4 id="reference">Reference</h4>
+<ul>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.IncludeAllExample.html#XMLCommentsExamples_SampleClass_IncludeAllExample">SampleClass.IncludeAllExample()</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.SampleClass.IncludeSectionsExample.html#XMLCommentsExamples_SampleClass_IncludeSectionsExample">SampleClass.IncludeSectionsExample()</a></li>
+</ul>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="miscelements.html">Miscellaneous Elements</a></li>
+<li><a href="inheritdoc.html">inheritdoc</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/miscelements/include.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle XML Comments Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

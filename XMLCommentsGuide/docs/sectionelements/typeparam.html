@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>typeparam </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="typeparam ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/sectionelements/typeparam.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle XML Comments Guide">
+            Sandcastle XML Comments Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="typeparam">typeparam</h1>
+
+<p>This element is used to describe generic parameters on generic types and methods.</p>
+<h2 id="syntax">Syntax</h2>
+<p>This top-level element is valid on generic types and generic methods to describe each generic
+type parameter. <em>typeParamName</em> is the name of the generic type parameter being
+referenced.</p>
+<pre><code class="lang-xml">&lt;typeparam name=&quot;typeParamName&quot;&gt;Type parameter description&lt;/typeparam&gt;
+</code></pre>
+<h2 id="remarks">Remarks</h2>
+<p>There should be one <code>typeparam</code> element for each generic type parameter in
+the class or method declaration.  The description will be used as the display text for the parameter in
+IntelliSense and the Object Browser.</p>
+<h2 id="examples">Examples</h2>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// This class is used to demonstrate the various XML comments elements
+/// related to generics.  It serves no useful purpose.
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;T1&quot;&gt;This is the first generic argument.&lt;/typeparam&gt;
+/// &lt;typeparam name=&quot;T2&quot;&gt;This is the second generic argument constrained to
+/// be or derive from &lt;see cref=&quot;EventArgs&quot;/&gt;.&lt;/typeparam&gt;
+/// &lt;conceptualLink target=&quot;163cae15-9020-4095-9b9c-da134b5b496c&quot; /&gt;
+public class GenericClass&lt;T1, T2&gt; where T2 : EventArgs
+{
+    /// &lt;summary&gt;
+    /// This is a property that gets or sets an instance of the type specified
+    /// by the generic type argument &lt;typeparamref name=&quot;T1&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;conceptualLink target=&quot;073a5ae1-828f-4bab-b0cb-438cefb5e9fb&quot; /&gt;
+    public T1 Property { get; set; }
+
+    /// &lt;summary&gt;
+    /// This is a method with an argument.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;argument&quot;&gt; This is an argument of the type specified by
+    /// the generic type argument &lt;typeparamref name=&quot;T1&quot;/&gt;.&lt;/param&gt;
+    /// &lt;conceptualLink target=&quot;073a5ae1-828f-4bab-b0cb-438cefb5e9fb&quot; /&gt;
+    public void Method(T1 argument)
+    {
+    }
+
+    /// &lt;summary&gt;
+    /// This is a generic method that takes two other generic types
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;T3&quot;&gt;This is a generic type argument for the method
+    /// argument.&lt;/typeparam&gt;
+    /// &lt;typeparam name=&quot;T4&quot;&gt;This is a generic type argument for the return
+    /// value.&lt;/typeparam&gt;
+    /// &lt;param name=&quot;argument&quot;&gt;This is an argument of the type specified by
+    /// the generic type argument &lt;typeparamref name=&quot;T3&quot;/&gt;.&lt;/param&gt;
+    /// &lt;returns&gt;The default value of the type specified by the generic type
+    /// argument &lt;typeparamref name=&quot;T4&quot;/&gt;.&lt;/returns&gt;
+    /// &lt;conceptualLink target=&quot;163cae15-9020-4095-9b9c-da134b5b496c&quot; /&gt;
+    /// &lt;conceptualLink target=&quot;073a5ae1-828f-4bab-b0cb-438cefb5e9fb&quot; /&gt;
+    public T4 GenericMethod&lt;T3, T4&gt;(T3 argument)
+    {
+        return default;
+    }
+
+    /// &lt;summary&gt;
+    /// This is an event that takes a generic argument.
+    /// &lt;/summary&gt;
+    /// &lt;remarks&gt;The &lt;see cref=&quot;Delegate&quot;&gt;delegate&lt;/see&gt; for this event is
+    /// &lt;see cref=&quot;EventHandler{T}&quot;/&gt; bound to the type specified by the
+    /// generic type argument &lt;typeparamref name=&quot;T2&quot;/&gt;.
+    /// &lt;/remarks&gt;
+    /// &lt;conceptualLink target=&quot;073a5ae1-828f-4bab-b0cb-438cefb5e9fb&quot; /&gt;
+    public event EventHandler&lt;T2&gt; SomethingHappened;
+
+    /// &lt;summary&gt;
+    /// This is a protected virtual method used to raise the
+    /// &lt;see cref=&quot;SomethingHappened&quot;/&gt; event.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;e&quot;&gt;Arguments for the event of the type specified by
+    /// the generic type argument &lt;typeparamref name=&quot;T2&quot;/&gt;.&lt;/param&gt;
+    /// &lt;conceptualLink target=&quot;073a5ae1-828f-4bab-b0cb-438cefb5e9fb&quot; /&gt;
+    protected virtual void OnSomethingHappened(T2 e)
+    {
+        SomethingHappened?.Invoke(this, e);
+    }
+}</code></pre><h2 id="see-also">See Also</h2>
+<h4 id="reference">Reference</h4>
+<ul>
+<li><a class="xref" href="../../api/XMLCommentsExamples.GenericClass-2.html">GenericClass&lt;T1, T2&gt;</a></li>
+<li><a class="xref" href="../../api/XMLCommentsExamples.GenericClass-2.GenericMethod.html#XMLCommentsExamples_GenericClass_2_GenericMethod__2___0_">GenericClass&lt;T1, T2&gt;.GenericMethod&lt;T3, T4&gt;(T3)</a></li>
+</ul>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="sectionelements.html">Section Elements</a></li>
+<li><a href="../inlineelements/typeparamref.html">typeparamref</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/XMLCommentsGuide/docfx/docs/sectionelements/typeparam.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle XML Comments Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
