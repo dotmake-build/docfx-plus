@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>autoOutline </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="autoOutline ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/miscelements/autooutline.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle MAML Guide">
+            Sandcastle MAML Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="autooutline">autoOutline</h1>
+
+<p>The <code>autoOutline</code> element is a special case used by Sandcastle to insert
+an auto-generated section outline within a topic's introduction or sub-sections.</p>
+<h2 id="usage">Usage</h2>
+<p>Place the element within a topic's <code>introduction</code> element to produce an
+outline of the topic's section headings or within a <code>section</code> 's <code>content</code>
+element to produce an outline of the section's sub-sections.  In either case, the outline will be created at the
+location of the auto-outline element.  As such, you can control the placement of the outline within the text.</p>
+<p>Each section must have a <code>title</code> element as that is the text that will be
+used for the outline entry.  In addition, an <code>address</code> attribute must be added to each <code>section</code> element to give it a unique ID that can be used as a link.  You can also add an
+optional <code>address</code> attribute to the <code>introduction</code> element so that
+you can link back to it from a sub-section.</p>
+<p>An optional <code>lead</code> attribute can be specified to define the lead-in text
+displayed before the list of links.  If not specified, default lead-in text is used.  If set to the value <code>none</code>, the lead-in text will be omitted.</p>
+<p>An optional <code>excludeRelatedTopics</code> attribute can be specified.  If set to
+True, the top-level auto-outline will exclude the <strong>Related Topics</strong> link.  This can be useful if you simply
+want to list the main sections of the topic with some alternate lead-in text or no lead-in text at all.</p>
+<p>If a numeric inner text value is specified, the section headings down to the indicated depth will
+be included in the outline.  Zero (0), the default, specifies that only top-level section headings should be
+included in the outline.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;topic id=&quot;1a817894-db7a-4c7f-bd67-cca896affa35&quot; revisionNumber=&quot;1&quot;&gt;
+    &lt;developerConceptualDocument
+    xmlns=&quot;http://ddue.schemas.microsoft.com/authoring/2003/5&quot;
+    xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+
+        &lt;introduction address=&quot;Intro&quot;&gt;
+            &lt;!-- No depth option so only show top-level sections here --&gt;
+            &lt;autoOutline /&gt;
+            &lt;para&gt;The introduction.  If &lt;codeInline&gt;&amp;lt;autoOutline /&amp;gt;&lt;/codeInline&gt;
+is included, this paragraph can be omitted.
+            &lt;/para&gt;
+            &lt;!-- Note that placing the autoOutline element here would place
+                     the section outline below the intro paragraph. --&gt;
+        &lt;/introduction&gt;
+        &lt;section address=&quot;S1&quot;&gt;
+            &lt;title&gt;Section 1&lt;/title&gt;
+            &lt;content&gt;
+                &lt;para&gt;This is section 1.&lt;/para&gt;
+                &lt;!-- This will include sub-sections in the outline up to three
+                         levels down.  It also uses custom lead-in text. --&gt;
+                &lt;autoOutline lead=&quot;Select a sub-section:&quot;&gt;3&lt;/autoOutline&gt;
+            &lt;/content&gt;
+            &lt;sections&gt;
+                &lt;section address=&quot;SS1&quot;&gt;
+                    &lt;title&gt;Sub-section 1&lt;/title&gt;
+                    &lt;content&gt;
+                        &lt;para&gt;This is sub-section 1.&lt;/para&gt;
+                    &lt;/content&gt;
+                &lt;/section&gt;
+                &lt;section address=&quot;SS2&quot;&gt;
+                    &lt;title&gt;Sub-section 2&lt;/title&gt;
+                    &lt;content&gt;
+                        &lt;!-- No &lt;autoOutline /&gt; in here so no outline --&gt;
+                        &lt;para&gt;This is sub-section 2.&lt;/para&gt;
+                    &lt;/content&gt;
+                    &lt;sections&gt;
+                        &lt;section address=&quot;SSS1&quot;&gt;
+                            &lt;title&gt;Sub-sub-section 1&lt;/title&gt;
+                            &lt;content&gt;
+                                &lt;para&gt;This is sub-sub-section 1.&lt;/para&gt;
+                            &lt;/content&gt;
+                        &lt;/section&gt;
+                        &lt;section address=&quot;SSS2&quot;&gt;
+                            &lt;title&gt;Sub-sub-section 2&lt;/title&gt;
+                            &lt;content&gt;
+                                &lt;para&gt;This is sub-sub-section 2.&lt;/para&gt;
+                                &lt;para&gt;
+                                    &lt;link xlink:href=&quot;#Intro&quot;&gt;Back to the Top&lt;/link&gt;
+                                &lt;/para&gt;
+                            &lt;/content&gt;
+                        &lt;/section&gt;
+                    &lt;/sections&gt;
+                &lt;/section&gt;
+            &lt;/sections&gt;
+        &lt;/section&gt;
+        &lt;section address=&quot;S2&quot;&gt;
+            &lt;title&gt;Section 2&lt;/title&gt;
+            &lt;content&gt;
+                &lt;para&gt;This is section 2.&lt;/para&gt;
+            &lt;/content&gt;
+        &lt;/section&gt;
+        &lt;relatedTopics&gt;
+            &lt;link xlink:href=&quot;b9a1daac-a2d8-41b7-83b0-b7dc7b28b898&quot; /&gt;
+        &lt;/relatedTopics&gt;
+    &lt;/developerConceptualDocument&gt;
+&lt;/topic&gt;</code></pre><h2 id="example-output">Example Output</h2>
+<p>See <a href="autooutlineexample.html">autoOutline Rendered Example</a></p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="miscelements.html">Miscellaneous Elements</a></li>
+<li><a href="token.html">token</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/miscelements/autooutline.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle MAML Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
