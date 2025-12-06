@@ -46,4 +46,5 @@ jobs:
         clean-exclude: |
           AntPlus/
           SandcastleBuilder/
+          SandcastleMAMLGuide/
           XMLCommentsGuide/
