@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>markup </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="markup ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/miscelements/markup.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle MAML Guide">
+            Sandcastle MAML Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="markup">markup</h1>
+
+<p>This element can be used to pass a literal piece of format-specific markup through to the rendered
+topic.  In general, this element is only used by custom build components to pass markup through after modifying
+the conceptual topic in some manner (i.e. to colorize code).  Other non-component uses might be to include a
+video or other such items in the topic that is currently not handled by MAML.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is recommended that you avoid using this element unless there is no MAML equivalent for what you
+are trying to do.  Usage should be restricted to the output of custom build components when needed.</p>
+</div>
+<h2 id="usage">Usage</h2>
+<p>Enter the element in the topic and specify the format-specific markup as the content.  It can be
+used as a block or an inline element.</p>
+<p>An optional <code>contentType</code> attribute is supported that defines the type of
+content (Html, OpenXml, or Markdown).  This allows only rendering the content based on the content type supported
+by the presentation style.</p>
+<p>When specified, presentation styles that only support Open XML will only render markup element
+content with a content type of &quot;OpenXml&quot;.  Presentation styles that only support Markdown will only render markup
+element content with a content type of &quot;Html&quot; or &quot;Markdown&quot;.  All others (Help 1, Microsoft Help Viewer, and
+website) will only render the content if the type is &quot;Html&quot;.  If the attribute is omitted, the content will be
+rendered regardless of the presentation style's formats whether or not they actually support it.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-xml">&lt;para&gt;Here are some literal markup examples:
+&lt;markup&gt;&lt;br /&gt;&lt;br /&gt;
+This content is compatible with the all presentation style formats.
+&lt;br /&gt;&lt;br /&gt;
+It is NOT recommended that you use the markup element for normal conceptual content
+when an equivalent MAML element already exists.  Its use should be restricted to
+custom build components.
+&lt;/markup&gt;
+
+&lt;markup contentType=&quot;Html&quot;&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;This content is only compatible with &lt;strong&gt;HTML&lt;/strong&gt; and &lt;strong&gt;Markdown&lt;/strong&gt;
+presentation style formats.&lt;/p&gt;
+
+&lt;p&gt;It is &lt;strong&gt;NOT&lt;/strong&gt; recommended that you use the &lt;em&gt;markup&lt;/em&gt; element for
+normal conceptual content when an equivalent &lt;u&gt;MAML element&lt;/u&gt; already exists.
+Its use should be restricted to custom build components.&lt;/p&gt;
+&lt;/markup&gt;
+
+&lt;markup contentType=&quot;Markdown&quot;&gt;&lt;br /&gt;&lt;br /&gt;
+This content is only compatible with **Markdown** presentation style formats.
+
+It is **NOT** recommended that you use the _markup_ element for normal conceptual
+content when an equivalent &lt;u&gt;MAML element&lt;/u&gt; already exists.  Its use should be
+restricted to custom build components.
+
+&lt;/markup&gt;
+
+&lt;!-- For Open XML, span elements are converted to the appropriate matching style after transformation
+as long as it is a recognized style name used by the transformation.  Line breaks are supported as-is.
+Open XML namespaces could be used if they are added to the namespace list at the top of the topic. --&gt;
+&lt;markup contentType=&quot;OpenXml&quot;&gt;&lt;br /&gt;&lt;br /&gt;
+This content is only compatible with &lt;span class=&quot;Bold&quot;&gt;Open XML&lt;/span&gt; presentation style formats.
+&lt;br /&gt;&lt;br /&gt;
+It is &lt;span class=&quot;Bold&quot;&gt;NOT&lt;/span&gt; recommended that you use the &lt;span class=&quot;Emphasis&quot;&gt;markup&lt;/span&gt;
+element for normal conceptual content when an equivalent &lt;span class=&quot;Underline&quot;&gt;MAML element&lt;/span&gt; already
+exists.  Its use should be restricted to custom build components.
+&lt;/markup&gt;
+&lt;/para&gt;
+</code></pre>
+<h2 id="example-output">Example Output</h2>
+<p>Here are some literal markup examples:<br><br>
+This content is compatible with the all presentation style formats.<br><br>
+It is NOT recommended that you use the markup element for normal conceptual content
+when an equivalent MAML element already exists.  Its use should be restricted to
+custom build components.
+<br><br><p>This content is only compatible with <strong>HTML</strong>and <strong>Markdown</strong>
+presentation style formats.</p>
+<p>It is <strong>NOT</strong>recommended that you use the <code>markup</code>element for
+normal conceptual content when an equivalent <u>MAML element</u>already exists.
+Its use should be restricted to custom build components.</p>
+<p>This content is only compatible with <strong>Markdown</strong> presentation style formats.</p>
+<p>It is <strong>NOT</strong> recommended that you use the <code>markup</code> element for normal conceptual
+content when an equivalent <u>MAML element</u>already exists.  Its use should be
+restricted to custom build components.</p>
+<p><br><br>
+This content is only compatible with <span class="Bold">Open XML</span>presentation style formats.<br><br>
+It is <span class="Bold">NOT</span>recommended that you use the <span class="CodeInline">markup</span>
+element for normal conceptual content when an equivalent <span class="Underline">MAML element</span>already
+exists.  Its use should be restricted to custom build components.</p>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="miscelements.html">Miscellaneous Elements</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/miscelements/markup.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle MAML Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

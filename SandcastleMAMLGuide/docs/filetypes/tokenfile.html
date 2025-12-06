@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Token File </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Token File ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/filetypes/tokenfile.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../.././">
+            <img id="logo" class="svg" src="../../images/Sandcastle.jpg" alt="Sandcastle MAML Guide">
+            Sandcastle MAML Guide
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="token-file">Token File</h1>
+
+<p>A token is used as a replaceable tag within a topic and is represented using a <code>token</code> element.  The inner text of the element is a token name.  The tokens are defined
+in a separate token file.  They are an easy way to represent common items that you use regularly such as a common
+phrase or external link.</p>
+<h2 id="token-file-format">Token File Format</h2>
+<p>Below is an example of a token file.</p>
+<pre><code class="lang-xml" name="Example Token File">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;content xml:space=&quot;preserve&quot; xmlns:ddue=&quot;http://ddue.schemas.microsoft.com/authoring/2003/5&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+  &lt;item id=&quot;BuildDate&quot;&gt;{@BuildDate:MMMM d, yyyy}&lt;/item&gt;
+  &lt;item id=&quot;SHFB&quot;&gt;&lt;ddue:externalLink xmlns:ddue=&quot;http://ddue.schemas.microsoft.com/authoring/2003/5&quot;&gt;
+    &lt;ddue:linkText&gt;Sandcastle Help File Builder&lt;/ddue:linkText&gt;
+    &lt;ddue:linkUri&gt;https://GitHub.com/EWSoftware/SHFB&lt;/ddue:linkUri&gt;
+    &lt;ddue:linkTarget&gt;_blank&lt;/ddue:linkTarget&gt;
+&lt;/ddue:externalLink&gt;&lt;/item&gt;
+  &lt;item id=&quot;SandcastleVersion&quot;&gt;v2025.9.30.0&lt;/item&gt;
+  &lt;item id=&quot;VisualStudioMinVersion&quot;&gt;Visual Studio 2022&lt;/item&gt;
+&lt;/content&gt;</code></pre>
+<p>The file consists of a root <code>content</code> node that contains one or more <code>item</code> nodes.  Be sure to add the <code>xml:space</code> attribute to preserve
+whitespace and the two namespace attributes on the <code>content</code> element.</p>
+<p>The <code>item</code> element has an <code>id</code> attribute that gives
+each one a unique identifier.  This is used as the inner text of the <code>token</code> element in a
+topic to represent the token.  The inner XML of the item will be used to replace the token at build-time.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The token ID is not case-sensitive.</p>
+</div>
+<h2 id="token-content">Token Content</h2>
+<p>The content of a token item can be anything you like and may include other MAML elements.  In the
+examples above, they are used to define a commonly used link and some common text elements.  When used with the
+Sandcastle Help File Builder, substitution tags such as <code>BuildDate</code> can also be used in
+the token content.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you embed MAML elements within a token,  you must prefix each element name with
+&quot; <code>ddue:</code> &quot; (without the quotes) as shown in the example above.  If not, the elements are
+inserted using the default empty namespace and they may not be processed by the topic transformations.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<h4 id="concepts">Concepts</h4>
+<ul>
+<li><a href="filetypes.html">Conceptual Content File Types</a></li>
+<li><a href="../miscelements/autooutline.html">autoOutline</a></li>
+<li><a href="../miscelements/token.html">token</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EWSoftware/SHFB/blob/main/Documentation/SandcastleMAMLGuide/docfx/docs/filetypes/tokenfile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          [v{@HelpFileVersion}] Sandcastle MAML Guide
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
