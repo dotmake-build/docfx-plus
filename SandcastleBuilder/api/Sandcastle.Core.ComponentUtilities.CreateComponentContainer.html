@@ -166,10 +166,10 @@ plug-ins, presentation styles, BuildAssembler components, and syntax generators)
 <div class="markdown level1 remarks"><p>The following folders are searched in the following order.  If the given folder has not been
 specified or does not exist, it is ignored.</p>
 <ol><li>The enumerable list of additional folders - This is typically the current project's
-NuGet packages (package tool paths from the <code>SHFBComponentPath</code>item in their properties file),
-the project's <code>ComponentPath</code>folder, and the current project's folder.  This allows for
+NuGet packages (package tool paths from the <code>SHFBComponentPath</code> item in their properties file),
+the project's <code>ComponentPath</code> folder, and the current project's folder.  This allows for
 project-specific build components.  Paths are searched in the order given above if specified.</li><li>Common application data folder - The help file builder's common application data folder
-where third-party build components are typically installed.</li><li><code>SHFBROOT</code>core components folder - The core Sandcastle Help File Builder components
+where third-party build components are typically installed.</li><li><code>SHFBROOT</code> core components folder - The core Sandcastle Help File Builder components
 folder and its subfolders.  This allows for XCOPY deployments that keep everything together.</li></ol>
 <p>All folders and their subfolders are search recursively for assemblies (*.dll).  There may be
 duplicate component IDs across the assemblies found.  Only the first component for a unique

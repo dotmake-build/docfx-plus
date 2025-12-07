@@ -144,7 +144,16 @@ project's <code>OutputPath</code> property after a build.</p>
 </div>
 <p>Prefix options with '-' or '/'.  Property values should be enclosed in double quotes if they
 contain spaces, commas, or other special characters. All relative paths specified on the command line and those
-in a response file (see below) are relative to the project's path as usual.</p>
+in a response file (see below) are relative to the project's path as usual.  Below are a couple of example
+command lines:</p>
+<pre><code class="lang-bat">%ProgramFiles(x86)%\MSBuild\14.0\bin\MSBuild.exe
+    /p:Configuration=Release HelpFile.shfbproj
+
+%ProgramFiles(x86)%\MSBuild\14.0\bin\MSBuild.exe
+    /p:CopyrightText=&quot;Copyright \xa9 2006-2011&quot;
+    /p:FeedbackEMailAdress=&quot;Eric@EWoodruff.us&quot;
+    HelpFile.shfbproj
+</code></pre>
 <div class="WARNING">
 <h5>Warning</h5>
 <p>Property names specified on the command line or in response files are case-insensitive as are
@@ -176,33 +185,13 @@ in single quotes or it will be ignored.  If necessary, enclose the entire comman
 quotes.</p>
 </div>
 <pre><code class="lang-xml">&lt;Project xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
-  &lt;!-- Example documentation source overrides
   &lt;PropertyGroup&gt;
-    &lt;DocumentationSources&gt;
-      &lt;DocumentationSource sourceFile=&quot;..\..\OtherProject\bin\Release\OtherAssembly.xml&quot; xmlns=&quot;&quot; /&gt;
-      &lt;DocumentationSource sourceFile=&quot;..\..\OtherProject\bin\Release\OtherAssembly.dll&quot; xmlns=&quot;&quot; /&gt;
-    &lt;/DocumentationSources&gt;
+    &lt;HtmlHelpName&gt;TestDoc&lt;/HtmlHelpName&gt;
+    &lt;CleanIntermediates&gt;True&lt;/CleanIntermediates&gt;
+    &lt;RootNamespaceTitle&gt;Root Namespace Container&lt;/RootNamespaceTitle&gt;
+    &lt;PresentationStyle&gt;Default2022&lt;/PresentationStyle&gt;
+    &lt;HelpTitle&gt;Test Help File&lt;/HelpTitle&gt;
   &lt;/PropertyGroup&gt;
-  --&gt;
-
-  &lt;PropertyGroup&gt;
-    &lt;HtmlHelpName&gt;TestDocOverride&lt;/HtmlHelpName&gt;
-    &lt;RootNamespaceTitle&gt;Root Namespace Override&lt;/RootNamespaceTitle&gt;
-    &lt;HelpTitle&gt;Test Help File Override&lt;/HelpTitle&gt;
-  &lt;/PropertyGroup&gt;
-
-  &lt;PropertyGroup&gt;
-    &lt;!-- Add the overridden properties as the value of the SubstitutionTags property --&gt;
-    &lt;SubstitutionTags&gt;$(SubstitutionTags);HtmlHelpName=$(HtmlHelpName);
-      RootNamespaceTitle=$(RootNamespaceTitle);HelpTitle=$(HelpTitle)
-    &lt;/SubstitutionTags&gt;
-  &lt;/PropertyGroup&gt;
-
-  &lt;!-- Example target override --&gt;
-  &lt;Target Name=&quot;BeforeBuildHelp&quot;&gt;
-    &lt;Message Text=&quot;BeforeBuildHelp override executed&quot; /&gt;
-  &lt;/Target&gt;
-
 &lt;/Project&gt;
 </code></pre>
 <p>The help file builder target definition file contains several targets that can be overridden to

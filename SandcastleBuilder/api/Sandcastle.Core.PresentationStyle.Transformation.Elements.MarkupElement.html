@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="MarkupElement Class ">
       
-      <meta name="description" content="This handles the markupelement, a parent element that does not itself have any rendered representation.  It just clones the child nodes, removes any XML namespaces, and passes them through as-is.">
+      <meta name="description" content="This handles the markup element, a parent element that does not itself have any rendered representation.  It just clones the child nodes, removes any XML namespaces, and passes them through as-is.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -101,7 +101,7 @@ MarkupElement Class  <a class="header-action link-secondary" title="View source"
   </div>
 
   <div class="markdown summary">
-  <p>This handles the <code>markup</code>element, a parent element that does not itself have any rendered
+  <p>This handles the <code>markup</code> element, a parent element that does not itself have any rendered
 representation.  It just clones the child nodes, removes any XML namespaces, and passes them through
 as-is.</p>
 
@@ -130,9 +130,9 @@ as-is.</p>
 
   <h2 class="section" id="Sandcastle_Core_PresentationStyle_Transformation_Elements_MarkupElement_remarks">Remarks</h2>
   <div class="markdown level0 remarks"><p>This will allow build components and topic authors to add HTML or other elements such as
-<code>include</code>elements for localized shared content to a pre-transformed document.  This prevents it
+<code>include</code> elements for localized shared content to a pre-transformed document.  This prevents it
 from being removed as unrecognized content by the transformations.</p>
-<p>An optional <code>contentType</code>attribute is supported that defines the type of content (Html,
+<p>An optional <code>contentType</code> attribute is supported that defines the type of content (Html,
 OpenXml, or Markdown).  This allows rendering of content based on the content type supported by the
 presentation style.</p>
 <p>When specified, presentation styles that only support Open XML will only render markup element

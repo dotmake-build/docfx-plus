@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="ResolveConceptualLinksComponent Class ">
       
-      <meta name="description" content="This is a modified version of the original ResolveConceptualLinksComponentthat is used to resolve links to conceptual topics.">
+      <meta name="description" content="This is a modified version of the original ResolveConceptualLinksComponent that is used to resolve links to conceptual topics.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -101,7 +101,7 @@ ResolveConceptualLinksComponent Class  <a class="header-action link-secondary" t
   </div>
 
   <div class="markdown summary">
-  <p>This is a modified version of the original <code>ResolveConceptualLinksComponent</code>that is used to resolve
+  <p>This is a modified version of the original <code>ResolveConceptualLinksComponent</code> that is used to resolve
 links to conceptual topics.</p>
 
   </div>
@@ -133,7 +133,7 @@ links to conceptual topics.</p>
 
 
   <h2 class="section" id="Sandcastle_Tools_BuildComponents_ResolveConceptualLinksComponent_examples">Examples</h2>
-  <p>On links without inner text, if the companion file contains a <code>linkText</code>element, that text will be
+  <p>On links without inner text, if the companion file contains a <code>linkText</code> element, that text will be
 used.  If not, the title is used.</p>
 <pre><code data-title="Example Links" class="lang-xml">&lt;!-- Link with inner text --&gt;
 &lt;link xlink:href="3ab3113f-984b-19ac-7812-990192aca5b0"&gt;Click Here&lt;/link&gt;
@@ -152,10 +152,10 @@ used.  If not, the title is used.</p>
 
   <h2 class="section" id="Sandcastle_Tools_BuildComponents_ResolveConceptualLinksComponent_remarks">Remarks</h2>
   <div class="markdown level0 remarks"><p>This version contains the following improvements and fixes:</p>
-<ul><li>Broken links use the <b>None</b>style rather than the <code>Index</code>style so that it is apparent
-that they do not work.</li><li>The inner text from the conceptual link is used if specified.</li><li>On broken links, when the <code>showBrokenLinkText</code>option is true and there is no inner text,
+<ul><li>Broken links use the <b>None</b> style rather than the <code>Index</code> style so that it is apparent
+that they do not work.</li><li>The inner text from the conceptual link is used if specified.</li><li>On broken links, when the <code>showBrokenLinkText</code> option is true and there is no inner text,
 the target value is displayed.</li><li>Conceptual link targets can include an optional anchor name from within the target such as
-"#Name" (see examples below).</li><li>Unnecessary whitespace is removed from the link text.</li><li>If the companion file contains a <code>&lt;linkText&gt;</code>element and no inner text is specified,
+"#Name" (see examples below).</li><li>Unnecessary whitespace is removed from the link text.</li><li>If the companion file contains a <code>&lt;linkText&gt;</code> element and no inner text is specified,
 its value will be used for the link text rather than the title.  This allows for a shorter title or
 description to use as the default link text.</li></ul>
 </div>

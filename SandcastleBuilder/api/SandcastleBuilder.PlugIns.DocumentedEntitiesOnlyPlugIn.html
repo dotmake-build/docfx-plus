@@ -144,12 +144,12 @@ one member of an overloaded method set, all of them will be excluded.  There is 
 rule.</p>
 <p>In addition, since inherited documentation is generated after reflection data is generated,
 undocumented members of explicitly implemented interfaces will not be included.  If you want them
-included, you must explicitly add an <code>inheritdoc</code>tag on those members.</p>
-<p>To explicitly exclude a documented member, add the <code>exclude</code>XML comment tag to its
+included, you must explicitly add an <code>inheritdoc</code> tag on those members.</p>
+<p>To explicitly exclude a documented member, add the <code>exclude</code> XML comment tag to its
 comments.  If placed on a type, it will exclude the entire type regardless of whether or not it has
-documented members.  If placed on a <code>NamespaceDoc</code>class, it will exclude all types within the
+documented members.  If placed on a <code>NamespaceDoc</code> class, it will exclude all types within the
 namespace regardless of whether or not they are documented.  Note that namespace exclusions defined in
-the project namespace summaries will have no effect.  You must either add a <code>NamespaceDoc</code>class for
+the project namespace summaries will have no effect.  You must either add a <code>NamespaceDoc</code> class for
 the excluded namespace or exclude all of its types.</p>
 </div>
 

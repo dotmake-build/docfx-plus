@@ -134,13 +134,13 @@ StandardDocumentModel Class  <a class="header-action link-secondary" title="View
   <h2 class="section" id="Sandcastle_Core_PresentationStyle_StandardDocumentModel_remarks">Remarks</h2>
   <div class="markdown level0 remarks"><p>The generator has the following behaviors:</p>
 <ul><li>If a root namespace container ID is specified, a root namespace container API entry (R:) is
-added with a list of the namespaces.  If not specified, it is omitted.</li><li>A <code>topicdata</code>element is added to each API entry to identify the topic group.  For
-enumeration members (the fields), a <code>notopic</code>attribute is added to indicate that it should not
-get a separate topic.  For explicitly implemented members, an <code>eiiname</code>attribute is added to
-identify the explicitly implemented type and member name.</li><li><code>library</code>elements are updated with the assembly version and, for type members, a
-<code>NoAptca</code>element is added if the assembly does not allow partially trusted callers.</li><li>Elements for overloaded methods are grouped into Overload elements within their type's API
-entry.  Extension methods are not grouped if overloaded but do get an <code>overload</code>attribute.</li><li>The API entries for overloaded members have an <code>overload</code>attribute added to their
-<code>memberdata</code>element to identify the overload topic ID.</li><li>For all types except enumerations, member list topic API entries are created for methods,
+added with a list of the namespaces.  If not specified, it is omitted.</li><li>A <code>topicdata</code> element is added to each API entry to identify the topic group.  For
+enumeration members (the fields), a <code>notopic</code> attribute is added to indicate that it should not
+get a separate topic.  For explicitly implemented members, an <code>eiiname</code> attribute is added to
+identify the explicitly implemented type and member name.</li><li><code>library</code> elements are updated with the assembly version and, for type members, a
+<code>NoAptca</code> element is added if the assembly does not allow partially trusted callers.</li><li>Elements for overloaded methods are grouped into Overload elements within their type's API
+entry.  Extension methods are not grouped if overloaded but do get an <code>overload</code> attribute.</li><li>The API entries for overloaded members have an <code>overload</code> attribute added to their
+<code>memberdata</code> element to identify the overload topic ID.</li><li>For all types except enumerations, member list topic API entries are created for methods,
 operators, properties, events, fields, attached properties, attached events, and overloaded members.</li></ul>
 </div>
 
