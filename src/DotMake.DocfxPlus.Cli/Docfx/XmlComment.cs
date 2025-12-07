@@ -88,10 +88,15 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                     foreach (var node in parentElement.DescendantNodes())
                     {
                         if (node is XText xText
-                            && xText.Parent?.Name.LocalName.ToLowerInvariant() != "code")
+                            && xText.Parent?.Name.LocalName.ToLowerInvariant() != "code"
+                            && xText.Value.Contains('\n'))
                         {
                             var lines = StringUtil.ReadLines(xText.Value)
-                                .Select(line => line.TrimStart());
+                                .Select((line, index) =>
+                                    (index == 0)
+                                        ? line //don't trim first line to prevent collapsing of words after an element
+                                        : line.TrimStart()
+                                );
 
                             xText.Value = string.Join("\n", lines);
                         }
