@@ -96,9 +96,9 @@
 <h2 id="setting-timeoutoptions">Setting TimeoutOptions</h2>
 <p>The global timeout setting can come from a variety of sources such as the command line or appsettings.json.				Two options are available - <strong>MissedMessages</strong> and <strong>Timeout</strong>. Timeout is in milliseconds and MissedMessages is the				number of messages missed before signalling the ANT device is considered offline. If no timeout setting				is specified the timeout will default to 8 missed messages. Timeouts can be disabled by setting <strong>Timeout=-1</strong>. This is				equivalent to Timeout.Infinite.</p>
 <div class="WARNING">
-<h5>Warning</h5>
-<p><strong>Disabling Timeouts</strong></p>
-<p>Disabling timeouts is <strong>NOT</strong> recommended. It can lead to unintended consequences such as sending a					message to a device that is no longer present. This can cause a radio channel to be blocked indefinitely.</p>
+<h5>Disabling Timeouts</h5>
+<p>
+Disabling timeouts is <strong>NOT</strong> recommended. It can lead to unintended consequences such as sending a					message to a device that is no longer present. This can cause a radio channel to be blocked indefinitely.</p>
 </div>
 <div class="NOTE">
 <h5>Note</h5>
@@ -172,7 +172,7 @@ internal class SelectBicyclePowerImplementation : ISelectImplementation
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 0:52:45.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 12/07/2025 15:17:49.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>

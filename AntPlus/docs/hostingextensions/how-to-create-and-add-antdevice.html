@@ -107,8 +107,8 @@ public partial class BikeRadar : AntDevice
 <li><p>Add a PNG file to use as an image/icon to the project and set the build action to &quot;Embedded Resource&quot;.						The Bike Radar image was copied from the Bike Radar specification and saved as a PNG in the						CustomAntDevice solution folder.</p>
 </li>
 <li><p>Implement required properties in the BikeRadar class. You will override ChannelCount, DeviceImageStream,						and ToString.</p>
-<div class="WARNING">
-<h5>Warning</h5>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>You need to manually declare your ANT specific device class! This const is used as a key when							added to the DI container and the AntCollection will instantiate a device with this key.</p>
 </div>
 <pre><code class="lang-cs">public const byte DeviceClass = 40;        // this value comes from the Bike Radar device type
@@ -290,7 +290,7 @@ Build();
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 0:52:45.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 12/07/2025 15:17:49.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>

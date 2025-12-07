@@ -90,9 +90,9 @@
 
 <p>These examples consists of four projects. AntGrpcShared is a class library providing a gRPC client/server to be consumed by the other			projects. AntGrpcService is a Windows service that provides services to connect to and communicate with an ANT USB stick.			The MauiAntClientApp is a .NET MAUI project and gRPC client that is used to demonstrate Windows/Android applications that work with the			remote server application on a local subnet. <strong>I have not tested the other platforms supported by .NET MAUI.</strong></p>
 <div class="NOTE">
-<h5>Note</h5>
-<p><strong>About gRPC</strong></p>
-<p>gRPC is a Google defined protocol for remote procedure calls. It is the recommended RPC to use instead of WCF. Also,				don't confuse <strong>gRPC channels</strong> with <strong>ANT radio channels</strong>. gRPC is a				network protocol, ANT radio channels are a Dynastream/Garmin protocol for ANT radios.</p>
+<h5>About gRPC</h5>
+<p>
+gRPC is a Google defined protocol for remote procedure calls. It is the recommended RPC to use instead of WCF. Also,				don't confuse <strong>gRPC channels</strong> with <strong>ANT radio channels</strong>. gRPC is a				network protocol, ANT radio channels are a Dynastream/Garmin protocol for ANT radios.</p>
 </div>
 <p>The intent of AntGrpcService is to make the ANT USB stick accessible not only to client applications running on the local			host but mobile device emulators and mobile devices connected to the network the service is running on.</p>
 <p>AntGrpcShared is the glue that facilitates communication between clients and the service. The benefit of using			gRPC is that multiple clients can run simultaneously, both on the local PC and over the network.</p>
@@ -143,7 +143,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 0:52:45.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 12/07/2025 15:17:49.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
