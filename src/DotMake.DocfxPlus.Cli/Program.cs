@@ -1,4 +1,3 @@
-using System;
 using DotMake.CommandLine;
 using DotMake.DocfxPlus.Cli;
 using DotMake.DocfxPlus.Cli.Commands;
