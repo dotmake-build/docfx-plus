@@ -24,15 +24,15 @@ jobs:
     steps:
     # Checkout external repositories
     - name: Checkout external repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         repository: StephenHidem/AntPlus
         path: AntPlus
 
     - name: Dotnet Setup
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v5
       with:
-        dotnet-version: 8.x
+        dotnet-version: 10.x
 
     - run: dotnet tool update -g docfx-plus
 
