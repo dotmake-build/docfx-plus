@@ -25,9 +25,9 @@ jobs:
     # Checkout external repositories
     - name: Checkout external repo
       uses: actions/checkout@v5
-      ref: v2025.9.30.0
       with:
         repository: EWSoftware/SHFB
+        ref: v2025.9.30.0
         path: SHFB
 
     - name: Dotnet Setup
