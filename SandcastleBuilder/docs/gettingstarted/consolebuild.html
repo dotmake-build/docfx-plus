@@ -154,8 +154,8 @@ command lines:</p>
     /p:FeedbackEMailAdress=&quot;Eric@EWoodruff.us&quot;
     HelpFile.shfbproj
 </code></pre>
-<div class="WARNING">
-<h5>Warning</h5>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>Property names specified on the command line or in response files are case-insensitive as are
 simple property values.  However, XML-based property values (the collection-based ones) are case-sensitive with
 regard to the element names.  The values of the elements themselves are case-insensitive.</p>
@@ -177,8 +177,8 @@ containing property and/or target definition overrides.  The <code>CustomBeforeS
 property is useful for specifying overrides for complex properties such as those for build component
 configurations, plug-in configurations, and API filter settings as you can specify them using normal XML that
 spans multiple lines.  An example override file is shown below:</p>
-<div class="WARNING">
-<h5>Warning</h5>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>The paths to the target override files should be fully qualified as relative paths on them are
 evaluated by MSBuild based on the help file builder's target file location.  Do not enclose the project filename
 in single quotes or it will be ignored.  If necessary, enclose the entire command line parameter in double

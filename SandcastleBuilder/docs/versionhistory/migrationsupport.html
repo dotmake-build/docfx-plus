@@ -132,8 +132,8 @@ new parameter type.</p>
 <li><p>For configurable build components and plug-ins, add an editor factory class to the
 configuration editor form similar to the following examples.  The first is for a plug-in, the second is for a
 build component.</p>
-<div class="WARNING">
-<h5>Warning</h5>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>It is essential that the ID specified in the export attribute matches the ID on the component
 or plug-in's export attribute exactly.  This is how the IDEs will match the editor component to the related
 build component or plug-in.</p>
@@ -199,8 +199,8 @@ host the configuration forms.</p>
 rather than modifying the old project file.  That way, all of the necessary NuGet properties and the build
 property file are present and ready to update.  The following sections provide more information on
 changes that need to be made to the various component project types.</p>
-<div class="WARNING">
-<h5>Warning</h5>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>If, after creating a project, you rename the assembly created by the project, be sure to rename
 the project's <em>.props</em> file found in the <em>.\build</em> folder to match the new
 assembly name.  This is required so that the build properties can be found when added to a help file builder
