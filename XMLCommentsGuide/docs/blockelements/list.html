@@ -140,8 +140,8 @@ or
 <p>The <code>type</code> attribute defines the list type.  The list type value should be
 one of the values shown below.  The list item terms and descriptions can be any valid inline or block XML comments
 similar to a <code>remarks</code> element.</p>
-<div class="WARNING">
-<h5>Warning</h5>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>The <code>type</code> attribute value is case-sensitive.  Unrecognized values will
 default to the <code>bullet</code> list style.</p>
 </div>
@@ -161,7 +161,7 @@ of each format are noted in the description.</p>
 </tr>
 <tr>
 <td>number</td>
-<td>This renders a numbered list.  Each <code>item</code> element will render a new<br>numbered item.  If <code>term</code> and <code>description</code> elements are omitted,<br>the inner text is rendered after the number.  The same thing happens if a <code>description</code><br>element is included by itself.  If both a <code>term</code> and a <code>description</code><br>element are present, the term is highlighted and separated from the description by a dash.<br><br><br><br>The <code>number</code> style supports an optional <code>start</code><br>attribute that can be used to indicate the starting number for the numbered list.  This lets you create a list<br>at a later point in the topic that continues numbering from the end point of a prior list.  You are responsible<br>for providing the appropriate starting number for the new list.<br><br><br><br>&gt; [!note]<br>&gt; <br>&gt; <br>&gt; <code>start</code> is a custom attribute implemented by Sandcastle.<br>&gt;</td>
+<td>This renders a numbered list.  Each <code>item</code> element will render a new<br>numbered item.  If <code>term</code> and <code>description</code> elements are omitted,<br>the inner text is rendered after the number.  The same thing happens if a <code>description</code><br>element is included by itself.  If both a <code>term</code> and a <code>description</code><br>element are present, the term is highlighted and separated from the description by a dash.<br><br><br><br>The <code>number</code> style supports an optional <code>start</code><br>attribute that can be used to indicate the starting number for the numbered list.  This lets you create a list<br>at a later point in the topic that continues numbering from the end point of a prior list.  You are responsible<br>for providing the appropriate starting number for the new list.<br><br><br><br>&gt; [!note]<br>&gt; <code>start</code> is a custom attribute implemented by Sandcastle.</td>
 </tr>
 <tr>
 <td>definition</td>

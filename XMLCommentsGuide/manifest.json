@@ -28,42 +28,14 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest",
-      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml\" sourcestartlinenumber=\"1\">This class is used to test inherited documentation on attached properties and events</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected",
-      "Summary": null
+      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty",
+      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml\" sourcestartlinenumber=\"1\">This defines the\n<xref href=\"XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelected\" data-throw-if-not-resolved=\"false\"></xref>\nattached property.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -84,14 +56,42 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelectedProperty",
-      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml\" sourcestartlinenumber=\"1\">This defines the\n<xref href=\"XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.IsBroughtIntoViewWhenSelected\" data-throw-if-not-resolved=\"false\"></xref>\nattached property.</p>\n"
+      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.GetIsBroughtIntoViewWhenSelected",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.SetIsBroughtIntoViewWhenSelected",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -112,69 +112,27 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.AddItemActivateHandler",
-      "Summary": null
+      "Title": "XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest",
+      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.AttachedEventsAndPropertiesTest.yml\" sourcestartlinenumber=\"1\">This class is used to test inherited documentation on attached properties and events</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.-ctor.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc",
-      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml\" sourcestartlinenumber=\"1\">A base class from which to inherit documentation</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.BaseInheritDoc",
       "Summary": null
     },
     {
@@ -196,27 +154,55 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.-ctor.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.BaseInheritDoc",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithExample",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.CustomException.yml",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithTwoExamples",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc",
+      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml\" sourcestartlinenumber=\"1\">A base class from which to inherit documentation</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.BaseInheritDoc.MethodWithLotsOfComments",
       "Summary": null
     },
     {
@@ -235,16 +221,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.yml",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.CustomException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException",
       "Summary": null
     },
     {
@@ -259,6 +245,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.ToString",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod",
       "Summary": null
     },
     {
@@ -336,20 +336,6 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.yml",
-      "output": {
-        ".html": {
           "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.html"
         }
       },
@@ -361,17 +347,73 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation",
-      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml\" sourcestartlinenumber=\"1\">A structure with a generic base class that has inherited documentation on its members</p>\n"
+      "Title": "XMLCommentsExamples.DocumentationInheritance.ExplicitImplementation.Clone",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -448,13 +490,13 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SymmetricExceptWith",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith",
       "Summary": null
     },
     {
@@ -462,55 +504,13 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals",
       "Summary": null
     },
     {
@@ -532,13 +532,13 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.ExceptWith",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Count",
       "Summary": null
     },
     {
@@ -546,13 +546,13 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IntersectWith",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.IsReadOnly",
       "Summary": null
     },
     {
@@ -560,41 +560,27 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.UnionWith",
-      "Summary": null
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation",
+      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml\" sourcestartlinenumber=\"1\">A structure with a generic base class that has inherited documentation on its members</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.GetEnumerator",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Remove",
       "Summary": null
     },
     {
@@ -616,13 +602,27 @@
       "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals.html"
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.SetEquals",
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.Add",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.DocumentationInheritance.SetDocumentation.CopyTo",
       "Summary": null
     },
     {
@@ -644,14 +644,14 @@
       "source_relative_path": "api/XMLCommentsExamples.GenericClass-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.GenericClass-2.SomethingHappened.html"
+          "relative_path": "api/XMLCommentsExamples.GenericClass-2.Property.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.GenericClass<T1, T2>.SomethingHappened",
-      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.GenericClass-2.yml\" sourcestartlinenumber=\"1\">This is an event that takes a generic argument.</p>\n"
+      "Title": "XMLCommentsExamples.GenericClass<T1, T2>.Property",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -686,6 +686,20 @@
       "source_relative_path": "api/XMLCommentsExamples.GenericClass-2.yml",
       "output": {
         ".html": {
+          "relative_path": "api/XMLCommentsExamples.GenericClass-2.SomethingHappened.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.GenericClass<T1, T2>.SomethingHappened",
+      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.GenericClass-2.yml\" sourcestartlinenumber=\"1\">This is an event that takes a generic argument.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.GenericClass-2.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/XMLCommentsExamples.GenericClass-2.OnSomethingHappened.html"
         }
       },
@@ -693,20 +707,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "XMLCommentsExamples.GenericClass<T1, T2>.OnSomethingHappened",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.GenericClass-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.GenericClass-2.Property.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.GenericClass<T1, T2>.Property",
       "Summary": null
     },
     {
@@ -770,62 +770,6 @@
       "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.TemporaryMethod.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.TemporaryMethod",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.SomethingHappened.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.SomethingHappened",
-      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.SampleClass.yml\" sourcestartlinenumber=\"1\">This event is raised when something interesting happens.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.OnSomethingHappened.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.OnSomethingHappened",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
           "relative_path": "api/XMLCommentsExamples.SampleClass.DoSomething.html"
         }
       },
@@ -833,258 +777,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "XMLCommentsExamples.SampleClass.DoSomething",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.TokenExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.TokenExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.SummaryRemarksExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.SummaryRemarksExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.BibliographyCiteExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.BibliographyCiteExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass",
-      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.SampleClass.yml\" sourcestartlinenumber=\"1\">This class is used to demonstrate the various XML comments elements.  It serves no useful purpose.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.PreliminaryExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.PreliminaryExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.SeeLangWordExamples.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.SeeLangWordExamples",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.op_Addition.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.operator +",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.SeeElementExternalExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.SeeElementExternalExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.ParagraphExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.ParagraphExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.CallStoredProcedure.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.CallStoredProcedure",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.ConceptualLinkExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.ConceptualLinkExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.PerformAnAction.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.PerformAnAction",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.GetRandomNumber.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.GetRandomNumber",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.SampleNumber.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.SampleNumber",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.FilterPriorityExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.FilterPriorityExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.ProcessText.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.ProcessText",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.IncludeSectionsExample.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.IncludeSectionsExample",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.VariousListExamples.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.VariousListExamples",
       "Summary": null
     },
     {
@@ -1120,13 +812,125 @@
       "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
       "output": {
         ".html": {
-          "relative_path": "api/XMLCommentsExamples.SampleClass.AverageValues.html"
+          "relative_path": "api/XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "XMLCommentsExamples.SampleClass.AverageValues",
+      "Title": "XMLCommentsExamples.SampleClass.MethodRequiringSpecificPermissions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.CallStoredProcedure.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.CallStoredProcedure",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.SampleNumber.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.SampleNumber",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.SeeLangWordExamples.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.SeeLangWordExamples",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.ConceptualLinkExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.ConceptualLinkExample",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.SomethingHappened.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.SomethingHappened",
+      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.SampleClass.yml\" sourcestartlinenumber=\"1\">This event is raised when something interesting happens.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.GetRandomNumber.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.GetRandomNumber",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.ProcessText.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.ProcessText",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.FilterPriorityExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.FilterPriorityExample",
       "Summary": null
     },
     {
@@ -1148,6 +952,90 @@
       "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
       "output": {
         ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.IncludeSectionsExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.IncludeSectionsExample",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.VariousListExamples.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.VariousListExamples",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.TemporaryMethod.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.TemporaryMethod",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.PreliminaryExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.PreliminaryExample",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.op_Addition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.operator +",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.OnSomethingHappened.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.OnSomethingHappened",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/XMLCommentsExamples.SampleClass.Increment.html"
         }
       },
@@ -1155,6 +1043,118 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "XMLCommentsExamples.SampleClass.Increment",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.PerformAnAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.PerformAnAction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.SummaryRemarksExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.SummaryRemarksExample",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.SeeElementExternalExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.SeeElementExternalExample",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.TokenExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.TokenExample",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.BibliographyCiteExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.BibliographyCiteExample",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass",
+      "Summary": "<p sourcefile=\"api/XMLCommentsExamples.SampleClass.yml\" sourcestartlinenumber=\"1\">This class is used to demonstrate the various XML comments elements.  It serves no useful purpose.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.AverageValues.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.AverageValues",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/XMLCommentsExamples.SampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XMLCommentsExamples.SampleClass.ParagraphExample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "XMLCommentsExamples.SampleClass.ParagraphExample",
       "Summary": null
     },
     {
