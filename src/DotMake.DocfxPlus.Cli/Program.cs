@@ -37,7 +37,7 @@ var docfxMainMethod = AccessTools.Method(PatchAssemblies.Docfx.GetType("Docfx.Pr
 #if DEBUG
 //var commandLine = @"..\..\..\..\..\\docs\docfx.json --serve --debug";
 
-//args = commandLine.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+//args = commandLine.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
 #endif
 
 var parser = Cli.GetParser<RootCliCommand>(new CliSettings { EnableDefaultExceptionHandler = true });

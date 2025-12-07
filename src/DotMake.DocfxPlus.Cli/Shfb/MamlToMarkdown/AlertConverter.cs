@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using HtmlAgilityPack;
 using ReverseMarkdown;
@@ -30,25 +31,25 @@ namespace DotMake.DocfxPlus.Cli.Shfb.MamlToMarkdown
                 case "implement":
                 case "caller":
                 case "inherit":
+                case "todo":
                     alertType = "note";
                     break;
 
                 case "tip":
-                case "todo":
                     alertType = "tip";
                     break;
 
-                //    alertType = "important";
-                //    break;
+                case "important":
+                    alertType = "important";
+                    break;
 
+                case "caution":
                 case "security":
                 case "security note":
                     alertType = "caution";
                     break;
 
-                case "caution":
                 case "warning":
-                case "important":
                     alertType = "warning";
                     break;
 
@@ -59,10 +60,14 @@ namespace DotMake.DocfxPlus.Cli.Shfb.MamlToMarkdown
 
             sb.AppendLine($"> [!{alertType}]");
 
+            if (string.IsNullOrWhiteSpace(title)
+                && !alertClass.Equals(alertType, StringComparison.OrdinalIgnoreCase))
+                title = alertClass;
+
             if (!string.IsNullOrWhiteSpace(title))
                 sb.AppendLine($"> **{title}**");
 
-            var content = TreatChildren(node);
+            var content = TreatChildren(node).Chomp();
             // get the lines based on carriage return and prefix "> " to each line
             foreach (var line in content.ReadLines())
             {

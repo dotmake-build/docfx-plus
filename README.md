@@ -270,6 +270,17 @@ Refer to [DocFx Config Reference](https://dotnet.github.io/docfx/reference/docfx
     `NamespaceDoc` classes will be found even if your API filter excludes them but themselves will not be included in the docs,
     only their XML Comments assigned to the containing namespaces will be displayed.  
     You can optionally make them private or internal and mark them with a `CompilerGenerated` attribute.
+
+- For markdown alerts, use bold text in the first line as the title of the alert:
+  ```
+  > [!note]
+  > **Project Road Map**
+  > This alert contains a custom title.
+         
+  > [!caution]
+  > **security note**
+  > Do not tape your password to the underside of your keyboard.
+  ```
  
 ## `docfx-plus` **template** features
 

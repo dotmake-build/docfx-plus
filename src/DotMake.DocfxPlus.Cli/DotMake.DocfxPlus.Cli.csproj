@@ -16,7 +16,27 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - **Fixed:** Words next to xmldocs elements were sticking (space was collapsing) in api output.
+        - **Fixed:** When converting SHFB projects, treat alert class same as DocFx one if it exists.
+          For example `<alert class="important">` should map to `> [!important]` and not `> [!warning]`.
+          If DocFx does not have the same alert type, use the closest type (for colors)
+          but use the SHFB type as the title (if alert does not have a specific title e.g. `<alert title="...">`).
+          For example, use `caution` type and `SECURITY NOTE` title for `<alert class="security note">`.
+          Also trim paragraph of converted alert markdown.
+
+        - **Improved:** For markdown alerts, use bold text in the first line as the title of the alert:
+          ```
+          > [!note]
+          > **Project Road Map**
+          > This alert contains a custom title.
+          
+          > [!caution]
+          > **security note**
+          > Do not tape your password to the underside of your keyboard.
+          ```
+          
+        - **Improved:** When converting SHFB projects, ignore `IsExpanded` property for topics when writing the TOC file,
+          so that TOC nodes are not unnecessarily expanded when page is loaded.
+          This is because SHFB docs say "Used by the editor for binding in the tree view." for `IsExpanded` property.
       ]]>
     </PackageReleaseNotes>
 

@@ -166,8 +166,9 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                         lines.Add($"href: {apiTocHref}");
                     else if (topic.TopicFile != null)
                         lines.Add($"href: ~/{fileMap.TopicFiles[topic.TopicFile.FilePath]}.md");
-                    if (topic.IsExpanded)
-                        lines.Add("expanded: true");
+                    //Ignore this as SHFB docs say "Used by the editor for binding in the tree view."
+                    //if (topic.IsExpanded)
+                    //    lines.Add("expanded: true");
 
                     if (topic == apiContentInsertionPoint && topic!.ApiParentMode == ApiParentMode.InsertAfter)
                     {
