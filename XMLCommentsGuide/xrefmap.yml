@@ -181,15 +181,6 @@ references:
   fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
   nameWithType: CustomException.CustomException(SerializationInfo, StreamingContext)
   nameWithType.vb: CustomException.New(SerializationInfo, StreamingContext)
-- uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String,System.Exception)
-  name: CustomException(string, Exception)
-  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html#XMLCommentsExamples_DocumentationInheritance_CustomException__ctor_System_String_System_Exception_
-  commentId: M:XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String,System.Exception)
-  name.vb: New(String, Exception)
-  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException(string, System.Exception)
-  fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New(String, System.Exception)
-  nameWithType: CustomException.CustomException(string, Exception)
-  nameWithType.vb: CustomException.New(String, Exception)
 - uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String)
   name: CustomException(string)
   href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html#XMLCommentsExamples_DocumentationInheritance_CustomException__ctor_System_String_
@@ -199,6 +190,15 @@ references:
   fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New(String)
   nameWithType: CustomException.CustomException(string)
   nameWithType.vb: CustomException.New(String)
+- uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String,System.Exception)
+  name: CustomException(string, Exception)
+  href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html#XMLCommentsExamples_DocumentationInheritance_CustomException__ctor_System_String_System_Exception_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: XMLCommentsExamples.DocumentationInheritance.CustomException.CustomException(string, System.Exception)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.CustomException.New(String, System.Exception)
+  nameWithType: CustomException.CustomException(string, Exception)
+  nameWithType.vb: CustomException.New(String, Exception)
 - uid: XMLCommentsExamples.DocumentationInheritance.CustomException.#ctor*
   name: CustomException
   href: api/XMLCommentsExamples.DocumentationInheritance.CustomException.-ctor.html
@@ -265,6 +265,15 @@ references:
   commentId: Overload:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples
   fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.MethodWithTwoExamples
   nameWithType: DerivedClassWithInheritedDocs.MethodWithTwoExamples
+- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String)
+  name: OverloadedMethod(string)
+  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_OverloadedMethod_System_String_
+  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String)
+  name.vb: OverloadedMethod(String)
+  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(string)
+  fullName.vb: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(String)
+  nameWithType: DerivedClassWithInheritedDocs.OverloadedMethod(string)
+  nameWithType.vb: DerivedClassWithInheritedDocs.OverloadedMethod(String)
 - uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String,System.Int32)
   name: OverloadedMethod(string, int)
   href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_OverloadedMethod_System_String_System_Int32_
@@ -283,15 +292,6 @@ references:
   fullName.vb: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(String, String)
   nameWithType: DerivedClassWithInheritedDocs.OverloadedMethod(string, string)
   nameWithType.vb: DerivedClassWithInheritedDocs.OverloadedMethod(String, String)
-- uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String)
-  name: OverloadedMethod(string)
-  href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html#XMLCommentsExamples_DocumentationInheritance_DerivedClassWithInheritedDocs_OverloadedMethod_System_String_
-  commentId: M:XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(System.String)
-  name.vb: OverloadedMethod(String)
-  fullName: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(string)
-  fullName.vb: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod(String)
-  nameWithType: DerivedClassWithInheritedDocs.OverloadedMethod(string)
-  nameWithType.vb: DerivedClassWithInheritedDocs.OverloadedMethod(String)
 - uid: XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod*
   name: OverloadedMethod
   href: api/XMLCommentsExamples.DocumentationInheritance.DerivedClassWithInheritedDocs.OverloadedMethod.html
@@ -710,15 +710,6 @@ references:
   commentId: T:XMLCommentsExamples.SampleClass
   fullName: XMLCommentsExamples.SampleClass
   nameWithType: SampleClass
-- uid: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})
-  name: AverageValues(IEnumerable<double>, IEnumerable<double>)
-  href: api/XMLCommentsExamples.SampleClass.AverageValues.html#XMLCommentsExamples_SampleClass_AverageValues_System_Collections_Generic_IEnumerable_System_Double__System_Collections_Generic_IEnumerable_System_Double__
-  commentId: M:XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})
-  name.vb: AverageValues(IEnumerable(Of Double), IEnumerable(Of Double))
-  fullName: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable<double>, System.Collections.Generic.IEnumerable<double>)
-  fullName.vb: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable(Of Double), System.Collections.Generic.IEnumerable(Of Double))
-  nameWithType: SampleClass.AverageValues(IEnumerable<double>, IEnumerable<double>)
-  nameWithType.vb: SampleClass.AverageValues(IEnumerable(Of Double), IEnumerable(Of Double))
 - uid: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double})
   name: AverageValues(IEnumerable<double>)
   href: api/XMLCommentsExamples.SampleClass.AverageValues.html#XMLCommentsExamples_SampleClass_AverageValues_System_Collections_Generic_IEnumerable_System_Double__
@@ -728,6 +719,15 @@ references:
   fullName.vb: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable(Of Double))
   nameWithType: SampleClass.AverageValues(IEnumerable<double>)
   nameWithType.vb: SampleClass.AverageValues(IEnumerable(Of Double))
+- uid: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})
+  name: AverageValues(IEnumerable<double>, IEnumerable<double>)
+  href: api/XMLCommentsExamples.SampleClass.AverageValues.html#XMLCommentsExamples_SampleClass_AverageValues_System_Collections_Generic_IEnumerable_System_Double__System_Collections_Generic_IEnumerable_System_Double__
+  commentId: M:XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})
+  name.vb: AverageValues(IEnumerable(Of Double), IEnumerable(Of Double))
+  fullName: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable<double>, System.Collections.Generic.IEnumerable<double>)
+  fullName.vb: XMLCommentsExamples.SampleClass.AverageValues(System.Collections.Generic.IEnumerable(Of Double), System.Collections.Generic.IEnumerable(Of Double))
+  nameWithType: SampleClass.AverageValues(IEnumerable<double>, IEnumerable<double>)
+  nameWithType.vb: SampleClass.AverageValues(IEnumerable(Of Double), IEnumerable(Of Double))
 - uid: XMLCommentsExamples.SampleClass.AverageValues*
   name: AverageValues
   href: api/XMLCommentsExamples.SampleClass.AverageValues.html
@@ -779,15 +779,6 @@ references:
   commentId: M:XMLCommentsExamples.SampleClass.DoSomething
   fullName: XMLCommentsExamples.SampleClass.DoSomething()
   nameWithType: SampleClass.DoSomething()
-- uid: XMLCommentsExamples.SampleClass.DoSomething(System.Int32,System.String)
-  name: DoSomething(int, string)
-  href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething_System_Int32_System_String_
-  commentId: M:XMLCommentsExamples.SampleClass.DoSomething(System.Int32,System.String)
-  name.vb: DoSomething(Integer, String)
-  fullName: XMLCommentsExamples.SampleClass.DoSomething(int, string)
-  fullName.vb: XMLCommentsExamples.SampleClass.DoSomething(Integer, String)
-  nameWithType: SampleClass.DoSomething(int, string)
-  nameWithType.vb: SampleClass.DoSomething(Integer, String)
 - uid: XMLCommentsExamples.SampleClass.DoSomething(System.Int32)
   name: DoSomething(int)
   href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething_System_Int32_
@@ -797,6 +788,15 @@ references:
   fullName.vb: XMLCommentsExamples.SampleClass.DoSomething(Integer)
   nameWithType: SampleClass.DoSomething(int)
   nameWithType.vb: SampleClass.DoSomething(Integer)
+- uid: XMLCommentsExamples.SampleClass.DoSomething(System.Int32,System.String)
+  name: DoSomething(int, string)
+  href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething_System_Int32_System_String_
+  commentId: M:XMLCommentsExamples.SampleClass.DoSomething(System.Int32,System.String)
+  name.vb: DoSomething(Integer, String)
+  fullName: XMLCommentsExamples.SampleClass.DoSomething(int, string)
+  fullName.vb: XMLCommentsExamples.SampleClass.DoSomething(Integer, String)
+  nameWithType: SampleClass.DoSomething(int, string)
+  nameWithType.vb: SampleClass.DoSomething(Integer, String)
 - uid: XMLCommentsExamples.SampleClass.DoSomething(System.String)
   name: DoSomething(string)
   href: api/XMLCommentsExamples.SampleClass.DoSomething.html#XMLCommentsExamples_SampleClass_DoSomething_System_String_
@@ -896,24 +896,6 @@ references:
   commentId: Overload:XMLCommentsExamples.SampleClass.OnSomethingHappened
   fullName: XMLCommentsExamples.SampleClass.OnSomethingHappened
   nameWithType: SampleClass.OnSomethingHappened
-- uid: XMLCommentsExamples.SampleClass.op_Addition(XMLCommentsExamples.SampleClass,XMLCommentsExamples.SampleClass)
-  name: operator +(SampleClass, SampleClass)
-  href: api/XMLCommentsExamples.SampleClass.op_Addition.html#XMLCommentsExamples_SampleClass_op_Addition_XMLCommentsExamples_SampleClass_XMLCommentsExamples_SampleClass_
-  commentId: M:XMLCommentsExamples.SampleClass.op_Addition(XMLCommentsExamples.SampleClass,XMLCommentsExamples.SampleClass)
-  name.vb: +(SampleClass, SampleClass)
-  fullName: XMLCommentsExamples.SampleClass.operator +(XMLCommentsExamples.SampleClass, XMLCommentsExamples.SampleClass)
-  fullName.vb: XMLCommentsExamples.SampleClass.+(XMLCommentsExamples.SampleClass, XMLCommentsExamples.SampleClass)
-  nameWithType: SampleClass.operator +(SampleClass, SampleClass)
-  nameWithType.vb: SampleClass.+(SampleClass, SampleClass)
-- uid: XMLCommentsExamples.SampleClass.op_Addition*
-  name: operator +
-  href: api/XMLCommentsExamples.SampleClass.op_Addition.html
-  commentId: Overload:XMLCommentsExamples.SampleClass.op_Addition
-  name.vb: +
-  fullName: XMLCommentsExamples.SampleClass.operator +
-  fullName.vb: XMLCommentsExamples.SampleClass.+
-  nameWithType: SampleClass.operator +
-  nameWithType.vb: SampleClass.+
 - uid: XMLCommentsExamples.SampleClass.ParagraphExample
   name: ParagraphExample()
   href: api/XMLCommentsExamples.SampleClass.ParagraphExample.html#XMLCommentsExamples_SampleClass_ParagraphExample
@@ -1007,6 +989,30 @@ references:
   commentId: E:XMLCommentsExamples.SampleClass.SomethingHappened
   fullName: XMLCommentsExamples.SampleClass.SomethingHappened
   nameWithType: SampleClass.SomethingHappened
+- uid: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32})
+  name: SumValues(IEnumerable<int>)
+  href: api/XMLCommentsExamples.SampleClass.SumValues.html#XMLCommentsExamples_SampleClass_SumValues_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SumValues(IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SampleClass.SumValues(IEnumerable<int>)
+  nameWithType.vb: SampleClass.SumValues(IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})
+  name: SumValues(IEnumerable<int>, IEnumerable<int>)
+  href: api/XMLCommentsExamples.SampleClass.SumValues.html#XMLCommentsExamples_SampleClass_SumValues_System_Collections_Generic_IEnumerable_System_Int32__System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: SumValues(IEnumerable(Of Integer), IEnumerable(Of Integer))
+  fullName: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable<int>, System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable(Of Integer), System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: SampleClass.SumValues(IEnumerable<int>, IEnumerable<int>)
+  nameWithType.vb: SampleClass.SumValues(IEnumerable(Of Integer), IEnumerable(Of Integer))
+- uid: XMLCommentsExamples.SampleClass.SumValues*
+  name: SumValues
+  href: api/XMLCommentsExamples.SampleClass.SumValues.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.SumValues
+  fullName: XMLCommentsExamples.SampleClass.SumValues
+  nameWithType: SampleClass.SumValues
 - uid: XMLCommentsExamples.SampleClass.SummaryRemarksExample
   name: SummaryRemarksExample()
   href: api/XMLCommentsExamples.SampleClass.SummaryRemarksExample.html#XMLCommentsExamples_SampleClass_SummaryRemarksExample
@@ -1019,30 +1025,6 @@ references:
   commentId: Overload:XMLCommentsExamples.SampleClass.SummaryRemarksExample
   fullName: XMLCommentsExamples.SampleClass.SummaryRemarksExample
   nameWithType: SampleClass.SummaryRemarksExample
-- uid: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})
-  name: SumValues(IEnumerable<int>, IEnumerable<int>)
-  href: api/XMLCommentsExamples.SampleClass.SumValues.html#XMLCommentsExamples_SampleClass_SumValues_System_Collections_Generic_IEnumerable_System_Int32__System_Collections_Generic_IEnumerable_System_Int32__
-  commentId: M:XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})
-  name.vb: SumValues(IEnumerable(Of Integer), IEnumerable(Of Integer))
-  fullName: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable<int>, System.Collections.Generic.IEnumerable<int>)
-  fullName.vb: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable(Of Integer), System.Collections.Generic.IEnumerable(Of Integer))
-  nameWithType: SampleClass.SumValues(IEnumerable<int>, IEnumerable<int>)
-  nameWithType.vb: SampleClass.SumValues(IEnumerable(Of Integer), IEnumerable(Of Integer))
-- uid: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32})
-  name: SumValues(IEnumerable<int>)
-  href: api/XMLCommentsExamples.SampleClass.SumValues.html#XMLCommentsExamples_SampleClass_SumValues_System_Collections_Generic_IEnumerable_System_Int32__
-  commentId: M:XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable{System.Int32})
-  name.vb: SumValues(IEnumerable(Of Integer))
-  fullName: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable<int>)
-  fullName.vb: XMLCommentsExamples.SampleClass.SumValues(System.Collections.Generic.IEnumerable(Of Integer))
-  nameWithType: SampleClass.SumValues(IEnumerable<int>)
-  nameWithType.vb: SampleClass.SumValues(IEnumerable(Of Integer))
-- uid: XMLCommentsExamples.SampleClass.SumValues*
-  name: SumValues
-  href: api/XMLCommentsExamples.SampleClass.SumValues.html
-  commentId: Overload:XMLCommentsExamples.SampleClass.SumValues
-  fullName: XMLCommentsExamples.SampleClass.SumValues
-  nameWithType: SampleClass.SumValues
 - uid: XMLCommentsExamples.SampleClass.TemporaryMethod
   name: TemporaryMethod()
   href: api/XMLCommentsExamples.SampleClass.TemporaryMethod.html#XMLCommentsExamples_SampleClass_TemporaryMethod
@@ -1091,6 +1073,24 @@ references:
   commentId: Overload:XMLCommentsExamples.SampleClass.VariousNoteExamples
   fullName: XMLCommentsExamples.SampleClass.VariousNoteExamples
   nameWithType: SampleClass.VariousNoteExamples
+- uid: XMLCommentsExamples.SampleClass.op_Addition(XMLCommentsExamples.SampleClass,XMLCommentsExamples.SampleClass)
+  name: operator +(SampleClass, SampleClass)
+  href: api/XMLCommentsExamples.SampleClass.op_Addition.html#XMLCommentsExamples_SampleClass_op_Addition_XMLCommentsExamples_SampleClass_XMLCommentsExamples_SampleClass_
+  commentId: M:XMLCommentsExamples.SampleClass.op_Addition(XMLCommentsExamples.SampleClass,XMLCommentsExamples.SampleClass)
+  name.vb: +(SampleClass, SampleClass)
+  fullName: XMLCommentsExamples.SampleClass.operator +(XMLCommentsExamples.SampleClass, XMLCommentsExamples.SampleClass)
+  fullName.vb: XMLCommentsExamples.SampleClass.+(XMLCommentsExamples.SampleClass, XMLCommentsExamples.SampleClass)
+  nameWithType: SampleClass.operator +(SampleClass, SampleClass)
+  nameWithType.vb: SampleClass.+(SampleClass, SampleClass)
+- uid: XMLCommentsExamples.SampleClass.op_Addition*
+  name: operator +
+  href: api/XMLCommentsExamples.SampleClass.op_Addition.html
+  commentId: Overload:XMLCommentsExamples.SampleClass.op_Addition
+  name.vb: +
+  fullName: XMLCommentsExamples.SampleClass.operator +
+  fullName.vb: XMLCommentsExamples.SampleClass.+
+  nameWithType: SampleClass.operator +
+  nameWithType.vb: SampleClass.+
 - uid: XMLCommentsExamples.ThreadSafetyClass
   name: ThreadSafetyClass
   href: api/XMLCommentsExamples.ThreadSafetyClass.html

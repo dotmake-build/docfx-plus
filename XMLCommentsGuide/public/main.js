@@ -189,7 +189,7 @@ function getLang(codeEl) {
     ?.toLowerCase()
     ?.trim();
 
-  return (lang === "" || lang === "none")
+  return (lang === "" || lang === "none" || lang === undefined)
     ? null
     : lang;
 }
