@@ -13,12 +13,6 @@ references:
   commentId: T:SmallEarthTech.AntPlus.AntDevice
   fullName: SmallEarthTech.AntPlus.AntDevice
   nameWithType: AntDevice
-- uid: SmallEarthTech.AntPlus.AntDevice._logger
-  name: _logger
-  href: api/SmallEarthTech.AntPlus.AntDevice._logger.html
-  commentId: F:SmallEarthTech.AntPlus.AntDevice._logger
-  fullName: SmallEarthTech.AntPlus.AntDevice._logger
-  nameWithType: AntDevice._logger
 - uid: SmallEarthTech.AntPlus.AntDevice.#ctor(SmallEarthTech.AntRadioInterface.ChannelId,SmallEarthTech.AntRadioInterface.IAntChannel,Microsoft.Extensions.Logging.ILogger,SmallEarthTech.AntPlus.TimeoutOptions)
   name: AntDevice(ChannelId, IAntChannel, ILogger, TimeoutOptions?)
   href: api/SmallEarthTech.AntPlus.AntDevice.-ctor.html#SmallEarthTech_AntPlus_AntDevice__ctor_SmallEarthTech_AntRadioInterface_ChannelId_SmallEarthTech_AntRadioInterface_IAntChannel_Microsoft_Extensions_Logging_ILogger_SmallEarthTech_AntPlus_TimeoutOptions_
@@ -112,6 +106,30 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.AntDevice.Offline
   fullName: SmallEarthTech.AntPlus.AntDevice.Offline
   nameWithType: AntDevice.Offline
+- uid: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived(System.Byte[])
+  name: OnUnknownDataPageReceived(byte[])
+  href: api/SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived.html#SmallEarthTech_AntPlus_AntDevice_OnUnknownDataPageReceived_System_Byte___
+  commentId: M:SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived(System.Byte[])
+  name.vb: OnUnknownDataPageReceived(Byte())
+  fullName: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived(byte[])
+  fullName.vb: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived(Byte())
+  nameWithType: AntDevice.OnUnknownDataPageReceived(byte[])
+  nameWithType.vb: AntDevice.OnUnknownDataPageReceived(Byte())
+- uid: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived*
+  name: OnUnknownDataPageReceived
+  href: api/SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived.html
+  commentId: Overload:SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived
+  fullName: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived
+  nameWithType: AntDevice.OnUnknownDataPageReceived
+- uid: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived``1(System.Int32,System.Byte[])
+  name: OnUnknownDataPageReceived<TEnum>(int, byte[])
+  href: api/SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived.html#SmallEarthTech_AntPlus_AntDevice_OnUnknownDataPageReceived__1_System_Int32_System_Byte___
+  commentId: M:SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived``1(System.Int32,System.Byte[])
+  name.vb: OnUnknownDataPageReceived(Of TEnum)(Integer, Byte())
+  fullName: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived<TEnum>(int, byte[])
+  fullName.vb: SmallEarthTech.AntPlus.AntDevice.OnUnknownDataPageReceived(Of TEnum)(Integer, Byte())
+  nameWithType: AntDevice.OnUnknownDataPageReceived<TEnum>(int, byte[])
+  nameWithType.vb: AntDevice.OnUnknownDataPageReceived(Of TEnum)(Integer, Byte())
 - uid: SmallEarthTech.AntPlus.AntDevice.Parse(System.Byte[])
   name: Parse(byte[])
   href: api/SmallEarthTech.AntPlus.AntDevice.Parse.html#SmallEarthTech_AntPlus_AntDevice_Parse_System_Byte___
@@ -169,6 +187,18 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.AntDevice.ToString
   fullName: SmallEarthTech.AntPlus.AntDevice.ToString
   nameWithType: AntDevice.ToString
+- uid: SmallEarthTech.AntPlus.AntDevice.UnknownDataPageReceived
+  name: UnknownDataPageReceived
+  href: api/SmallEarthTech.AntPlus.AntDevice.UnknownDataPageReceived.html
+  commentId: E:SmallEarthTech.AntPlus.AntDevice.UnknownDataPageReceived
+  fullName: SmallEarthTech.AntPlus.AntDevice.UnknownDataPageReceived
+  nameWithType: AntDevice.UnknownDataPageReceived
+- uid: SmallEarthTech.AntPlus.AntDevice._logger
+  name: _logger
+  href: api/SmallEarthTech.AntPlus.AntDevice._logger.html
+  commentId: F:SmallEarthTech.AntPlus.AntDevice._logger
+  fullName: SmallEarthTech.AntPlus.AntDevice._logger
+  nameWithType: AntDevice._logger
 - uid: SmallEarthTech.AntPlus.AntDeviceCollection
   name: AntDeviceCollection
   href: api/SmallEarthTech.AntPlus.AntDeviceCollection.html
@@ -211,6 +241,18 @@ references:
   commentId: F:SmallEarthTech.AntPlus.AntDeviceCollection.CollectionLock
   fullName: SmallEarthTech.AntPlus.AntDeviceCollection.CollectionLock
   nameWithType: AntDeviceCollection.CollectionLock
+- uid: SmallEarthTech.AntPlus.AntDeviceCollection.Dispose
+  name: Dispose()
+  href: api/SmallEarthTech.AntPlus.AntDeviceCollection.Dispose.html#SmallEarthTech_AntPlus_AntDeviceCollection_Dispose
+  commentId: M:SmallEarthTech.AntPlus.AntDeviceCollection.Dispose
+  fullName: SmallEarthTech.AntPlus.AntDeviceCollection.Dispose()
+  nameWithType: AntDeviceCollection.Dispose()
+- uid: SmallEarthTech.AntPlus.AntDeviceCollection.Dispose*
+  name: Dispose
+  href: api/SmallEarthTech.AntPlus.AntDeviceCollection.Dispose.html
+  commentId: Overload:SmallEarthTech.AntPlus.AntDeviceCollection.Dispose
+  fullName: SmallEarthTech.AntPlus.AntDeviceCollection.Dispose
+  nameWithType: AntDeviceCollection.Dispose
 - uid: SmallEarthTech.AntPlus.AntDeviceCollection.Remove(SmallEarthTech.AntPlus.AntDevice)
   name: Remove(AntDevice)
   href: api/SmallEarthTech.AntPlus.AntDeviceCollection.Remove.html#SmallEarthTech_AntPlus_AntDeviceCollection_Remove_SmallEarthTech_AntPlus_AntDevice_
@@ -1234,18 +1276,18 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.CommunicationLost
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.CommunicationLost
   nameWithType: Asset.AssetStatus.CommunicationLost
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.Good
-  name: Good
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.html#SmallEarthTech_AntPlus_DeviceProfiles_AssetTracker_Asset_AssetStatus_Good
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.Good
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.Good
-  nameWithType: Asset.AssetStatus.Good
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.GPSLost
   name: GPSLost
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.html#SmallEarthTech_AntPlus_DeviceProfiles_AssetTracker_Asset_AssetStatus_GPSLost
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.GPSLost
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.GPSLost
   nameWithType: Asset.AssetStatus.GPSLost
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.Good
+  name: Good
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.html#SmallEarthTech_AntPlus_DeviceProfiles_AssetTracker_Asset_AssetStatus_Good
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.Good
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.Good
+  nameWithType: Asset.AssetStatus.Good
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.LowBattery
   name: LowBattery
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.AssetTracker.Asset.AssetStatus.html#SmallEarthTech_AntPlus_DeviceProfiles_AssetTracker_Asset_AssetStatus_LowBattery
@@ -1825,18 +1867,6 @@ references:
   fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.New
   nameWithType: CrankTorqueFrequencySensor.CrankTorqueFrequencySensor
   nameWithType.vb: CrankTorqueFrequencySensor.New
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
-  name: Cadence
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_CrankTorqueFrequencySensor_Cadence
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
-  nameWithType: CrankTorqueFrequencySensor.Cadence
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence*
-  name: Cadence
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
-  nameWithType: CrankTorqueFrequencySensor.Cadence
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.CTFDefinedId
   name: CrankTorqueFrequencySensor.CTFDefinedId
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.CTFDefinedId.html
@@ -1867,6 +1897,18 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.CTFDefinedId.ZeroOffset
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.CTFDefinedId.ZeroOffset
   nameWithType: CrankTorqueFrequencySensor.CTFDefinedId.ZeroOffset
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
+  name: Cadence
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_CrankTorqueFrequencySensor_Cadence
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
+  nameWithType: CrankTorqueFrequencySensor.Cadence
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence*
+  name: Cadence
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Cadence
+  nameWithType: CrankTorqueFrequencySensor.Cadence
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.DeviceImageStream
   name: DeviceImageStream
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.DeviceImageStream.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_CrankTorqueFrequencySensor_DeviceImageStream
@@ -1960,18 +2002,6 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Slope
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Slope
   nameWithType: CrankTorqueFrequencySensor.Slope
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
-  name: Torque
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_CrankTorqueFrequencySensor_Torque
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
-  nameWithType: CrankTorqueFrequencySensor.Torque
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque*
-  name: Torque
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
-  nameWithType: CrankTorqueFrequencySensor.Torque
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.ToString
   name: ToString()
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.ToString.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_CrankTorqueFrequencySensor_ToString
@@ -1984,6 +2014,18 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.ToString
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.ToString
   nameWithType: CrankTorqueFrequencySensor.ToString
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
+  name: Torque
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_CrankTorqueFrequencySensor_Torque
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
+  nameWithType: CrankTorqueFrequencySensor.Torque
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque*
+  name: Torque
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.CrankTorqueFrequencySensor.Torque
+  nameWithType: CrankTorqueFrequencySensor.Torque
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.MeasurementOutputData
   name: MeasurementOutputData
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.MeasurementOutputData.html
@@ -2458,18 +2500,6 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.RightForceAngle
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.RightForceAngle
   nameWithType: StandardCrankTorqueSensor.RightForceAngle
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
-  name: TorqueBarycenterAngle
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardCrankTorqueSensor_TorqueBarycenterAngle
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
-  nameWithType: StandardCrankTorqueSensor.TorqueBarycenterAngle
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle*
-  name: TorqueBarycenterAngle
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
-  nameWithType: StandardCrankTorqueSensor.TorqueBarycenterAngle
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.ToString
   name: ToString()
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.ToString.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardCrankTorqueSensor_ToString
@@ -2482,6 +2512,18 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.ToString
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.ToString
   nameWithType: StandardCrankTorqueSensor.ToString
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
+  name: TorqueBarycenterAngle
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardCrankTorqueSensor_TorqueBarycenterAngle
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
+  nameWithType: StandardCrankTorqueSensor.TorqueBarycenterAngle
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle*
+  name: TorqueBarycenterAngle
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardCrankTorqueSensor.TorqueBarycenterAngle
+  nameWithType: StandardCrankTorqueSensor.TorqueBarycenterAngle
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor
   name: StandardPowerSensor
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.html
@@ -2515,30 +2557,6 @@ references:
   fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.New
   nameWithType: StandardPowerSensor.StandardPowerSensor
   nameWithType.vb: StandardPowerSensor.New
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
-  name: AdvancedCapabilities1
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvancedCapabilities1
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
-  nameWithType: StandardPowerSensor.AdvancedCapabilities1
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1*
-  name: AdvancedCapabilities1
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
-  nameWithType: StandardPowerSensor.AdvancedCapabilities1
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
-  name: AdvancedCapabilities2
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvancedCapabilities2
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
-  nameWithType: StandardPowerSensor.AdvancedCapabilities2
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2*
-  name: AdvancedCapabilities2
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
-  nameWithType: StandardPowerSensor.AdvancedCapabilities2
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1
   name: StandardPowerSensor.AdvCapabilities1
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.html
@@ -2581,6 +2599,30 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.CustomProperties
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.CustomProperties
   nameWithType: StandardPowerSensor.AdvCapabilities1.CustomProperties
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp
+  name: StandardPowerSensor.AdvCapabilities1.InteropProp
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html
+  commentId: T:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp
+  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
+  name: DefaultCrankLength
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvCapabilities1_InteropProp_DefaultCrankLength
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
+  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.None
+  name: None
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvCapabilities1_InteropProp_None
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.None
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.None
+  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp.None
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
+  name: RequiresCrankLength
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvCapabilities1_InteropProp_RequiresCrankLength
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
+  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteroperableCapabilities
   name: StandardPowerSensor.AdvCapabilities1.InteroperableCapabilities
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteroperableCapabilities.html
@@ -2635,30 +2677,6 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteroperableProperties
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteroperableProperties
   nameWithType: StandardPowerSensor.AdvCapabilities1.InteroperableProperties
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp
-  name: StandardPowerSensor.AdvCapabilities1.InteropProp
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html
-  commentId: T:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp
-  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
-  name: DefaultCrankLength
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvCapabilities1_InteropProp_DefaultCrankLength
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
-  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp.DefaultCrankLength
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.None
-  name: None
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvCapabilities1_InteropProp_None
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.None
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.None
-  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp.None
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
-  name: RequiresCrankLength
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvCapabilities1_InteropProp_RequiresCrankLength
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
-  nameWithType: StandardPowerSensor.AdvCapabilities1.InteropProp.RequiresCrankLength
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.Mask
   name: Mask
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities1.Mask.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvCapabilities1_Mask
@@ -2761,6 +2779,30 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities2.Value
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvCapabilities2.Value
   nameWithType: StandardPowerSensor.AdvCapabilities2.Value
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
+  name: AdvancedCapabilities1
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvancedCapabilities1
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
+  nameWithType: StandardPowerSensor.AdvancedCapabilities1
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1*
+  name: AdvancedCapabilities1
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities1
+  nameWithType: StandardPowerSensor.AdvancedCapabilities1
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
+  name: AdvancedCapabilities2
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AdvancedCapabilities2
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
+  nameWithType: StandardPowerSensor.AdvancedCapabilities2
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2*
+  name: AdvancedCapabilities2
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AdvancedCapabilities2
+  nameWithType: StandardPowerSensor.AdvancedCapabilities2
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AutoZeroStatus
   name: AutoZeroStatus
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.AutoZeroStatus.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_AutoZeroStatus
@@ -3340,18 +3382,6 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.SetTransitionTimeOffset
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.SetTransitionTimeOffset
   nameWithType: StandardPowerSensor.SetTransitionTimeOffset
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
-  name: TorqueSensor
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_TorqueSensor
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
-  nameWithType: StandardPowerSensor.TorqueSensor
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor*
-  name: TorqueSensor
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
-  nameWithType: StandardPowerSensor.TorqueSensor
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.ToString
   name: ToString()
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.ToString.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_ToString
@@ -3364,6 +3394,18 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.ToString
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.ToString
   nameWithType: StandardPowerSensor.ToString
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
+  name: TorqueSensor
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_StandardPowerSensor_TorqueSensor
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
+  nameWithType: StandardPowerSensor.TorqueSensor
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor*
+  name: TorqueSensor
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardPowerSensor.TorqueSensor
+  nameWithType: StandardPowerSensor.TorqueSensor
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardWheelTorqueSensor
   name: StandardWheelTorqueSensor
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.StandardWheelTorqueSensor.html
@@ -3493,12 +3535,6 @@ references:
   commentId: T:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor
   nameWithType: TorqueSensor
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger
-  name: _logger
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger.html
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger
-  nameWithType: TorqueSensor._logger
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.#ctor(Microsoft.Extensions.Logging.ILogger)
   name: TorqueSensor(ILogger)
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.-ctor.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_TorqueSensor__ctor_Microsoft_Extensions_Logging_ILogger_
@@ -3553,6 +3589,39 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.AverageTorque
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.AverageTorque
   nameWithType: TorqueSensor.AverageTorque
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
+  name: InstantaneousCadence
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_TorqueSensor_InstantaneousCadence
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
+  nameWithType: TorqueSensor.InstantaneousCadence
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence*
+  name: InstantaneousCadence
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
+  nameWithType: TorqueSensor.InstantaneousCadence
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(System.Byte[])
+  name: ParseTorque(byte[])
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_TorqueSensor_ParseTorque_System_Byte___
+  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(System.Byte[])
+  name.vb: ParseTorque(Byte())
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(byte[])
+  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(Byte())
+  nameWithType: TorqueSensor.ParseTorque(byte[])
+  nameWithType.vb: TorqueSensor.ParseTorque(Byte())
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque*
+  name: ParseTorque
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque
+  nameWithType: TorqueSensor.ParseTorque
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger
+  name: _logger
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger.html
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor._logger
+  nameWithType: TorqueSensor._logger
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.deltaEventCount
   name: deltaEventCount
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.deltaEventCount.html
@@ -3577,39 +3646,12 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.deltaTorque
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.deltaTorque
   nameWithType: TorqueSensor.deltaTorque
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
-  name: InstantaneousCadence
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_TorqueSensor_InstantaneousCadence
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
-  nameWithType: TorqueSensor.InstantaneousCadence
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence*
-  name: InstantaneousCadence
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.InstantaneousCadence
-  nameWithType: TorqueSensor.InstantaneousCadence
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.isFirstDataMessage
   name: isFirstDataMessage
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.isFirstDataMessage.html
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.isFirstDataMessage
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.isFirstDataMessage
   nameWithType: TorqueSensor.isFirstDataMessage
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(System.Byte[])
-  name: ParseTorque(byte[])
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque.html#SmallEarthTech_AntPlus_DeviceProfiles_BicyclePower_TorqueSensor_ParseTorque_System_Byte___
-  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(System.Byte[])
-  name.vb: ParseTorque(Byte())
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(byte[])
-  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque(Byte())
-  nameWithType: TorqueSensor.ParseTorque(byte[])
-  nameWithType.vb: TorqueSensor.ParseTorque(Byte())
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque*
-  name: ParseTorque
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BicyclePower.TorqueSensor.ParseTorque
-  nameWithType: TorqueSensor.ParseTorque
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence
   name: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.html
@@ -4111,12 +4153,6 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.DataPage.ProductInfo
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.DataPage.ProductInfo
   nameWithType: CommonSpeedCadence.DataPage.ProductInfo
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage
-  name: isFirstDataMessage
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage.html
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage
-  nameWithType: CommonSpeedCadence.isFirstDataMessage
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.ManufacturerInfo
   name: ManufacturerInfo
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.ManufacturerInfo.html#SmallEarthTech_AntPlus_DeviceProfiles_BikeSpeedAndCadence_CommonSpeedCadence_ManufacturerInfo
@@ -4174,18 +4210,6 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.Parse
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.Parse
   nameWithType: CommonSpeedCadence.Parse
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime
-  name: prevEventTime
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime.html
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime
-  nameWithType: CommonSpeedCadence.prevEventTime
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount
-  name: prevRevCount
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount.html
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount
-  nameWithType: CommonSpeedCadence.prevRevCount
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.ProductInfo
   name: ProductInfo
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.ProductInfo.html#SmallEarthTech_AntPlus_DeviceProfiles_BikeSpeedAndCadence_CommonSpeedCadence_ProductInfo
@@ -4252,6 +4276,24 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.Stopped
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.Stopped
   nameWithType: CommonSpeedCadence.Stopped
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage
+  name: isFirstDataMessage
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage.html
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.isFirstDataMessage
+  nameWithType: CommonSpeedCadence.isFirstDataMessage
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime
+  name: prevEventTime
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime.html
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevEventTime
+  nameWithType: CommonSpeedCadence.prevEventTime
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount
+  name: prevRevCount
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount.html
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.BikeSpeedAndCadence.CommonSpeedCadence.prevRevCount
+  nameWithType: CommonSpeedCadence.prevRevCount
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment
   name: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.html
@@ -4663,6 +4705,12 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.RowerData
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.RowerData
   nameWithType: FitnessEquipment.DataPage.RowerData
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.StationaryBikeData
+  name: StationaryBikeData
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_FitnessEquipment_DataPage_StationaryBikeData
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.StationaryBikeData
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.StationaryBikeData
+  nameWithType: FitnessEquipment.DataPage.StationaryBikeData
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.TargetPower
   name: TargetPower
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.DataPage.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_FitnessEquipment_DataPage_TargetPower
@@ -4789,6 +4837,12 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.Rower
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.Rower
   nameWithType: FitnessEquipment.FitnessEquipmentType.Rower
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.StationaryBike
+  name: StationaryBike
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_FitnessEquipment_FitnessEquipmentType_StationaryBike
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.StationaryBike
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.StationaryBike
+  nameWithType: FitnessEquipment.FitnessEquipmentType.StationaryBike
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.TrainerStationaryBike
   name: TrainerStationaryBike
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.FitnessEquipmentType.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_FitnessEquipment_FitnessEquipmentType_TrainerStationaryBike
@@ -5038,27 +5092,6 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.GetFitnessEquipment
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.GetFitnessEquipment
   nameWithType: FitnessEquipment.GetFitnessEquipment
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage
-  name: handledPage
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage.html
-  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage
-  nameWithType: FitnessEquipment.handledPage
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(System.Byte[])
-  name: HandleFEState(byte[])
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_FitnessEquipment_HandleFEState_System_Byte___
-  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(System.Byte[])
-  name.vb: HandleFEState(Byte())
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(byte[])
-  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(Byte())
-  nameWithType: FitnessEquipment.HandleFEState(byte[])
-  nameWithType.vb: FitnessEquipment.HandleFEState(Byte())
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState*
-  name: HandleFEState
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState
-  nameWithType: FitnessEquipment.HandleFEState
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HRDataSource
   name: FitnessEquipment.HRDataSource
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HRDataSource.html
@@ -5089,6 +5122,21 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HRDataSource.Invalid
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HRDataSource.Invalid
   nameWithType: FitnessEquipment.HRDataSource.Invalid
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(System.Byte[])
+  name: HandleFEState(byte[])
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_FitnessEquipment_HandleFEState_System_Byte___
+  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(System.Byte[])
+  name.vb: HandleFEState(Byte())
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(byte[])
+  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState(Byte())
+  nameWithType: FitnessEquipment.HandleFEState(byte[])
+  nameWithType.vb: FitnessEquipment.HandleFEState(Byte())
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState*
+  name: HandleFEState
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.HandleFEState
+  nameWithType: FitnessEquipment.HandleFEState
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.LapToggled
   name: LapToggled
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.LapToggled.html
@@ -5263,6 +5311,12 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.TrainingModes
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.TrainingModes
   nameWithType: FitnessEquipment.TrainingModes
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage
+  name: handledPage
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage.html
+  commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.FitnessEquipment.handledPage
+  nameWithType: FitnessEquipment.handledPage
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.NordicSkier
   name: NordicSkier
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.NordicSkier.html
@@ -5503,6 +5557,90 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.Rower.ToString
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.Rower.ToString
   nameWithType: Rower.ToString
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike
+  name: StationaryBike
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.html
+  commentId: T:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike
+  nameWithType: StationaryBike
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.#ctor(SmallEarthTech.AntRadioInterface.ChannelId,SmallEarthTech.AntRadioInterface.IAntChannel,Microsoft.Extensions.Logging.ILogger,SmallEarthTech.AntPlus.TimeoutOptions)
+  name: StationaryBike(ChannelId, IAntChannel, ILogger, TimeoutOptions?)
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.-ctor.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_StationaryBike__ctor_SmallEarthTech_AntRadioInterface_ChannelId_SmallEarthTech_AntRadioInterface_IAntChannel_Microsoft_Extensions_Logging_ILogger_SmallEarthTech_AntPlus_TimeoutOptions_
+  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.#ctor(SmallEarthTech.AntRadioInterface.ChannelId,SmallEarthTech.AntRadioInterface.IAntChannel,Microsoft.Extensions.Logging.ILogger,SmallEarthTech.AntPlus.TimeoutOptions)
+  name.vb: New(ChannelId, IAntChannel, ILogger, TimeoutOptions)
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.StationaryBike(SmallEarthTech.AntRadioInterface.ChannelId, SmallEarthTech.AntRadioInterface.IAntChannel, Microsoft.Extensions.Logging.ILogger, SmallEarthTech.AntPlus.TimeoutOptions?)
+  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.New(SmallEarthTech.AntRadioInterface.ChannelId, SmallEarthTech.AntRadioInterface.IAntChannel, Microsoft.Extensions.Logging.ILogger, SmallEarthTech.AntPlus.TimeoutOptions)
+  nameWithType: StationaryBike.StationaryBike(ChannelId, IAntChannel, ILogger, TimeoutOptions?)
+  nameWithType.vb: StationaryBike.New(ChannelId, IAntChannel, ILogger, TimeoutOptions)
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.#ctor(SmallEarthTech.AntRadioInterface.ChannelId,SmallEarthTech.AntRadioInterface.IAntChannel,Microsoft.Extensions.Logging.ILogger,System.Int32)
+  name: StationaryBike(ChannelId, IAntChannel, ILogger, int)
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.-ctor.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_StationaryBike__ctor_SmallEarthTech_AntRadioInterface_ChannelId_SmallEarthTech_AntRadioInterface_IAntChannel_Microsoft_Extensions_Logging_ILogger_System_Int32_
+  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.#ctor(SmallEarthTech.AntRadioInterface.ChannelId,SmallEarthTech.AntRadioInterface.IAntChannel,Microsoft.Extensions.Logging.ILogger,System.Int32)
+  name.vb: New(ChannelId, IAntChannel, ILogger, Integer)
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.StationaryBike(SmallEarthTech.AntRadioInterface.ChannelId, SmallEarthTech.AntRadioInterface.IAntChannel, Microsoft.Extensions.Logging.ILogger, int)
+  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.New(SmallEarthTech.AntRadioInterface.ChannelId, SmallEarthTech.AntRadioInterface.IAntChannel, Microsoft.Extensions.Logging.ILogger, Integer)
+  nameWithType: StationaryBike.StationaryBike(ChannelId, IAntChannel, ILogger, int)
+  nameWithType.vb: StationaryBike.New(ChannelId, IAntChannel, ILogger, Integer)
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.#ctor*
+  name: StationaryBike
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.-ctor.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.#ctor
+  name.vb: New
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.StationaryBike
+  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.New
+  nameWithType: StationaryBike.StationaryBike
+  nameWithType.vb: StationaryBike.New
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence
+  name: Cadence
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_StationaryBike_Cadence
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence
+  nameWithType: StationaryBike.Cadence
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence*
+  name: Cadence
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Cadence
+  nameWithType: StationaryBike.Cadence
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower
+  name: InstantaneousPower
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_StationaryBike_InstantaneousPower
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower
+  nameWithType: StationaryBike.InstantaneousPower
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower*
+  name: InstantaneousPower
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.InstantaneousPower
+  nameWithType: StationaryBike.InstantaneousPower
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse(System.Byte[])
+  name: Parse(byte[])
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_StationaryBike_Parse_System_Byte___
+  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse(System.Byte[])
+  name.vb: Parse(Byte())
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse(byte[])
+  fullName.vb: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse(Byte())
+  nameWithType: StationaryBike.Parse(byte[])
+  nameWithType.vb: StationaryBike.Parse(Byte())
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse*
+  name: Parse
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.Parse
+  nameWithType: StationaryBike.Parse
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString
+  name: ToString()
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString.html#SmallEarthTech_AntPlus_DeviceProfiles_FitnessEquipment_StationaryBike_ToString
+  commentId: M:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString()
+  nameWithType: StationaryBike.ToString()
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString*
+  name: ToString
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.StationaryBike.ToString
+  nameWithType: StationaryBike.ToString
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.TrainerStationaryBike
   name: TrainerStationaryBike
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.FitnessEquipment.TrainerStationaryBike.html
@@ -6787,6 +6925,18 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.Features.Swimming
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.Features.Swimming
   nameWithType: HeartRate.Features.Swimming
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
+  name: HeartRateData
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData.html#SmallEarthTech_AntPlus_DeviceProfiles_HeartRate_HeartRateData
+  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
+  nameWithType: HeartRate.HeartRateData
+- uid: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData*
+  name: HeartRateData
+  href: api/SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData.html
+  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
+  fullName: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
+  nameWithType: HeartRate.HeartRateData
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartbeatEventType
   name: HeartRate.HeartbeatEventType
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartbeatEventType.html
@@ -6805,18 +6955,6 @@ references:
   commentId: F:SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartbeatEventType.MeasuredTimestamp
   fullName: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartbeatEventType.MeasuredTimestamp
   nameWithType: HeartRate.HeartbeatEventType.MeasuredTimestamp
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
-  name: HeartRateData
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData.html#SmallEarthTech_AntPlus_DeviceProfiles_HeartRate_HeartRateData
-  commentId: P:SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
-  nameWithType: HeartRate.HeartRateData
-- uid: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData*
-  name: HeartRateData
-  href: api/SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData.html
-  commentId: Overload:SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
-  fullName: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.HeartRateData
-  nameWithType: HeartRate.HeartRateData
 - uid: SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.ManufacturerInfo
   name: ManufacturerInfo
   href: api/SmallEarthTech.AntPlus.DeviceProfiles.HeartRate.ManufacturerInfo.html#SmallEarthTech_AntPlus_DeviceProfiles_HeartRate_ManufacturerInfo
@@ -8203,45 +8341,30 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntDeviceState
   fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntDeviceState
   nameWithType: LoggerExtensions.LogAntDeviceState
-- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,SmallEarthTech.AntRadioInterface.AntResponse,System.String)
-  name: LogAntResponse(ILogger, LogLevel, AntResponse, string)
-  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogAntResponse_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_SmallEarthTech_AntRadioInterface_AntResponse_System_String_
-  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,SmallEarthTech.AntRadioInterface.AntResponse,System.String)
-  name.vb: LogAntResponse(ILogger, LogLevel, AntResponse, String)
-  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, SmallEarthTech.AntRadioInterface.AntResponse, string)
-  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, SmallEarthTech.AntRadioInterface.AntResponse, String)
-  nameWithType: LoggerExtensions.LogAntResponse(ILogger, LogLevel, AntResponse, string)
-  nameWithType.vb: LoggerExtensions.LogAntResponse(ILogger, LogLevel, AntResponse, String)
-- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse*
-  name: LogAntResponse
-  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse.html
-  commentId: Overload:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse
-  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogAntResponse
-  nameWithType: LoggerExtensions.LogAntResponse
-- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte[],System.String)
-  name: LogDataPage(ILogger, LogLevel, byte[], string)
-  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Byte___System_String_
-  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte[],System.String)
-  name.vb: LogDataPage(ILogger, LogLevel, Byte(), String)
-  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, byte[], string)
-  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Byte(), String)
-  nameWithType: LoggerExtensions.LogDataPage(ILogger, LogLevel, byte[], string)
-  nameWithType.vb: LoggerExtensions.LogDataPage(ILogger, LogLevel, Byte(), String)
+- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte[],System.UInt32)
+  name: LogDataPage(ILogger, LogLevel, byte[], uint)
+  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Byte___System_UInt32_
+  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte[],System.UInt32)
+  name.vb: LogDataPage(ILogger, LogLevel, Byte(), UInteger)
+  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, byte[], uint)
+  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Byte(), UInteger)
+  nameWithType: LoggerExtensions.LogDataPage(ILogger, LogLevel, byte[], uint)
+  nameWithType.vb: LoggerExtensions.LogDataPage(ILogger, LogLevel, Byte(), UInteger)
 - uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage*
   name: LogDataPage
   href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage.html
   commentId: Overload:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage
   fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage
   nameWithType: LoggerExtensions.LogDataPage
-- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage``1(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte,System.Byte[],System.String)
-  name: LogDataPage<TEnum>(ILogger, LogLevel, byte, byte[], string)
-  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage__1_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Byte_System_Byte___System_String_
-  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage``1(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte,System.Byte[],System.String)
-  name.vb: LogDataPage(Of TEnum)(ILogger, LogLevel, Byte, Byte(), String)
-  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage<TEnum>(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, byte, byte[], string)
-  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Of TEnum)(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Byte, Byte(), String)
-  nameWithType: LoggerExtensions.LogDataPage<TEnum>(ILogger, LogLevel, byte, byte[], string)
-  nameWithType.vb: LoggerExtensions.LogDataPage(Of TEnum)(ILogger, LogLevel, Byte, Byte(), String)
+- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage``1(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Int32,System.Byte[],System.String)
+  name: LogDataPage<TEnum>(ILogger, LogLevel, int, byte[], string)
+  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage__1_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Int32_System_Byte___System_String_
+  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage``1(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Int32,System.Byte[],System.String)
+  name.vb: LogDataPage(Of TEnum)(ILogger, LogLevel, Integer, Byte(), String)
+  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage<TEnum>(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, int, byte[], string)
+  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Of TEnum)(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Integer, Byte(), String)
+  nameWithType: LoggerExtensions.LogDataPage<TEnum>(ILogger, LogLevel, int, byte[], string)
+  nameWithType.vb: LoggerExtensions.LogDataPage(Of TEnum)(ILogger, LogLevel, Integer, Byte(), String)
 - uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogIgnoredDataPage*
   name: LogIgnoredDataPage
   href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogIgnoredDataPage.html
@@ -8302,30 +8425,30 @@ references:
   commentId: Overload:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnhandledAntResponse
   fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnhandledAntResponse
   nameWithType: LoggerExtensions.LogUnhandledAntResponse
-- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger,System.Byte[],System.String)
-  name: LogUnknownDataPage(ILogger, byte[], string)
-  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogUnknownDataPage_Microsoft_Extensions_Logging_ILogger_System_Byte___System_String_
-  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger,System.Byte[],System.String)
-  name.vb: LogUnknownDataPage(ILogger, Byte(), String)
-  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger, byte[], string)
-  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger, Byte(), String)
-  nameWithType: LoggerExtensions.LogUnknownDataPage(ILogger, byte[], string)
-  nameWithType.vb: LoggerExtensions.LogUnknownDataPage(ILogger, Byte(), String)
+- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger,System.Byte[],System.UInt32)
+  name: LogUnknownDataPage(ILogger, byte[], uint)
+  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogUnknownDataPage_Microsoft_Extensions_Logging_ILogger_System_Byte___System_UInt32_
+  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger,System.Byte[],System.UInt32)
+  name.vb: LogUnknownDataPage(ILogger, Byte(), UInteger)
+  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger, byte[], uint)
+  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Microsoft.Extensions.Logging.ILogger, Byte(), UInteger)
+  nameWithType: LoggerExtensions.LogUnknownDataPage(ILogger, byte[], uint)
+  nameWithType.vb: LoggerExtensions.LogUnknownDataPage(ILogger, Byte(), UInteger)
 - uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage*
   name: LogUnknownDataPage
   href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage.html
   commentId: Overload:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage
   fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage
   nameWithType: LoggerExtensions.LogUnknownDataPage
-- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage``1(Microsoft.Extensions.Logging.ILogger,System.Byte,System.Byte[],System.String)
-  name: LogUnknownDataPage<TEnum>(ILogger, byte, byte[], string)
-  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogUnknownDataPage__1_Microsoft_Extensions_Logging_ILogger_System_Byte_System_Byte___System_String_
-  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage``1(Microsoft.Extensions.Logging.ILogger,System.Byte,System.Byte[],System.String)
-  name.vb: LogUnknownDataPage(Of TEnum)(ILogger, Byte, Byte(), String)
-  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage<TEnum>(Microsoft.Extensions.Logging.ILogger, byte, byte[], string)
-  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Of TEnum)(Microsoft.Extensions.Logging.ILogger, Byte, Byte(), String)
-  nameWithType: LoggerExtensions.LogUnknownDataPage<TEnum>(ILogger, byte, byte[], string)
-  nameWithType.vb: LoggerExtensions.LogUnknownDataPage(Of TEnum)(ILogger, Byte, Byte(), String)
+- uid: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage``1(Microsoft.Extensions.Logging.ILogger,System.Int32,System.Byte[],System.UInt32)
+  name: LogUnknownDataPage<TEnum>(ILogger, int, byte[], uint)
+  href: api/SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage.html#SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogUnknownDataPage__1_Microsoft_Extensions_Logging_ILogger_System_Int32_System_Byte___System_UInt32_
+  commentId: M:SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage``1(Microsoft.Extensions.Logging.ILogger,System.Int32,System.Byte[],System.UInt32)
+  name.vb: LogUnknownDataPage(Of TEnum)(ILogger, Integer, Byte(), UInteger)
+  fullName: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage<TEnum>(Microsoft.Extensions.Logging.ILogger, int, byte[], uint)
+  fullName.vb: SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogUnknownDataPage(Of TEnum)(Microsoft.Extensions.Logging.ILogger, Integer, Byte(), UInteger)
+  nameWithType: LoggerExtensions.LogUnknownDataPage<TEnum>(ILogger, int, byte[], uint)
+  nameWithType.vb: LoggerExtensions.LogUnknownDataPage(Of TEnum)(ILogger, Integer, Byte(), UInteger)
 - uid: SmallEarthTech.AntPlus.SportMode
   name: SportMode
   href: api/SmallEarthTech.AntPlus.SportMode.html
@@ -8968,18 +9091,6 @@ references:
   commentId: T:SmallEarthTech.AntRadioInterface.DeviceCapabilities
   fullName: SmallEarthTech.AntRadioInterface.DeviceCapabilities
   nameWithType: DeviceCapabilities
-- uid: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
-  name: AdvancedBurst
-  href: api/SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst.html#SmallEarthTech_AntRadioInterface_DeviceCapabilities_AdvancedBurst
-  commentId: P:SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
-  fullName: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
-  nameWithType: DeviceCapabilities.AdvancedBurst
-- uid: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst*
-  name: AdvancedBurst
-  href: api/SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst.html
-  commentId: Overload:SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
-  fullName: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
-  nameWithType: DeviceCapabilities.AdvancedBurst
 - uid: SmallEarthTech.AntRadioInterface.DeviceCapabilities.ANTFS_Support
   name: ANTFS_Support
   href: api/SmallEarthTech.AntRadioInterface.DeviceCapabilities.ANTFS_Support.html#SmallEarthTech_AntRadioInterface_DeviceCapabilities_ANTFS_Support
@@ -8992,6 +9103,18 @@ references:
   commentId: Overload:SmallEarthTech.AntRadioInterface.DeviceCapabilities.ANTFS_Support
   fullName: SmallEarthTech.AntRadioInterface.DeviceCapabilities.ANTFS_Support
   nameWithType: DeviceCapabilities.ANTFS_Support
+- uid: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
+  name: AdvancedBurst
+  href: api/SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst.html#SmallEarthTech_AntRadioInterface_DeviceCapabilities_AdvancedBurst
+  commentId: P:SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
+  fullName: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
+  nameWithType: DeviceCapabilities.AdvancedBurst
+- uid: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst*
+  name: AdvancedBurst
+  href: api/SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst.html
+  commentId: Overload:SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
+  fullName: SmallEarthTech.AntRadioInterface.DeviceCapabilities.AdvancedBurst
+  nameWithType: DeviceCapabilities.AdvancedBurst
 - uid: SmallEarthTech.AntRadioInterface.DeviceCapabilities.EventBuffering
   name: EventBuffering
   href: api/SmallEarthTech.AntRadioInterface.DeviceCapabilities.EventBuffering.html#SmallEarthTech_AntRadioInterface_DeviceCapabilities_EventBuffering
@@ -9400,18 +9523,18 @@ references:
   commentId: F:SmallEarthTech.AntRadioInterface.EventMsgId.QueueOverflow
   fullName: SmallEarthTech.AntRadioInterface.EventMsgId.QueueOverflow
   nameWithType: EventMsgId.QueueOverflow
-- uid: SmallEarthTech.AntRadioInterface.EventMsgId.RxFailed
-  name: RxFailed
-  href: api/SmallEarthTech.AntRadioInterface.EventMsgId.html#SmallEarthTech_AntRadioInterface_EventMsgId_RxFailed
-  commentId: F:SmallEarthTech.AntRadioInterface.EventMsgId.RxFailed
-  fullName: SmallEarthTech.AntRadioInterface.EventMsgId.RxFailed
-  nameWithType: EventMsgId.RxFailed
 - uid: SmallEarthTech.AntRadioInterface.EventMsgId.RxFailGoToSearch
   name: RxFailGoToSearch
   href: api/SmallEarthTech.AntRadioInterface.EventMsgId.html#SmallEarthTech_AntRadioInterface_EventMsgId_RxFailGoToSearch
   commentId: F:SmallEarthTech.AntRadioInterface.EventMsgId.RxFailGoToSearch
   fullName: SmallEarthTech.AntRadioInterface.EventMsgId.RxFailGoToSearch
   nameWithType: EventMsgId.RxFailGoToSearch
+- uid: SmallEarthTech.AntRadioInterface.EventMsgId.RxFailed
+  name: RxFailed
+  href: api/SmallEarthTech.AntRadioInterface.EventMsgId.html#SmallEarthTech_AntRadioInterface_EventMsgId_RxFailed
+  commentId: F:SmallEarthTech.AntRadioInterface.EventMsgId.RxFailed
+  fullName: SmallEarthTech.AntRadioInterface.EventMsgId.RxFailed
+  nameWithType: EventMsgId.RxFailed
 - uid: SmallEarthTech.AntRadioInterface.EventMsgId.RxSearchTimeout
   name: RxSearchTimeout
   href: api/SmallEarthTech.AntRadioInterface.EventMsgId.html#SmallEarthTech_AntRadioInterface_EventMsgId_RxSearchTimeout
@@ -9814,21 +9937,6 @@ references:
   commentId: Overload:SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelFreq
   fullName: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelFreq
   nameWithType: IAntChannel.SetChannelFreq
-- uid: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
-  name: SetChannelID_UsingSerial(ChannelId, uint)
-  href: api/SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelID_UsingSerial_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_
-  commentId: M:SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
-  name.vb: SetChannelID_UsingSerial(ChannelId, UInteger)
-  fullName: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, uint)
-  fullName.vb: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, UInteger)
-  nameWithType: IAntChannel.SetChannelID_UsingSerial(ChannelId, uint)
-  nameWithType.vb: IAntChannel.SetChannelID_UsingSerial(ChannelId, UInteger)
-- uid: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial*
-  name: SetChannelID_UsingSerial
-  href: api/SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial.html
-  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial
-  fullName: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial
-  nameWithType: IAntChannel.SetChannelID_UsingSerial
 - uid: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
   name: SetChannelID(ChannelId, uint)
   href: api/SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelID_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_
@@ -9844,6 +9952,21 @@ references:
   commentId: Overload:SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID
   fullName: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID
   nameWithType: IAntChannel.SetChannelID
+- uid: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
+  name: SetChannelID_UsingSerial(ChannelId, uint)
+  href: api/SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelID_UsingSerial_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_
+  commentId: M:SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
+  name.vb: SetChannelID_UsingSerial(ChannelId, UInteger)
+  fullName: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, uint)
+  fullName.vb: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, UInteger)
+  nameWithType: IAntChannel.SetChannelID_UsingSerial(ChannelId, uint)
+  nameWithType.vb: IAntChannel.SetChannelID_UsingSerial(ChannelId, UInteger)
+- uid: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial*
+  name: SetChannelID_UsingSerial
+  href: api/SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial.html
+  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial
+  fullName: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelID_UsingSerial
+  nameWithType: IAntChannel.SetChannelID_UsingSerial
 - uid: SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelPeriod(System.UInt16,System.UInt32)
   name: SetChannelPeriod(ushort, uint)
   href: api/SmallEarthTech.AntRadioInterface.IAntChannel.SetChannelPeriod.html#SmallEarthTech_AntRadioInterface_IAntChannel_SetChannelPeriod_System_UInt16_System_UInt32_
@@ -9955,36 +10078,6 @@ references:
   commentId: T:SmallEarthTech.AntRadioInterface.IAntConfiguration
   fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration
   nameWithType: IAntConfiguration
-- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
-  name: ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
-  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext.html#SmallEarthTech_AntRadioInterface_IAntConfiguration_ConfigureAdvancedBursting_ext_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt16_System_Byte_System_UInt32_
-  commentId: M:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
-  name.vb: ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
-  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, ushort, byte, uint)
-  fullName.vb: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UShort, Byte, UInteger)
-  nameWithType: IAntConfiguration.ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
-  nameWithType.vb: IAntConfiguration.ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
-- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext*
-  name: ConfigureAdvancedBursting_ext
-  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext.html
-  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext
-  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext
-  nameWithType: IAntConfiguration.ConfigureAdvancedBursting_ext
-- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
-  name: ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
-  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting.html#SmallEarthTech_AntRadioInterface_IAntConfiguration_ConfigureAdvancedBursting_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt32_
-  commentId: M:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
-  name.vb: ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
-  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, uint)
-  fullName.vb: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UInteger)
-  nameWithType: IAntConfiguration.ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
-  nameWithType.vb: IAntConfiguration.ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
-- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting*
-  name: ConfigureAdvancedBursting
-  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting.html
-  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting
-  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting
-  nameWithType: IAntConfiguration.ConfigureAdvancedBursting
 - uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBurstSplitting(System.Boolean)
   name: ConfigureAdvancedBurstSplitting(bool)
   href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBurstSplitting.html#SmallEarthTech_AntRadioInterface_IAntConfiguration_ConfigureAdvancedBurstSplitting_System_Boolean_
@@ -10000,6 +10093,36 @@ references:
   commentId: Overload:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBurstSplitting
   fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBurstSplitting
   nameWithType: IAntConfiguration.ConfigureAdvancedBurstSplitting
+- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
+  name: ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
+  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting.html#SmallEarthTech_AntRadioInterface_IAntConfiguration_ConfigureAdvancedBursting_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt32_
+  commentId: M:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
+  name.vb: ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
+  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, uint)
+  fullName.vb: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UInteger)
+  nameWithType: IAntConfiguration.ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
+  nameWithType.vb: IAntConfiguration.ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
+- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting*
+  name: ConfigureAdvancedBursting
+  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting.html
+  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting
+  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting
+  nameWithType: IAntConfiguration.ConfigureAdvancedBursting
+- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
+  name: ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
+  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext.html#SmallEarthTech_AntRadioInterface_IAntConfiguration_ConfigureAdvancedBursting_ext_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt16_System_Byte_System_UInt32_
+  commentId: M:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
+  name.vb: ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
+  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, ushort, byte, uint)
+  fullName.vb: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UShort, Byte, UInteger)
+  nameWithType: IAntConfiguration.ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
+  nameWithType.vb: IAntConfiguration.ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
+- uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext*
+  name: ConfigureAdvancedBursting_ext
+  href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext.html
+  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext
+  fullName: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureAdvancedBursting_ext
+  nameWithType: IAntConfiguration.ConfigureAdvancedBursting_ext
 - uid: SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureEventBuffer(SmallEarthTech.AntRadioInterface.EventBufferConfig,System.UInt16,System.UInt16,System.UInt32)
   name: ConfigureEventBuffer(EventBufferConfig, ushort, ushort, uint)
   href: api/SmallEarthTech.AntRadioInterface.IAntConfiguration.ConfigureEventBuffer.html#SmallEarthTech_AntRadioInterface_IAntConfiguration_ConfigureEventBuffer_SmallEarthTech_AntRadioInterface_EventBufferConfig_System_UInt16_System_UInt16_System_UInt32_
@@ -10405,30 +10528,6 @@ references:
   commentId: Overload:SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetPID
   fullName: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetPID
   nameWithType: IAntUsbRadio.GetPID
-- uid: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription
-  name: GetProductDescription()
-  href: api/SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription.html#SmallEarthTech_AntRadioInterface_IAntUsbRadio_GetProductDescription
-  commentId: M:SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription
-  fullName: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription()
-  nameWithType: IAntUsbRadio.GetProductDescription()
-- uid: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription*
-  name: GetProductDescription
-  href: api/SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription.html
-  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription
-  fullName: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetProductDescription
-  nameWithType: IAntUsbRadio.GetProductDescription
-- uid: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString
-  name: GetSerialString()
-  href: api/SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString.html#SmallEarthTech_AntRadioInterface_IAntUsbRadio_GetSerialString
-  commentId: M:SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString
-  fullName: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString()
-  nameWithType: IAntUsbRadio.GetSerialString()
-- uid: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString*
-  name: GetSerialString
-  href: api/SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString.html
-  commentId: Overload:SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString
-  fullName: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetSerialString
-  nameWithType: IAntUsbRadio.GetSerialString
 - uid: SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetVID
   name: GetVID()
   href: api/SmallEarthTech.AntRadioInterface.IAntUsbRadio.GetVID.html#SmallEarthTech_AntRadioInterface_IAntUsbRadio_GetVID
@@ -11293,21 +11392,6 @@ references:
   commentId: Overload:SmallEarthTech.AntUsbStick.AntChannel.SetChannelFreq
   fullName: SmallEarthTech.AntUsbStick.AntChannel.SetChannelFreq
   nameWithType: AntChannel.SetChannelFreq
-- uid: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
-  name: SetChannelID_UsingSerial(ChannelId, uint)
-  href: api/SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial.html#SmallEarthTech_AntUsbStick_AntChannel_SetChannelID_UsingSerial_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_
-  commentId: M:SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
-  name.vb: SetChannelID_UsingSerial(ChannelId, UInteger)
-  fullName: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, uint)
-  fullName.vb: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, UInteger)
-  nameWithType: AntChannel.SetChannelID_UsingSerial(ChannelId, uint)
-  nameWithType.vb: AntChannel.SetChannelID_UsingSerial(ChannelId, UInteger)
-- uid: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial*
-  name: SetChannelID_UsingSerial
-  href: api/SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial.html
-  commentId: Overload:SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial
-  fullName: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial
-  nameWithType: AntChannel.SetChannelID_UsingSerial
 - uid: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
   name: SetChannelID(ChannelId, uint)
   href: api/SmallEarthTech.AntUsbStick.AntChannel.SetChannelID.html#SmallEarthTech_AntUsbStick_AntChannel_SetChannelID_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_
@@ -11323,6 +11407,21 @@ references:
   commentId: Overload:SmallEarthTech.AntUsbStick.AntChannel.SetChannelID
   fullName: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID
   nameWithType: AntChannel.SetChannelID
+- uid: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
+  name: SetChannelID_UsingSerial(ChannelId, uint)
+  href: api/SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial.html#SmallEarthTech_AntUsbStick_AntChannel_SetChannelID_UsingSerial_SmallEarthTech_AntRadioInterface_ChannelId_System_UInt32_
+  commentId: M:SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId,System.UInt32)
+  name.vb: SetChannelID_UsingSerial(ChannelId, UInteger)
+  fullName: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, uint)
+  fullName.vb: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial(SmallEarthTech.AntRadioInterface.ChannelId, UInteger)
+  nameWithType: AntChannel.SetChannelID_UsingSerial(ChannelId, uint)
+  nameWithType.vb: AntChannel.SetChannelID_UsingSerial(ChannelId, UInteger)
+- uid: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial*
+  name: SetChannelID_UsingSerial
+  href: api/SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial.html
+  commentId: Overload:SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial
+  fullName: SmallEarthTech.AntUsbStick.AntChannel.SetChannelID_UsingSerial
+  nameWithType: AntChannel.SetChannelID_UsingSerial
 - uid: SmallEarthTech.AntUsbStick.AntChannel.SetChannelPeriod(System.UInt16,System.UInt32)
   name: SetChannelPeriod(ushort, uint)
   href: api/SmallEarthTech.AntUsbStick.AntChannel.SetChannelPeriod.html#SmallEarthTech_AntUsbStick_AntChannel_SetChannelPeriod_System_UInt16_System_UInt32_
@@ -11467,36 +11566,6 @@ references:
   commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.CancelTransfers
   fullName: SmallEarthTech.AntUsbStick.AntRadio.CancelTransfers
   nameWithType: AntRadio.CancelTransfers
-- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
-  name: ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext.html#SmallEarthTech_AntUsbStick_AntRadio_ConfigureAdvancedBursting_ext_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt16_System_Byte_System_UInt32_
-  commentId: M:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
-  name.vb: ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, ushort, byte, uint)
-  fullName.vb: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UShort, Byte, UInteger)
-  nameWithType: AntRadio.ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
-  nameWithType.vb: AntRadio.ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
-- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext*
-  name: ConfigureAdvancedBursting_ext
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext.html
-  commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext
-  nameWithType: AntRadio.ConfigureAdvancedBursting_ext
-- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
-  name: ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting.html#SmallEarthTech_AntUsbStick_AntRadio_ConfigureAdvancedBursting_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt32_
-  commentId: M:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
-  name.vb: ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, uint)
-  fullName.vb: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UInteger)
-  nameWithType: AntRadio.ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
-  nameWithType.vb: AntRadio.ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
-- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting*
-  name: ConfigureAdvancedBursting
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting.html
-  commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting
-  nameWithType: AntRadio.ConfigureAdvancedBursting
 - uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBurstSplitting(System.Boolean)
   name: ConfigureAdvancedBurstSplitting(bool)
   href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBurstSplitting.html#SmallEarthTech_AntUsbStick_AntRadio_ConfigureAdvancedBurstSplitting_System_Boolean_
@@ -11512,6 +11581,36 @@ references:
   commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBurstSplitting
   fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBurstSplitting
   nameWithType: AntRadio.ConfigureAdvancedBurstSplitting
+- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
+  name: ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
+  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting.html#SmallEarthTech_AntUsbStick_AntRadio_ConfigureAdvancedBursting_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt32_
+  commentId: M:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt32)
+  name.vb: ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
+  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, uint)
+  fullName.vb: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UInteger)
+  nameWithType: AntRadio.ConfigureAdvancedBursting(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, uint)
+  nameWithType.vb: AntRadio.ConfigureAdvancedBursting(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UInteger)
+- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting*
+  name: ConfigureAdvancedBursting
+  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting.html
+  commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting
+  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting
+  nameWithType: AntRadio.ConfigureAdvancedBursting
+- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
+  name: ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
+  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext.html#SmallEarthTech_AntUsbStick_AntRadio_ConfigureAdvancedBursting_ext_System_Boolean_System_Byte_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_SmallEarthTech_AntRadioInterface_AdvancedBurstConfigFlags_System_UInt16_System_Byte_System_UInt32_
+  commentId: M:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(System.Boolean,System.Byte,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags,System.UInt16,System.Byte,System.UInt32)
+  name.vb: ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
+  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(bool, byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, ushort, byte, uint)
+  fullName.vb: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext(Boolean, Byte, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, SmallEarthTech.AntRadioInterface.AdvancedBurstConfigFlags, UShort, Byte, UInteger)
+  nameWithType: AntRadio.ConfigureAdvancedBursting_ext(bool, byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, ushort, byte, uint)
+  nameWithType.vb: AntRadio.ConfigureAdvancedBursting_ext(Boolean, Byte, AdvancedBurstConfigFlags, AdvancedBurstConfigFlags, UShort, Byte, UInteger)
+- uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext*
+  name: ConfigureAdvancedBursting_ext
+  href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext.html
+  commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext
+  fullName: SmallEarthTech.AntUsbStick.AntRadio.ConfigureAdvancedBursting_ext
+  nameWithType: AntRadio.ConfigureAdvancedBursting_ext
 - uid: SmallEarthTech.AntUsbStick.AntRadio.ConfigureEventBuffer(SmallEarthTech.AntRadioInterface.EventBufferConfig,System.UInt16,System.UInt16,System.UInt32)
   name: ConfigureEventBuffer(EventBufferConfig, ushort, ushort, uint)
   href: api/SmallEarthTech.AntUsbStick.AntRadio.ConfigureEventBuffer.html#SmallEarthTech_AntUsbStick_AntRadio_ConfigureEventBuffer_SmallEarthTech_AntRadioInterface_EventBufferConfig_System_UInt16_System_UInt16_System_UInt32_
@@ -11740,30 +11839,6 @@ references:
   commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.GetPID
   fullName: SmallEarthTech.AntUsbStick.AntRadio.GetPID
   nameWithType: AntRadio.GetPID
-- uid: SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription
-  name: GetProductDescription()
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription.html#SmallEarthTech_AntUsbStick_AntRadio_GetProductDescription
-  commentId: M:SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription()
-  nameWithType: AntRadio.GetProductDescription()
-- uid: SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription*
-  name: GetProductDescription
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription.html
-  commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.GetProductDescription
-  nameWithType: AntRadio.GetProductDescription
-- uid: SmallEarthTech.AntUsbStick.AntRadio.GetSerialString
-  name: GetSerialString()
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.GetSerialString.html#SmallEarthTech_AntUsbStick_AntRadio_GetSerialString
-  commentId: M:SmallEarthTech.AntUsbStick.AntRadio.GetSerialString
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.GetSerialString()
-  nameWithType: AntRadio.GetSerialString()
-- uid: SmallEarthTech.AntUsbStick.AntRadio.GetSerialString*
-  name: GetSerialString
-  href: api/SmallEarthTech.AntUsbStick.AntRadio.GetSerialString.html
-  commentId: Overload:SmallEarthTech.AntUsbStick.AntRadio.GetSerialString
-  fullName: SmallEarthTech.AntUsbStick.AntRadio.GetSerialString
-  nameWithType: AntRadio.GetSerialString
 - uid: SmallEarthTech.AntUsbStick.AntRadio.GetVID
   name: GetVID()
   href: api/SmallEarthTech.AntUsbStick.AntRadio.GetVID.html#SmallEarthTech_AntUsbStick_AntRadio_GetVID

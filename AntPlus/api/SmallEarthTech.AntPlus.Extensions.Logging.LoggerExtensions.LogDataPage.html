@@ -46,6 +46,7 @@
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href=".././">
             <img id="logo" class="svg" src="../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            <div class="site-header-divider"></div>
             Small Earth Technology ANT+ Class Library
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +93,7 @@
 
 
 <h1 id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage_" data-uid="SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage*" class="text-break">
-LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L176"><i class="bi bi-code-slash"></i></a>
+LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L160"><i class="bi bi-code-slash"></i></a>
 </h1>
 
 <h2 class="section" id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage__definition">Definition</h2>
@@ -122,9 +123,9 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
 
 <a id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage_" data-uid="SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage*"></a>
 
-<h2 class="section" id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Byte___System_String_" data-uid="SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte[],System.String)">
-  LogDataPage(ILogger, LogLevel, byte[], string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L176"><i class="bi bi-code-slash"></i></a>
+<h2 class="section" id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Byte___System_UInt32_" data-uid="SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte[],System.UInt32)">
+  LogDataPage(ILogger, LogLevel, byte[], uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L160"><i class="bi bi-code-slash"></i></a>
 </h2>
 <div class="memberInfo">
 
@@ -135,7 +136,7 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
 <div class="markdown level1 conceptual"></div>
 
 <div class="codewrapper">
-  <pre><code class="lang-csharp hljs">public static void LogDataPage(this ILogger logger, LogLevel level, byte[] dataPage, string methodName = &quot;&quot;)</code></pre>
+  <pre><code class="lang-csharp hljs">public static void LogDataPage(this ILogger logger, LogLevel level, byte[] dataPage, uint deviceNumber)</code></pre>
 </div>
 
 <h4 class="section">Parameters</h4>
@@ -149,8 +150,8 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
   <dt><code>dataPage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
   <dd><p>The data page as a byte array.</p>
 </dd>
-  <dt><code>methodName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-  <dd><p>The caller member name.</p>
+  <dt><code>deviceNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+  <dd><p>The device number.</p>
 </dd>
 </dl>
 
@@ -169,9 +170,9 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
 
 <a id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage_" data-uid="SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage*"></a>
 
-<h2 class="section" id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage__1_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Byte_System_Byte___System_String_" data-uid="SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage``1(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Byte,System.Byte[],System.String)">
-  LogDataPage&lt;TEnum&gt;(ILogger, LogLevel, byte, byte[], string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L193"><i class="bi bi-code-slash"></i></a>
+<h2 class="section" id="SmallEarthTech_AntPlus_Extensions_Logging_LoggerExtensions_LogDataPage__1_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Logging_LogLevel_System_Int32_System_Byte___System_String_" data-uid="SmallEarthTech.AntPlus.Extensions.Logging.LoggerExtensions.LogDataPage``1(Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel,System.Int32,System.Byte[],System.String)">
+  LogDataPage&lt;TEnum&gt;(ILogger, LogLevel, int, byte[], string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L177"><i class="bi bi-code-slash"></i></a>
 </h2>
 <div class="memberInfo">
 
@@ -182,7 +183,7 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
 <div class="markdown level1 conceptual"></div>
 
 <div class="codewrapper">
-  <pre><code class="lang-csharp hljs">public static void LogDataPage&lt;TEnum&gt;(this ILogger logger, LogLevel level, byte value, byte[] dataPage, string methodName = &quot;&quot;) where TEnum : Enum</code></pre>
+  <pre><code class="lang-csharp hljs">public static void LogDataPage&lt;TEnum&gt;(this ILogger logger, LogLevel level, int pageIndex, byte[] dataPage, string methodName = &quot;&quot;) where TEnum : Enum</code></pre>
 </div>
 
 <h4 class="section">Parameters</h4>
@@ -193,8 +194,8 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
   <dt><code>level</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.loglevel">LogLevel</a></dt>
   <dd><p>Log level.</p>
 </dd>
-  <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
-  <dd><p>Value of the enumeration.</p>
+  <dt><code>pageIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+  <dd><p>Index into the data page that holds the value of the enumeration.</p>
 </dd>
   <dt><code>dataPage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
   <dd><p>The data page as a byte array.</p>
@@ -226,7 +227,7 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L176" class="edit-link">Edit this page</a>
+          <a href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/Extensions/Logging/LoggerExtensions.cs/#L160" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -242,7 +243,7 @@ LoggerExtensions.LogDataPage Method  <a class="header-action link-secondary" tit
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 15:17:50.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 08/21/2026 1:38:16.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>

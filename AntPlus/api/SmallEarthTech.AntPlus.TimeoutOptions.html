@@ -46,6 +46,7 @@
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href=".././">
             <img id="logo" class="svg" src="../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            <div class="site-header-divider"></div>
             Small Earth Technology ANT+ Class Library
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -135,14 +136,14 @@ Asset trackers broadcast 16 times a second and Geocaches broadcast once every 2 
 broadcast 4 times a second.</p>
 <p>
 For example, your appsettings.json file would have this entry -
-<pre><code class="lang-cs">{
+<pre><code class="lang-json">{
   "TimeoutOptions": {
     "MissedMessages": 8,
     "Timeout": null
   }
 }
 </code></pre>
-The command line could define the timeout "--TimeoutOptions:MissedMessages=8".
+<p>The command line could define the timeout &quot;--TimeoutOptions:MissedMessages=8&quot;.</p>
 
 <p>Timeouts can be disabled by setting Timeout to -1 and ignoring or setting MissedMessages to null.</p>
 </div>
@@ -196,7 +197,7 @@ The command line could define the timeout "--TimeoutOptions:MissedMessages=8".
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 15:17:50.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 08/21/2026 1:38:16.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>

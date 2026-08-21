@@ -46,6 +46,7 @@
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href=".././">
             <img id="logo" class="svg" src="../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            <div class="site-header-divider"></div>
             Small Earth Technology ANT+ Class Library
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +93,7 @@
 
 
 <h1 id="SmallEarthTech_AntPlus_CommonDataPages_ParseCommonDataPage_" data-uid="SmallEarthTech.AntPlus.CommonDataPages.ParseCommonDataPage*" class="text-break">
-CommonDataPages.ParseCommonDataPage Method  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/CommonDataPages.cs/#L423"><i class="bi bi-code-slash"></i></a>
+CommonDataPages.ParseCommonDataPage Method  <a class="header-action link-secondary" title="View source" href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/CommonDataPages.cs/#L443"><i class="bi bi-code-slash"></i></a>
 </h1>
 
 <h2 class="section" id="SmallEarthTech_AntPlus_CommonDataPages_ParseCommonDataPage__definition">Definition</h2>
@@ -125,13 +126,13 @@ CommonDataPages.ParseCommonDataPage Method  <a class="header-action link-seconda
 <a id="SmallEarthTech_AntPlus_CommonDataPages_ParseCommonDataPage_System_Byte___" data-uid="SmallEarthTech.AntPlus.CommonDataPages.ParseCommonDataPage(System.Byte[])"></a>
 
 <div class="markdown level1 summary">
-<p>Parses the common data page.</p>
+<p>Parses common data pages.</p>
 
 </div>
 <div class="markdown level1 conceptual"></div>
 
 <div class="codewrapper">
-  <pre><code class="lang-csharp hljs">public void ParseCommonDataPage(byte[] dataPage)</code></pre>
+  <pre><code class="lang-csharp hljs">public bool ParseCommonDataPage(byte[] dataPage)</code></pre>
 </div>
 
 <h4 class="section">Parameters</h4>
@@ -141,6 +142,12 @@ CommonDataPages.ParseCommonDataPage Method  <a class="header-action link-seconda
 </dd>
 </dl>
 
+<h4 class="section">Returns</h4>
+<dl class="parameters">
+  <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+  <dd><p>Returns true if the data page was successfully parsed as a common data page, false otherwise.</p>
+</dd>
+</dl>
 
 
 
@@ -156,7 +163,7 @@ CommonDataPages.ParseCommonDataPage Method  <a class="header-action link-seconda
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/CommonDataPages.cs/#L423" class="edit-link">Edit this page</a>
+          <a href="https://github.com/StephenHidem/AntPlus/blob/main/AntPlus/CommonDataPages.cs/#L443" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -172,7 +179,7 @@ CommonDataPages.ParseCommonDataPage Method  <a class="header-action link-seconda
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 15:17:49.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 08/21/2026 1:38:15.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>

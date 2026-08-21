@@ -46,6 +46,7 @@
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href=".././">
             <img id="logo" class="svg" src="../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            <div class="site-header-divider"></div>
             Small Earth Technology ANT+ Class Library
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -143,7 +144,19 @@
 </ul>
 <p>See <a class="xref" href="../api/SmallEarthTech.AntPlus.DeviceProfiles.html">SmallEarthTech.AntPlus.DeviceProfiles</a> for specific device details.</p>
 <h2 id="antdevice">AntDevice</h2>
-<p>This abstract class provides properties and methods common to all ANT devices. The virtual Parse method handles resetting the				device timeout each time a message is received. The RequestDataPage method sends a data page request to the ANT device.				The SendExtAcknowledgedMessage method sends commands/requests to the ANT device.</p>
+<p>This abstract class provides events, properties and methods common to all ANT devices. These are some of the key				features of this class that are used by the derived ANT device classes -</p>
+<ul>
+<li><p>The virtual <code>Parse</code> method handles resetting the device timeout each time a message is received. Derived						classes should override this method to parse messages received from the ANT device. Be sure to call the						base Parse method to reset the device timeout.</p>
+</li>
+<li><p>The <code>RequestDataPage</code> method sends a data page request to the ANT device. The derived classes						typically provide a public method that calls this method with the appropriate data page number for the						request.</p>
+</li>
+<li><p>The <code>SendExtAcknowledgedMessage</code> method sends commands/requests to the ANT device. The derived classes						typically provide public methods that call this method with the appropriate data page number and payload						for the command/request.</p>
+</li>
+<li><p>The <code>DeviceOffline</code> event is raised when the ANT device timeout is reached. The timeout options are						configured in the AntDeviceCollection class.</p>
+</li>
+<li><p>The <code>UnknownDataPageReceived</code> event is raised when a data page is received that is not defined in the						library. This allows applications to receive custom data pages or data pages that supported by the library.</p>
+</li>
+</ul>
 <h2 id="commondatapages">CommonDataPages</h2>
 <p>CommonDataPages are typically added to derived AntDevice classes as a read-only property if the ANT device supports common data pages.</p>
 <pre><code class="lang-c#">public CommonDataPages CommonDataPages { get; }
@@ -192,7 +205,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 15:17:49.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 08/21/2026 1:38:16.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>

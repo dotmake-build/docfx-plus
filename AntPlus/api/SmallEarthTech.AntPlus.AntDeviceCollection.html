@@ -46,6 +46,7 @@
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href=".././">
             <img id="logo" class="svg" src="../images/Help.png" alt="Small Earth Technology ANT+ Class Library">
+            <div class="site-header-divider"></div>
             Small Earth Technology ANT+ Class Library
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,7 +108,7 @@ AntDeviceCollection Class  <a class="header-action link-secondary" title="View s
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AntDeviceCollection : ObservableCollection&lt;AntDevice&gt;, IList&lt;AntDevice&gt;, ICollection&lt;AntDevice&gt;, IReadOnlyList&lt;AntDevice&gt;, IReadOnlyCollection&lt;AntDevice&gt;, IEnumerable&lt;AntDevice&gt;, IList, ICollection, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class AntDeviceCollection : ObservableCollection&lt;AntDevice&gt;, IList&lt;AntDevice&gt;, ICollection&lt;AntDevice&gt;, IReadOnlyList&lt;AntDevice&gt;, IReadOnlyCollection&lt;AntDevice&gt;, IEnumerable&lt;AntDevice&gt;, IList, ICollection, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged, IDisposable</code></pre>
   </div>
 
 
@@ -136,6 +137,7 @@ AntDeviceCollection Class  <a class="header-action link-secondary" title="View s
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
     </dd>
   </dl>
 
@@ -210,24 +212,6 @@ for continuous scan mode.</p>
     </tr>
     <tr>
       <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1.items">Items</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.propertychanged">PropertyChanged</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
           <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">this[int]</a>
       </td>
       <td>
@@ -254,38 +238,11 @@ for continuous scan mode.</p>
     </tr>
     <tr>
       <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.blockreentrancy">BlockReentrancy()</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.checkreentrancy">CheckReentrancy()</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
           <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1.clear">Clear()</a>
       </td>
       <td>
       
       (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.clearitems">ClearItems()</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
       </td>
     </tr>
     <tr>
@@ -304,6 +261,16 @@ for continuous scan mode.</p>
       <td>
       
       (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection&lt;AntDevice&gt;</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <a class="xref" href="SmallEarthTech.AntPlus.AntDeviceCollection.Dispose.html#SmallEarthTech_AntPlus_AntDeviceCollection_Dispose">Dispose()</a>
+      </td>
+      <td>
+      <p>Disposes the ANT device collection and all ANT devices in the collection. Also disposes ANT channels created by this collection.</p>
+
+      
       </td>
     </tr>
     <tr>
@@ -335,43 +302,7 @@ for continuous scan mode.</p>
     </tr>
     <tr>
       <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.insertitem">InsertItem(int, T)</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
           <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.move">Move(int, int)</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.moveitem">MoveItem(int, int)</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.oncollectionchanged">OnCollectionChanged(NotifyCollectionChangedEventArgs)</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.onpropertychanged">OnPropertyChanged(PropertyChangedEventArgs)</a>
       </td>
       <td>
       
@@ -395,24 +326,6 @@ for continuous scan mode.</p>
       <td>
       
       (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.removeitem">RemoveItem(int)</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1.setitem">SetItem(int, T)</a>
-      </td>
-      <td>
-      
-      (Inherited from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;AntDevice&gt;</a>)
       </td>
     </tr>
     <tr>
@@ -449,7 +362,7 @@ for continuous scan mode.</p>
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Documentation built 12/07/2025 15:17:49.<br>&#169; 2022 Stephen Hidem.
+          Documentation built 08/21/2026 1:38:15.<br>&#169; 2022 Stephen Hidem.
         </div>
         <div class="flex-fill text-end">
           <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
