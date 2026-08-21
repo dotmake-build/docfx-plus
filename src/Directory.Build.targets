@@ -21,5 +21,19 @@
       <InformationalVersion>$(Version)</InformationalVersion>
     </PropertyGroup>
   </Target>
-  
+
+  <Target Name="CleanCopiedOutputFiles" AfterTargets="Clean">
+    <ItemGroup>
+      <!-- Target the templates folder sitting inside your active bin configuration folder -->
+      <FilesToDelete Include="$(OutDir)**\*" />
+      <DirsToDelete Include="$([System.IO.Directory]::GetDirectories('$(OutDir)'))" />
+    </ItemGroup>
+
+    <!-- 1. Delete all the files nested inside the output directory -->
+    <Delete Files="@(FilesToDelete)" />
+
+    <!-- 2. Delete the remaining empty subdirectory structures safely -->
+    <RemoveDir Directories="@(DirsToDelete)" />
+  </Target>
+
 </Project>

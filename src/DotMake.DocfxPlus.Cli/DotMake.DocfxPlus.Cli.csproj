@@ -16,27 +16,19 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - **Fixed:** When converting SHFB projects, treat alert class same as DocFx one if it exists.
-          For example `<alert class="important">` should map to `> [!important]` and not `> [!warning]`.
-          If DocFx does not have the same alert type, use the closest type (for colors)
-          but use the SHFB type as the title (if alert does not have a specific title e.g. `<alert title="...">`).
-          For example, use `caution` type and `SECURITY NOTE` title for `<alert class="security note">`.
-          Also trim paragraph of converted alert markdown.
+        - **Added:** Re-designed `docfx-plus` template to match latest version of Microsoft's Learn site.
+          - Added subtle background colors to header, TOC and footer to differentiate them from main content.
+          - Added a separator between nav logo and title.
+          - Used thin scrollbar in TOC, `In this article` side panel and main page.
+          - When viewport is large, content page in the middle is centered, TOC and `In this article` side panel
+            are always kept at the edges.
+          - Updated colors of alerts, made the icons smaller and fixed spacing between header and content.
+          - Updated colors, borders, sizing of code tabs and code blocks.
+          - Many other small visual perfections.
+        
+        - **Improved:** Updated to `v2.78.5` of `docfx` which adds support for .NET 10 target framework.
 
-        - **Improved:** For markdown alerts, use bold text in the first line as the title of the alert:
-          ```
-          > [!note]
-          > **Project Road Map**
-          > This alert contains a custom title.
-          
-          > [!caution]
-          > **security note**
-          > Do not tape your password to the underside of your keyboard.
-          ```
-          
-        - **Improved:** When converting SHFB projects, ignore `IsExpanded` property for topics when writing the TOC file,
-          so that TOC nodes are not unnecessarily expanded when page is loaded.
-          This is because SHFB docs say "Used by the editor for binding in the tree view." for `IsExpanded` property.
+        - **Improved:** Updated `DotMake.CommandLine` to `v3.5.0` and `Lib.Harmony` to `2.4.2`.
       ]]>
     </PackageReleaseNotes>
 
@@ -45,8 +37,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
-    <PackageReference Include="DotMake.CommandLine" Version="3.0.0" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+    <PackageReference Include="DotMake.CommandLine" Version="3.5.0" />
     <PackageReference Include="ReverseMarkdown" Version="4.7.1" />
   </ItemGroup>
 
@@ -74,15 +66,15 @@
 
     <!-- required as we are referencing docfx as dll, these are needed to prevent conflicts -->
     <PackageReference Include="Docfx.App" Version="$(DocfxVersion)">
-      <PrivateAssets>None</PrivateAssets>
+      <ExcludeAssets>contentFiles</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Docfx.Dotnet" Version="$(DocfxVersion)">
-      <PrivateAssets>None</PrivateAssets>
+      <ExcludeAssets>contentFiles</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\templates\**">
+    <None Include="..\templates\**" Exclude="..\templates\_*\**">
       <Link>templates\%(RecursiveDir)%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
