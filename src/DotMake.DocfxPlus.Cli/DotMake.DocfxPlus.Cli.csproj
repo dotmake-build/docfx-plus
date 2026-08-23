@@ -16,19 +16,7 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - **Added:** Re-designed `docfx-plus` template to match latest version of Microsoft's Learn site.
-          - Added subtle background colors to header, TOC and footer to differentiate them from main content.
-          - Added a separator between nav logo and title.
-          - Used thin scrollbar in TOC, `In this article` side panel and main page.
-          - When viewport is large, content page in the middle is centered, TOC and `In this article` side panel
-            are always kept at the edges.
-          - Updated colors of alerts, made the icons smaller and fixed spacing between header and content.
-          - Updated colors, borders, sizing of code tabs and code blocks.
-          - Many other small visual perfections.
-        
-        - **Improved:** Updated to `v2.78.5` of `docfx` which adds support for .NET 10 target framework.
-
-        - **Improved:** Updated `DotMake.CommandLine` to `v3.5.0` and `Lib.Harmony` to `2.4.2`.
+        - **Fixed:** `codeSourceBasePath` was not being fixed if `metadata` command was skipped,  e.g. called build only via `docfx build`.
       ]]>
     </PackageReleaseNotes>
 

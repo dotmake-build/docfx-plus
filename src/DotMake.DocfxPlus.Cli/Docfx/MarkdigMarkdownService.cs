@@ -16,7 +16,7 @@ namespace DotMake.DocfxPlus.Cli.Docfx
             var getBasePath = AccessTools.PropertyGetter(parametersType, "BasePath");
             var basePath = getBasePath.Invoke(_parameters, null) as string;
 
-            if (DotnetApiCatalog.CurrentConfig.TryGetValue("CodeSourceBasePath", out var codeSourceBasePath)
+            if (Docset.CurrentConfig.TryGetValue("CodeSourceBasePath", out var codeSourceBasePath)
                 && !string.IsNullOrEmpty(codeSourceBasePath))
                 codeSourceBasePath = Path.GetRelativePath(basePath!, codeSourceBasePath);
             else

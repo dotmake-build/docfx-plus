@@ -35,7 +35,7 @@ logger.LogInformation($"{ExecutableInfo.AssemblyInfo.Product}: Patches for DocFx
 var docfxMainMethod = AccessTools.Method(PatchAssemblies.Docfx.GetType("Docfx.Program"), "Main");
 
 #if DEBUG
-//var commandLine = @"..\..\..\..\..\\docs\docfx.json --serve --debug";
+//var commandLine = @"..\..\..\..\..\docs\docfx.json --serve --debug";
 
 //args = commandLine.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
 #endif
