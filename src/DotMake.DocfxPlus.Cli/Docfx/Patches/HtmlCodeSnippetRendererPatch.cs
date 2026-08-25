@@ -20,7 +20,7 @@ namespace DotMake.DocfxPlus.Cli.Docfx.Patches
             internal static bool Prefix(HtmlRenderer renderer, CodeSnippet codeSnippet, object __instance)
             {
                 //Console.WriteLine($"{ExecutableInfo.AssemblyInfo.Product}: {nameof(GetContent)} Prefix is run!");
-                HtmlCodeSnippetRenderer.Write(renderer, codeSnippet);
+                HtmlCodeSnippetRenderer.Write(renderer, codeSnippet, __instance);
                 return true; //also run original method
             }
         }

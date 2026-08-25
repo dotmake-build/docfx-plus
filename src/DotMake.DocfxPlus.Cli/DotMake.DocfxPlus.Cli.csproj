@@ -17,6 +17,13 @@
     <PackageReleaseNotes>
       <![CDATA[
         - **Fixed:** `codeSourceBasePath` was not being fixed if `metadata` command was skipped,  e.g. called build only via `docfx build`.
+
+        - **Fixed:** Markdown code snippets without language specified e.g. `[!code[](~~/Samples.aspx#Region1)]`
+          should infer language from file extension (just like xml comments does).
+
+        - **Fixed:** Highligher should use `txt` for unsupported languages,
+          and should support `aspx-cs` and `aspx-vb` (not only `aspx`),
+          and should treat `config`, `csproj` and `slnx` as `xml`.
       ]]>
     </PackageReleaseNotes>
 

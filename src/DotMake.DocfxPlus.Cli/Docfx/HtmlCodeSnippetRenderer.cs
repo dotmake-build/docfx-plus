@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using Docfx.MarkdigEngine.Extensions;
@@ -33,14 +34,11 @@ namespace DotMake.DocfxPlus.Cli.Docfx
         private const string MarkupLanguageFamilyCodeSnippetCommentEndLineTemplate = "<!--#endregion-->";
 
 
-        public static void Write(HtmlRenderer renderer, CodeSnippet codeSnippet)
+        public static void Write(HtmlRenderer renderer, CodeSnippet codeSnippet, object __instance)
         {
-            codeSnippet.CodePath = WebUtility.UrlDecode(codeSnippet.CodePath);
-            codeSnippet.TagName = WebUtility.UrlDecode(codeSnippet.TagName);
-        }
-
-        public static void GetContent(ref string content, CodeSnippet obj, object __instance)
-        {
+            //We can't patch static constructors, but we need to add these extensions as soon as possible
+            //Write is called before GetContent and doing this here seem to fix correct region handling for code snippets
+            //without language specified (inferred from file extension).
             lock (lockObj)
             {
                 if (!staticStateChanged)
@@ -71,6 +69,24 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                     staticStateChanged = true;
                 }
             }
+
+            if (string.IsNullOrEmpty(codeSnippet.Language))
+            {
+                codeSnippet.Language = Path.GetExtension(codeSnippet.CodePath)?.TrimStart('.');
+                /*
+                var htmlCodeSnippetRendererType = __instance.GetType();
+                codeSnippet.Language = AccessTools.Method(htmlCodeSnippetRendererType, "GetLanguageByFileExtension")
+                    .Invoke(null, [Path.GetExtension(codeSnippet.CodePath)]) as string;
+                */
+            }
+
+            codeSnippet.CodePath = WebUtility.UrlDecode(codeSnippet.CodePath);
+            codeSnippet.TagName = WebUtility.UrlDecode(codeSnippet.TagName);
+        }
+
+        public static void GetContent(ref string content, CodeSnippet obj, object __instance)
+        {
+
 
             //Update: Need to patch CodeSnippetExtractor.MatchTag anyway for allowing spaces inside tag names so will path this also there
             //CodeSnippetExtractor.MatchTag calls ToLower() on found tag name instead of ToLowerInvariant()

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <!-- https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#generateassemblyinfo -->
-    <VersionPrefix>3.0.1</VersionPrefix>
+    <VersionPrefix>3.0.3</VersionPrefix>
     <DocfxVersion>2.78.5</DocfxVersion>
     <Product>DotMake Docfx-Plus</Product>
     <Company>DotMake</Company>
