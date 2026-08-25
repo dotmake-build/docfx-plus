@@ -3,7 +3,6 @@ let globalHljs;
 
 export default {
   start: () => {
-    groupCodeBlocks();
   },  
   configureHljs: (hljs) => {
     globalHljs = hljs;
@@ -44,6 +43,9 @@ export default {
         el.parentElement?.querySelector("a.code-action")?.remove();
       }
     });
+
+    //This should not be called in start() above because we need globalHljs in getLangFallback which is used by this:
+    groupCodeBlocks();
   },
   iconLinks: docfx.iconLinks
 }
@@ -204,17 +206,22 @@ function getLangFallback(lang) {
     case "c#":
     case "csharp":
     case "aspx":
+    case "aspx-cs":
       return "cs";
     case "vbhtml":
+    case "aspx-vb":
       return "vb";
     case "xaml":
+    case "config":
+    case "csproj":
+    case "slnx":
       return "xml";
     case "none":
     case "":
     case null:
       return "txt";
     default:
-      return lang;
+      return globalHljs.getLanguage(lang) ? lang : "txt";
   }
 }
 
