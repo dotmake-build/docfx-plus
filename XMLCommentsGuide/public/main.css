@@ -7,6 +7,7 @@
   --bs-body-font-family: Segoe UI,Segoe UI Variable Text,-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
   --bs-body-line-height: 1.6;
   --bs-border-radius: .25rem;
+  --bs-dropdown-font-size: .875rem;
   scrollbar-width: thin;
 }
 
@@ -19,6 +20,7 @@
   --menu-bg-color: #fafafa;
   --menu-header-bg-color: #f0f0f0;
   --code-border-color: #d1d1d1;
+  --footer-bg-color: #e8e6df;
 
   --bs-success-bg-subtle: #f1faf1;
   --bs-success-border-subtle: #0e700e;
@@ -43,6 +45,7 @@
   --menu-bg-color: #2c3136;
   --menu-header-bg-color: #32373c;
   --code-border-color: #bdbdbd;
+  --footer-bg-color: #091f2c;
 
   --bs-info-bg-subtle: #302b33;
   --bs-info-border-subtle: #735da3;
@@ -55,8 +58,18 @@
   font-weight: 600;
 }
 
+.navbar {
+  font-size: .875rem;
+}
+
 .navbar .navbar-nav {
   align-items: center;
+}
+
+.navbar li > a,
+.navbar li > a:hover,
+.navbar li > a:focus {
+  color: unset;
 }
 
 @media (width < 768px) {
@@ -100,6 +113,9 @@ a:focus:not(.btn, .dropdown-item) {
   text-decoration: underline;
 }
 
+.dropdown-item i {
+  margin-right: .5rem;
+}
 
 
 header.bg-body {
@@ -132,7 +148,8 @@ main > .toc-offcanvas {
   background-color: var(--menu-bg-color);
   border-inline-end: 1px solid var(--bs-border-color);
   padding-inline-start: 1.5rem !important;
-  padding-block-start: 1.5em
+  padding-block-start: 1.5em;
+  font-size: .875rem;
 }
 
 .toc ul {
@@ -194,7 +211,7 @@ main > .affix {
 }
 
 footer {
-  background-color: #e8e6df;
+  background-color: var(--footer-bg-color);
   color: unset !important;
 }
 
@@ -222,8 +239,13 @@ footer a {
   margin-top: .45rem;
 }
 
-.toc li > a {
+.toc li > a,
+.toc li > a:hover,
+.toc li > a:focus {
   color: unset;
+}
+
+.toc li > a {
   display: block;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -238,10 +260,6 @@ footer a {
   padding-left: 1.4rem;
 }
 
-[data-bs-theme=dark] .toc li > a {
-  color: unset;
-}
-
 .toc li.active:not(:has(li.active)) > a {
   background-color: #ebebeb;
   color: #171717;
@@ -252,6 +270,15 @@ footer a {
   background-color: #787878;
   color: #f8f8f8;
 }
+
+.toc .nav > li.hide {
+  display: none;
+}
+
+.toc .nav > li.filtered > ul {
+  display: block;
+}
+
 
 body[data-yaml-mime=ManagedReference] article dl.typelist.inheritance>dd>div:not(:last-child):after, 
 body[data-yaml-mime=ApiPage] article dl.typelist.inheritance>dd>div:not(:last-child):after {
@@ -446,7 +473,7 @@ body[data-yaml-mime=ApiPage] article h2.section {
 .alert {
   color: var(--bs-body-color);
   margin-top: 1rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .alert h5 {
@@ -463,4 +490,11 @@ body[data-yaml-mime=ApiPage] article h2.section {
 .alert a:not(.button) {
   color: var(--bs-alert-link-color);
   font-weight: 600;
+}
+
+.sr-item mark{
+  color: unset;
+  background-color: unset;
+  font-weight: bolder;
+  padding: 0;
 }
