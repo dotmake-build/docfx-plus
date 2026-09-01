@@ -7,9 +7,6 @@
       <meta name="title" content="Version 2020.3.6.0 ">
       
       
-      <link rel="icon" href="../../../favicon.ico">
-      <link rel="stylesheet" href="../../../public/docfx.min.css">
-      <link rel="stylesheet" href="../../../public/main.css">
       <meta name="docfx:navrel" content="../../../toc.html">
       <meta name="docfx:tocrel" content="../../toc.html">
       
@@ -30,8 +27,13 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
 
-      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+        <script type="text/javascript" src="../../../public/common.js"></script>
+        <script type="module" src="./../../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -58,6 +60,8 @@
                 <i class="bi bi-search"></i>
                 <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
+              
+            
             </div>
           </div>
         </div>
@@ -71,8 +75,11 @@
             <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body">
-            <nav class="toc" id="toc"></nav>
+          <div class="offcanvas-body" id="sidetoggle">
+          
+            <nav class="toc" id="toc">
+            </nav>
+
           </div>
         </div>
       </div>
@@ -138,11 +145,13 @@ blocked scripts.  Use the <strong>View Website (Local Web Dev Server)</strong> o
       </div>
 
       <div class="affix">
-        <nav id="affix"></nav>
+        <nav id="affix">
+        </nav>
       </div>
     </main>
 
-    <div class="container-xxl search-results" id="search-results"></div>
+    <div class="container-xxl search-results" id="search-results">
+    </div>
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">
