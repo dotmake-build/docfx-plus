@@ -113,7 +113,12 @@ Options:
 
 ### Template usage
 
-Edit your `docfx.json` and update the template property so that you are able to use the theme:
+Pass template (and inherited template) names to the tool like this:
+```console
+docfx-plus -t default,modern,docfx-plus
+```
+
+Or edit your `docfx.json` and update the template property so that you are able to use the theme:
 ```json
 "template": [
   "default",
@@ -121,6 +126,7 @@ Edit your `docfx.json` and update the template property so that you are able to 
   "docfx-plus"
 ]
 ```
+
 And ensure `outputFormat` is not set to a value other than `mref` (the default value if not set, which means ManagedReference). 
 For example using value `apiPage` will not make use of our theme because for that mode, 
 `docfx` internally generates the HTML, most of which is not customizable in the template.  
@@ -133,6 +139,41 @@ Use these `metadata` settings for best results:
   }
 ]
 ```
+
+The theme also supports offline mode via property `_enableOfflineMode`, which when set to `true`, generates documentation that can be run
+on file system (offline, no web server required). Cross domain errors with `file://` origin is fixed with some
+smart tricks so TOC, Nav, Breadcrumb and even the full-text search works.
+We didn't implement a new separate theme but instead added this switch for existing `docfx-plus` theme so that
+the offline version looks and works exactly like online version.
+The problem with docfx bundled `statictoc` theme (besides its ugly looks) is that, it statically inserts TOC to
+every HTML file so it produces very large files especially for `api` subfolder and it can't run search like our offline mode.
+
+For example, you can build online version for deploying to your web server:
+
+```console
+docfx-plus build -t default,modern,docfx-plus
+```
+
+and then you can build offline version for bundling in your product zip (works smoothly just like legacy `.chm` files):
+         
+```console
+docfx-plus build -t default,modern,docfx-plus -m _enableOfflineMode -o _site_offline
+```
+          
+Or in your `docfx.json`:
+           
+```json
+"template": [
+  "default",
+  "modern",
+  "docfx-plus"
+],
+"globalMetadata": {
+  "_enableOfflineMode": true
+}
+```
+
+
 The template can also be used alone with regular `docfx` tool, however it's recommended to use `docfx-plus` tool
 which already bundles the template and in addition provides important fixes for `<code>` blocks.
 
@@ -369,6 +410,7 @@ Refer to [DocFx Config Reference](https://dotnet.github.io/docfx/reference/docfx
   This is because we can't use e.g. `./` for `href` in `toc.yml`; we get `CircularTocInclusion` error
   as it tries to load itself at `./toc.yml`.  
   This way, we can use `~/.` as a workaround in `toc.yml` (we want to use clean directory URL and avoid using `index.html`)
+
 
 ## DocFx Tips:
 

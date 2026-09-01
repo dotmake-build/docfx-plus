@@ -1,0 +1,58 @@
+{
+  "name": "@docfx/template",
+  "version": "1.0.0",
+  "description": "Docfx static website templates",
+  "type": "module",
+  "keywords": [
+    "docfx",
+    "template"
+  ],
+  "author": "docfx",
+  "license": "MIT",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "lint": "eslint modern/src && stylelint modern/src",
+    "test": "node --import tsx --test modern/src/*.test.ts",
+    "start": "node build.js --watch"
+  },
+  "dependencies": {
+    "@default/anchor-js": "npm:anchor-js@5.0.0",
+    "@default/bootstrap": "npm:bootstrap@5.3.8",
+    "@default/highlight.js": "npm:highlight.js@11.10.0",
+    "@default/lunr": "npm:lunr@2.3.9",
+    "@default/mark.js": "npm:mark.js@8.11.1",
+    "@default/twbs-pagination": "npm:twbs-pagination@1.4.2",
+    "@default/url": "npm:@websanova/url@2.6.3",
+    "@websanova/url": "^2.6.3",
+    "anchor-js": "^5.0.0",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "highlight.js": "^11.10.0",
+    "idb-keyval": "^6.2.2",
+    "jquery": "3.7.0",
+    "lit-html": "^3.3.2",
+    "lunr": "2.3.9",
+    "lunr-languages": "^1.14.0",
+    "mathjax": "^3.2.2",
+    "mermaid": "^11.16.1",
+    "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/lunr": "^2.3.7",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
+    "browser-sync": "^3.0.4",
+    "esbuild": "~0.27.3",
+    "esbuild-sass-plugin": "~3.6.0",
+    "eslint": "^9.39.2",
+    "neostandard": "^0.12.2",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "typescript": "^5.9.3",
+    "yargs": "^18.0.0"
+  }
+}

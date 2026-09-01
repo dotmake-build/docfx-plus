@@ -2,6 +2,7 @@
 {{!include(/^public/.*/)}}
 {{!include(favicon.ico)}}
 {{!include(logo.svg)}}
+{{>layout/_master.include}}
 <!DOCTYPE html>
 <html {{#_lang}}lang="{{_lang}}"{{/_lang}}>
   <head>
@@ -15,9 +16,6 @@
       <meta name="title" content="{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}">
       {{#_description}}<meta name="description" content="{{_description}}">{{/_description}}
       {{#description}}<meta name="description" content="{{description}}">{{/description}}
-      <link rel="icon" href="{{_rel}}{{{_appFaviconPath}}}{{^_appFaviconPath}}favicon.ico{{/_appFaviconPath}}">
-      <link rel="stylesheet" href="{{_rel}}public/docfx.min.css">
-      <link rel="stylesheet" href="{{_rel}}public/main.css">
       <meta name="docfx:navrel" content="{{_navRel}}">
       <meta name="docfx:tocrel" content="{{_tocRel}}">
       {{#_noindex}}<meta name="searchOption" content="noindex">{{/_noindex}}
@@ -38,6 +36,10 @@
       <meta name="loc:copy" content="{{__global.copy}}">
       <meta name="loc:downloadPdf" content="{{__global.downloadPdf}}">
 
+      <link rel="icon" href="{{_rel}}{{{_appFaviconPath}}}{{^_appFaviconPath}}favicon.ico{{/_appFaviconPath}}">
+      <link rel="stylesheet" href="{{_rel}}public/docfx.min.css">
+      <link rel="stylesheet" href="{{_rel}}public/main.css">
+
       {{#_appIconLinks}}
       <script>
         window.docfx = window.docfx || {};
@@ -45,7 +47,20 @@
       </script>
       {{/_appIconLinks}}
 
-      <script type="module" src="./{{_rel}}public/docfx.min.js"></script>
+      {{#_enableOfflineMode}}
+        <script type="text/javascript" src="{{_rel}}public/offline/docfx.vendor.min.js"></script>
+        <script type="text/javascript" src="{{_rel}}public/offline/cshtml-razor.min.js"></script>
+        <script type="text/javascript" src="{{_rel}}public/common.js"></script>
+        <script type="text/javascript" src="{{_rel}}public/offline/docfx.js"></script>
+        <script type="text/javascript" src="{{_navJsRel}}"></script>
+        <script type="text/javascript" src="{{_tocJsRel}}"></script>
+        <script type="text/javascript" src="{{_rel}}public/offline/search-worker.min.js"></script>
+        <script type="text/javascript" src="{{_rel}}index.js"></script>
+      {{/_enableOfflineMode}}
+      {{^_enableOfflineMode}}
+        <script type="text/javascript" src="{{_rel}}public/common.js"></script>
+        <script type="module" src="./{{_rel}}public/docfx.min.js"></script>
+      {{/_enableOfflineMode}}
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -86,6 +101,11 @@
                 <input class="form-control" id="search-query" type="search" disabled placeholder="{{__global.search}}" autocomplete="off" aria-label="Search">
               </form>
               {{/_enableSearch}}
+              
+            {{#_enableOfflineMode}}
+              <form class="icons"></form>
+            {{/_enableOfflineMode}}
+            
             </div>
           </div>
         </div>
@@ -101,8 +121,17 @@
             <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body">
-            <nav class="toc" id="toc"></nav>
+          <div class="offcanvas-body" id="sidetoggle">
+          
+            <nav class="toc" id="toc">
+            {{#_enableOfflineMode}}
+              <form class="filter">
+                <i class="bi bi-filter"></i>
+                <input class="form-control" type="search" autocomplete="off" value="" placeholder="{{__global.tocFilter}}" aria-label="{{__global.tocFilter}}">
+              </form>
+            {{/_enableOfflineMode}}
+            </nav>
+
           </div>
         </div>
       </div>
@@ -146,13 +175,25 @@
 
       {{^_disableAffix}}
       <div class="affix">
-        <nav id="affix"></nav>
+        <nav id="affix">
+        {{#_enableOfflineMode}}
+          <h5 class="border-bottom">{{__global.inThisArticle}}</h5>
+        {{/_enableOfflineMode}}
+        </nav>
       </div>
       {{/_disableAffix}}
     </main>
 
     {{#_enableSearch}}
-    <div class="container-xxl search-results" id="search-results"></div>
+    <div class="container-xxl search-results" id="search-results">
+    {{#_enableOfflineMode}}
+      <div class="search-list"></div>
+      <div class="sr-items">
+        <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </div>
+      <ul id="pagination" data-first={{__global.pageFirst}} data-prev={{__global.pagePrev}} data-next={{__global.pageNext}} data-last={{__global.pageLast}}></ul>
+    {{/_enableOfflineMode}}
+    </div>
     {{/_enableSearch}}
 
     <footer class="border-top text-secondary">

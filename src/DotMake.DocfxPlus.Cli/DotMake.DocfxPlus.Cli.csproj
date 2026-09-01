@@ -16,14 +16,44 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - **Fixed:** `codeSourceBasePath` was not being fixed if `metadata` command was skipped,  e.g. called build only via `docfx build`.
+        - **Added:** New theme property `_enableOfflineMode`, which when set to `true`, generates documentation that can be run
+          on file system (offline, no web server required). Cross domain errors with `file://` origin is fixed with some
+          smart tricks so TOC, Nav, Breadcrumb and even the full-text search works.
+          We didn't implement a new separate theme but instead added this switch for existing `docfx-plus` theme so that
+          the offline version looks and works exactly like online version.
+          The problem with docfx bundled `statictoc` theme (besides its ugly looks) is that, it statically inserts TOC to
+          every HTML file so it produces very large files expecially for `api` subfolder and it can't run search like our offline mode.
 
-        - **Fixed:** Markdown code snippets without language specified e.g. `[!code[](~~/Samples.aspx#Region1)]`
-          should infer language from file extension (just like xml comments does).
+          For example, you can build online version for deploying to your web server:
 
-        - **Fixed:** Highligher should use `txt` for unsupported languages,
-          and should support `aspx-cs` and `aspx-vb` (not only `aspx`),
-          and should treat `config`, `csproj` and `slnx` as `xml`.
+          ```console
+          docfx-plus build -t default,modern,docfx-plus
+          ```
+          
+          and then you can build offline version for bundling in your product zip (works smoothly just like legacy `.chm` files):
+          
+          ```console
+          docfx-plus build -t default,modern,docfx-plus -m _enableOfflineMode -o _site_offline
+          ```
+          
+          Or in your `docfx.json`:
+          
+          ```json
+          "template": [
+            "default",
+            "modern",
+            "docfx-plus"
+          ],
+          "globalMetadata": {
+            "_enableOfflineMode": true
+          }
+          ```
+
+        - **Added:** Implemented a plugin for the template, which can register itself as a post processor dynamically
+          and does some useful tasks like deleting unused files for optimal `_site` folder size, and converting some `.json` files
+          to `.js` for being able to support offline mode.
+        
+        - **Fixed:** Footer background color was not correct in dark mode.
       ]]>
     </PackageReleaseNotes>
 
@@ -32,8 +62,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Ensure that the plugin is built together with this project -->
+    <ProjectReference Include="..\DotMake.DocfxPlus.Plugin\DotMake.DocfxPlus.Plugin.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.4.2" />
-    <PackageReference Include="DotMake.CommandLine" Version="3.5.0" />
+    <PackageReference Include="DotMake.CommandLine" Version="3.6.0" />
     <PackageReference Include="ReverseMarkdown" Version="4.7.1" />
   </ItemGroup>
 

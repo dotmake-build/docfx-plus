@@ -11,7 +11,7 @@ exports.preTransform = function (model) {
 //  if (model.name[0].value === "CliContext")
 //    console.log(JSON.stringify(model.namespace));
   
-  templateCommon.overrideTemplateMetadata(model);
+  templateCommon.preTransform(model);
 
   const modelType = getModelType(model);
   
@@ -112,6 +112,8 @@ exports.preTransform = function (model) {
  * This method will be called at the end of exports.transform in ManagedReference.html.primary.js
  */
 exports.postTransform = function (model) {
+  templateCommon.postTransform(model);
+
   return model;
 }
 

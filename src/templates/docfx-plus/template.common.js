@@ -1,6 +1,18 @@
-exports.overrideTemplateMetadata = overrideTemplateMetadata;
+exports.preTransform = preTransform;
+exports.postTransform = postTransform;
 
-function overrideTemplateMetadata(model) {
+function preTransform(model) {
+}
+
+function postTransform(model) {
+  if (model._enableOfflineMode) {
+    model._navJsRel = model._navRel.replace(/.html$/gi, '.js');
+    model._tocJsRel = model._tocRel.replace(/.html$/gi, '.js');
+  
+    if (!model._appLogoUrl)
+      model._appLogoUrl = model._rel + "index.html";
+  }
+
   if (model._appIconLinks) {
     if (!Array.isArray(model._appIconLinks))
       model._appIconLinks = [model._appIconLinks];
@@ -11,6 +23,7 @@ function overrideTemplateMetadata(model) {
   if (model._appFooter)
     model._appFooter = replaceBuildDate(model._appFooter);
 }
+
 
 function replaceBuildDate(input) {
   // "{%40BuildDate}." → "12/03/2025, 21:32:10"

@@ -7,7 +7,7 @@ var templateCommon = require('./template.common.js');
  * This method will be called at the start of exports.transform in RestApi.html.primary.js
  */
 exports.preTransform = function (model) {
-  templateCommon.overrideTemplateMetadata(model);
+  templateCommon.preTransform(model);
 
   return model;
 }
@@ -16,5 +16,7 @@ exports.preTransform = function (model) {
  * This method will be called at the end of exports.transform in RestApi.html.primary.js
  */
 exports.postTransform = function (model) {
+  templateCommon.postTransform(model);
+
   return model;
 }

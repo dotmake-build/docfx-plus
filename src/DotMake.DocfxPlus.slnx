@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DotMake.DocfxPlus.Cli/DotMake.DocfxPlus.Cli.csproj" />
+  <Project Path="DotMake.DocfxPlus.Plugin/DotMake.DocfxPlus.Plugin.csproj" />
+</Solution>

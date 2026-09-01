@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Product>DotMake Docfx-Plus Plugin</Product>
+    <OutDir>$(MSBuildThisFileDirectory)..\templates\docfx-plus\plugins</OutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Docfx.Plugins" Version="$(DocfxVersion)" />
+    <PackageReference Include="System.Composition" Version="10.0.3" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <Target Name="CopySinglePackageDll" AfterTargets="Build">
+    <Copy
+      SourceFiles="$(PkgLib_Harmony)\lib\net8.0\0Harmony.dll"
+      DestinationFolder="$(TargetDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>
