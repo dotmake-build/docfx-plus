@@ -37,9 +37,9 @@ namespace DotMake.DocfxPlus.Cli.Docfx.Patches
                 return true; //also run original method
             }
 
-            internal static void Postfix(ref string __result, CodeSnippet obj)
+            internal static void Postfix(ref string __result, CodeSnippet obj, object __instance)
             {
-                __result = HtmlCodeSnippetRenderer.GetContentPostFix(__result, obj);
+                __result = HtmlCodeSnippetRenderer.GetContentPostFix(__result, obj, __instance);
             }
         }
     }

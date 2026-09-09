@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "DotMake.DocfxPlus.Plugin/3.5.0": {
+      "DotMake.DocfxPlus.Plugin/3.6.0": {
         "dependencies": {
           "Docfx.Plugins": "2.78.5",
           "Lib.Harmony": "2.4.2",
@@ -106,7 +106,7 @@
     }
   },
   "libraries": {
-    "DotMake.DocfxPlus.Plugin/3.5.0": {
+    "DotMake.DocfxPlus.Plugin/3.6.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

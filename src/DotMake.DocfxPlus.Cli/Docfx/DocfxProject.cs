@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using DotMake.DocfxPlus.Cli.Shfb;
 using DotMake.DocfxPlus.Cli.Shfb.MamlToMarkdown;
 using DotMake.DocfxPlus.Cli.Util;
@@ -89,13 +90,22 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                 .ToArray();
 
             AppName = shfbProject.HelpTitle;
+            //_appTitle = name,
             AppLogoPath = fileMap.ContentFiles.Values
                 .FirstOrDefault(f => Path.GetFileName(f).Equals(shfbProject.LogoFile, StringComparison.OrdinalIgnoreCase));
             AppFaviconPath = fileMap.ContentFiles.Values
-                .FirstOrDefault(f => Path.GetFileName(f).Equals("favicon.ico", StringComparison.OrdinalIgnoreCase));
-            //_appTitle = name,
+                .FirstOrDefault(f => Path.GetFileName(f).Equals("favicon.ico", StringComparison.OrdinalIgnoreCase))
+                //SHFB always have favicon in its template although there is no icons/favicon.ico
+                //As we can't get it from project folder, use DocFx one
+                ?? "favicon.ico";
             AppFooter = string.Join("<br>", new[] { shfbProject.FooterText, shfbProject.CopyrightText }
                 .Where(s => !string.IsNullOrWhiteSpace(s)));
+            // We can't read SHFB HelpFileVersion property here (it's also irrelevant as we converted to docfx)
+            // so just replace it with empty string
+            // "[v{@HelpFileVersion}]"
+            // "v{@HelpFileVersion}"
+            // "{@HelpFileVersion}"
+            AppFooter = Regex.Replace(AppFooter, @"\[?v?\{@HelpFileVersion\}\]?\s?", "");
 
 
             var defaultTopic = CreateTocFiles(topicCollections, fileMap);
@@ -136,7 +146,9 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                 .Select(tc => tc.GetApiContentInsertionPoint())
                 .FirstOrDefault(t => t != null);
 
-            using (var tocFileWriter = new StreamWriter(Path.Combine(docfxOutputPath, options.DocsLocation, "toc.yml")))
+            var tocRelativePath = options.DocsLocation;
+
+            using (var tocFileWriter = new StreamWriter(Path.Combine(docfxOutputPath, tocRelativePath, "toc.yml")))
             {
                 var lastLevel = 0;
 
@@ -165,7 +177,10 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                     if (topic == apiContentInsertionPoint && topic!.ApiParentMode == ApiParentMode.InsertAsChild)
                         lines.Add($"href: {apiTocHref}");
                     else if (topic.TopicFile != null)
-                        lines.Add($"href: ~/{fileMap.TopicFiles[topic.TopicFile.FilePath]}.md");
+                    {
+                        var relativeHref = PathUtil.RebaseRelativePath(fileMap.TopicFiles[topic.TopicFile.FilePath], [tocRelativePath], "");
+                        lines.Add($"href: {relativeHref}.md");
+                    }
                     //Ignore this as SHFB docs say "Used by the editor for binding in the tree view."
                     //if (topic.IsExpanded)
                     //    lines.Add("expanded: true");
@@ -354,8 +369,8 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                         {
                             src = MetadataFiles.Select(s => new
                             {
-                                src = Path.GetDirectoryName(s),
-                                files = Path.GetFileName(s)
+                                files = Path.GetFileName(s),
+                                src = Path.GetDirectoryName(s)
                             }),
                             dest = options.ApiLocation,
                             codeSourceBasePath = CodeSourceBasePath,
@@ -367,31 +382,35 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                 {
                     "build", new
                     {
-                        content = new[]
+                        content = new object[]
                         {
+                            new { files = "*.{md,yml}" },
+                            new { files = $"{options.DocsLocation}/**/*.{{md,yml}}" },
+                            new { files = $"{options.ApiLocation}/**/*.{{md,yml}}" },
                             new
                             {
-                                files = new[] { "**/*.{md,yml}" },
-                                exclude = new[] { "_site/**", $"{options.OverwritesLocation}/**" }
-                            }
-                        },
-                        resource = new[]
-                        {
-                            new
-                            {
-                                files =  new [] { "images/**" }
-                                    .Concat(ResourceFiles.Select(path =>
-                                    {
-                                        var parts = path.Split('/');
-                                        return parts.Length > 1 ? parts[0] + "/**" : path;
-                                    }))
-                                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                                files = "*.md",
+                                src = $"{options.ApiLocation}-md",
+                                dest = options.ApiLocation
                             }
                         },
                         overwrite = new[]
                         {
-                            new { files = new[] { $"{options.OverwritesLocation}/*.{{md,yml}}" } }
+                            new { files = $"{options.OverwritesLocation}/*.md" }
                         },
+                        resource = new object[]
+                        {
+                            new { files = "images/**" }
+                        }.Concat(
+                            ResourceFiles.Select(path =>
+                                {
+                                    var parts = path.Split('/');
+                                    return parts.Length > 1 ? parts[0] + "/**" : path;
+                                })
+                                .Where(path => !path.Equals("images/**" , StringComparison.OrdinalIgnoreCase))
+                                .Distinct(StringComparer.OrdinalIgnoreCase)
+                                .Select(path => new { files = path })
+                        ),
                         xref = new[]
                         {
                             "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json"
@@ -401,9 +420,9 @@ namespace DotMake.DocfxPlus.Cli.Docfx
                         globalMetadata = new
                         {
                             _appName = AppName,
+                            _appTitle = AppName,
                             _appLogoPath = AppLogoPath,
                             _appFaviconPath = AppFaviconPath,
-                            //_appTitle = name,
                             _appFooter = AppFooter,
                             _enableSearch = true,
                             //pdf,

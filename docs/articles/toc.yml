@@ -1,0 +1,16 @@
+- name: "Overview"
+  href: index.md
+- name: "Getting started"
+  href: getting-started.md
+- name: "Tool Features"
+  href: tool-features.md
+- name: "Template Features"
+  href: template-features.md
+- name: "Config Sample"
+  href: config-sample.md
+- name: "Docfx Tips"
+  href: docfx-tips.md
+- name: "Publish to GitHub Pages"
+  href: publish-github-pages.md
+- name: "Sample Outputs"
+  href: sample-outputs.md

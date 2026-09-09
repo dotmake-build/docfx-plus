@@ -16,44 +16,40 @@
     <PackageTags>docfx plus plugin tool template Documentation API Metadata</PackageTags>
     <PackageReleaseNotes>
       <![CDATA[
-        - **Added:** New theme property `_enableOfflineMode`, which when set to `true`, generates documentation that can be run
-          on file system (offline, no web server required). Cross domain errors with `file://` origin is fixed with some
-          smart tricks so TOC, Nav, Breadcrumb and even the full-text search works.
-          We didn't implement a new separate theme but instead added this switch for existing `docfx-plus` theme so that
-          the offline version looks and works exactly like online version.
-          The problem with docfx bundled `statictoc` theme (besides its ugly looks) is that, it statically inserts TOC to
-          every HTML file so it produces very large files expecially for `api` subfolder and it can't run search like our offline mode.
+        - **Improved:** Write warning message to console when a markdown code snippet for a file,
+          returns empty content so that user ensures indicated region or line range actually exists in the file.
 
-          For example, you can build online version for deploying to your web server:
+        - **Improved:** Updated `DotMake.CommandLine` to `v3.7.0`.
+          Note that option short aliases for `docfx-plus convert` command are changed:
+          All are now single character e.g. `-d` and not `-dl` for `--docs-location`.
 
-          ```console
-          docfx-plus build -t default,modern,docfx-plus
-          ```
-          
-          and then you can build offline version for bundling in your product zip (works smoothly just like legacy `.chm` files):
-          
-          ```console
-          docfx-plus build -t default,modern,docfx-plus -m _enableOfflineMode -o _site_offline
-          ```
-          
-          Or in your `docfx.json`:
-          
-          ```json
-          "template": [
-            "default",
-            "modern",
-            "docfx-plus"
-          ],
-          "globalMetadata": {
-            "_enableOfflineMode": true
-          }
-          ```
+        - **Improved:** Some small visual perfections in the template.
 
-        - **Added:** Implemented a plugin for the template, which can register itself as a post processor dynamically
-          and does some useful tasks like deleting unused files for optimal `_site` folder size, and converting some `.json` files
-          to `.js` for being able to support offline mode.
-        
-        - **Fixed:** Footer background color was not correct in dark mode.
+        - **Improved:** Some improvements for `convert` command:
+          - Use relative href in `toc.yml` instead of href starting with `~/`.
+          - Use docfx favicon.ico even if SHFB project does not have one (SHFB templates always copies a default one to output).
+          - Replace `{@HelpFileVersion}` variable in `_appFooter` with empty string because it's irrelevant once we converted to docfx.
+          - Simplify written `docfx.json` when converting.
+
+        - **Improved:** Removed workaround:
+          > Fix URLs starting with app relative path `~/` for TOC.  
+          > This is because we can't use e.g. `./` for `href` in `toc.yml`; we get `CircularTocInclusion` error
+          > as it tries to load itself at `./toc.yml`.  
+          > This way, we can use `~/.` as a workaround in `toc.yml` (we want to use clean directory URL and avoid using `index.html`)
+
+          From now on, you should use `href: index.md` in `toc.yml` which was the regular way in docfx.
+          This is because `~/.` workaround was confusing and it was also wrong for other hrefs starting with `~/`.
+          Instead, we fix URLs according to online or offline mode automatically when generating docs.
+          For example, when `_enableOfflineMode` set to `true`, we always use `index.html` in TOC hrefs, logo url and redirection pages
+          (`redirect_url` metadata in markdown files) because directory links do not work when browsing offline html files.
+          When we are building for online mode (web server mode), we remove `index.html` and use `./`
+          to prevent canonical URL issues for search engines.
+          We also introduce a new theme property `_useDirsAsIndex`, which when set to `false`, can force to use `index.html`
+          even for online mode (if you don't care about nice online URLs).
+          For offline mode this is always set to `false` automatically.
+          
+        - **Improved:** Strong name sign the DLLs for NuGet package. Signing will be done only when `DotMake.snk` exists,
+          it's not committed to this repository.
       ]]>
     </PackageReleaseNotes>
 
@@ -70,7 +66,7 @@
 
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.4.2" />
-    <PackageReference Include="DotMake.CommandLine" Version="3.6.0" />
+    <PackageReference Include="DotMake.CommandLine" Version="3.7.0" />
     <PackageReference Include="ReverseMarkdown" Version="4.7.1" />
   </ItemGroup>
 

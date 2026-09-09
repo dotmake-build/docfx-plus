@@ -121,9 +121,23 @@ namespace DotMake.DocfxPlus.Cli.Docfx
             */
         }
 
-        public static string GetContentPostFix(string content, CodeSnippet obj)
+        public static string GetContentPostFix(string content, CodeSnippet obj, object __instance)
         {
-            return content.Trim();
+            content = content.Trim();
+
+            if (string.IsNullOrWhiteSpace(content))
+            {
+                var htmlCodeSnippetRendererType = __instance.GetType();
+                var _context = AccessTools.Field(htmlCodeSnippetRendererType, "_context")
+                    .GetValue(__instance) as MarkdownContext;
+
+                _context?.LogWarning(
+                    "codesnippet-empty",
+                    $"Empty content returned for code snippet '{obj.TagName}' in file '{obj.CodePath}'. Make sure region or line range exists in file.",
+                    obj);
+            }
+
+            return content;
         }
 
         private static void BuildFileExtensionLanguageMap()

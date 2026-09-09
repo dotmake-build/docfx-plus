@@ -20,8 +20,6 @@ which is still very stable but its theme and architecture was outdated.
 
 [**Live Demo**](https://dotmake.build/command-line/api/) - API docs for our other project [DotMake Command-Line](https://github.com/dotmake-build/command-line).
 
-[![Nuget](https://img.shields.io/nuget/v/docfx-plus?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/docfx-plus)
-
 ![docfx-plus-template-light](https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-light.png)
 
 ![docfx-plus-template-light](https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-dark.png)
@@ -192,26 +190,10 @@ This will export the bundled `docfx-plus` template to `_exported_templates` subf
 
 Refer to [DocFx Config Reference](https://dotnet.github.io/docfx/reference/docfx-json-reference.html) for more details.
 
-## Building
-
-We provide some `.cmd` batch scripts in `build` folder for easier building:
-```console
-1. Build Cli.cmd
-2. Build Nuget Packages.cmd
-3. Build Api Docs WebSite.cmd         
-```
-
-Output results can be found in `publish` folder, for example:
-```console
-DotMake.DocfxPlus.Cli-net8.0
-
-docfx-plus.1.0.0.nupkg
-```
-
 ## Links
 
 - [DotMake Docfx-Plus Documentation](https://dotmake.build/docfx-plus/)
 - [Sample Outputs](https://dotmake.build/docfx-plus/articles/sample-outputs.html)
 - [Release Notes](https://github.com/dotmake-build/docfx-plus/releases)
-- [NuGet Package](https://www.nuget.org/packages/docfx-plus)
+- [GitHub Repository](https://github.com/dotmake-build/docfx-plus)
 

@@ -1,6 +1,10 @@
+# Full `docfx.json` sample:
+
+Refer to [docfx.json](https://github.com/dotmake-build/command-line/blob/main/docs/docfx.json) from our other project [DotMake Command-Line](https://github.com/dotmake-build/command-line).
+
+```js
 {
   "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
-  /*
   "metadata": [
     {
       "src": [
@@ -17,7 +21,6 @@
       //"outputFormat": "apiPage" //not working for custom templates
     }
   ],
-  */
   "build": {
     "content": [
       { "files": "*.{md,yml}" },
@@ -47,19 +50,20 @@
       "docfx-plus"
     ],
     "globalMetadata": {
-      "_appName": "DotMake Docfx-Plus",
-      "_appTitle": "DotMake Docfx-Plus",
+      "_appName": "DotMake Command-Line",
+      "_appTitle": "DotMake Command-Line",
       "_appLogoPath": "images/logo32.svg",
       "_appFaviconPath": "images/favicon.ico",
-      "_appFooter": "Copyright © 2025-2026 DotMake",
+      "_appFooter": "Copyright © 2023-2026 DotMake",
       "_enableSearch": true,
       "_appIconLinks": [
         {
           "icon": "github",
-          "href": "https://github.com/dotmake-build/docfx-plus",
+          "href": "https://github.com/dotmake-build/command-line",
           "title": "GitHub"
         }
       ]
     }
   }
 }
+```

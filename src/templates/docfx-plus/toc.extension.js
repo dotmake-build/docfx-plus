@@ -1,10 +1,17 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+var templateCommon = require('./template.common.js');
+
 /**
  * This method will be called at the start of exports.transform in toc.html.js and toc.json.js
  */
 exports.preTransform = function (model) {
+
+  //For offline mode always use index.html
+  if (model._enableOfflineMode)
+    model._useDirsAsIndex = false;
+  
 
   //Fix urls starting with app relative path ~/
   //This is because we can't use e.g. ./ for href in toc.yml, we get CircularTocInclusion error
@@ -12,8 +19,8 @@ exports.preTransform = function (model) {
   //This way we can use ~/. as a workaround in toc.yml (we want to use clean directory url and avoid using index.html)
   //Only for non-api pages, e.g. for toc.json, toc.html
   //console.log(JSON.stringify(model));
-  if (!("memberLayout" in model))
-    fixTildeHref(model.items);
+  //if (!("memberLayout" in model))
+  fixItemsHref(model.items, model._useDirsAsIndex);
 
   return model;
 }
@@ -31,11 +38,10 @@ exports.postTransform = function (model) {
   return model;
 }
 
-function fixTildeHref(items) {
+function fixItemsHref(items, useDirsAsIndex) {
   items?.forEach((item) => {
-    if (item.href?.startsWith("~/"))
-      item.href = "./" + item.href.substring(2);
+    item.href = templateCommon.fixHrefIndexHtml(item.href, useDirsAsIndex);
 
-    fixTildeHref(item.items);
+    fixItemsHref(item.items, useDirsAsIndex);
   });
 }

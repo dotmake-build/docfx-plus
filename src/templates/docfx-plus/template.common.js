@@ -1,5 +1,6 @@
 exports.preTransform = preTransform;
 exports.postTransform = postTransform;
+exports.fixHrefIndexHtml = fixHrefIndexHtml;
 
 function preTransform(model) {
 }
@@ -8,10 +9,17 @@ function postTransform(model) {
   if (model._enableOfflineMode) {
     model._navJsRel = model._navRel.replace(/.html$/gi, '.js');
     model._tocJsRel = model._tocRel.replace(/.html$/gi, '.js');
-  
-    if (!model._appLogoUrl)
-      model._appLogoUrl = model._rel + "index.html";
+
+    //For offline mode always use index.html
+    model._useDirsAsIndex = false;
   }
+
+  if (model.redirect_url)
+    model.redirect_url = fixHrefIndexHtml(model.redirect_url, model._useDirsAsIndex);
+
+  if (!model._appLogoUrl)
+    model._appLogoUrl = model._rel;
+  model._appLogoUrl = fixHrefIndexHtml(model._appLogoUrl, model._useDirsAsIndex)
 
   if (model._appIconLinks) {
     if (!Array.isArray(model._appIconLinks))
@@ -24,6 +32,39 @@ function postTransform(model) {
     model._appFooter = replaceBuildDate(model._appFooter);
 }
 
+
+function fixHrefIndexHtml(href, useDirsAsIndex) {
+  if (!href)
+    return href;
+
+  href = href.trim();
+
+  if (!href)
+    return href;
+
+  if (/^https?:\/\//i.test(href))
+    return href;
+
+  if (useDirsAsIndex === false) {
+    if (/\.html?$/i.test(href))
+      return href;
+
+    if (href === "." || href.endsWith("/."))
+      href = href.slice(0, -1);
+
+    if (href == "./")
+      href = "";
+
+    return href.endsWith("/") || (href.length === 0)
+      ? href + "index.html"
+      : href + "/index.html";
+  }
+
+  // index.html is represented by the directory itself.
+  return href.replace(/(^|\/)index\.html?$/i, (match, p1) => {
+    return (p1.length === 0) ? "./" : p1;
+  });
+}
 
 function replaceBuildDate(input) {
   // "{%40BuildDate}." → "12/03/2025, 21:32:10"

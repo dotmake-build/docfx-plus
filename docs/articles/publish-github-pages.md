@@ -1,3 +1,8 @@
+# Publish to GitHub Pages:
+
+Create a workflow file in your repository, e.g. `publish-docs.yml` file in `.github\workflows` folder with these contents:
+
+```yml
 # Your GitHub workflow file under .github/workflows/
 
 on:
@@ -18,7 +23,6 @@ permissions:
   actions: read
   pages: write
   id-token: write
-  contents: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -47,13 +51,18 @@ jobs:
     # Build docs in this repository via docfx-plus:
     - run: docfx-plus docs/docfx.json
 
-    - name: Deploy to GitHub Pages (Update existing)
-      uses: JamesIves/github-pages-deploy-action@v4
+    # Upload HTML output of the docs build:
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v5
       with:
-        folder: docs/_site # The folder the action should deploy.
-        target-folder: .
-        clean-exclude: |
-          AntPlus/
-          SandcastleBuilder/
-          SandcastleMAMLGuide/
-          XMLCommentsGuide/
+        path: 'docs/_site'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v5
+```
+
+Then enable GitHub Actions for your repository's Pages settings as described here:  
+[Publishing with a custom GitHub Actions workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow)
+
+Now whenever you commit, your action will run automatically and publish your docs.
