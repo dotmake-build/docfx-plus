@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>docfx-plus template features | DotMake Docfx-Plus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="docfx-plus template features | DotMake Docfx-Plus ">
+      
+      
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dotmake-build/docfx-plus/blob/v3.6.0/docs/articles/template-features.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+
+      <script>
+        window.docfx = window.docfx || {};
+        window.docfx.iconLinks = [{"icon":"github","href":"https://github.com/dotmake-build/docfx-plus","title":"GitHub"}];
+      </script>
+
+        <script type="text/javascript" src="../public/common.js"></script>
+        <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../">
+            <img id="logo" class="svg" src="../images/logo32.svg" alt="DotMake Docfx-Plus">
+            <div class="site-header-divider"></div>
+            DotMake Docfx-Plus
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+              
+            
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body" id="sidetoggle">
+          
+            <nav class="toc" id="toc">
+            </nav>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="docfx-plus-template-features"><code>docfx-plus</code> <strong>template</strong> features</h1>
+
+<ul>
+<li><p>In namespace, class, enum or member pages use <code>Name Type</code> format as the title e.g. <code>CliContext Class</code> instead of <code>Class CliContext</code>.</p>
+<p>Display <code>Definition</code> heading after the title heading.</p>
+<p>Don't break the namespace into link parts next to <code>Namespace:</code> because e.g. the root namespace may not exist and cause a HTTP 404.</p>
+<p>Fix heading margins (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> ...).</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature1.png" alt="docfx-plus-template-feature1"></p>
+</li>
+<li><p>Display namespace members, class members and enum fields with tables with subtle borders.</p>
+<p>Display inherited members and extension methods together with other members (in their own member type group),
+instead of displaying them as a huge and isolated list under the class definition section.<br>
+Display <code>(Inherited from BaseClass)</code> note in the description.<br>
+Sort inherited members along with other members by name.</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature2.png" alt="docfx-plus-template-feature2"></p>
+</li>
+<li><p>Elegant rendering of <code>&lt;code&gt;</code> blocks with white background and subtle borders.</p>
+<p>Group sibling <code>&lt;code&gt;</code> blocks which are for different languages (e.g. <code>vb</code> following <code>cs</code>), and display them as tabs.</p>
+<pre><code class="lang-xml">&lt;code source=&quot;Class1.cs&quot; /&gt;
+&lt;code source=&quot;Class1.vb&quot; /&gt;
+</code></pre>
+<p>If there is text between <code>&lt;code&gt;</code> blocks or if they are for same language, they will not be grouped and will be displayed separately.</p>
+<p>Display always visible &quot;code copy&quot; button on the right-side of tabs.</p>
+<p>Add <code>cshtml-razor</code> grammar for <code>highlight.js</code>.</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature3.png" alt="docfx-plus-template-feature3"></p>
+</li>
+<li><p>On member pages, display overloads with indentation separately from definition section and fix sub-heading levels (<code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> ...).</p>
+<p>If no overloads, display single member.</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature4.png" alt="docfx-plus-template-feature4"></p>
+</li>
+<li><p>Display values for <code>enum</code> fields along with name and description and sort them by values.</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature5.png" alt="docfx-plus-template-feature5"></p>
+</li>
+<li><p>Display <code>Obsolete</code> badge if class, enum or member has <code>ObsoleteAttribute</code> attribute
+and an in addition display an alert <code>div</code> under the badge if <code>ObsoleteAttribute</code> has a message.</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature6.png" alt="docfx-plus-template-feature6"></p>
+</li>
+<li><p>Elegant rendering of TOC tree.</p>
+<p>Highlight current tree node.</p>
+<p>Remove root node <code>Namespaces</code> which causes unnecessary nesting and display all namespaces as root (though fixed in <code>v2.78.4</code> of <code>docfx</code>).</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature7.png" alt="docfx-plus-template-feature7"></p>
+</li>
+<li><p>Add icon links to top toolbar via new template property <code>_appIconLinks</code> directly in <code>docfx.json</code> (no need to override <code>layout/_master.tmpl</code>):</p>
+<pre><code class="lang-json">&quot;globalMetadata&quot;: {
+    &quot;_appIconLinks&quot;: [
+      {
+        &quot;icon&quot;: &quot;github&quot;,
+        &quot;href&quot;: &quot;https://github.com/dotmake-build/command-line&quot;,
+        &quot;title&quot;: &quot;GitHub&quot;
+      }
+    ]
+}
+</code></pre>
+<p>Fix header nav brand logo, title and buttons wrapping on phone and tablet sizes.</p>
+<p><img src="https://raw.githubusercontent.com/dotmake-build/docfx-plus/master/images/docfx-plus-template-feature8.png" alt="docfx-plus-template-feature8"></p>
+</li>
+<li><p>Fix some URL issues:</p>
+<p>We fix URLs according to online or offline mode automatically when generating docs.</p>
+<p>When <code>_enableOfflineMode</code> set to <code>true</code>, we always use <code>index.html</code> in TOC hrefs, logo url and redirection pages
+(<code>redirect_url</code> metadata in markdown files) because directory links do not work when browsing offline html files.</p>
+<p>When we are building for online mode (web server mode), we remove <code>index.html</code> and use <code>./</code>
+to prevent canonical URL issues for search engines (we want to use clean directory URL and avoid using <code>index.html</code>).</p>
+<p>We also introduce a new theme property <code>_useDirsAsIndex</code>, which when set to <code>false</code>, can force to use <code>index.html</code>
+even for online mode (if you don't care about nice online URLs).
+For offline mode this is always set to <code>false</code> automatically.</p>
+<p>For example, you use <code>index.md</code> for <code>href</code> in <code>toc.yml</code>
+(you need to use <code>index.md</code> because if you use <code>./</code> for <code>href</code> in <code>toc.yml</code>; you get <code>CircularTocInclusion</code> error
+as it tries to load itself at <code>./toc.yml</code>):</p>
+<pre><code>- name: &quot;Overview&quot;
+  href: index.md
+</code></pre>
+<p>For online mode, TOC and NavBar will have this link generated for href <code>./</code> automatically.
+For offline mode, it will use <code>index.html</code>.</p>
+<p>For example, you have a markdown file like this:</p>
+<pre><code>---
+redirect_url: articles/
+---
+</code></pre>
+<p>For online mode, the generated HTML will have a redirect meta tag with href <code>articles/</code> (same kept).
+For offline mode, the href will be automatically converted to <code>articles/index.html</code>.</p>
+<p>For example, you have a markdown file like this:</p>
+<pre><code>---
+redirect_url: articles/index.html
+---
+</code></pre>
+<p>For online mode, the generated HTML will have a redirect meta tag with href <code>articles/</code> (converted automatically).
+For offline mode, the href will be kept same as <code>articles/index.html</code>.</p>
+<p>The same logic applies for theme property <code>_appLogoUrl</code>.</p>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/dotmake-build/docfx-plus/blob/v3.6.0/docs/articles/template-features.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix">
+        </nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results">
+    </div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025-2026 DotMake
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

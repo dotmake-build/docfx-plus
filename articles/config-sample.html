@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Full docfx.json sample: | DotMake Docfx-Plus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Full docfx.json sample: | DotMake Docfx-Plus ">
+      
+      
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dotmake-build/docfx-plus/blob/v3.6.0/docs/articles/config-sample.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+
+      <script>
+        window.docfx = window.docfx || {};
+        window.docfx.iconLinks = [{"icon":"github","href":"https://github.com/dotmake-build/docfx-plus","title":"GitHub"}];
+      </script>
+
+        <script type="text/javascript" src="../public/common.js"></script>
+        <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../">
+            <img id="logo" class="svg" src="../images/logo32.svg" alt="DotMake Docfx-Plus">
+            <div class="site-header-divider"></div>
+            DotMake Docfx-Plus
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+              
+            
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body" id="sidetoggle">
+          
+            <nav class="toc" id="toc">
+            </nav>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="full-docfxjson-sample">Full <code>docfx.json</code> sample:</h1>
+
+<p>Refer to <a href="https://github.com/dotmake-build/command-line/blob/main/docs/docfx.json">docfx.json</a> from our other project <a href="https://github.com/dotmake-build/command-line">DotMake Command-Line</a>.</p>
+<pre><code class="lang-js">{
+  &quot;$schema&quot;: &quot;https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json&quot;,
+  &quot;metadata&quot;: [
+    {
+      &quot;src&quot;: [
+        {
+          &quot;files&quot;: &quot;DotMake.CommandLine/DotMake.CommandLine.csproj&quot;,
+          &quot;src&quot;: &quot;../src&quot;
+        }
+      ],
+      &quot;dest&quot;: &quot;api&quot;, 
+      &quot;codeSourceBasePath&quot;: &quot;../src/DotMake.CommandLine/&quot;, 
+      &quot;memberLayout&quot;: &quot;separatePages&quot;,
+      &quot;categoryLayout&quot;: &quot;nested&quot;,
+      //&quot;namespaceLayout&quot;: &quot;nested&quot;, 
+      //&quot;outputFormat&quot;: &quot;apiPage&quot; //not working for custom templates
+    }
+  ],
+  &quot;build&quot;: {
+    &quot;content&quot;: [
+      { &quot;files&quot;: &quot;*.{md,yml}&quot; },
+      { &quot;files&quot;: &quot;articles/**/*.{md,yml}&quot; },
+      { &quot;files&quot;: &quot;api/**/*.{md,yml}&quot; },
+      {
+        //Handle separately because we use different src and dest
+        &quot;files&quot;: &quot;*.md&quot;,
+        &quot;src&quot;: &quot;api-md&quot;,
+        &quot;dest&quot;: &quot;api&quot;
+      }
+    ],
+    &quot;overwrite&quot;: [
+      { &quot;files&quot;: &quot;overwrites/*.md&quot; }
+    ],
+    &quot;resource&quot;: [
+      { &quot;files&quot;: &quot;images/**&quot; }
+    ],
+    &quot;xref&quot;: [
+      //This is only used for xref references in custom markdown files:
+      &quot;https://learn.microsoft.com/en-us/dotnet/.xrefmap.json&quot;
+    ],
+    &quot;output&quot;: &quot;_site&quot;,
+    &quot;template&quot;: [
+      &quot;default&quot;,
+      &quot;modern&quot;,
+      &quot;docfx-plus&quot;
+    ],
+    &quot;globalMetadata&quot;: {
+      &quot;_appName&quot;: &quot;DotMake Command-Line&quot;,
+      &quot;_appTitle&quot;: &quot;DotMake Command-Line&quot;,
+      &quot;_appLogoPath&quot;: &quot;images/logo32.svg&quot;,
+      &quot;_appFaviconPath&quot;: &quot;images/favicon.ico&quot;,
+      &quot;_appFooter&quot;: &quot;Copyright © 2023-2026 DotMake&quot;,
+      &quot;_enableSearch&quot;: true,
+      &quot;_appIconLinks&quot;: [
+        {
+          &quot;icon&quot;: &quot;github&quot;,
+          &quot;href&quot;: &quot;https://github.com/dotmake-build/command-line&quot;,
+          &quot;title&quot;: &quot;GitHub&quot;
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/dotmake-build/docfx-plus/blob/v3.6.0/docs/articles/config-sample.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix">
+        </nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results">
+    </div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025-2026 DotMake
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>docfx-plus tool features | DotMake Docfx-Plus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="docfx-plus tool features | DotMake Docfx-Plus ">
+      
+      
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dotmake-build/docfx-plus/blob/v3.6.0/docs/articles/tool-features.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+
+      <script>
+        window.docfx = window.docfx || {};
+        window.docfx.iconLinks = [{"icon":"github","href":"https://github.com/dotmake-build/docfx-plus","title":"GitHub"}];
+      </script>
+
+        <script type="text/javascript" src="../public/common.js"></script>
+        <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../">
+            <img id="logo" class="svg" src="../images/logo32.svg" alt="DotMake Docfx-Plus">
+            <div class="site-header-divider"></div>
+            DotMake Docfx-Plus
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+              
+            
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body" id="sidetoggle">
+          
+            <nav class="toc" id="toc">
+            </nav>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="docfx-plus-tool-features"><code>docfx-plus</code> <strong>tool</strong> features</h1>
+
+<ul>
+<li><p>Support region includes (<code>&lt;code source=&quot;...&quot; region=&quot;...&quot;&gt;</code>) across more language files (e.g. <code>.vb</code>, <code>.js</code>, <code>.aspx</code>).<br>
+Support the same region extensions for markdown code snippet source files (<code>[!code-csharp[](Program.cs#region)]</code>).<br>
+This will be useful especially when migrating from <code>SHFB</code>.</p>
+<p>In <code>.vb</code> source files, regions defined like this can now be included:</p>
+<pre><code class="lang-vb">#Region &quot;Name&quot;
+
+#End Region
+</code></pre>
+<p>In <code>.js</code> source files, regions defined like this can now be included:</p>
+<pre><code class="lang-js">//#region Name
+
+//#endregion
+</code></pre>
+<p>In xml-based source files, regions defined like this can now be included (just like <code>SHFB</code>):</p>
+<pre><code class="lang-xml">&lt;!-- #region Name --&gt;
+
+&lt;!-- #endregion --&gt;
+</code></pre>
+<p>This is in addition to <code>docfx</code> default format:</p>
+<pre><code class="lang-xml">&lt;!-- &lt;Name&gt; --&gt;
+
+&lt;!-- &lt;/Name&gt; --&gt;
+</code></pre>
+<p><code>.aspx</code>, <code>.csproj</code>, <code>.slnx</code>, <code>.config</code> are also added to <code>docfx</code> default xml-based formats <code>.xml</code>, <code>.xaml</code>, <code>.html</code>, <code>.cshtml</code>, <code>.vbhtml</code>.</p>
+</li>
+<li><p>Always ensure correct indentation for both xml comments code blocks and markdown code snippets.<br>
+Some source files or <code>&lt;code&gt;</code> contents can contain tab characters which can cause inconsistent indentation.</p>
+<p>Convert tab (<code>\t</code>) characters to spaces.
+Define and use default tab sizes for common code file extensions (e.g. <code>2</code> spaces for xml-based files or <code>4</code> spaces for c-based files),
+so that code keeps correct indentation when some lines start with tabs and some starts with spaces.</p>
+<p>Support <code>tabSize</code> attribute (<code>&lt;code tabSize=&quot;2&quot;&gt;</code>) to override default tabSize for a language.</p>
+</li>
+<li><p>Consistent line break handling inside <code>&lt;code&gt;</code> blocks so that code is always rendered correctly in the html.</p>
+<p>Additionally normalize new lines inside of parent elements, which contain <code>&lt;code&gt;</code> blocks
+to prevent Yaml multi-line problems (<code>.yml</code> generated by <code>docfx</code>).
+This way text surrounding code blocks will not break Yaml due to inconsistent indentation.</p>
+</li>
+<li><p>Support nested <code>&lt;code&gt;</code> blocks in your XML Comments (xmldocs), for merging code even from different regions, just like <code>SHFB</code>:</p>
+<pre><code class="lang-xml">&lt;code language=&quot;cs&quot;&gt;
+  &lt;code source=&quot;Class1.cs&quot; region=&quot;Region1&quot; /&gt;
+  &lt;code source=&quot;Class2.cs&quot; region=&quot;Region2&quot; /&gt;
+&lt;/code&gt;
+</code></pre>
+<p>Literal code can also be mixed around nested <code>&lt;code&gt;</code> blocks.</p>
+<pre><code class="lang-xml">&lt;code language=&quot;cs&quot;&gt;
+  // The new line below will be significant but above will not
+
+  &lt;code source=&quot;Class1.cs&quot; region=&quot;Region1&quot; /&gt;
+
+  // New lines above or below will be significant
+
+  &lt;code source=&quot;Class2.cs&quot; region=&quot;Region2&quot; /&gt;
+
+  // The new line above will be significant but below will not
+&lt;/code&gt;
+</code></pre>
+<p>Indentation from source files and literal code will all be normalized.</p>
+</li>
+<li><p>Support <code>title</code> attribute (<code>&lt;code title=&quot;Custom&quot;&gt;</code>) which is used when showing as code tab title instead of the language.</p>
+</li>
+<li><p>If <code>codeSourceBasePath</code> from <code>metadata</code> in <code>docfx.json</code> is a relative path,
+convert it to be relative to the <code>docfx.json</code> (<code>docfx</code> originally treats it relative to the working directory, which is wrong).</p>
+<p>In markdown files, allow to reference code snippet source files relative to <code>codeSourceBasePath</code> option in <code>docfx.json</code>
+via new special prefix <code>~~/</code> (note the double tilde). For example:</p>
+<pre><code>[!code-csharp[](~~/Program.cs)]
+[!code-csharp[](~~/../SubFolder/Program.cs)]
+</code></pre>
+<p>If <code>codeSourceBasePath</code> option is not set, this will fallback to <code>docfx.json</code> project root so it will behave like already supported <code>~/</code> prefix.</p>
+<p>Convert backslashes (<code>\</code>) in code block's source attribute (<code>&lt;code source=&quot;...&quot;&gt;</code>) to forward slashes (<code>/</code>)<br>
+so that they are resolved correctly even when building docs on linux (e.g. when running in a Github Pages workflow which are usually linux based).<br>
+Since .NET 8, <code>System.IO.Path</code> methods does not do backslash mapping in Unix file paths<br>
+but we want to support existing projects which may have <code>&lt;code source=&quot;...&quot;&gt;</code> with backslashes all over the source code.</p>
+</li>
+<li><p><code>NamespaceDoc</code> support just like <code>SHFB</code>.<br>
+Namespace comments can be specified and maintained in your source code by adding an empty <code>NamespaceDoc</code> class to each namespace.<br>
+XML Comments (<code>&lt;summary&gt;</code> and <code>&lt;remarks&gt;</code> tags) from these classes will be extracted and assigned to the containing namespaces in the docs.</p>
+<pre><code class="lang-c#">namespace DotMake.CommandLine
+{
+    /// &lt;summary&gt;
+    /// This is the root namespace of this library, it includes the CLI attributes and CLI parser/runner.
+    /// &lt;para /&gt;
+    /// &lt;para&gt;The main classes in this namespace are:&lt;/para&gt;
+    /// &lt;list type=&quot;bullet&quot;&gt;
+    ///     &lt;item&gt;&lt;see cref=&quot;CliCommandAttribute&quot;/&gt; is the attribute which specifies a class that represents a command which is a specific action that the command line application performs.&lt;/item&gt;
+    ///     &lt;item&gt;&lt;see cref=&quot;CliOptionAttribute&quot;/&gt; is the attribute which specifies a class property that represents an option which is a named parameter and a value for that parameter, that is used on the command line.&lt;/item&gt;
+    /// &lt;/list&gt;
+    /// &lt;/summary&gt;
+    [System.Runtime.CompilerServices.CompilerGenerated]
+    internal class NamespaceDoc
+    {
+    }
+}
+</code></pre>
+<p><code>NamespaceDoc</code> classes will be found even if your API filter excludes them but themselves will not be included in the docs,
+only their XML Comments assigned to the containing namespaces will be displayed.<br>
+You can optionally make them private or internal and mark them with a <code>CompilerGenerated</code> attribute.</p>
+</li>
+<li><p>For markdown alerts, use bold text in the first line as the title of the alert:</p>
+<pre><code>&gt; [!note]
+&gt; **Project Road Map**
+&gt; This alert contains a custom title.
+
+&gt; [!caution]
+&gt; **security note**
+&gt; Do not tape your password to the underside of your keyboard.
+</code></pre>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/dotmake-build/docfx-plus/blob/v3.6.0/docs/articles/tool-features.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix">
+        </nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results">
+    </div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025-2026 DotMake
+        </div>
+        <div class="flex-fill text-end">
+          <span>Made with <a href="https://dotmake.build/docfx-plus/">docfx-plus</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
