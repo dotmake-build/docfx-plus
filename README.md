@@ -196,16 +196,19 @@ Refer to [DocFx Config Reference](https://dotnet.github.io/docfx/reference/docfx
 
 We provide some `.cmd` batch scripts in `build` folder for easier building:
 ```console
-1. Build Cli.cmd
+1. Build Cli App.cmd
 2. Build Nuget Packages.cmd
-3. Build Api Docs WebSite.cmd         
+3. Build Docs WebSite.cmd         
 ```
 
 Output results can be found in `publish` folder, for example:
 ```console
 DotMake.DocfxPlus.Cli-net8.0
 
-docfx-plus.1.0.0.nupkg
+docfx-plus.3.6.0.nupkg
+
+Docs-WebSite
+Docs-Offline
 ```
 
 ## Links
